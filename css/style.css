@@ -179,7 +179,7 @@ img {
     position: relative;
     height: 100%;
     width: 100%;
-    background: url('../img/Bild1.jpeg') no-repeat center center;
+    background: url('../img/Bild1.jpeg') no-repeat center right;
     background-size: cover;
     display: flex;
     align-items: center;
@@ -188,7 +188,18 @@ img {
 
 .login-form {
     background: rgb(209, 209, 209, 0.9); /* Weißer, halbtransparenter Hintergrund für das Formular */
-    padding: 20px;
+    padding: 30px;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    margin-right: 40%;
+}
+
+.register-form {
+    background: rgb(209, 209, 209, 0.9); /* Weißer, halbtransparenter Hintergrund für das Formular */
+    padding: 30px;
     border-radius: 10px;
     text-align: center;
     max-width: 400px;
@@ -197,11 +208,26 @@ img {
     margin-right: 40%;
 }
 
+.register-form .form-group:nth-of-type(6) {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 .form-group {
     margin-bottom: 5px;
     text-align: left;
     width:100%;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; 
+}
+
+.flex-item {
+    flex: 1;
 }
 
 label {
@@ -217,11 +243,12 @@ label {
     margin-top: 5px;
 }
 
-.form-group:nth-of-type(3) {
+.login-form .form-group:nth-of-type(3) {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 
 /*Login-Fenster hier zu Ende */
 
@@ -389,7 +416,7 @@ input[type="text"], input[type="password"], input[type="email"] {
 }
 
 input[type="email"] {
-	width: 200px;
+	width: 100%;
 	padding: 10px;
 	margin-bottom: 10px;
 	border: 1px solid #ccc;
