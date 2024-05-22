@@ -2,9 +2,9 @@
 Bank of the Future!
 
 
-22.05. (09 Uhr) - Diane
+22.05. (10 Uhr) - Diane
 
-im html Ordner habe ich einige kleine Veränderungen an den Dateien vorgenommen
+im html Ordner habe ich bei allen Dateien einige kleine Veränderungen vorgenommen (bzw, auch neue Seiten erstellt) & auch style.css & style1.css sind neu
 
 19.05 / 14.30 Uhr
 Im Ordner CSS und HTML habe ich jeweils die geänderten Dateien abgelegt.
