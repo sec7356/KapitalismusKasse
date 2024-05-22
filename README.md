@@ -3,6 +3,7 @@ Bank of the Future!
 
 
 22.05. (09 Uhr) - Diane
+
 im html Ordner habe ich einige kleine Veränderungen an den Dateien vorgenommen
 
 19.05 / 14.30 Uhr
