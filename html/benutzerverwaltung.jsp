@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page errorPage="fehlermeldungAllgemein.jsp" %>
 
 <!DOCTYPE html>
@@ -7,20 +7,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
-    <title>KPT-Beniutzerverwaltung - Kapitalismus-Kasse</title>
-    <link rel="stylesheet" href="../css/style1.css">
+    <title>KPT-Startseite - Kapitalismus-Kasse</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Benutzerverwaltung</h1>
-    </header>
-    <nav>    
-        <ul>
-            <li><a href="Banking-Login.jsp" class="white-anchor">Logout</a></li>   <!-- geeignetes Logout implementieren -->
-            <li><a href="#" class="white-anchor">Überweisungen</a></li>         <!-- geeigneten Link einfügen -->
-        </ul>
-    </nav>
-    <article>
+
+<nav id="navbar">
+	<ul>
+		<li>
+			<div class="container">
+				<img src="../img/logo.jpg" alt="Logo" class="image">
+				<div class="company-name">
+   	 				<span>Kapitalismus-</span>
+    				<span>Kasse</span>
+    			</div>
+    		</div>
+		</li>
+		<li><a href="UserStartseite.jsp">Startseite</a>
+		</li>
+		<li><a href="Ueberweisungen.jsp">Überweisungen</a>
+		</li>
+		<li><a href="benutzerverwaltung.jsp" class="active">Benutzerverwaltung</a>
+		</li>
+		<li><a href="Banking-Login.jsp">Logout</a>
+		</li>
+	</ul>
+</nav>
+<br>
+
+<div class="login_window">
+        <div class="login-form">
+        <div class="background-image"></div>
         <form action="../UpdateServlet" method="POST" enctype="multipart/form-data"> <!-- action fehlt -->
             <div>
                 <label for="vorname">Vorname:</label>
@@ -47,7 +64,9 @@
 				 <button name="reset" type="reset">Zurücksetzen</button>
 			</div>
         </form>
-    </article>
+	</div>
+ </div>
+
     <footer>
         <p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>
     </footer>
