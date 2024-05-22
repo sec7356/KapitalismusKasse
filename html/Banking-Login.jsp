@@ -57,10 +57,10 @@
                     <button type="submit">Anmelden</button>
                 </div>
                 <div class="form-group">
-                	<p>Passwort vergessen?
+                	<p><b>Passwort vergessen?</b></p>
                 	<p>Hilfe finden Sie Sie <a href="passwortReset.jsp" class="black-anchor">hier</a>.</p>
                 
-                	<p>Neu hier?</p>
+                	<p><b>Neu hier?</b></p>
                 	<p>Registrieren Sie sich <a href="Registrierung.jsp" class="black-anchor">hier</a>.</p>
                 
                 
