@@ -1,5 +1,7 @@
 # KapitalismusKasse
 Bank of the Future!
+
+
 22.05.
 im html Ordner habe ich einige kleine Veränderungen an den Dateien vorgenommen
 
