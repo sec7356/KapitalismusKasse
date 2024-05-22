@@ -79,7 +79,7 @@
                 <button type="reset">Zurücksetzen</button>
             </div>
             <div class="form-group">
-                <p>Sie kommen nicht weiter?</p>
+                <p><b>Sie kommen nicht weiter?</b></p>
                 <p>Hilfe finden Sie <a href="hilfe.jsp" class="black-anchor">hier</a>.</p>
             </div>
         </form>
