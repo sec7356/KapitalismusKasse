@@ -23,15 +23,15 @@
     			</div>
     		</div>
 		</li>
-		<li><a href="../index.jsp">Privatkunden</a>
+		<li><a href="${pageContext.request.contextPath}/index.jsp">Privatkunden</a>
 		</li>
-		<li><a href="Firmenkunden.jsp">Firmenkunden</a>
+		<li><a href="${pageContext.request.contextPath}/Firmenkunden.jsp">Firmenkunden</a>
 		</li>
-		<li><a href="Immobilien.jsp">Immobilien</a>
+		<li><a href="${pageContext.request.contextPath}/Immobilien.jsp">Immobilien</a>
 		</li>
-		<li><a href="Karriere.jsp">Karriere</a>
+		<li><a href="${pageContext.request.contextPath}/Karriere.jsp">Karriere</a>
 		</li>
-		<li><a href="Banking-Login.jsp"class="active">Banking-Login</a>
+		<li><a href="${pageContext.request.contextPath}/Banking-Login.jsp"class="active">Banking-Login</a>
 		</li>
 	</ul>
 </nav>
@@ -41,7 +41,7 @@
         <div class="login-form">
         <div class="background-image"></div>
             
-            <form action="../LoginServlet" method="post">
+            <form action="${pageContext.request.contextPath}/LoginServlet" method="post">
                 <div class="form-group">
                  	<h2>Willkommen im KPT-Kasse Online-Banking</h2>
                  	<p>Bitte loggen Sie sich ein.</p>
