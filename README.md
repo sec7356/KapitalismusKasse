@@ -1,6 +1,7 @@
 # KapitalismusKasse
 Bank of the Future!
 
+23.05. 15:30 neue Updates
 
 22.05. (10 Uhr) - Diane
 
