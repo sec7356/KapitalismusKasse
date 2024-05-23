@@ -14,13 +14,6 @@
         <h1>Oops! Etwas ist schief gelaufen.</h1>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="kontakt.jsp" class="white-anchor">Kontakt</a></li>
-            <li><a href="hilfe.jsp" class="white-anchor">Hilfe</a></li>
-        </ul>
-    </nav>
-
     <aside>
         <h2>Fehler</h2>
         <div>
