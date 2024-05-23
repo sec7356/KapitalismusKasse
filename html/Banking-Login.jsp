@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
     <title>KPT-Login - Kapitalismus-Kasse</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 </head>
 <body>
 
@@ -40,6 +40,7 @@
  <div class="login_window">
         <div class="login-form">
         <div class="background-image"></div>
+            
             <form action="../LoginServlet" method="post">
                 <div class="form-group">
                  	<h2>Willkommen im KPT-Kasse Online-Banking</h2>
@@ -56,6 +57,7 @@
                     <span class="required-fields">*Pflichtfelder</span>
                     <button type="submit">Anmelden</button>
                 </div>
+                
                 <div class="form-group">
                 	<p><b>Passwort vergessen?</b></p>
                 	<p>Hilfe finden Sie Sie <a href="passwortReset.jsp" class="black-anchor">hier</a>.</p>
