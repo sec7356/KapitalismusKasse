@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
     <title>Hilfe - Kapitalismus-Kasse</title>
-    <link rel="stylesheet" href="../css/style1.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style1.css">
 </head>
 <body>
     <header>
