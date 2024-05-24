@@ -35,24 +35,14 @@ public class LoeschenServlet extends HttpServlet{
 		Long id = (Long)session.getAttribute("b_id");
 		
 		// DB-Zugriff
-		deleteBenutzer(id);
 		deleteKonto(id);
+		deleteBenutzer(id);
 				
 		// Weiterleiten an JSP
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");   //so korrekt?
 		dispatcher.forward(request, response);	
 	}
 	
-	private void deleteBenutzer(Long id) throws ServletException {
-		// DB-Zugriff
-		try (Connection con = ds.getConnection();
-			 PreparedStatement pstmt = con.prepareStatement("DELETE FROM Benutzer WHERE b_id = ?")){
-			pstmt.setLong(1, id);
-			pstmt.executeUpdate();
-		} catch (Exception ex) {
-			throw new ServletException(ex.getMessage());
-		}
-	}
 	private void deleteKonto(Long id) throws ServletException {
 		// DB-Zugriff
 		try (Connection con = ds.getConnection();
@@ -63,4 +53,15 @@ public class LoeschenServlet extends HttpServlet{
 			throw new ServletException(ex.getMessage());
 		}
 	}
+	private void deleteBenutzer(Long id) throws ServletException {
+		// DB-Zugriff
+		try (Connection con = ds.getConnection();
+			 PreparedStatement pstmt = con.prepareStatement("DELETE FROM Benutzer WHERE b_id = ?")){
+			pstmt.setLong(1, id);
+			pstmt.executeUpdate();
+		} catch (Exception ex) {
+			throw new ServletException(ex.getMessage());
+		}
+	}
+	
 }
