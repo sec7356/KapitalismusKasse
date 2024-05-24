@@ -65,7 +65,7 @@ public class RegisterServlet extends HttpServlet {
 			return; // Beende die Methode
 		}
 		benutzer.setPin(Integer.valueOf(request.getParameter("pin1")));
-		
+		benutzer.setAdmin(false);
 		
 
 		// DB-Zugriff
@@ -81,6 +81,7 @@ public class RegisterServlet extends HttpServlet {
 		session.setAttribute("b_id", benutzer.getB_id());
 		session.setAttribute("vorname", benutzer.getVorname());
 		session.setAttribute("nachname", benutzer.getNachname());
+		session.setAttribute("admin", benutzer.isAdmin());
 		session.setAttribute("kontostand", konto.getKontoStand());
 		session.setAttribute("IBAN", konto.getIBAN());
 		
@@ -92,6 +93,7 @@ public class RegisterServlet extends HttpServlet {
 	    System.out.println("Nachname: " + benutzer.getNachname());
 	    System.out.println("Email: " + benutzer.getEmail());
 	    System.out.println("Pin: " + benutzer.getPin());
+	    System.out.println("Admin: " + benutzer.isAdmin());
 		
 		
 		dispatcher.forward(request, response);

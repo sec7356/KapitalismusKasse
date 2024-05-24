@@ -39,7 +39,7 @@
    			- Link zu benutzerverwaltung.jsp einfügen -->
 
 <div class="grauBackground">
-	<br><br><br><br><br>												<!-- falsch formatiert -->
+	<br><br><br><br>												<!-- falsch formatiert -->
 	<p>Guten Tag, <%= session.getAttribute("vorname") %> <%= session.getAttribute("nachname") %>!</p>		
 	
 	<div class="kontostand">
