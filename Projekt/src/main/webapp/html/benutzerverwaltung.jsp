@@ -47,45 +47,42 @@
 	<br>
 
 	<div class="internForm">
-		<form action="${pageContext.request.contextPath}/UpdateServlet" method="POST" enctype="multipart/form-data">
-		<fieldset><legend>Daten verwalten</legend>
-			<div>
-				<label for="vorname">Vorname:</label> <input type="text"
-					id="vorname" name="vorname" required maxlength="30"><br>
-			</div>
-			<div>
-				<label for="nachname">Nachname:</label> <input type="text"
-					id="nachname" name="nachname" required maxlength="30"><br>
-			</div>
-			<div>
-				<label for="password1">PIN:</label><br> <input type="password"
-					id="pin1" name="pin1" required maxlength="8"><br>
-			</div>
-			<div>
-				<label for="password2">PIN bestätigen:</label><br> <input
-					type="password" id="pin2" name="pin2" required maxlength="8"><br>
-			</div>
-			<div>
-				<label for="profilbild">Profilbild:</label> <input type="file"
-					id="profilbild" name="profilbild" accept="image/*"><br>
-			</div>
-			<div>
-				<button name="submit" type="submit">Änderungen speichern</button>
-				<button name="reset" type="reset">Zurücksetzen</button>
-			</div>
-			</fieldset>
-		</form>
+    <h2>Daten verwalten</h2>
+    <form action="${pageContext.request.contextPath}/UpdateServlet" method="POST" enctype="multipart/form-data">
+        <div>
+            <label for="vorname">Vorname:</label>
+            <input type="text" id="vorname" name="vorname" required maxlength="30"><br>
+        </div>
+        <div>
+            <label for="nachname">Nachname:</label>
+            <input type="text" id="nachname" name="nachname" required maxlength="30"><br>
+        </div>
+        <div>
+            <label for="pin1">PIN:</label><br>
+            <input type="password" id="pin1" name="pin1" required maxlength="8"><br>
+        </div>
+        <div>
+            <label for="pin2">PIN bestätigen:</label><br>
+            <input type="password" id="pin2" name="pin2" required maxlength="8"><br>
+        </div>
+        <div>
+            <label for="profilbild">Profilbild:</label>
+            <input type="file" id="profilbild" name="profilbild" accept="image/*"><br>
+        </div>
+        <div>
+            <button name="submit" type="submit">Änderungen speichern</button>
+            <button name="reset" type="reset">Zurücksetzen</button>
+        </div>
+    </form>
 
-		<form action="${pageContext.request.contextPath}/LoeschenServlet"
-			method="POST">
-			<div>
-				<p>Profil löschen:</p>
-				<button name="loeschen" type="submit">Löschen</button>
-				<br>
-			</div>
-		</form>
-	</div>
-	</div>
+    <form action="${pageContext.request.contextPath}/LoeschenServlet" method="POST">
+        <div>
+            <p>Profil löschen:</p>
+            <button name="loeschen" type="submit">Löschen</button><br>
+        </div>
+    </form>
+</div>
+
 
 	<footer>
 		<p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>
