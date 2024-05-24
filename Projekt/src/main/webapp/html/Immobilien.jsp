@@ -42,15 +42,15 @@
   <div class="mySlides fade">
   	<div class="text">x<br> x</div>
   	<div class="text_info">x <br> x <br>x</div>
-    <img src="${pageContext.request.contextPath}img/Bild4.jpg">
+    <img src="${pageContext.request.contextPath}/img/Bild4.jpg">
   </div>
 
   <div class="mySlides fade">
-    <img src="${pageContext.request.contextPath}img/Bild2.jpeg">
+    <img src="${pageContext.request.contextPath}/img/Bild2.jpeg">
   </div>
 
   <div class="mySlides fade">
-    <img src="../img/Bild3.jpg">
+    <img src="${pageContext.request.contextPath}/img/Bild3.jpg">
   </div>
   
 
