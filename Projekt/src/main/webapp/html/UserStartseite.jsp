@@ -28,7 +28,7 @@
 		</li>
 		<li><a href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp">Benutzerverwaltung</a>
 		</li>
-		<li><a href="${pageContext.request.contextPath}/html/Banking-Login.jsp">Logout</a>
+		<li><a href="${pageContext.request.contextPath}/LogoutServlet">Logout</a>
 		</li>
 	</ul>
 </nav>
