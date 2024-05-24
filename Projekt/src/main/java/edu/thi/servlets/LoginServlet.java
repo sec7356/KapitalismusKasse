@@ -15,6 +15,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -28,20 +29,30 @@ public class LoginServlet extends HttpServlet {
     @Resource(lookup="java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
 
+    /*protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	request.getRequestDispatcher("html/fehlermeldungAllgemein.jsp").forward(request, response);
+    }*/
+    
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
-    	request.setCharacterEncoding("UTF-8");	// In diesem Format erwartet das Servlet jetzt die Formulardaten
+        HttpSession session = request.getSession();
+    	
+    	request.setCharacterEncoding("UTF-8");	
 		
     	String email = request.getParameter("email");
     	int pin = Integer.valueOf(request.getParameter("pin"));
 		
 		// DB-Zugriff
 		Benutzer benutzer = read(email, pin);
-						
-		// Scope "Request"
-		request.setAttribute("benutzer", benutzer);
+		
+		
+		session.setAttribute("email", benutzer.getEmail());
+		session.setAttribute("pin", benutzer.getEmail());
+		session.setAttribute("b_id", benutzer.getB_id());
+		session.setAttribute("vorname", benutzer.getVorname());
+		session.setAttribute("nachname", benutzer.getNachname());
 				
-		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/ServletAusgabe.jsp");  //so korrekt?
+		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/UserStartseite.jsp");  
+			
      	dispatcher.forward(request, response); 
     }
     

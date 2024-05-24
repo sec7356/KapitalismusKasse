@@ -70,7 +70,7 @@ public class RegisterServlet extends HttpServlet {
 		request.setAttribute("benutzer", benutzer); // wofür der String anfangs?
 
 		// Weiterleiten an JSP
-		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/ServletAusgabe.jsp"); // so korrekt?
+		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/UserStartseite.jsp"); // so korrekt?
 		dispatcher.forward(request, response);
 	}
 

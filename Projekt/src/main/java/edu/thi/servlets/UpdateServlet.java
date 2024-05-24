@@ -7,6 +7,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -30,23 +32,49 @@ public class UpdateServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+    /*protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	request.getRequestDispatcher("html/fehlermeldungAllgemein.jsp").forward(request, response);
+	}*/
+    
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		
+		HttpSession session = request.getSession();
+		
 		Benutzer benutzer = new Benutzer();
-		benutzer.setB_id(Long.valueOf(request.getParameter("b_id")));     //id muss irgendwo schon vorhanden/gespeichert werden
+		
+		benutzer.setB_id((Long)session.getAttribute("b_id"));    
+		
 		benutzer.setVorname(request.getParameter("vorname"));
 		benutzer.setNachname(request.getParameter("nachname"));
 		benutzer.setEmail(request.getParameter("email"));
 		
+		//PINs prüfen
+		String pin1 = request.getParameter("pin1");
+		String pin2 = request.getParameter("pin2");
+
+		// Überprüfen, ob mindestens einer der PINS nicht nur aus Zahlen besteht
+		if (!pin1.matches("\\d+") || !pin2.matches("\\d+")) {
+			// Wenn mindestens einer der PINS nicht nur aus Zahlen besteht
+			// Weiterleitung zu einer Fehlerseite oder entsprechende Fehlerbehandlung
+			response.sendRedirect("html/fehlermeldungPIN.jsp");
+			return; // Beende die Methode
+		}
+
+		// Überprüfen, ob die PINS übereinstimmen
+		if (!pin1.equals(pin2)) {
+			// Wenn die PINS nicht übereinstimmen
+			// Weiterleitung zu einer Fehlerseite oder entsprechende Fehlerbehandlung
+			response.sendRedirect("html/fehlermeldungPIN.jsp");
+			return; // Beende die Methode
+		}
+		benutzer.setPin(Integer.valueOf(request.getParameter("pin1")));
+		
 		// DB-Zugriff
 		persist(benutzer);
-		request.setAttribute("benutzer", benutzer);
-		
+				
 		// Weiterleiten an JSP
-		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/ServletAusgabe.jsp");
+		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/UserStartseite.jsp");
 		dispatcher.forward(request, response);	
 		
 	}

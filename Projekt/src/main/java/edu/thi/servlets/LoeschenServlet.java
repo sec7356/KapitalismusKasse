@@ -13,6 +13,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/LoeschenServlet")
 public class LoeschenServlet extends HttpServlet{
@@ -21,18 +22,21 @@ public class LoeschenServlet extends HttpServlet{
 	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
 	
+	/*protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.getRequestDispatcher("html/fehlermeldungAllgemein.jsp").forward(request, response);
+	}*/
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Servlet zur Entgegennahme von Formularinhalten, Löschen der Daten in einer DB und Generierung
 		// eines Feldes zur Weitergabe an eine JSP
 		request.setCharacterEncoding("UTF-8");	// In diesem Format erwartet das Servlet jetzt die Formulardaten
-		Long id = Long.valueOf(request.getParameter("id"));
+		
+		HttpSession session = request.getSession();
+		Long id = (Long)session.getAttribute("b_id");
 		
 		// DB-Zugriff
 		delete(id);
 				
-		// Scope "Request"
-		request.setAttribute("id", id);
-		
 		// Weiterleiten an JSP
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/ServletAusgabe.jsp");   //so korrekt?
 		dispatcher.forward(request, response);	
