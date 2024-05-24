@@ -44,6 +44,10 @@
                 	<label for="nachname">Nachname:</label>
                 	<input type="text" id="nachname" name="nachname" required maxlength="30"><br>               <!-- mit Daten aus DB vorbelegen -->
            	 	</div>
+           	 	<div>
+                	<label for="email">Email:</label>
+                	<input type="email" id="email" name="email" required maxlength="30"><br>               <!-- mit Daten aus DB vorbelegen -->
+           	 	</div>
 				<div>
 				  <button name="submit" type="submit">Benutzer suchen</button>
 				  <button name="reset" type="reset">Zurücksetzen</button>

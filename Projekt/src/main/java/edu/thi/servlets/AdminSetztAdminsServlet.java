@@ -34,17 +34,25 @@ public class AdminSetztAdminsServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		Benutzer benutzer = new Benutzer();
-		benutzer.setB_id(Long.valueOf(request.getParameter("id")));
 		benutzer.setVorname(request.getParameter("vorname"));
 		benutzer.setNachname(request.getParameter("nachname"));
 		benutzer.setEmail(request.getParameter("email"));
+
+		String adminParam = request.getParameter("admin");
+
+		if (adminParam != null && adminParam.equals("on")) {
+		    benutzer.setAdmin(true); // Checkbox wurde ausgewählt
+		} else {
+		    benutzer.setAdmin(false); // Checkbox wurde nicht ausgewählt
+		}
+
 		
 		// DB-Zugriff
 		persist(benutzer);
 		request.setAttribute("benutzer", benutzer);
 		
 		// Weiterleiten an JSP
-		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/ServletAusgabe.jsp");
+		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/adminFormular.jsp");
 		dispatcher.forward(request, response);	
 		
 	}
@@ -56,11 +64,10 @@ public class AdminSetztAdminsServlet extends HttpServlet {
 		     		                                      + "SET admin = ? "
 		     		                                      + "WHERE vorname = ?, nachname = ?, email = ? ")) {
 			
-			
-			pstmt.setString(1, benutzer.getVorname());
-			pstmt.setString(2, benutzer.getNachname());
-			pstmt.setString(3, benutzer.getEmail());
-			pstmt.setLong(4, benutzer.getB_id());
+			pstmt.setBoolean(1, false);
+			pstmt.setString(2, benutzer.getVorname());
+			pstmt.setString(3, benutzer.getNachname());
+			pstmt.setString(4, benutzer.getEmail());
 			pstmt.executeUpdate();
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());

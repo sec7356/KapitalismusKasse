@@ -45,8 +45,9 @@ public class AdminSuchtBenutzerServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");	// In diesem Format erwartet das Servlet jetzt die Formulardaten
 		String vorname = request.getParameter("vorname");
 		String nachname = request.getParameter("nachname");
+		String email = request.getParameter("email");
 		
-		List<Benutzer> benutzer = search(vorname, nachname);
+		List<Benutzer> benutzer = search(vorname, nachname, email);
 		
 		// Scope "Request"
 		request.setAttribute("benutzer", benutzer);
@@ -57,18 +58,20 @@ public class AdminSuchtBenutzerServlet extends HttpServlet {
 		
 	}
 
-	private List<Benutzer> search(String vorname, String nachname) throws ServletException {
+	private List<Benutzer> search(String vorname, String nachname, String email) throws ServletException {
 		vorname = (vorname == null || vorname == "") ? "%" : "%" + vorname + "%";
 		nachname = (nachname == null || nachname == "") ? "%" : "%" + nachname + "%";
+		email = (email == null || email == "") ? "%" : "%" + email + "%";
 
 		List<Benutzer> benutzerList = new ArrayList<Benutzer>();
 		
 		// DB-Zugriff
 		try (Connection con = ds.getConnection();
-			 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM Benutzer WHERE vorname LIKE ? AND nachname LIKE ?")) {
+			 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM Benutzer WHERE vorname LIKE ? AND nachname LIKE ? AND email = ?")) {
 
 			pstmt.setString(1, vorname);
 			pstmt.setString(2, nachname);
+			pstmt.setString(3, email);
 
 			try (ResultSet rs = pstmt.executeQuery()) {
 			
