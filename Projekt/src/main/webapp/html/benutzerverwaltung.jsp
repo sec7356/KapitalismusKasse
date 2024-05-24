@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/x-icon"
 	href="${pageContext.request.contextPath}/img/favicon.ico" />
-<title>KPT-Startseite - Kapitalismus-Kasse</title>
+<title>Benutzerverwaltung - Kapitalismus-Kasse</title>
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/css/style.css">
+	href="${pageContext.request.contextPath}/css/styleIntern.css">
 </head>
 <body>
 
@@ -47,14 +47,14 @@
 	<br>
 
 	<div class="internForm">
-    <h2>Daten verwalten</h2>
-    <form action="${pageContext.request.contextPath}/UpdateServlet" method="POST" enctype="multipart/form-data">
+    <form  method="post" action="${pageContext.request.contextPath}/UpdateServlet">
+        <fieldset><legend>Benutzerdaten verwalten</legend>
         <div>
-            <label for="vorname">Vorname:</label>
+            <label for="vorname">Vorname:</label><br>
             <input type="text" id="vorname" name="vorname" required maxlength="30"><br>
         </div>
         <div>
-            <label for="nachname">Nachname:</label>
+            <label for="nachname">Nachname:</label><br>
             <input type="text" id="nachname" name="nachname" required maxlength="30"><br>
         </div>
         <div>
@@ -69,17 +69,21 @@
             <label for="profilbild">Profilbild:</label>
             <input type="file" id="profilbild" name="profilbild" accept="image/*"><br>
         </div>
+        <br>
         <div>
             <button name="submit" type="submit">Änderungen speichern</button>
             <button name="reset" type="reset">Zurücksetzen</button>
         </div>
+        </fieldset>
     </form>
-
+	<br>
     <form action="${pageContext.request.contextPath}/LoeschenServlet" method="POST">
+         <fieldset><legend>Benutzerdaten löschen</legend>
         <div>
             <p>Profil löschen:</p>
             <button name="loeschen" type="submit">Löschen</button><br>
         </div>
+        </fieldset>
     </form>
 </div>
 
