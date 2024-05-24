@@ -39,7 +39,7 @@ public class LoeschenServlet extends HttpServlet{
 		deleteBenutzer(id);
 				
 		// Weiterleiten an JSP
-		final RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");   //so korrekt?
+		final RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");  
 		dispatcher.forward(request, response);	
 	}
 	
