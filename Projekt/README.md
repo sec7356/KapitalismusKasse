@@ -1,4 +1,4 @@
 # KapitalismusKasse
 Bank of the Future!
 
-23.05. - Unser_WebProjekt-NEUER-STAND.war = aller neuster Stand mit allen zusammengeführten Seiten & ein Teil der Logik funktioniert auch
+24.05.24 - Alle Dateien bis auf die Servlets von Diane sind auf dem aktuellen Stand von uns allen!
