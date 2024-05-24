@@ -37,8 +37,8 @@
 	<p>Guten Tag, <%= session.getAttribute("vorname") %>!</p>		
 </div>
 <br>
-    <div>
-        <form id="myForm" method="post" action="AdminSuchtBenutzerServlet">
+    <div class="internForm">
+        <form method="post" action="${pageContext.request.contextPath}/AdminSuchtBenutzerServlet">
 			<fieldset><legend>Benutzer suchen</legend>
 				<div>
                 	<label for="vorname">Vorname:</label>
