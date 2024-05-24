@@ -3,6 +3,7 @@ package edu.thi.servlets;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import javax.sql.DataSource;
 
@@ -45,10 +46,30 @@ public class LoeschenServlet extends HttpServlet{
 	
 	private void deleteKonto(Long id) throws ServletException {
 		// DB-Zugriff
-		try (Connection con = ds.getConnection();
-			 PreparedStatement pstmt = con.prepareStatement("DELETE FROM Konto WHERE besitzer = ?")){
-			pstmt.setLong(1, id);
-			pstmt.executeUpdate();
+		try(Connection con = ds.getConnection();
+		         PreparedStatement selectStmt = con.prepareStatement("SELECT kontostand FROM Konto WHERE besitzer = ?");
+		         PreparedStatement deleteStmt = con.prepareStatement("DELETE FROM Konto WHERE besitzer = ?")) {
+			
+			// Den Kontostand abfragen
+			selectStmt.setLong(1, id);
+			ResultSet resultSet = selectStmt.executeQuery();
+			
+			if(resultSet.next()) {
+				double kontoStand = resultSet.getDouble("kontoStand");
+				
+				// Überprüfen, ob der Kontostand größer als 0 ist
+				if(kontoStand > 0) {
+					// Kontostand ist größer als 0, Konto kann nicht gelöscht werden
+					throw new ServletException("Das Konto kann nicht gelöscht werden, da der Kontostand größer als 0 ist.");
+				}
+				else if(kontoStand < 0) {
+					throw new ServletException("Das Konto kann nicht gelöscht werden, da Sie momentan im Disporahmen sind. Begleichen sie ihre Schulden!");
+				}
+				else {
+					deleteStmt.setLong(1,  id);
+					deleteStmt.executeUpdate();
+				}
+			}
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
 		}
