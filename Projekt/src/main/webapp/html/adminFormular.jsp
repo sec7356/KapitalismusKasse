@@ -22,10 +22,6 @@
     			</div>
     		</div>
 		</li>
-		<li><a href="${pageContext.request.contextPath}/html/adminFormular.jsp" class="active">User ändern</a>
-		</li>
-		<li><a href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp">Eigene Benutzerverwaltung</a>
-		</li>
 		<li><a href="${pageContext.request.contextPath}/html/Banking-Login.jsp">Logout</a>
 		</li>
 	</ul>
@@ -33,7 +29,7 @@
 <br>
 
 <div class="grauBackground">
-	<br><br><br><br>												<!-- falsch formatiert -->
+	<br><br><br><br>												<!-- falsch formatiert? -->
 	<p>Guten Tag, <%= session.getAttribute("vorname") %>!</p>		
 </div>
 <br>

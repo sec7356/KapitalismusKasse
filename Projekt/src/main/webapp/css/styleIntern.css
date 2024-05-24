@@ -205,7 +205,7 @@ nav a.active::after {
 .internForm input[type="text"],
 .internForm input[type="email"],
 .internForm input[type="password"] {
-    width: 90%; /* Volle Breite des Eingabefeldes */
+    width: 50%; /* Volle Breite des Eingabefeldes */
     padding: 10px; /* Innenabstand des Eingabefeldes */
     margin-bottom: 15px; /* Abstand nach unten zwischen den Eingabefeldern */
     border: 1px solid #ccc; /* Rand des Eingabefeldes */

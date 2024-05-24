@@ -59,11 +59,11 @@
         </div>
         <div>
             <label for="pin1">PIN:</label><br>
-            <input type="password" id="pin1" name="pin1" required maxlength="8"><br>
+            <input type="password" id="pin1" name="pin1" required maxlength="6"><br>
         </div>
         <div>
             <label for="pin2">PIN bestätigen:</label><br>
-            <input type="password" id="pin2" name="pin2" required maxlength="8"><br>
+            <input type="password" id="pin2" name="pin2" required maxlength="6"><br>
         </div>
         <div>
             <label for="profilbild">Profilbild:</label>
