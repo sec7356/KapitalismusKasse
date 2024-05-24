@@ -30,7 +30,14 @@
 		</li>
 	</ul>
 </nav>
-    <article>
+<br>
+
+<div class="grauBackground">
+	<br><br><br><br>												<!-- falsch formatiert -->
+	<p>Guten Tag, <%= session.getAttribute("vorname") %>!</p>		
+</div>
+<br>
+    <div>
         <form id="myForm" method="post" action="AdminSuchtBenutzerServlet">
 			<fieldset><legend>Benutzer suchen</legend>
 				<div>
@@ -47,7 +54,7 @@
 				</div>
 			</fieldset>
 		</form>
-    </article>
+    </div>
     <footer>
         <p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>
     </footer>
