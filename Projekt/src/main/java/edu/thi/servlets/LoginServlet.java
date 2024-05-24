@@ -29,10 +29,6 @@ public class LoginServlet extends HttpServlet {
     
     @Resource(lookup="java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
-
-    /*protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	request.getRequestDispatcher("html/fehlermeldungAllgemein.jsp").forward(request, response);
-    }*/
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
@@ -69,12 +65,19 @@ public class LoginServlet extends HttpServlet {
 		session.setAttribute("b_id", benutzer.getB_id());
 		session.setAttribute("vorname", benutzer.getVorname());
 		session.setAttribute("nachname", benutzer.getNachname());
+		session.setAttribute("admin", benutzer.isAdmin());
+
 		session.setAttribute("kontostand", konto.getKontoStand());
 		session.setAttribute("IBAN", konto.getIBAN());
 				
-		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/UserStartseite.jsp");  
-			
-     	dispatcher.forward(request, response); 
+		// Umleitung basierend auf der E-Mail-Adresse
+        if (email.equals("admin.admin@demo.org")|| benutzer.isAdmin() == true) {
+            final RequestDispatcher dispatcher = request.getRequestDispatcher("html/adminFormular.jsp");  
+            dispatcher.forward(request, response);
+        } else {
+            final RequestDispatcher dispatcher = request.getRequestDispatcher("html/UserStartseite.jsp");  
+            dispatcher.forward(request, response);
+        } 
     }
     
     private Benutzer readBenutzer(String email, int pin) throws ServletException {
