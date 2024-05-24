@@ -88,6 +88,7 @@
 		<div class="grid-item">
 			Bargeld wächst nun auf Bäumen!<br>
 			<br>Neu! Forscher fanden eine spezielle Art von Pflanzen aus einer Nachbargalaxie, worauf Euro-Scheine wachsen.
+			Desshalb jetzt 100€ Startguthaben bei der Registrierung als Neukunde!
 			<br><br>
 			<a href="#">Mehr</a>
 		</div>

@@ -48,7 +48,7 @@ public class LoginServlet extends HttpServlet {
         
 		
 		// DB-Zugriff
-		Benutzer benutzer = read(email, pin);
+		Benutzer benutzer = readBenutzer(email, pin);
 		Konto konto = new Konto();
 		
 		long b_id = benutzer.getB_id();
@@ -77,7 +77,7 @@ public class LoginServlet extends HttpServlet {
      	dispatcher.forward(request, response); 
     }
     
-    private Benutzer read(String email, int pin) throws ServletException {
+    private Benutzer readBenutzer(String email, int pin) throws ServletException {
         Benutzer benutzer = new Benutzer();
         benutzer.setEmail(email);
         benutzer.setPin(pin);
