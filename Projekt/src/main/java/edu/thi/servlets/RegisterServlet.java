@@ -37,6 +37,13 @@ public class RegisterServlet extends HttpServlet {
 
 		String pin1 = request.getParameter("pin1");
 		String pin2 = request.getParameter("pin2");
+		
+		// Debugging
+//	    System.out.println("Register/Vorname: " + request.getParameter("vorname"));
+//	    System.out.println("Register/Nachname: " + request.getParameter("nachname"));
+//	    System.out.println("Register/Email: " + request.getParameter("email"));
+//	    System.out.println("Register/Pin: " + request.getParameter("pin1"));
+//	    System.out.println("Register/Pin2 " + request.getParameter("pin2"));
 
 		// Überprüfen, ob mindestens einer der PINS nicht nur aus Zahlen besteht
 		if (!pin1.matches("\\d+") || !pin2.matches("\\d+")) {
@@ -60,10 +67,20 @@ public class RegisterServlet extends HttpServlet {
 
 		// Scope "Request"
 		request.setAttribute("benutzer", benutzer); // wofür der String anfangs?
-
+		
 		// Weiterleiten an JSP
-		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/UserStartseite.jsp"); // so korrekt?
+		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/UserStartseite.jsp"); 
+		
+		// Debugging-Ausgaben
+	    System.out.println("Vorname: " + benutzer.getVorname());
+	    System.out.println("Nachname: " + benutzer.getNachname());
+	    System.out.println("Email: " + benutzer.getEmail());
+	    System.out.println("Pin: " + benutzer.getPin());
+		
+		
 		dispatcher.forward(request, response);
+		
+		
 	}
 
 	private void persist(Benutzer benutzer, HttpServletResponse response) throws ServletException {
@@ -71,7 +88,6 @@ public class RegisterServlet extends HttpServlet {
 		String[] generatedKeys = new String[] { "b_id" }; // Name der Spalte(n), die automatisch generiert wird(werden)		
 		
 		try (Connection con = ds.getConnection();
-				/* final Statement stmt = con.createStatement() */
 				PreparedStatement pstmt = con.prepareStatement(
 						"INSERT INTO Benutzer (vorname,nachname,email,pin) VALUES (?,?,?,?)", generatedKeys)) {
 

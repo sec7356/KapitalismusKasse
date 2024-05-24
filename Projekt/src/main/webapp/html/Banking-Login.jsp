@@ -47,7 +47,7 @@
                  	<p>Bitte loggen Sie sich ein.</p>
                  	<br>
                     <label for="email">Direct-Banking-Email*</label>
-                    <input type="text" id="username" name="username" required maxlength="50">
+                    <input type="text" id="email" name="email" required maxlength="50">
                 </div>
                 <div class="form-group">
                     <label for="pin">PIN (Direct-Banking-PIN)*</label>

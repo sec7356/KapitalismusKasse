@@ -40,7 +40,7 @@
 
 <div class="grauBackground">
 	<br><br><br><br><br>												<!-- falsch formatiert -->
-	<p>Guten Tag, ${sessionScope.vorname} ${sessionScope.nachname}!</p>		<!-- hier kommt leider noch nichts raus -->
+	<p>Guten Tag, <%= session.getAttribute("vorname") %> <%= session.getAttribute("nachname") %>!</p>		
 	
 	<div class="kontostand">
 	<p>Ihr Kontostand:</p>
