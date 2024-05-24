@@ -65,7 +65,7 @@ public class AdminSuchtBenutzerServlet extends HttpServlet {
 		
 		// DB-Zugriff
 		try (Connection con = ds.getConnection();
-			 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM products WHERE vorname LIKE ? AND nachname LIKE ?")) {
+			 PreparedStatement pstmt = con.prepareStatement("SELECT * FROM Benutzer WHERE vorname LIKE ? AND nachname LIKE ?")) {
 
 			pstmt.setString(1, vorname);
 			pstmt.setString(2, nachname);
