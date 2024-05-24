@@ -23,66 +23,70 @@ public class LoeschenServlet extends HttpServlet{
 	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
 	
-	/*protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("html/fehlermeldungAllgemein.jsp").forward(request, response);
-	}*/
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// Servlet zur Entgegennahme von Formularinhalten, Löschen der Daten in einer DB und Generierung
-		// eines Feldes zur Weitergabe an eine JSP
-		request.setCharacterEncoding("UTF-8");	// In diesem Format erwartet das Servlet jetzt die Formulardaten
-		
-		HttpSession session = request.getSession();
-		Long id = (Long)session.getAttribute("b_id");
-		
-		// DB-Zugriff
-		deleteKonto(id);
-		deleteBenutzer(id);
-				
-		// Weiterleiten an JSP
-		final RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");  
-		dispatcher.forward(request, response);	
-	}
-	
-	private void deleteKonto(Long id) throws ServletException {
-		// DB-Zugriff
-		try(Connection con = ds.getConnection();
-		         PreparedStatement selectStmt = con.prepareStatement("SELECT kontostand FROM Konto WHERE besitzer = ?");
-		         PreparedStatement deleteStmt = con.prepareStatement("DELETE FROM Konto WHERE besitzer = ?")) {
-			
-			// Den Kontostand abfragen
-			selectStmt.setLong(1, id);
-			ResultSet resultSet = selectStmt.executeQuery();
-			
-			if(resultSet.next()) {
-				double kontoStand = resultSet.getDouble("kontoStand");
-				
-				// Überprüfen, ob der Kontostand größer als 0 ist
-				if(kontoStand > 0) {
-					// Kontostand ist größer als 0, Konto kann nicht gelöscht werden
-					throw new ServletException("Das Konto kann nicht gelöscht werden, da der Kontostand größer als 0 ist.");
-				}
-				else if(kontoStand < 0) {
-					throw new ServletException("Das Konto kann nicht gelöscht werden, da Sie momentan im Disporahmen sind. Begleichen sie ihre Schulden!");
-				}
-				else {
-					deleteStmt.setLong(1,  id);
-					deleteStmt.executeUpdate();
-				}
-			}
-		} catch (Exception ex) {
-			throw new ServletException(ex.getMessage());
-		}
-	}
-	private void deleteBenutzer(Long id) throws ServletException {
-		// DB-Zugriff
-		try (Connection con = ds.getConnection();
-			 PreparedStatement pstmt = con.prepareStatement("DELETE FROM Benutzer WHERE b_id = ?")){
-			pstmt.setLong(1, id);
-			pstmt.executeUpdate();
-		} catch (Exception ex) {
-			throw new ServletException(ex.getMessage());
-		}
-	}
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        HttpSession session = request.getSession();
+        Long id = (Long) session.getAttribute("b_id");
+
+        // Überprüfe den Kontostand, bevor du das Konto bzw. den Benutzer löschst
+        if (!isKontostandNull(id)) {
+            // Kontostand ist nicht null, zeige eine Fehlermeldung an
+            String errorMessage = "Konto kann nicht gelöscht werden, da der Kontostand nicht 0 € beträgt.";
+            request.setAttribute("errorMessage", errorMessage);
+            request.setAttribute("showMessage", true); // Attribute, um die Popup-Nachricht anzuzeigen
+        } else {
+            // Lösche zuerst die Konten, um die referenzielle Integrität sicherzustellen
+            deleteKonto(id);
+            deleteBenutzer(id);
+
+            // Setze eine Erfolgsmeldung, die auf der Benutzerverwaltung.jsp angezeigt wird
+            String successMessage = "Konto und Benutzer erfolgreich gelöscht.";
+            request.setAttribute("successMessage", successMessage);
+        }
+
+        // Leite zurück zur Benutzerverwaltung.jsp
+        RequestDispatcher dispatcher = request.getRequestDispatcher("html/benutzerverwaltung.jsp");
+        dispatcher.forward(request, response);
+    }
+
+    private boolean isKontostandNull(Long id) throws ServletException {
+        boolean kontostandNull = true;
+        try (Connection con = ds.getConnection();
+                PreparedStatement pstmt = con.prepareStatement("SELECT kontostand FROM Konto WHERE besitzer = ?")) {
+            pstmt.setLong(1, id);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    double kontostand = rs.getDouble("kontostand");
+                    // Überprüfe, ob der Kontostand null ist
+                    kontostandNull = (kontostand == 0);
+                }
+            }
+        } catch (Exception ex) {
+            throw new ServletException(ex.getMessage());
+        }
+        return kontostandNull;
+    }
+
+    private void deleteBenutzer(Long id) throws ServletException {
+        try (Connection con = ds.getConnection();
+                PreparedStatement pstmt = con.prepareStatement("DELETE FROM Benutzer WHERE b_id = ?")) {
+            pstmt.setLong(1, id);
+            pstmt.executeUpdate();
+        } catch (Exception ex) {
+            throw new ServletException(ex.getMessage());
+        }
+    }
+
+    private void deleteKonto(Long id) throws ServletException {
+        try (Connection con = ds.getConnection();
+                PreparedStatement pstmt = con.prepareStatement("DELETE FROM Konto WHERE besitzer = ?")) {
+            pstmt.setLong(1, id);
+            pstmt.executeUpdate();
+        } catch (Exception ex) {
+            throw new ServletException(ex.getMessage());
+        }
+    }
+
 	
 }

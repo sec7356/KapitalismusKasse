@@ -10,6 +10,8 @@
 <title>Benutzerverwaltung - Kapitalismus-Kasse</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/styleIntern.css">
+<script src="${pageContext.request.contextPath}/JavaScript/popup.js" defer></script>
+	
 </head>
 <body>
 
@@ -86,6 +88,19 @@
         </fieldset>
     </form>
 </div>
+
+<!-- Hier wird die Popup-Nachricht angezeigt -->
+<div id="popup" class="popup">
+    <p id="popupMessage" class="popup-message"></p>
+    <button onclick="hidePopup()" class="popup-button">Verstanden!</button>
+</div>
+
+<%-- Setze die Werte der versteckten Felder basierend auf den Attributen --%>
+<input type="hidden" id="showMessage" value="<%= request.getAttribute("showMessage") != null ? request.getAttribute("showMessage") : "false" %>">
+<input type="hidden" id="errorMessage" value="<%= request.getAttribute("errorMessage") != null ? request.getAttribute("errorMessage") : "" %>">
+
+
+
 
 
 	<footer>
