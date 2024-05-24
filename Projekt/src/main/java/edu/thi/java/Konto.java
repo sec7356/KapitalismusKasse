@@ -6,7 +6,7 @@ public class Konto implements Serializable {
 private static final long serialVersionUID = 1L;
 	
 	private String IBAN;
-	private int besitzer;
+	private long besitzer;
 	private String kontoArt;
 	private double kontoStand;
 	
@@ -14,7 +14,7 @@ private static final long serialVersionUID = 1L;
 		 
 	}
 	
-		public Konto(String iBAN, int besitzer, String kontoArt, double kontoStand) {
+		public Konto(String iBAN, long besitzer, String kontoArt, double kontoStand) {
 		super();
 		this.IBAN = iBAN;
 		this.besitzer = besitzer;
@@ -30,11 +30,11 @@ private static final long serialVersionUID = 1L;
 			IBAN = iBAN;
 		}
 
-		public int getBesitzer() {
+		public long getBesitzer() {
 			return besitzer;
 		}
 
-		public void setBesitzer(int besitzer) {
+		public void setBesitzer(long besitzer) {
 			this.besitzer = besitzer;
 		}
 

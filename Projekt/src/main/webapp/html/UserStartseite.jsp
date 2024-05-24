@@ -43,9 +43,9 @@
 	<p>Guten Tag, <%= session.getAttribute("vorname") %> <%= session.getAttribute("nachname") %>!</p>		
 	
 	<div class="kontostand">
-	<p>Ihr Kontostand:</p>
-	123.004,53 €
-	</div>
+		<p>IBAN und Kontostand</p>
+		<p><%= session.getAttribute("IBAN") %> <br> <%= session.getAttribute("kontostand") %></p>
+    </div>
 </div>
 
 <div class="aktionen">
