@@ -34,14 +34,6 @@ public class RegisterServlet extends HttpServlet {
 		benutzer.setVorname(request.getParameter("vorname"));
 		benutzer.setNachname(request.getParameter("nachname"));
 		benutzer.setEmail(request.getParameter("email"));
-		
-		// Überprüfen, ob die E-Mail bereits im System registriert ist
-	    
-	    
-	    
-
-		
-		
 
 		String pin1 = request.getParameter("pin1");
 		String pin2 = request.getParameter("pin2");
@@ -88,7 +80,6 @@ public class RegisterServlet extends HttpServlet {
 			pstmt.setString(2, benutzer.getNachname());
 			pstmt.setString(3, benutzer.getEmail());
 			pstmt.setInt(4, benutzer.getPin());
-			
 			
 			// Überprüfen, ob E-Mail bereits im System registriert, bevor es in DB geschrieben wird
 		    PreparedStatement statementCheckEmail = con.prepareStatement(
