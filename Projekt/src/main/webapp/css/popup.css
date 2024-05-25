@@ -1,0 +1,32 @@
+/*Pop-Up-Fenster */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 20px;
+    border: 2px solid #000000;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    text-align: center;
+}
+
+.popup-message {
+    margin-bottom: 15px;
+}
+
+.popup-button {
+    background-color: #b89e14;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.popup-button:hover {
+    background-color: rgb(55, 81, 128);
+}

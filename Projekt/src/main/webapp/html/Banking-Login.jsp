@@ -73,16 +73,20 @@
             </form>
         </div>
     </div>
-    
-    
-    <!-- Hier wird die Popup-Nachricht angezeigt -->
-    <div id="popup" class="popup" style="display:none;">
-        <p id="popupMessage" class="popup-message"></p>
-        <button onclick="hidePopup()" class="popup-button">Verstanden!</button>
-    </div>
 
-    <input type="hidden" id="showMessage" value="<%= request.getAttribute("showMessage") != null ? request.getAttribute("showMessage") : "false" %>">
-    <input type="hidden" id="successMessage" value="<%= request.getAttribute("successMessage") != null ? request.getAttribute("successMessage") : "" %>">
+
+<!-- Versteckte Felder für Nachrichten -->
+<input type="hidden" id="showMessage" value="<%= request.getAttribute("showMessage") != null ? request.getAttribute("showMessage") : "false" %>">
+<input type="hidden" id="successMessage" value="<%= request.getAttribute("successMessage") != null ? request.getAttribute("successMessage") : "" %>">
+
+<!-- Hier wird die Popup-Nachricht angezeigt -->
+<div id="popup" class="popup" style="display:none;">
+    <p id="popupMessage" class="popup-message"></p>
+    <button onclick="hidePopup()" class="popup-button">Verstanden!</button>
+</div>
+
+
+
 
 
     <footer>
