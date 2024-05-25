@@ -178,9 +178,9 @@ nav a.active::after {
 	background-color: #b89e14;
 	border-radius: 25px;
 	margin: 10px 450px;
-	font-size: 19;
+	font-size: 17;
 	font-weight: bold;
-	padding: 10px 0px;
+	padding: 8px 0px;
 	
 } 
 
@@ -268,4 +268,12 @@ button[type="submit"]:hover, button[type="reset"]:hover {
 	/* Ändere die Hintergrundfarbe im Hover-Zustand */
 }
 
-
+.geldHintergrund {
+	background-image: url('../img/BildUeberweisung.jpeg');
+    background-size: cover;
+    background-position: center top;
+   	height: 80%;
+   	width: 100%;
+   	position: absolute;
+   	padding-top: 15px;
+}

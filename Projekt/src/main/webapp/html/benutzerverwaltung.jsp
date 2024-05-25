@@ -26,15 +26,14 @@
 					</div>
 				</div>
 			</li>
-			<li><a
-				href="${pageContext.request.contextPath}/html/UserStartseite.jsp">Startseite</a>
-			</li>
-			<li><a
-				href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp">Überweisungen</a>
-			</li>
-			<li><a
-				href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp"
-				class="active">Benutzerverwaltung</a></li>
+			<li><a href="${pageContext.request.contextPath}/html/UserStartseite.jsp">Startseite</a>
+		</li>
+		<li><a href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp">Überweisen</a>
+		</li>
+		<li><a href="${pageContext.request.contextPath}/html/verlauf.jsp">Verlauf</a>
+		</li>
+		<li><a href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp" class="active">Benutzerverwaltung</a>
+		</li>
 			<li>
 				<form  method="post" action="${pageContext.request.contextPath}/LogoutServlet">
 					<button name="loeschen" type="submit">Logout</button>

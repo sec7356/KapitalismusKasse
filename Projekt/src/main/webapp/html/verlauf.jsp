@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico" />
-    <title>Kontoauszüge - Kapitalismus-Kasse</title>
+    <title>Alle Buchungen - Kapitalismus-Kasse</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleIntern.css">
 </head>
 <body>
@@ -15,7 +15,7 @@
 	<ul>
 		<li>
 			<div class="container">
-				<img src="${pageContext.request.contextPath}/img/logo.jpg" alt="Logo" class="image">
+				<img src="../img/logo.jpg" alt="Logo" class="image">
 				<div class="company-name">
    	 				<span>Kapitalismus-</span>
     				<span>Kasse</span>
@@ -26,7 +26,7 @@
 		</li>
 		<li><a href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp">Überweisen</a>
 		</li>
-		<li><a href="${pageContext.request.contextPath}/html/verlauf.jsp">Verlauf</a>
+		<li><a href="${pageContext.request.contextPath}/html/verlauf.jsp" class="active">Verlauf</a>
 		</li>
 		<li><a href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp">Benutzerverwaltung</a>
 		</li>
@@ -37,29 +37,19 @@
 		</li>
 	</ul>
 </nav>
-
+<br>
+   
+   <!-- Hier alle Überweisungen des Kontos als Liste anzeigen -->
+   			
 <div class="grauBackground">
 	<br><br><br><br>												<!-- falsch formatiert -->
-	<p>Guten Tag, <%= session.getAttribute("vorname") %> <%= session.getAttribute("nachname") %>!</p>		
-	<p>Hier können Sie Ihre Kontoauszüge sehen und herunterladen.</p>
-</div> <br> <br>
-
-<div class="internForm">
-			<fieldset>
-				<legend>Es tut uns Leid!</legend>
-				
-				<p>Wir als Kapitalismus-Kasse legen großen Wert auf Nachhaltigkeit und Effizienz. Durch den Verzicht auf 
-				Kontoauszüge sparen wir wertvolle Ressourcen und reduzieren unseren ökologischen Fußabdruck. Zudem bieten unsere 
-				digitalen Plattformen jederzeit einen sicheren und schnellen Zugriff auf Ihre Kontoinformationen, wodurch diese Dokumente 
-				überflüssig werden.</p>
-			</fieldset>
-
-	</div>
-
-		<!-- Entweder so lassen (nur als Aufruf von Startseite) oder komplett löschen -->
+	<p>Guten Tag, <%= session.getAttribute("vorname") %> <%= session.getAttribute("nachname") %>!</p>
+	<p>Hier können Sie alle Ihre Buchungen ansehen. Wir hoffen Sie haben viel Grünes vor Ihnen!</p>		
+	
+</div>
 
 
-<footer>
+	<footer>
         <p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>
     </footer>
 </body>

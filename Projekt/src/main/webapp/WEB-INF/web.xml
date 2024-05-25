@@ -131,4 +131,14 @@
       <injection-target-name>ds</injection-target-name>
     </injection-target>
   </resource-ref>
+  <servlet>
+    <description></description>
+    <display-name>VerlaufServlet</display-name>
+    <servlet-name>VerlaufServlet</servlet-name>
+    <servlet-class>edu.thi.servlets.VerlaufServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>VerlaufServlet</servlet-name>
+    <url-pattern>/VerlaufServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

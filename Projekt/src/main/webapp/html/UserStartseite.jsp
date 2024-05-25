@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico" />
-    <title>KPT-Startseite - Kapitalismus-Kasse</title>
+    <title>Startseite - Kapitalismus-Kasse</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleIntern.css">
 </head>
 <body>
@@ -24,9 +24,9 @@
 		</li>
 		<li><a href="${pageContext.request.contextPath}/html/UserStartseite.jsp" class="active">Startseite</a>
 		</li>
-		<li><a href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp">Überweisungen</a>
+		<li><a href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp">Überweisen</a>
 		</li>
-		<li><a href="${pageContext.request.contextPath}/html/Kontoauszuege.jsp">Kontoauszüge</a>
+		<li><a href="${pageContext.request.contextPath}/html/verlauf.jsp">Verlauf</a>
 		</li>
 		<li><a href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp">Benutzerverwaltung</a>
 		</li>
@@ -53,13 +53,13 @@
 	<h2>Was möchtest du machen?</h2>
 	<br>
 	<div class="aktion">
-		Geld überweisen
+		<a href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp">Geld überweisen</a>
 	</div>
 	<div class="aktion">
-		Geld anfordern
+		<a href="${pageContext.request.contextPath}/html/verlauf.jsp">Buchungsverlauf ansehen</a>
 	</div>
 	<div class="aktion">
-		Kontoauszug anfordern
+		<a href="${pageContext.request.contextPath}/html/Kontoauszuege.jsp">Kontoauszüge ansehen</a>
 	</div>
 
 </div>
