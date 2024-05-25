@@ -62,13 +62,14 @@ public class AdminSetztAdminsServlet extends HttpServlet {
 		try (Connection con = ds.getConnection();
 		     PreparedStatement pstmt = con.prepareStatement("UPDATE benutzer "
 		     		                                      + "SET admin = ? "
-		     		                                      + "WHERE vorname = ?, nachname = ?, email = ? ")) {
+		     		                                      + "WHERE vorname = ? AND nachname = ? AND email = ? ")) {
 			
 			pstmt.setBoolean(1, benutzer.isAdmin());
 			pstmt.setString(2, benutzer.getVorname());
 			pstmt.setString(3, benutzer.getNachname());
 			pstmt.setString(4, benutzer.getEmail());
 			pstmt.executeUpdate();
+			
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
 		}

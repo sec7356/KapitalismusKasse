@@ -38,12 +38,9 @@
 	</ul>
 </nav>
 <br>
-   
-   <!-- To-Do: 
-   			- Konto & Kontostand anzeigen lassen -->
-   			
+  			
 <div class="grauBackground">
-	<br><br><br><br>												<!-- falsch formatiert -->
+	<br><br><br><br>											
 	<p>Guten Tag, <%= session.getAttribute("vorname") %> <%= session.getAttribute("nachname") %>!</p>		
 	
 	<div class="kontostand">
@@ -67,7 +64,7 @@
 				</div>
 				<div>
 					<label for="summe">Summe:</label> <input type="number" id="summe"
-						name="summe" required step="0.01" min="0" max="9999999999999.99"><br>
+						name="summe" required step="0.01" min="0" max="9999999999999.99"  maxlength=""><br>
 				</div><br>
 				<div>
 					<button name="submit" type="submit">Überweisen</button>

@@ -38,13 +38,16 @@
         <fieldset>
             <legend>Benutzer als Admin setzen</legend>
             <div>
-                <label for="vorname">Vorname: </label> <%= session.getAttribute("vorname") %>
+                <label for="vorname">Vorname: </label>
+                <input type="text" id="vorname" name="vorname" required maxlength="30"><br> 
             </div>
             <div>
-                <label for="nachname">Nachname: </label><%= session.getAttribute("nachname") %>
+                <label for="nachname">Nachname: </label>
+				<input type="text" id="nachname" name="nachname" required maxlength="30"><br>
             </div>
             <div>
-                <label for="email">Email: </label><%= session.getAttribute("email") %>
+                <label for="email">Email: </label>
+				<input type="email" id="email" name="email" required maxlength="30"><br>
             </div>
             <div>
                 <label for="admin">Admin:</label>

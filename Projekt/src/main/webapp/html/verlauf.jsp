@@ -38,16 +38,14 @@
 	</ul>
 </nav>
 <br>
-   
-   <!-- Hier alle Überweisungen des Kontos als Liste anzeigen -->
-   			
+      			
 <div class="grauBackground">
-	<br><br><br><br>												<!-- falsch formatiert -->
+	<br><br><br><br>												
 	<p>Guten Tag, <%= session.getAttribute("vorname") %> <%= session.getAttribute("nachname") %>!</p>
 	<p>Hier können Sie alle Ihre Buchungen ansehen. Wir hoffen Sie haben viel Grünes vor Ihnen!</p>		
-	
 </div>
 
+   <!-- Hier alle Überweisungen des Kontos als Liste anzeigen -->
 
 	<footer>
         <p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>

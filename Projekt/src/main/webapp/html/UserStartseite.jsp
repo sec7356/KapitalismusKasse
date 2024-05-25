@@ -40,7 +40,7 @@
 <br>
 
 <div class="grauBackground">
-	<br><br><br><br>												<!-- falsch formatiert -->
+	<br><br><br><br>											
 	<p>Guten Tag, <%= session.getAttribute("vorname") %> <%= session.getAttribute("nachname") %>!</p>		
 	
 	<div class="kontostand">
