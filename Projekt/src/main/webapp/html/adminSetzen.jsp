@@ -38,13 +38,13 @@
         <fieldset>
             <legend>Benutzer als Admin setzen</legend>
             <div>
-                <label for="vorname">Vorname: ${benutzer.vorname}</label>
+                <label for="vorname">Vorname: </label>${benutzer.vorname}
             </div>
             <div>
-                <label for="nachname">Nachname: ${benutzer.nachname}</label>
+                <label for="nachname">Nachname: </label>${benutzer.nachname}
             </div>
             <div>
-                <label for="email">Email: ${benutzer.email}</label>
+                <label for="email">Email: </label>${benutzer.email}
             </div>
             <div>
                 <label for="admin">Admin:</label>
