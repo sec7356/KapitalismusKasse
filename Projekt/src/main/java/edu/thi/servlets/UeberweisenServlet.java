@@ -15,7 +15,6 @@ import java.time.LocalDateTime;
 
 import javax.sql.DataSource;
 
-import edu.thi.java.Konto;
 import edu.thi.java.Transaktion;
 
 @WebServlet("/UeberweisenServlet")

@@ -59,8 +59,7 @@
 			<fieldset>
 				<legend>Überweisen</legend>
 				<div>
-					<label for="von">Von:</label> <input type="text" id="von"
-						name="von" required maxlength="34"><br>
+					<label for="von">Von:</label>  <%= session.getAttribute("IBAN") %>
 				</div>
 				<div>
 					<label for="nach">Nach:</label> <input type="text" id="nach"
