@@ -30,28 +30,24 @@ public class LoeschenServlet extends HttpServlet {
         Long id = (Long) session.getAttribute("b_id");
 
         // Überprüfe den Kontostand, bevor du das Konto bzw. den Benutzer löschst
-        if (!isKontostandNull(id)) {
-            String errorMessage = "Konto kann nicht gelöscht werden, da der Kontostand nicht 0 € beträgt.";
+        Double kontostand = getKontostand(id);
+        if (kontostand != null && kontostand != 0) {
+            // Kontostand ist nicht null, zeige eine Fehlermeldung mit dem genauen Kontostand an
+            String errorMessage = String.format("Konto kann nicht gelöscht werden, da der Kontostand %.2f € beträgt.", kontostand);
             request.setAttribute("errorMessage", errorMessage);
             request.setAttribute("showMessage", true); // Attribute, um die Popup-Nachricht anzuzeigen
-
-            // Debug-Ausgabe für Fehlersuche
-            System.out.println("errorMessage: " + errorMessage);
-            System.out.println("showMessage: " + request.getAttribute("showMessage"));
-
             RequestDispatcher dispatcher = request.getRequestDispatcher("html/benutzerverwaltung.jsp");
             dispatcher.forward(request, response);
             return;
         } else {
+            // Lösche zuerst die Konten, um die referenzielle Integrität sicherzustellen
             deleteKonto(id);
             deleteBenutzer(id);
 
-            request.setAttribute("successMessage", "Konto und Benutzer erfolgreich gelöscht.");
+            // Setze eine Erfolgsmeldung, die auf der Benutzerverwaltung.jsp angezeigt wird
+            String successMessage = "Konto und Benutzer erfolgreich gelöscht.";
+            request.setAttribute("successMessage", successMessage);
             request.setAttribute("showMessage", true); // Attribute, um die Popup-Nachricht anzuzeigen
-
-            // Debug-Ausgabe für Fehlersuche
-            System.out.println("successMessage: " + request.getAttribute("successMessage"));
-            System.out.println("showMessage: " + request.getAttribute("showMessage"));
         }
 
         session = request.getSession(false);
@@ -62,32 +58,24 @@ public class LoeschenServlet extends HttpServlet {
         // Leite zurück zum Login und gebe Info an Benutzer, dass Konto gelöscht wurde
         request.setAttribute("successMessage", "Konto und Benutzer erfolgreich gelöscht.");
         request.setAttribute("showMessage", true);
-
-        // Debug-Ausgabe für Fehlersuche
-        System.out.println("successMessage: " + request.getAttribute("successMessage"));
-        System.out.println("showMessage: " + request.getAttribute("showMessage"));
-
         RequestDispatcher dispatcher = request.getRequestDispatcher("html/Banking-Login.jsp");
         dispatcher.forward(request, response);
     }
 
-
-    private boolean isKontostandNull(Long id) throws ServletException {
-        boolean kontostandNull = true;
+    private Double getKontostand(Long id) throws ServletException {
+        Double kontostand = null;
         try (Connection con = ds.getConnection();
-                PreparedStatement pstmt = con.prepareStatement("SELECT kontostand FROM Konto WHERE besitzer = ?")) {
+             PreparedStatement pstmt = con.prepareStatement("SELECT kontostand FROM Konto WHERE besitzer = ?")) {
             pstmt.setLong(1, id);
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
-                    double kontostand = rs.getDouble("kontostand");
-                    // Überprüfe, ob der Kontostand null ist
-                    kontostandNull = (kontostand == 0);
+                    kontostand = rs.getDouble("kontostand");
                 }
             }
         } catch (Exception ex) {
             throw new ServletException(ex.getMessage());
         }
-        return kontostandNull;
+        return kontostand;
     }
 
     private void deleteBenutzer(Long id) throws ServletException {
