@@ -9,13 +9,21 @@ function showPopup(message) {
     var popup = document.getElementById("popup");
     var popupMessage = document.getElementById("popupMessage");
     popupMessage.innerHTML = message;
-    popup.style.display = "block";
+    popup.style.display = "block"; // Sicherstellen, dass das Popup angezeigt wird
+    // Kurze Verzögerung hinzufügen, um sicherzustellen, dass die Anzeige ändert, bevor die Animation beginnt
+    setTimeout(function() {
+        popup.classList.add("show");
+    }, 10);
 }
 
 // JavaScript-Funktion, um die Popup-Nachricht auszublenden
 function hidePopup() {
     var popup = document.getElementById("popup");
-    popup.style.display = "none";
+    popup.classList.remove("show");
+    // Füge eine Verzögerung hinzu, um sicherzustellen, dass die Animation beendet ist, bevor das Popup ausgeblendet wird
+    setTimeout(function() {
+        popup.style.display = "none";
+    }, 200);
 }
 
 // Event-Listener für das Ausblenden des Popups, wenn der Benutzer auf "Verstanden" klickt
