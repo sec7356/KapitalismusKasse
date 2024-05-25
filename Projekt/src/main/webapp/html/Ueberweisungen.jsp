@@ -68,7 +68,7 @@
 				<div>
 					<label for="summe">Summe:</label> <input type="number" id="summe"
 						name="summe" required step="0.01" min="0" max="9999999999999.99"><br>
-				</div>
+				</div><br>
 				<div>
 					<button name="submit" type="submit">Überweisen</button>
 					<button name="reset" type="reset">Zurücksetzen</button>

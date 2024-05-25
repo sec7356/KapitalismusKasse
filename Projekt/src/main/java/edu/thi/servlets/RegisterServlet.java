@@ -49,15 +49,16 @@ public class RegisterServlet extends HttpServlet {
 			// Wenn mindestens einer der PINS nicht nur aus Zahlen besteht
 			// Weiterleitung zu einer Fehlerseite oder entsprechende Fehlerbehandlung
 			response.sendRedirect("html/fehlermeldungPIN.jsp");
-			return; // Beende die Methode
+			return; // Beende die Methode 
 		}
 
 		// Überprüfen, ob die PINS übereinstimmen
 		if (!pin1.equals(pin2)) {
+			
 			// Wenn die PINS nicht übereinstimmen
 			// Weiterleitung zu einer Fehlerseite oder entsprechende Fehlerbehandlung
 			response.sendRedirect("html/fehlermeldungPIN.jsp");
-			return; // Beende die Methode
+			return; // Beende die Methode 
 		}
 		benutzer.setPin(Integer.valueOf(request.getParameter("pin1")));
 		

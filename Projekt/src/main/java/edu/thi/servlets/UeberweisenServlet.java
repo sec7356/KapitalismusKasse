@@ -30,12 +30,12 @@ public class UeberweisenServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        
-        HttpSession session = request.getSession();
-       
-        Transaktion transaktion = new Transaktion();
                
-        String von = request.getParameter("von");
+        Transaktion transaktion = new Transaktion();
+		HttpSession session = request.getSession();
+
+               
+        String von = (String) session.getAttribute("kontostand");
         String nach = request.getParameter("nach");
         String summeStr = request.getParameter("summe");
         
@@ -48,13 +48,6 @@ public class UeberweisenServlet extends HttpServlet {
                 request.setAttribute("showMessage", true); // Attribute, um die Popup-Nachricht anzuzeigen
             }
                         
-            if (!isValidIBAN(von) || !isValidIBAN(nach)) {
-                // Falsches Format der IBAN
-                String errorMessage = "Die Überweisung konnte nicht durchgeführt werden, da die IBAN nicht korrekt angegeben wurde.";
-                request.setAttribute("errorMessage", errorMessage);
-                request.setAttribute("showMessage", true); // Attribute, um die Popup-Nachricht anzuzeigen
-            }
-
             if (von.equals(nach)) {
                 // Falsches Format der Summe
                 String errorMessage = "Die Überweisung konnte nicht durchgeführt werden, da die beiden IBAN die selben sind.";
@@ -98,33 +91,6 @@ public class UeberweisenServlet extends HttpServlet {
 			e.printStackTrace();
 		}
     }
-
-    private boolean isValidIBAN(String iban) {
-        // Entfernen von Leerzeichen und Sonderzeichen
-        iban = iban.replaceAll("\\s", "");
-
-        // Überprüfen der Länge (mindestens 4 Zeichen)
-        if (iban.length() < 4) {
-            return false;
-        }
-
-        // Überprüfen, ob die ersten beiden Zeichen Buchstaben sind
-        for (int i = 0; i < 2; i++) {
-            if (!Character.isLetter(iban.charAt(i))) {
-                return false;
-            }
-        }
-
-        // Überprüfen, ob die restlichen Zeichen Ziffern oder Buchstaben sind
-        for (int i = 2; i < iban.length(); i++) {
-            if (!Character.isLetterOrDigit(iban.charAt(i))) {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
 
     private boolean AccountExists(String iban) throws SQLException {
         // DB-Zugriff
