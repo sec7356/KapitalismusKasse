@@ -21,7 +21,7 @@
             <p>Es sieht so aus, als hätten wir ein Problem. Bitte versuchen Sie es später erneut.</p>
         </div>
         <div>
-            <a href="../index.jsp">Zurück zur Startseite</a>
+            <a href="${pageContext.request.contextPath}/index.jsp">Zurück zur Startseite</a>
         </div>
     </aside>
 

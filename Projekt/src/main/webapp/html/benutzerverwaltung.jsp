@@ -35,9 +35,11 @@
 			<li><a
 				href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp"
 				class="active">Benutzerverwaltung</a></li>
-			<li><a
-				href="${pageContext.request.contextPath}/html/Banking-Login.jsp">Logout</a>
-				<!-- ToDo Logout implementieren --></li>
+			<li>
+				<form  method="post" action="${pageContext.request.contextPath}/LogoutServlet">
+					<button name="loeschen" type="submit">Logout</button>
+				</form>
+			</li>
 		</ul>
 	</nav>
 	<br>

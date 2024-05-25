@@ -26,20 +26,59 @@
 		</li>
 		<li><a href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp" class="active">Überweisungen</a>
 		</li>
+		<li><a href="${pageContext.request.contextPath}/html/Kontoauszuege.jsp">Kontoauszüge</a>
+		</li>
 		<li><a href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp">Benutzerverwaltung</a>
 		</li>
-		<li><a href="${pageContext.request.contextPath}/html/Banking-Login.jsp">Logout</a>
+		<li>
+			<form  method="post" action="${pageContext.request.contextPath}/LogoutServlet">
+				<button name="loeschen" type="submit">Logout</button>
+			</form>
 		</li>
 	</ul>
 </nav>
 <br>
    
    <!-- To-Do: 
-   			- Konto & Kontostand anzeigen lassen
-   			- Link zu einer Seite, wo man ÜÜberweisungen tätigen kann
-   			- Link zu benutzerverwaltung.jsp einfügen -->
-   
-<footer>
+   			- Konto & Kontostand anzeigen lassen -->
+   			
+<div class="grauBackground">
+	<br><br><br><br>												<!-- falsch formatiert -->
+	<p>Guten Tag, <%= session.getAttribute("vorname") %> <%= session.getAttribute("nachname") %>!</p>		
+	
+	<div class="kontostand">
+		<p>IBAN und Kontostand</p>
+		<p><%= session.getAttribute("IBAN") %> <br> <%= session.getAttribute("kontostand") %></p>
+    </div>
+</div>
+
+	<div class="internForm">
+		<form method="post"
+			action="${pageContext.request.contextPath}/UeberweisenServlet">
+			<fieldset>
+				<legend>Überweisen</legend>
+				<div>
+					<label for="von">Von:</label> <input type="text" id="von"
+						name="von" required maxlength="34"><br>
+				</div>
+				<div>
+					<label for="nach">Nach:</label> <input type="text" id="nach"
+						name="nach" required maxlength="34"><br>
+				</div>
+				<div>
+					<label for="summe">Summe:</label> <input type="number" id="summe"
+						name="summe" required step="0.01" min="0" max="9999999999999.99"><br>
+				</div>
+				<div>
+					<button name="submit" type="submit">Überweisen</button>
+					<button name="reset" type="reset">Zurücksetzen</button>
+				</div><br>
+			</fieldset>
+		</form>
+
+	</div>
+
+	<footer>
         <p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>
     </footer>
 </body>

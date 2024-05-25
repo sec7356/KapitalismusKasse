@@ -24,17 +24,10 @@ public class UpdateServlet extends HttpServlet {
 	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
 
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public UpdateServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
-
-    /*protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	request.getRequestDispatcher("html/fehlermeldungAllgemein.jsp").forward(request, response);
-	}*/
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");

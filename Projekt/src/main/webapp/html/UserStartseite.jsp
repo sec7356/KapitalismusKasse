@@ -26,17 +26,18 @@
 		</li>
 		<li><a href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp">Überweisungen</a>
 		</li>
+		<li><a href="${pageContext.request.contextPath}/html/Kontoauszuege.jsp">Kontoauszüge</a>
+		</li>
 		<li><a href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp">Benutzerverwaltung</a>
 		</li>
-		<li><a href="${pageContext.request.contextPath}/LogoutServlet">Logout</a>
+		<li>
+			<form  method="post" action="${pageContext.request.contextPath}/LogoutServlet">
+				<button name="loeschen" type="submit">Logout</button>
+			</form>
 		</li>
 	</ul>
 </nav>
 <br>
-   <!-- To-Do: 
-   			- Konto & Kontostand anzeigen lassen
-   			- Link zu einer Seite, wo man ÜÜberweisungen tätigen kann
-   			- Link zu benutzerverwaltung.jsp einfügen -->
 
 <div class="grauBackground">
 	<br><br><br><br>												<!-- falsch formatiert -->
