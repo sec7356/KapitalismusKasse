@@ -9,6 +9,8 @@
     <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico" />
     <title>Login - Kapitalismus-Kasse</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+    <script src="${pageContext.request.contextPath}/JavaScript/popupLöschen.js" defer></script>
+    
 </head>
 <body>
 
@@ -71,6 +73,16 @@
             </form>
         </div>
     </div>
+    
+    
+    <!-- Hier wird die Popup-Nachricht angezeigt -->
+    <div id="popup" class="popup" style="display:none;">
+        <p id="popupMessage" class="popup-message"></p>
+        <button onclick="hidePopup()" class="popup-button">Verstanden!</button>
+    </div>
+
+    <input type="hidden" id="showMessage" value="<%= request.getAttribute("showMessage") != null ? request.getAttribute("showMessage") : "false" %>">
+    <input type="hidden" id="successMessage" value="<%= request.getAttribute("successMessage") != null ? request.getAttribute("successMessage") : "" %>">
 
 
     <footer>

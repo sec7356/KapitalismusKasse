@@ -17,12 +17,12 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/LoeschenServlet")
-public class LoeschenServlet extends HttpServlet{
-	private static final long serialVersionUID = 1L;
+public class LoeschenServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
 
-	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
-	private DataSource ds;
-	
+    @Resource(lookup = "java:jboss/datasources/MySqlThidbDS")
+    private DataSource ds;
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
@@ -31,29 +31,46 @@ public class LoeschenServlet extends HttpServlet{
 
         // Überprüfe den Kontostand, bevor du das Konto bzw. den Benutzer löschst
         if (!isKontostandNull(id)) {
-            // Kontostand ist nicht null, zeige eine Fehlermeldung an
             String errorMessage = "Konto kann nicht gelöscht werden, da der Kontostand nicht 0 € beträgt.";
             request.setAttribute("errorMessage", errorMessage);
             request.setAttribute("showMessage", true); // Attribute, um die Popup-Nachricht anzuzeigen
+
+            // Debug-Ausgabe für Fehlersuche
+            System.out.println("errorMessage: " + errorMessage);
+            System.out.println("showMessage: " + request.getAttribute("showMessage"));
+
+            RequestDispatcher dispatcher = request.getRequestDispatcher("html/benutzerverwaltung.jsp");
+            dispatcher.forward(request, response);
+            return;
         } else {
-            // Lösche zuerst die Konten, um die referenzielle Integrität sicherzustellen
             deleteKonto(id);
             deleteBenutzer(id);
 
-            // Setze eine Erfolgsmeldung, die auf der Benutzerverwaltung.jsp angezeigt wird
-            String successMessage = "Konto und Benutzer erfolgreich gelöscht.";
-            request.setAttribute("successMessage", successMessage);
+            request.setAttribute("successMessage", "Konto und Benutzer erfolgreich gelöscht.");
+            request.setAttribute("showMessage", true); // Attribute, um die Popup-Nachricht anzuzeigen
+
+            // Debug-Ausgabe für Fehlersuche
+            System.out.println("successMessage: " + request.getAttribute("successMessage"));
+            System.out.println("showMessage: " + request.getAttribute("showMessage"));
         }
-        
+
         session = request.getSession(false);
         if (session != null) {
             session.invalidate(); // Invalide die Session, um alle Daten zu löschen
         }
-        
-        // Leite zurück zum Login
+
+        // Leite zurück zum Login und gebe Info an Benutzer, dass Konto gelöscht wurde
+        request.setAttribute("successMessage", "Konto und Benutzer erfolgreich gelöscht.");
+        request.setAttribute("showMessage", true);
+
+        // Debug-Ausgabe für Fehlersuche
+        System.out.println("successMessage: " + request.getAttribute("successMessage"));
+        System.out.println("showMessage: " + request.getAttribute("showMessage"));
+
         RequestDispatcher dispatcher = request.getRequestDispatcher("html/Banking-Login.jsp");
         dispatcher.forward(request, response);
     }
+
 
     private boolean isKontostandNull(Long id) throws ServletException {
         boolean kontostandNull = true;

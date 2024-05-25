@@ -21,20 +21,16 @@ function hidePopup() {
 // Event-Listener für das Ausblenden des Popups, wenn der Benutzer auf "Verstanden" klickt
 document.addEventListener("DOMContentLoaded", function () {
     var popupButton = document.querySelector('.popup-button');
-    popupButton.addEventListener("click", function () {
-        hidePopup();
-    });
+    if (popupButton) {
+        popupButton.addEventListener("click", function () {
+            hidePopup();
+        });
+    }
 
     // Überprüfe die versteckten Felder beim Laden der Seite
     var showMessage = getHiddenFieldValue("showMessage");
-    var errorMessage = getHiddenFieldValue("errorMessage");
     var successMessage = getHiddenFieldValue("successMessage");
-
-    if (showMessage === "true") {
-        if (errorMessage) {
-            showPopup(errorMessage);
-        } else if (successMessage) {
-            showPopup(successMessage);
-        }
+    if (showMessage === "true" && successMessage) {
+        showPopup(successMessage);
     }
 });

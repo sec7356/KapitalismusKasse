@@ -96,13 +96,10 @@
     <button onclick="hidePopup()" class="popup-button">Verstanden!</button>
 </div>
 
-<%-- Setze die Werte der versteckten Felder basierend auf den Attributen --%>
+<!-- Setze die Werte der versteckten Felder basierend auf den Attributen -->
 <input type="hidden" id="showMessage" value="<%= request.getAttribute("showMessage") != null ? request.getAttribute("showMessage") : "false" %>">
 <input type="hidden" id="errorMessage" value="<%= request.getAttribute("errorMessage") != null ? request.getAttribute("errorMessage") : "" %>">
-
-
-
-
+<input type="hidden" id="successMessage" value="<%= request.getAttribute("successMessage") != null ? request.getAttribute("successMessage") : "" %>">
 
 	<footer>
 		<p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>
