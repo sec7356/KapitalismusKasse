@@ -45,12 +45,13 @@ public class LoeschenServlet extends HttpServlet{
             request.setAttribute("successMessage", successMessage);
         }
         
+        session = request.getSession(false);
         if (session != null) {
             session.invalidate(); // Invalide die Session, um alle Daten zu löschen
         }
         
         // Leite zurück zum Login
-        RequestDispatcher dispatcher = request.getRequestDispatcher("html/benutzerverwaltung.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("html/Banking-Login.jsp");
         dispatcher.forward(request, response);
     }
 

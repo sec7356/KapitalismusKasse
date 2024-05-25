@@ -83,13 +83,14 @@ public class UpdateServlet extends HttpServlet {
 		// DB-Zugriff
 		try (Connection con = ds.getConnection();
 		     PreparedStatement pstmt = con.prepareStatement("UPDATE benutzer "
-		     		                                      + "SET vorname = ?, nachname = ?, email = ? "
+		     		                                      + "SET vorname = ?, nachname = ?, email = ?, pin "
 		     		                                      + "WHERE b_id = ?")) {
 			
 			pstmt.setString(1, benutzer.getVorname());
 			pstmt.setString(2, benutzer.getNachname());
 			pstmt.setString(3, benutzer.getEmail());
-			pstmt.setLong(4, benutzer.getB_id());
+			pstmt.setInt(4, benutzer.getPin());
+			pstmt.setLong(5, benutzer.getB_id());
 			pstmt.executeUpdate();
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());

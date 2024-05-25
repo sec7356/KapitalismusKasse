@@ -53,7 +53,7 @@ public class AdminSuchtBenutzerServlet extends HttpServlet {
 		request.setAttribute("benutzer", benutzer);
 				
 		// Weiterleiten an JSP
-		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/adminSetzenFormular.jsp");
+		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/adminSetzen.jsp");
 		dispatcher.forward(request, response);
 		
 	}
