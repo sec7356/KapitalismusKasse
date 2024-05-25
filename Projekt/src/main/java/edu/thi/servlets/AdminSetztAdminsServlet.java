@@ -64,7 +64,7 @@ public class AdminSetztAdminsServlet extends HttpServlet {
 		     		                                      + "SET admin = ? "
 		     		                                      + "WHERE vorname = ?, nachname = ?, email = ? ")) {
 			
-			pstmt.setBoolean(1, false);
+			pstmt.setBoolean(1, benutzer.isAdmin());
 			pstmt.setString(2, benutzer.getVorname());
 			pstmt.setString(3, benutzer.getNachname());
 			pstmt.setString(4, benutzer.getEmail());

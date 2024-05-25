@@ -44,8 +44,12 @@ public class LoeschenServlet extends HttpServlet{
             String successMessage = "Konto und Benutzer erfolgreich gelöscht.";
             request.setAttribute("successMessage", successMessage);
         }
-
-        // Leite zurück zur Benutzerverwaltung.jsp
+        
+        if (session != null) {
+            session.invalidate(); // Invalide die Session, um alle Daten zu löschen
+        }
+        
+        // Leite zurück zum Login
         RequestDispatcher dispatcher = request.getRequestDispatcher("html/benutzerverwaltung.jsp");
         dispatcher.forward(request, response);
     }
