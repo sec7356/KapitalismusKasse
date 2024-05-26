@@ -14,25 +14,34 @@
 <nav id="navbar">
 	<ul>
 		<li>
-			<div class="container">
-				<img src="../img/logo.jpg" alt="Logo" class="image">
-				<div class="company-name">
-   	 				<span>Kapitalismus-</span>
-    				<span>Kasse</span>
-    			</div>
-    		</div>
+				<div class="container">
+					<a href="${pageContext.request.contextPath}/html/UserStartseite.jsp"
+					title="Die Bank der Zukunft!">
+					<img src="${pageContext.request.contextPath}/img/logo.jpg"
+						alt="Logo" class="imageMitLink"></a>
+					
+					<a href="${pageContext.request.contextPath}/html/UserStartseite.jsp"
+					title="Die Bank der Zukunft!" class="companyNameLink">
+						<span>Kapitalismus-</span>
+						<span>Kasse</span></a>
+					
+				</div>
+			</li>
+		<li><a href="${pageContext.request.contextPath}/html/UserStartseite.jsp"
+		title="Sehen Sie sich Ihr Dashboard an!">Startseite</a>
 		</li>
-		<li><a href="${pageContext.request.contextPath}/html/UserStartseite.jsp">Startseite</a>
+		<li><a href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp" class="active"
+		title="Überweisen Sie bequem Ihr Geld!">Überweisen</a>
 		</li>
-		<li><a href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp" class="active">Überweisen</a>
+		<li><a href="${pageContext.request.contextPath}/html/verlauf.jsp"
+		title="Sehen Sie sich alle Ihre Buchungen an!">Verlauf</a>
 		</li>
-		<li><a href="${pageContext.request.contextPath}/html/verlauf.jsp">Verlauf</a>
-		</li>
-		<li><a href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp">Benutzerverwaltung</a>
+		<li><a href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp"
+		title="Ändern Sie Ihr Profilbild oder Ihre Nutzerdaten!">Benutzerverwaltung</a>
 		</li>
 		<li>
 			<form  method="post" action="${pageContext.request.contextPath}/LogoutServlet">
-				<button name="loeschen" type="submit">Logout</button>
+				<button name="loeschen" type="submit" title="Melden Sie sich sicher ab!">Logout</button>
 			</form>
 		</li>
 	</ul>
