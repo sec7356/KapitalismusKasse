@@ -16,8 +16,6 @@ import java.sql.PreparedStatement;
 import javax.sql.DataSource;
 import edu.thi.java.Benutzer;
 
-
-
 @WebServlet("/UpdateServlet")
 @MultipartConfig
 public class UpdateServlet extends HttpServlet {
@@ -31,95 +29,75 @@ public class UpdateServlet extends HttpServlet {
         
         HttpSession session = request.getSession();
         
-        // Abrufen der Vornamen und Nachnamen aus der vorherigen Sitzung
         String vorname = (String) session.getAttribute("vorname");
         String nachname = (String) session.getAttribute("nachname");
+        String email = (String) session.getAttribute("email");
         
         Benutzer benutzer = new Benutzer();
-        
         benutzer.setB_id((Long) session.getAttribute("b_id"));
-        
-        // Setzen des Vornamens und Nachnamens
         benutzer.setVorname(vorname);
         benutzer.setNachname(nachname);
+        benutzer.setEmail(email);
         
-        // Aktualisieren der Vornamen und Nachnamen, wenn sie im Formular geändert wurden
         String neuerVorname = request.getParameter("vorname");
         if (neuerVorname != null && !neuerVorname.isEmpty()) {
             benutzer.setVorname(neuerVorname);
-            session.setAttribute("vorname", neuerVorname); // Aktualisieren der Sitzungsattribut
+            session.setAttribute("vorname", neuerVorname);
         }
         
         String neuerNachname = request.getParameter("nachname");
         if (neuerNachname != null && !neuerNachname.isEmpty()) {
             benutzer.setNachname(neuerNachname);
-            session.setAttribute("nachname", neuerNachname); // Aktualisieren der Sitzungsattribut
+            session.setAttribute("nachname", neuerNachname);
         }
         
-        benutzer.setEmail(request.getParameter("email"));
-        
-        // PINs prüfen und setzen
         String pin1 = request.getParameter("pin1");
         String pin2 = request.getParameter("pin2");
 
+        Integer pin = null;
         if (pin1 != null && pin2 != null && pin1.matches("\\d{6}") && pin1.equals(pin2)) {
-            benutzer.setPin(Integer.parseInt(pin1));
+            pin = Integer.parseInt(pin1);
         } else {
-            // Fehlerbehandlung für ungültige PINs, falls erforderlich
+            pin = (Integer) session.getAttribute("pin");
         }
-        
-     // Profilbild hochladen
+
         Part filePart = request.getPart("profilbild");
         InputStream fileContent = null;
         if (filePart != null && filePart.getSize() > 0) {
             fileContent = filePart.getInputStream();
         }
 
-        // DB-Zugriff nur wenn ein Profilbild hochgeladen wurde
-        if (fileContent != null) {
-            persist(benutzer, fileContent);
-        }
-        
-        // Weiterleitung zur Benutzerseite, um das aktualisierte Profilbild anzuzeigen
+        persist(benutzer, pin, fileContent);
+
         response.sendRedirect(request.getContextPath() + "/html/UserStartseite.jsp");
     }
 
-
-    private void persist(Benutzer benutzer, InputStream fileContent) throws ServletException {
-        // SQL-Anweisung zum Aktualisieren des Profilbilds
-        String sql = "UPDATE benutzer SET profilbild = ?";
-        // Überprüfen, ob Vorname und Nachname geändert wurden
-        boolean hasNameUpdates = false;
-        if (benutzer.getVorname() != null && !benutzer.getVorname().isEmpty()) {
-            sql += ", vorname = ?";
-            hasNameUpdates = true;
+    private void persist(Benutzer benutzer, Integer pin, InputStream fileContent) throws ServletException {
+        String sql = "UPDATE benutzer SET vorname = ?, nachname = ?, email = ?";
+        if (pin != null) {
+            sql += ", pin = ?";
         }
-        if (benutzer.getNachname() != null && !benutzer.getNachname().isEmpty()) {
-            sql += ", nachname = ?";
-            hasNameUpdates = true;
+        if (fileContent != null) {
+            sql += ", profilbild = ?";
         }
-        // Wenn keine Änderungen an Vorname und Nachname vorgenommen wurden,
-        // wird das Update nur für das Profilbild durchgeführt
         sql += " WHERE b_id = ?";
-        
+
         try (Connection con = ds.getConnection();
              PreparedStatement pstmt = con.prepareStatement(sql)) {
+            int paramIndex = 1;
 
-            // Setze das Profilbild
-            pstmt.setBlob(1, fileContent);
-            int paramIndex = 2;
-
-            // Setze den Wert von Vorname und Nachname, wenn sie geändert wurden
-            if (hasNameUpdates) {
-                if (benutzer.getVorname() != null && !benutzer.getVorname().isEmpty()) {
-                    pstmt.setString(paramIndex++, benutzer.getVorname());
-                }
-                if (benutzer.getNachname() != null && !benutzer.getNachname().isEmpty()) {
-                    pstmt.setString(paramIndex++, benutzer.getNachname());
-                }
+            pstmt.setString(paramIndex++, benutzer.getVorname());
+            pstmt.setString(paramIndex++, benutzer.getNachname());
+            pstmt.setString(paramIndex++, benutzer.getEmail());
+            
+            if (pin != null) {
+                pstmt.setInt(paramIndex++, pin);
             }
 
-            // Setze den Wert von b_id
+            if (fileContent != null) {
+                pstmt.setBlob(paramIndex++, fileContent);
+            }
+
             pstmt.setLong(paramIndex, benutzer.getB_id());
 
             pstmt.executeUpdate();

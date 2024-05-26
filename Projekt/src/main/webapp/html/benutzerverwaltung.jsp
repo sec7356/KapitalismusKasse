@@ -63,19 +63,19 @@
         <fieldset><legend>Benutzerdaten verwalten</legend>
         <div>
             <label for="vorname">Vorname:</label><br>
-            <input type="text" id="vorname" name="vorname" maxlength="30"><br>
+            <input type="text" id="vorname" name="vorname" maxlength="30" required><br>
         </div>
         <div>
             <label for="nachname">Nachname:</label><br>
-            <input type="text" id="nachname" name="nachname" maxlength="30"><br>
+            <input type="text" id="nachname" name="nachname" maxlength="30" required><br>
         </div>
         <div>
             <label for="pin1">PIN:</label><br>
-            <input type="password" id="pin1" name="pin1" maxlength="6"><br>
+            <input type="password" id="pin1" name="pin1" maxlength="6" required><br>
         </div>
         <div>
             <label for="pin2">PIN bestätigen:</label><br>
-            <input type="password" id="pin2" name="pin2" maxlength="6"><br>
+            <input type="password" id="pin2" name="pin2" maxlength="6" required><br>
         </div>
         <div>
             <label for="profilbild">Profilbild:</label>
