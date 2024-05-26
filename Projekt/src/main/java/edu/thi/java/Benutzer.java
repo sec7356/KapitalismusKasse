@@ -11,6 +11,8 @@ public class Benutzer implements Serializable {
 	private String email;
 	private int pin;
 	private boolean admin;
+    private byte[] profilbild;
+
 	
 	public Benutzer() {
 	}
@@ -61,4 +63,12 @@ public class Benutzer implements Serializable {
 	public void setAdmin(boolean admin) {
 		this.admin = admin;
 	}
+	
+	public byte[] getProfilbild() {
+        return profilbild;
+    }
+
+    public void setProfilbild(byte[] profilbild) {
+        this.profilbild = profilbild;
+    }
 }

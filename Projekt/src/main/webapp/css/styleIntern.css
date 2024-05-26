@@ -189,6 +189,19 @@ nav a.active::after {
 	
 } 
 
+.profilbild {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.profilbild img {
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 50%;
+    border: 2px solid #000;
+}
+
+
 /*User-Startseite und Kontostand ende*/
 
 /* CSS für adminForm-Klasse */

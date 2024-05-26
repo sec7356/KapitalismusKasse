@@ -43,6 +43,11 @@
 	<br><br><br><br>											
 	<p>Guten Tag, <%= session.getAttribute("vorname") %> <%= session.getAttribute("nachname") %>!</p>		
 	
+	<div class="profilbild">
+        <p>Profilbild:</p>
+        <img src="${pageContext.request.contextPath}/DisplayImageServlet" alt="Profilbild" />
+    </div>
+	
 	<div class="kontostand">
 		<p>IBAN und Kontostand</p>
 		<p><%= session.getAttribute("IBAN") %> <br> <%= session.getAttribute("kontostand") %></p>

@@ -94,6 +94,8 @@ public class LoginServlet extends HttpServlet {
                     benutzer.setNachname(rs.getString("nachname"));
                     benutzer.setEmail(rs.getString("email"));
                     benutzer.setPin(rs.getInt("pin")); 
+                    benutzer.setAdmin(rs.getBoolean("admin"));
+                    benutzer.setProfilbild(rs.getBytes("profilBild"));
 
                     // Debugging-Ausgaben
                     System.out.println("DB b_id: " + rs.getString("b_id"));

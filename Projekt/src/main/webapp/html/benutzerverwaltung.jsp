@@ -49,8 +49,8 @@
 	</div>
 	<br>
 
-	<div class="internForm">
-    <form  method="post" action="${pageContext.request.contextPath}/UpdateServlet">
+<div class="internForm">
+    <form  method="post" action="${pageContext.request.contextPath}/UpdateServlet" enctype="multipart/form-data">
         <fieldset><legend>Benutzerdaten verwalten</legend>
         <div>
             <label for="vorname">Vorname:</label><br>
@@ -59,6 +59,10 @@
         <div>
             <label for="nachname">Nachname:</label><br>
             <input type="text" id="nachname" name="nachname" required maxlength="30"><br>
+        </div>
+        <div>
+            <label for="email">E-Mail:</label><br>
+            <input type="email" id="email" name="email" required maxlength="100"><br>
         </div>
         <div>
             <label for="pin1">PIN:</label><br>
@@ -79,16 +83,8 @@
         </div>
         </fieldset>
     </form>
-	<br>
-    <form action="${pageContext.request.contextPath}/LoeschenServlet" method="POST">
-         <fieldset><legend>Benutzerdaten löschen</legend>
-        <div>
-            <p>Profil löschen:</p>
-            <button name="loeschen" type="submit">Löschen</button><br>
-        </div>
-        </fieldset>
-    </form>
 </div>
+
 
 <!-- Hier wird die Popup-Nachricht angezeigt -->
 <div id="popup" class="popup">
