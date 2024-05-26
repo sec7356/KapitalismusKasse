@@ -55,12 +55,20 @@ public class UpdateServlet extends HttpServlet {
         String pin2 = request.getParameter("pin2");
 
         Integer pin = null;
-        if (pin1 != null && pin2 != null && pin1.matches("\\d{6}") && pin1.equals(pin2)) {
+        if (pin1 != null && pin2 != null && pin1.equals(pin2) && pin1.matches("\\d+")) {
             pin = Integer.parseInt(pin1);
-        } else {
-            pin = (Integer) session.getAttribute("pin");
         }
 
+        // Debugging-Ausgaben hinzufügen
+        System.out.println("Vorname: " + benutzer.getVorname());
+        System.out.println("Nachname: " + benutzer.getNachname());
+        System.out.println("Email: " + benutzer.getEmail());
+        System.out.println("PIN1: " + pin1);
+        System.out.println("PIN2: " + pin2);
+        System.out.println("PIN: " + pin);
+
+        
+        
         Part filePart = request.getPart("profilbild");
         InputStream fileContent = null;
         if (filePart != null && filePart.getSize() > 0) {
@@ -73,14 +81,16 @@ public class UpdateServlet extends HttpServlet {
     }
 
     private void persist(Benutzer benutzer, Integer pin, InputStream fileContent) throws ServletException {
-        String sql = "UPDATE benutzer SET vorname = ?, nachname = ?, email = ?";
+        StringBuilder sqlBuilder = new StringBuilder("UPDATE benutzer SET vorname = ?, nachname = ?, email = ?");
         if (pin != null) {
-            sql += ", pin = ?";
+            sqlBuilder.append(", pin = ?");
         }
         if (fileContent != null) {
-            sql += ", profilbild = ?";
+            sqlBuilder.append(", profilbild = ?");
         }
-        sql += " WHERE b_id = ?";
+        sqlBuilder.append(" WHERE b_id = ?");
+        
+        String sql = sqlBuilder.toString();
 
         try (Connection con = ds.getConnection();
              PreparedStatement pstmt = con.prepareStatement(sql)) {
@@ -89,6 +99,13 @@ public class UpdateServlet extends HttpServlet {
             pstmt.setString(paramIndex++, benutzer.getVorname());
             pstmt.setString(paramIndex++, benutzer.getNachname());
             pstmt.setString(paramIndex++, benutzer.getEmail());
+
+            
+            // Debugging-Ausgaben hinzufügen
+            System.out.println("SQL: " + sql);
+            System.out.println("Vorname: " + benutzer.getVorname());
+            System.out.println("Nachname: " + benutzer.getNachname());
+            System.out.println("Email: " + benutzer.getEmail());
             
             if (pin != null) {
                 pstmt.setInt(paramIndex++, pin);
