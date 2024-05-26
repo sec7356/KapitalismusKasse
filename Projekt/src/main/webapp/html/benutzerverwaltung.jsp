@@ -80,6 +80,7 @@
         </fieldset>
    </form>
 </div>
+<br>
 <div class="internForm">
         <form action="${pageContext.request.contextPath}/LoeschenServlet" method="POST">
         <fieldset><legend>Account verwalten</legend>
