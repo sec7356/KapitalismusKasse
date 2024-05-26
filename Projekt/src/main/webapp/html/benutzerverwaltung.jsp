@@ -54,23 +54,23 @@
         <fieldset><legend>Benutzerdaten verwalten</legend>
         <div>
             <label for="vorname">Vorname:</label><br>
-            <input type="text" id="vorname" name="vorname" required maxlength="30"><br>
+            <input type="text" id="vorname" name="vorname" maxlength="30"><br>
         </div>
         <div>
             <label for="nachname">Nachname:</label><br>
-            <input type="text" id="nachname" name="nachname" required maxlength="30"><br>
+            <input type="text" id="nachname" name="nachname" maxlength="30"><br>
         </div>
         <div>
             <label for="email">E-Mail:</label><br>
-            <input type="email" id="email" name="email" required maxlength="100"><br>
+            <input type="email" id="email" name="email" maxlength="100"><br>
         </div>
         <div>
             <label for="pin1">PIN:</label><br>
-            <input type="password" id="pin1" name="pin1" required maxlength="6"><br>
+            <input type="password" id="pin1" name="pin1" maxlength="6"><br>
         </div>
         <div>
             <label for="pin2">PIN bestätigen:</label><br>
-            <input type="password" id="pin2" name="pin2" required maxlength="6"><br>
+            <input type="password" id="pin2" name="pin2" maxlength="6"><br>
         </div>
         <div>
             <label for="profilbild">Profilbild:</label>
@@ -84,6 +84,7 @@
         </fieldset>
     </form>
 </div>
+
 
 
 <!-- Hier wird die Popup-Nachricht angezeigt -->

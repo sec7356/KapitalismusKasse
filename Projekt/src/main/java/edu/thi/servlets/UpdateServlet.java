@@ -36,25 +36,7 @@ public class UpdateServlet extends HttpServlet {
         
         Benutzer benutzer = new Benutzer();
         
-        benutzer.setB_id((Long) session.getAttribute("b_id"));    
-        benutzer.setVorname(request.getParameter("vorname"));
-        benutzer.setNachname(request.getParameter("nachname"));
-        benutzer.setEmail(request.getParameter("email"));
-        
-        // PINs prüfen
-        String pin1 = request.getParameter("pin1");
-        String pin2 = request.getParameter("pin2");
-
-        if (!pin1.matches("\\d+") || !pin2.matches("\\d+")) {
-            response.sendRedirect("html/fehlermeldungPIN.jsp");
-            return;
-        }
-
-        if (!pin1.equals(pin2)) {
-            response.sendRedirect("html/fehlermeldungPIN.jsp");
-            return;
-        }
-        benutzer.setPin(Integer.valueOf(request.getParameter("pin1")));
+        benutzer.setB_id((Long) session.getAttribute("b_id"));
         
         // Profilbild hochladen
         Part filePart = request.getPart("profilbild");
@@ -66,33 +48,55 @@ public class UpdateServlet extends HttpServlet {
         // DB-Zugriff
         persist(benutzer, fileContent);
         
-        // Setzen der Session-Attribute
-        session.setAttribute("vorname", benutzer.getVorname());
-        session.setAttribute("nachname", benutzer.getNachname());
-                
         // Weiterleiten an JSP
         final RequestDispatcher dispatcher = request.getRequestDispatcher("html/UserStartseite.jsp");
         dispatcher.forward(request, response);    
     }
 
+
+
     private void persist(Benutzer benutzer, InputStream fileContent) throws ServletException {
-        String sql = "UPDATE benutzer SET vorname = ?, nachname = ?, email = ?, pin = ?, profilBild = ? WHERE b_id = ?";
+        String sql = "UPDATE benutzer SET ";
+        boolean first = true;
+
+        if (benutzer.getVorname() != null) {
+            sql += "vorname = ?";
+            first = false;
+        }
+        if (benutzer.getNachname() != null) {
+            if (!first) sql += ", ";
+            sql += "nachname = ?";
+            first = false;
+        }
+
+        if (fileContent != null) {
+            if (!first) sql += ", ";
+            sql += "profilbild = ?";
+        }
+
+        sql += " WHERE b_id = ?";
+        
         try (Connection con = ds.getConnection();
              PreparedStatement pstmt = con.prepareStatement(sql)) {
             
-            pstmt.setString(1, benutzer.getVorname());
-            pstmt.setString(2, benutzer.getNachname());
-            pstmt.setString(3, benutzer.getEmail());
-            pstmt.setInt(4, benutzer.getPin());
-            if (fileContent != null) {
-                pstmt.setBlob(5, fileContent);
-            } else {
-                pstmt.setNull(5, java.sql.Types.BLOB);
+            int paramIndex = 1;
+
+            if (benutzer.getVorname() != null) {
+                pstmt.setString(paramIndex++, benutzer.getVorname());
             }
-            pstmt.setLong(6, benutzer.getB_id());
+            if (benutzer.getNachname() != null) {
+                pstmt.setString(paramIndex++, benutzer.getNachname());
+            }
+            if (fileContent != null) {
+                pstmt.setBlob(paramIndex++, fileContent);
+            }
+
+            pstmt.setLong(paramIndex, benutzer.getB_id());
+
             pstmt.executeUpdate();
         } catch (Exception ex) {
             throw new ServletException(ex.getMessage());
         }
     }
+
 }
