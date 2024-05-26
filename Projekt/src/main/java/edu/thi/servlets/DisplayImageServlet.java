@@ -40,17 +40,23 @@ public class DisplayImageServlet extends HttpServlet {
             pstmt.setLong(1, b_id);
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
-                    InputStream inputStream = rs.getBlob("profilbild").getBinaryStream();
-                    response.setContentType("image/jpeg");
-                    OutputStream outputStream = response.getOutputStream();
+                    // Überprüfe, ob das Blob nicht null ist
+                    if (rs.getBlob("profilbild") != null) {
+                        InputStream inputStream = rs.getBlob("profilbild").getBinaryStream();
+                        response.setContentType("image/jpeg");
+                        OutputStream outputStream = response.getOutputStream();
 
-                    byte[] buffer = new byte[1024];
-                    int bytesRead = -1;
-                    while ((bytesRead = inputStream.read(buffer)) != -1) {
-                        outputStream.write(buffer, 0, bytesRead);
+                        byte[] buffer = new byte[1024];
+                        int bytesRead = -1;
+                        while ((bytesRead = inputStream.read(buffer)) != -1) {
+                            outputStream.write(buffer, 0, bytesRead);
+                        }
+                        inputStream.close();
+                        outputStream.close();
+                    } else {
+                        // Wenn das Blob null ist, sende eine benutzerdefinierte Fehlermeldung
+                        response.sendError(HttpServletResponse.SC_NOT_FOUND, "No profile picture found for the user");
                     }
-                    inputStream.close();
-                    outputStream.close();
                 } else {
                     response.sendError(HttpServletResponse.SC_NOT_FOUND, "User not found");
                 }
@@ -59,4 +65,5 @@ public class DisplayImageServlet extends HttpServlet {
             throw new ServletException(ex.getMessage());
         }
     }
+
 }
