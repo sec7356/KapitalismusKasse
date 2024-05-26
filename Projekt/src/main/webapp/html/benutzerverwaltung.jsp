@@ -61,10 +61,6 @@
             <input type="text" id="nachname" name="nachname" maxlength="30"><br>
         </div>
         <div>
-            <label for="email">E-Mail:</label><br>
-            <input type="email" id="email" name="email" maxlength="100"><br>
-        </div>
-        <div>
             <label for="pin1">PIN:</label><br>
             <input type="password" id="pin1" name="pin1" maxlength="6"><br>
         </div>
@@ -82,9 +78,18 @@
             <button name="reset" type="reset">Zurücksetzen</button>
         </div>
         </fieldset>
-    </form>
+   </form>
 </div>
-
+<div class="internForm">
+        <form action="${pageContext.request.contextPath}/LoeschenServlet" method="POST">
+        <fieldset><legend>Account verwalten</legend>
+        	<div>
+                <p>Profil löschen:</p>
+                <button name="loeschen" type="submit">Löschen</button><br> 
+       	 </div>
+        </fieldset>
+   		</form>
+</div>
 
 
 <!-- Hier wird die Popup-Nachricht angezeigt -->

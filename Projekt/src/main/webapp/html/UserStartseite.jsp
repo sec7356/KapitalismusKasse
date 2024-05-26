@@ -1,10 +1,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    
     <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico" />
     <title>Startseite - Kapitalismus-Kasse</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleIntern.css">
