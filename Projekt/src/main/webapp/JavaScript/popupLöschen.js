@@ -1,3 +1,5 @@
+"use strict";
+
 // Funktion zum Abrufen von Werten aus versteckten HTML-Feldern
 function getHiddenFieldValue(id) {
     var element = document.getElementById(id);
