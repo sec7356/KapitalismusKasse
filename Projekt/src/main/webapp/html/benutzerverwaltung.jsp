@@ -74,11 +74,11 @@
         <fieldset><legend>Benutzerdaten verwalten</legend>
         <div>
             <label for="vorname">Vorname:</label><br>
-            <input type="text" id="vorname" name="vorname" maxlength="30" required><br>
+            <input type="text" id="vorname" name="vorname" maxlength="30" ><br>
         </div>
         <div>
             <label for="nachname">Nachname:</label><br>
-            <input type="text" id="nachname" name="nachname" maxlength="30" required><br>
+            <input type="text" id="nachname" name="nachname" maxlength="30" ><br>
         </div>
         <div>
             <label for="pin1">PIN:</label><br>
