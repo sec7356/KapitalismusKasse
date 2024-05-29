@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/UserStartseite_Design.css">
     
     <script  src= "${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
-    
     <script  src="${pageContext.request.contextPath}/JavaScript/greeting.js"></script>
     
 </head>
@@ -37,6 +36,12 @@
         <li><a href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp" title="Überweisen Sie bequem Ihr Geld!">Überweisen</a></li>
         <li><a href="${pageContext.request.contextPath}/html/verlauf.jsp" title="Sehen Sie sich alle Ihre Buchungen an!">Verlauf</a></li>
         <li><a href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp" title="Ändern Sie Ihr Profilbild oder Ihre Nutzerdaten!">Benutzerverwaltung</a></li>
+        
+        <li> <!-- Benutzer verwalten Icon -->
+        	<a href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp" title="Nutzerdaten verwalten">
+        	<img src="${pageContext.request.contextPath}/img/accountBild.jpg" alt="Benutzerverwaltung" class="accountBild">
+        	</a>
+        </li>
         <li>
             <div class="timer-logout-container">
                 <div id="timer">05:00</div>

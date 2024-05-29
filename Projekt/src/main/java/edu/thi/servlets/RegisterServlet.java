@@ -116,7 +116,15 @@ public class RegisterServlet extends HttpServlet {
 					}
 				}
 			}
-
+			
+/*
+ByteArrayOutputStream os = new ByteArrayOutputStream();
+ImageIO.write(image,"png", os); 
+InputStream fis = new ByteArrayInputStream(os.toByteArray());
+Hier rein probieren von stackoverflow und profilbild rein
+ */
+			
+					//Registrierungs Infos von Benutzer-Bean in die DB schreiben
 			try (PreparedStatement pstmt = con.prepareStatement(
 					"INSERT INTO Benutzer (vorname, nachname, email, pin, admin) VALUES (?,?,?,?,?)", generatedKeys)) {
 				// Zugriff über Klasse java.sql.PreparedStatement

@@ -8,6 +8,8 @@
     <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico" />
     <title>Alle Buchungen - Kapitalismus-Kasse</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleIntern.css">
+    <script  src= "${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
+    <script  src="${pageContext.request.contextPath}/JavaScript/greeting.js"></script>
 </head>
 <body>
 
@@ -39,10 +41,19 @@
 		<li><a href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp"
 		title="Ändern Sie Ihr Profilbild oder Ihre Nutzerdaten!">Benutzerverwaltung</a>
 		</li>
+		<li> <!-- Benutzer verwalten Icon -->
+        	<a href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp" title="Nutzerdaten verwalten">
+        	<img src="${pageContext.request.contextPath}/img/accountBild.jpg" alt="Benutzerverwaltung" class="accountBild">
+        	</a>
+        </li>
 		<li>
-			<form  method="post" action="${pageContext.request.contextPath}/LogoutServlet">
-				<button name="loeschen" type="submit" title="Melden Sie sich sicher ab!">Logout</button>
-			</form>
+			<div class="timer-logout-container">
+                <div id="timer">05:00</div>
+                <div class="divider"></div>
+                <form method="post" action="${pageContext.request.contextPath}/LogoutServlet">
+                    <button name="loeschen" type="submit" class="logout-button" title="Melden Sie sich sicher ab!">Logout</button>
+                </form>
+            </div>
 		</li>
 	</ul>
 </nav>
