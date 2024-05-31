@@ -65,10 +65,10 @@ document.addEventListener("keydown", resetTimer);
 document.addEventListener("click", resetTimer);
 
 // Den Timer anfangs wiederherstellen und starten
-window.onload = function() {
+document.addEventListener("DOMContentLoaded", function() {
     restoreTimer();
     startTimer();
-};
+});
 
 // Globale Variable für die Logout-URL definieren
 var logoutUrl = "/KapitalismusKasse_LOKAL/LogoutServlet";
