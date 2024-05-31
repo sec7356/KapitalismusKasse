@@ -32,8 +32,18 @@ public class LoginServlet extends HttpServlet {
     	request.setCharacterEncoding("UTF-8");	
 		
     	String email = request.getParameter("email");
-    	int pin = Integer.valueOf(request.getParameter("pin"));
+    	String pinStr = request.getParameter("pin");
     	
+    	// Überprüfen, ob die PIN nur aus Zahlen besteht
+        if (!pinStr.matches("\\d+")) {
+            request.setAttribute("errorMessage", "Die PIN darf nur aus Zahlen bestehen. Bitte korrigieren Sie Ihre Eingabe.");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("html/Banking-Login.jsp");
+            dispatcher.forward(request, response);
+            return;
+        }
+    	
+        int pin = Integer.parseInt(pinStr);
+
     	// Debugging-Ausgaben
         System.out.println("Email from form: " + email);
         System.out.println("PIN from form: " + pin);
