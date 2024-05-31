@@ -41,12 +41,21 @@ public class LoginServlet extends HttpServlet {
 		
 		// DB-Zugriff
 		Benutzer benutzer = readBenutzer(email, pin);
+		
+        if (benutzer == null || benutzer.getB_id() == null) {
+            // Benutzer nicht gefunden oder falsche Eingaben
+            request.setAttribute("errorMessage", "Diese Angaben sind ungültig. Bitte korrigieren Sie Ihre Eingabe.");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("html/Banking-Login.jsp");
+            dispatcher.forward(request, response);
+            return;
+        }
+		
+		
 		Konto konto = new Konto();
 		
 		long b_id = benutzer.getB_id();
+		
 		konto.setBesitzer(b_id);
-		
-		
 		konto.setIBAN(getIBAN(b_id));
 		konto.setKontoStand(getKontostand(b_id));
 		

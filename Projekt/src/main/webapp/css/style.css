@@ -513,3 +513,12 @@ textarea {
 	box-sizing: border-box;
 	/* Inkludiert das Padding in die Gesamtbreite */
 }
+
+.error-message {
+	color: white;
+    background-color: #ff6666;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 15px;
+}
