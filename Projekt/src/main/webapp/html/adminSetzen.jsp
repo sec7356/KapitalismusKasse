@@ -12,21 +12,51 @@
 <body>
 
 <nav id="navbar">
-	<ul>
-		<li>
-			<div class="container">
-				<img src="${pageContext.request.contextPath}/img/logo.jpg" alt="Logo" class="image">
-				<div class="company-name">
-   	 				<span>Kapitalismus-</span>
-    				<span>Kasse</span>
-    			</div>
-    		</div>
-		</li>
-		<li><a href="${pageContext.request.contextPath}/html/Banking-Login.jsp">Logout</a>
-		</li>
-	</ul>
-</nav>
-<br>
+		<ul>
+			<li>
+				<div class="container">
+					<a
+						href="${pageContext.request.contextPath}/html/adminFormular.jsp"
+						title="Die Bank der Zukunft!"> <img
+						src="${pageContext.request.contextPath}/img/logo.jpg" alt="Logo"
+						class="imageMitLink"></a> <a
+						href="${pageContext.request.contextPath}/html/adminFormular.jsp"
+						title="Die Bank der Zukunft!" class="companyNameLink"> <span>Kapitalismus-</span>
+						<span>Kasse</span></a>
+
+				</div>
+			</li>
+			<li><a
+				href="${pageContext.request.contextPath}/html/adminFormular.jsp"
+				title="Suchen sie einen bestimmten Nutzer!">Benutzer suchen</a></li>
+			<li><a
+				href="${pageContext.request.contextPath}/html/adminSetzen.jsp"
+				title="Setzten sie den Status anderer Nutzer!">Adminverwaltung</a></li>
+			<li><a
+				href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp"
+				title="Ändern Sie Ihr Profilbild oder Ihre Nutzerdaten!">Benutzerverwaltung</a></li>
+			<li>
+				<!-- Benutzer verwalten Icon --> <a
+				href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp"
+				title="Nutzerdaten verwalten"> <img
+					src="${pageContext.request.contextPath}/img/accountBild.jpg"
+					alt="Benutzerverwaltung" class="accountBild">
+			</a>
+			</li>
+			<li>
+				<div class="timer-logout-container">
+					<div id="timer">05:00</div>
+					<div class="divider"></div>
+					<form method="post"
+						action="${pageContext.request.contextPath}/LogoutServlet">
+						<button name="loeschen" type="submit" class="logout-button"
+							title="Melden Sie sich sicher ab!">Logout</button>
+					</form>
+				</div>
+			</li>
+		</ul>
+	</nav>
+	<br>
 
 <div class="grauBackground">
 	<br><br><br><br>												<!-- falsch formatiert? -->

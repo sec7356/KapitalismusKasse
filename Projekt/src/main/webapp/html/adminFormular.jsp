@@ -32,6 +32,9 @@
 			<li><a
 				href="${pageContext.request.contextPath}/html/adminSetzen.jsp"
 				title="Setzten sie den Status anderer Nutzer!">Adminverwaltung</a></li>
+			<li><a
+				href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp"
+				title="Ändern Sie Ihr Profilbild oder Ihre Nutzerdaten!">Benutzerverwaltung</a></li>
 			<li>
 				<!-- Benutzer verwalten Icon --> <a
 				href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp"
