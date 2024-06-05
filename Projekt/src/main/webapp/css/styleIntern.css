@@ -341,7 +341,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	width: 100%;
 	border-collapse: collapse;
 	font-size: 14px;
-	text-align: left;
+	text-align: center;
 }
 
 .transaktionen-table th, .transaktionen-table td {
@@ -350,7 +350,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
 
 .transaktionen-table th {
-	background-color: #f2f2f2;
+	background-color: #d1d1d1;
 }
 
 .transaktionen-table tbody tr:nth-child(even) {
@@ -366,5 +366,5 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
 
 .copy-button-container {
-	margin-left: 10px; 
+	margin-left: 30px; 
 }

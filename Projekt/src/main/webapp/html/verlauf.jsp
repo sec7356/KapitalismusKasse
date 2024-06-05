@@ -19,35 +19,21 @@
 
 </head>
 <body>
-
 	<nav id="navbar">
 		<ul>
 			<li>
 				<div class="container">
-					<a
-						href="${pageContext.request.contextPath}/html/UserStartseite.jsp"
-						title="Die Bank der Zukunft!"> <img
-						src="${pageContext.request.contextPath}/img/logo.jpg" alt="Logo"
-						class="imageMitLink"></a> <a
-						href="${pageContext.request.contextPath}/html/UserStartseite.jsp"
-						title="Die Bank der Zukunft!" class="companyNameLink"> <span>Kapitalismus-</span>
-						<span>Kasse</span></a>
-
+				<a href="${pageContext.request.contextPath}/html/UserStartseite.jsp" title="Die Bank der Zukunft!">
+				<img src="${pageContext.request.contextPath}/img/logo.jpg" alt="Logo" class="imageMitLink"></a> 
+				<a href="${pageContext.request.contextPath}/html/UserStartseite.jsp" title="Die Bank der Zukunft!" class="companyNameLink"> 
+				<span>Kapitalismus-</span> <span>Kasse</span></a>
 				</div>
 			</li>
-			<li><a
-				href="${pageContext.request.contextPath}/html/UserStartseite.jsp"
-				title="Sehen Sie sich Ihr Dashboard an!">Startseite</a></li>
-			<li><a
-				href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp"
-				title="Überweisen Sie bequem Ihr Geld!">Überweisen</a></li>
-			<li><a
-				href="${pageContext.request.contextPath}/VerlaufServlet"
-				class="active" title="Sehen Sie sich alle Ihre Buchungen an!">Verlauf</a>
+			<li><a href="${pageContext.request.contextPath}/html/UserStartseite.jsp" title="Sehen Sie sich Ihr Dashboard an!">Startseite</a></li>
+			<li><a href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp" title="Überweisen Sie bequem Ihr Geld!">Überweisen</a></li>
+			<li><a href="${pageContext.request.contextPath}/VerlaufServlet" class="active" title="Sehen Sie sich alle Ihre Buchungen an!">Verlauf</a>
 			</li>
-			<li><a
-				href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp"
-				title="Ändern Sie Ihr Profilbild oder Ihre Nutzerdaten!">Benutzerverwaltung</a>
+			<li><a href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp" title="Ändern Sie Ihr Profilbild oder Ihre Nutzerdaten!">Benutzerverwaltung</a>
 			</li>
 			<li>
 				<!-- Benutzer verwalten Icon --> <a
@@ -73,37 +59,22 @@
 	<br>
 
 	<div class="grauBackground">
-		<br>
-		<br>
-		<br>
-		<br>
-		<p>
-			Guten Tag,
-			<%=session.getAttribute("vorname")%>
-			<%=session.getAttribute("nachname")%>!
-		</p>
-		<p>Hier können Sie alle Ihre Buchungen ansehen. Wir hoffen Sie
-			haben viel Grünes vor Ihnen!</p>
+		<br><br><br><br>
+		<p>Guten Tag, <%=session.getAttribute("vorname")%> <%=session.getAttribute("nachname")%>!</p>
+		<p>Hier können Sie alle Ihre Buchungen ansehen. Wir hoffen Sie haben viel Grünes vor Ihnen!</p>
 	</div>
 
 <div class="transaktionen">
     <table class="transaktionen-table">
         <thead>
-            <tr>
-                <th>Von</th>
-                <th>Nach</th>
-                <th>Empfänger</th>
-                <th>Summe</th>
-                <th>Zeitstempel</th>                    
+            <tr><th>Von</th><th>Nach</th><th>Empfänger</th><th>Summe</th><th>Zeitstempel</th>                    
             </tr>
         </thead>
         <tbody>
         <c:set var="transaktionenSize" value="${transaktionen.size()}" />
             <c:choose>
                 <c:when test="${empty transaktionen}">
-                    <tr>
-                        <td colspan="5">Noch keine Transaktionen durchgeführt</td>
-                    </tr>
+                    <tr><td colspan="5">Noch keine Transaktionen durchgeführt</td></tr>
                 </c:when>
                 <c:otherwise>
                 <c:forEach var="index" begin="0" end="${transaktionenSize - 1}" step="1">
@@ -111,20 +82,11 @@
             	<c:set var="transaktion" value="${transaktionen[reverseIndex]}" />
                         <tr>
                             <td>${transaktion.von}</td>
-                            <td>
-                                ${transaktion.nach}  
-                                <span class="copy-button-container">
-                                    <button onclick="copyToClipboardAndDisplayText('${transaktion.nach}')">Kopieren</button>
-                                </span>
-                            </td>
+                            <td>${transaktion.nach}
+                            <span class="copy-button-container"><button onclick="copyToClipboardAndDisplayText('${transaktion.nach}')">Kopieren</button></span></td>
                             <td>${transaktion.vorname} ${transaktion.nachname}</td>
-                            <td>
-                                <fmt:formatNumber value="${transaktion.summe}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2"/>
-                                €
-                            </td>
-                            <td>
-                                <fmt:formatDate value="${transaktion.zeitstempel}" pattern="dd.MM.yyyy, HH:mm"/> Uhr
-                            </td>
+                            <td><fmt:formatNumber value="${transaktion.summe}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2"/>€</td>
+                            <td><fmt:formatDate value="${transaktion.zeitstempel}" pattern="dd.MM.yyyy, HH:mm"/> Uhr</td>
                         </tr>
                     </c:forEach>
                 </c:otherwise>
