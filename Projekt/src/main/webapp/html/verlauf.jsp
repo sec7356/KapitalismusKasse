@@ -92,6 +92,7 @@
                 <tr>
                     <th>Von</th>
                     <th>Nach</th>
+					<th>Empfänger</th>
                     <th>Summe</th>
                     <th>Zeitstempel</th>
                 </tr>
@@ -101,6 +102,7 @@
                     <tr>
                         <td>${transaktion.von}</td>
                         <td>${transaktion.nach}</td>
+                        <td>${transaktion.nachname}</td>
                         <td>
                             <fmt:formatNumber value="${transaktion.summe}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2"/>
                             €

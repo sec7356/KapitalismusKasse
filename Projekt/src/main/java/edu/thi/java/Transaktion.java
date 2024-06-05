@@ -11,6 +11,7 @@ public class Transaktion implements Serializable {
     private String nach;
     private double summe;
     private Timestamp zeitstempel;
+    private String nachname; 
 
     public Transaktion() {
     }
@@ -61,6 +62,14 @@ public class Transaktion implements Serializable {
 
     public void setZeitstempel(Timestamp zeitstempel) {
         this.zeitstempel = zeitstempel;
+    }
+    
+    public String getNachname() {
+        return nachname;
+    }
+
+    public void setNachname(String nachname) {
+        this.nachname = nachname;
     }
 }
 	
