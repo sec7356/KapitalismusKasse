@@ -89,40 +89,48 @@
 	</div>
 
 <div class="transaktionen">
-        <table class="transaktionen-table">
-            <thead>
-                <tr>
-                    <th>Von</th>
-                    <th>Nach</th>
-					<th>Empfänger</th>
-                    <th>Summe</th>
-                    <th>Zeitstempel</th>                    
-                </tr>
-            </thead>
-            <tbody>
-             <c:forEach var="transaktion" items="${transaktionen}">
+    <table class="transaktionen-table">
+        <thead>
+            <tr>
+                <th>Von</th>
+                <th>Nach</th>
+                <th>Empfänger</th>
+                <th>Summe</th>
+                <th>Zeitstempel</th>                    
+            </tr>
+        </thead>
+        <tbody>
+            <c:choose>
+                <c:when test="${empty transaktionen}">
                     <tr>
-                        <td>${transaktion.von}</td>
-                        <td>
-                        ${transaktion.nach}  
-                            <span class="copy-button-container">
-                                <button onclick="copyToClipboard('${transaktion.nach}')">Kopieren</button>
-                            </span>
-                            </td>
-						<td>${transaktion.vorname} ${transaktion.nachname}</td>
-                        <td>
-                            <fmt:formatNumber value="${transaktion.summe}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2"/>
-                            €
-                        </td>
-                        <td>
-                            <fmt:formatDate value="${transaktion.zeitstempel}" pattern="dd.MM.yyyy, HH:mm"/> Uhr
-                        </td>
+                        <td colspan="5">Noch keine Transaktionen durchgeführt</td>
                     </tr>
-                </c:forEach>
-            </tbody>
-            
-        </table>
-    </div>
+                </c:when>
+                <c:otherwise>
+                    <c:forEach var="transaktion" items="${transaktionen}">
+                        <tr>
+                            <td>${transaktion.von}</td>
+                            <td>
+                                ${transaktion.nach}  
+                                <span class="copy-button-container">
+                                    <button onclick="copyToClipboard('${transaktion.nach}')">Kopieren</button>
+                                </span>
+                            </td>
+                            <td>${transaktion.vorname} ${transaktion.nachname}</td>
+                            <td>
+                                <fmt:formatNumber value="${transaktion.summe}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2"/>
+                                €
+                            </td>
+                            <td>
+                                <fmt:formatDate value="${transaktion.zeitstempel}" pattern="dd.MM.yyyy, HH:mm"/> Uhr
+                            </td>
+                        </tr>
+                    </c:forEach>
+                </c:otherwise>
+            </c:choose>
+        </tbody>
+    </table>
+</div>
 
 	<footer>
 		<p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>
