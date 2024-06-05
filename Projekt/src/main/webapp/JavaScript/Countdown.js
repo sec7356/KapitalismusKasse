@@ -71,4 +71,4 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // Globale Variable für die Logout-URL definieren
-var logoutUrl = "/KapitalismusKasse_LOKAL/LogoutServlet";
+var logoutUrl = "/KapitalismusKasse/LogoutServlet";
