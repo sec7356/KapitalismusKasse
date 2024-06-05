@@ -9,16 +9,18 @@ public class Konto implements Serializable {
 	private long besitzer;
 	private String kontoArt;
 	private double kontoStand;
+	private double dispoStand;
 
 	public Konto() {
 	}
 
-	public Konto(String iBAN, long besitzer, String kontoArt, double kontoStand) {
+	public Konto(String iBAN, long besitzer, String kontoArt, double kontoStand, double dispoStand) {
 		super();
 		this.IBAN = iBAN;
 		this.besitzer = besitzer;
 		this.kontoArt = kontoArt;
 		this.kontoStand = kontoStand;
+		this.dispoStand = dispoStand;
 	}
 
 	public String getIBAN() {
@@ -51,6 +53,14 @@ public class Konto implements Serializable {
 
 	public void setKontoStand(double kontoStand) {
 		this.kontoStand = kontoStand;
+	}
+	
+	public double getDispoStand() {
+		return dispoStand;
+	}
+	
+	public void setDispoStand(double dispoStand) {
+		this.dispoStand = dispoStand;
 	}
 
 }

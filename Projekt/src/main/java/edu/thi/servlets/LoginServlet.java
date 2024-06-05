@@ -60,6 +60,7 @@ public class LoginServlet extends HttpServlet {
 		konto.setBesitzer(b_id);
 		konto.setIBAN(getIBAN(b_id));
 		konto.setKontoStand(getKontostand(b_id));
+		konto.setDispoStand(getDispoStand(b_id));
 
 		session.setAttribute("email", benutzer.getEmail());
 		session.setAttribute("pin", benutzer.getPin());
@@ -69,6 +70,7 @@ public class LoginServlet extends HttpServlet {
 		session.setAttribute("admin", benutzer.isAdmin());
 		session.setAttribute("kontostand", konto.getKontoStand());
 		session.setAttribute("IBAN", konto.getIBAN());
+		session.setAttribute("dispo", konto.getDispoStand());
 
 		// Umleitung basierend auf der E-Mail-Adresse
 		RequestDispatcher dispatcher;
@@ -151,5 +153,23 @@ public class LoginServlet extends HttpServlet {
 		}
 
 		return IBAN;
+	}
+	
+	private double getDispoStand(long b_id) throws ServletException {
+		double dispoStand = 0.0;
+
+		try (Connection con = ds.getConnection();
+				PreparedStatement pstmt = con.prepareStatement("SELECT dispo FROM Konto WHERE besitzer = ?")) {
+			pstmt.setLong(1, b_id);
+			try (ResultSet rs = pstmt.executeQuery()) {
+				if (rs != null && rs.next()) {
+					dispoStand = rs.getDouble("dispo");
+				}
+			}
+		} catch (Exception ex) {
+			throw new ServletException(ex.getMessage(), ex);
+		}
+
+		return dispoStand;
 	}
 }

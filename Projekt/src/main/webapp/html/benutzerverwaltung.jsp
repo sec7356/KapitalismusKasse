@@ -39,7 +39,7 @@
 		<li><a href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp"
 		title="Überweisen Sie bequem Ihr Geld!">Überweisen</a>
 		</li>
-		<li><a href="${pageContext.request.contextPath}/html/verlauf.jsp"
+		<li><a href="${pageContext.request.contextPath}/VerlaufServlet"
 		title="Sehen Sie sich alle Ihre Buchungen an!">Verlauf</a>
 		</li>
 		<li><a href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp" class="active"

@@ -2,327 +2,363 @@
 
 /* Globale Stile */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    padding-bottom: 60px; /* Platz für den Footer reservieren */
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	padding-bottom: 60px; /* Platz für den Footer reservieren */
 }
 
 /* Deaktiviere die Textauswahl auf der gesamten Webseite */
 body {
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Standard */
+	-webkit-user-select: none; /* Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Standard */
 }
 
 /* Timer- und Logout-Button Container */
 .timer-logout-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #b89e14; /* Hintergrundfarbe des Containers */
-    padding: 1px; /* Innenabstand des Containers */
-    border-radius: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Optional: Schatten um das Rechteck */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #b89e14; /* Hintergrundfarbe des Containers */
+	padding: 1px; /* Innenabstand des Containers */
+	border-radius: 10px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+	/* Optional: Schatten um das Rechteck */
 }
 
 #timer {
 	margin-top: 1px;
-    font-size: 14px;
-    color: white; /* Textfarbe */
-    margin-bottom: 2px; /* Abstand zur Trennlinie */
+	font-size: 14px;
+	color: white; /* Textfarbe */
+	margin-bottom: 2px; /* Abstand zur Trennlinie */
 }
 
 .divider {
-    width: 75%;
-    border: none;
-    border-top: 1.5px solid white;
-    margin: 0px; /* Abstand zur oberen und unteren Seite */
+	width: 75%;
+	border: none;
+	border-top: 1.5px solid white;
+	margin: 0px; /* Abstand zur oberen und unteren Seite */
 }
 
 .logout-button {
-    color: white; /* Textfarbe */
-    border: none;
-    border-radius: 0px; /* Abgerundete Ecken */
-    margin-top: 1px; /* Abstand zur Trennlinie */
-    margin-bottom: 1px;
+	color: white; /* Textfarbe */
+	border: none;
+	border-radius: 0px; /* Abgerundete Ecken */
+	margin-top: 1px; /* Abstand zur Trennlinie */
+	margin-bottom: 1px;
 }
 
 /* Footer-Stile */
 footer {
-    height: 40px;
-    position: fixed;
-    justify-content: center;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #d1d1d1;
-    color: rgb(0, 0, 0);
-    text-align: center;
-    padding: 0px;
-    transition: bottom 1s ease; /* Fügt eine sanfte Animation hinzu */
+	height: 40px;
+	position: fixed;
+	justify-content: center;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: #d1d1d1;
+	color: rgb(0, 0, 0);
+	text-align: center;
+	padding: 0px;
+	transition: bottom 1s ease; /* Fügt eine sanfte Animation hinzu */
 }
 
 /* Navigation horizontal */
-
 .container {
-    position: absolute;
-    left: 0;
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
+	position: absolute;
+	left: 0;
+	transform: translateY(-50%);
+	display: flex;
+	align-items: center;
 }
 
 .image {
-    height: 60px;
-    max-width: 60px;
-    margin: 3px;
-    margin-top: 8px;
-    left: 12px;
-    position: fixed;
+	height: 60px;
+	max-width: 60px;
+	margin: 3px;
+	margin-top: 8px;
+	left: 12px;
+	position: fixed;
 }
 
 .accountBild {
 	max-height: 60px;
 	max-width: 60px;
-    position: absolute;
+	position: absolute;
 }
 
-.imageMitLink { /* Neuer Style für das Logo ganz oben mit Link zur Startseite */
-    position: absolute;
-    height: 60px;
-    max-width: 60px;
-    left: 12px;
-    margin-top: -26px;
-    margin-left: 3px;
+.imageMitLink {
+	/* Neuer Style für das Logo ganz oben mit Link zur Startseite */
+	position: absolute;
+	height: 60px;
+	max-width: 60px;
+	left: 12px;
+	margin-top: -26px;
+	margin-left: 3px;
 }
 
 .company-name {
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-    display: flex;
-    align-items: left;
-    flex-direction: column;
-    margin-left: 75px;
-    color: rgb(55, 81, 128);
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	display: flex;
+	align-items: left;
+	flex-direction: column;
+	margin-left: 75px;
+	color: rgb(55, 81, 128);
 }
 
 .companyNameLink {
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-    font-size: 1em;
-    display: flex;
-    align-items: left;
-    flex-direction: column;
-    margin-left: 75px;
-    color: rgb(55, 81, 128);
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	font-size: 1em;
+	display: flex;
+	align-items: left;
+	flex-direction: column;
+	margin-left: 75px;
+	color: rgb(55, 81, 128);
 }
 
 nav {
-    position: fixed;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    z-index: 1000;
-    height: 80px;
+	position: fixed;
+	left: 0;
+	width: 100%;
+	background-color: white;
+	display: flex;
+	justify-content: center;
+	z-index: 1000;
+	height: 80px;
 }
 
 nav.small {
-    background-color: #d1d1d1; /* Neue Hintergrundfarbe */
-    transition: background-color 0.3s ease-in-out; /* Übergangseffekt für die Hintergrundfarbe */
+	background-color: #d1d1d1; /* Neue Hintergrundfarbe */
+	transition: background-color 0.3s ease-in-out;
+	/* Übergangseffekt für die Hintergrundfarbe */
 }
 
 nav.small a {
-    color: white; /* Ändere die Schriftfarbe auf Weiß */
-    transition: color 0.3s ease-in-out; /* Übergangseffekt für die Schriftfarbe */
+	color: white; /* Ändere die Schriftfarbe auf Weiß */
+	transition: color 0.3s ease-in-out;
+	/* Übergangseffekt für die Schriftfarbe */
 }
 
 nav ul {
-    align-items: center;
-    border: none; /* Zum Testen hier Rahmen dotted */
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    /* Horizontale Zentrierung der Listenelemente */
+	align-items: center;
+	border: none; /* Zum Testen hier Rahmen dotted */
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	/* Horizontale Zentrierung der Listenelemente */
 }
 
 li:last-child {
-    position: absolute;
-    right: 0;
+	position: absolute;
+	right: 0;
 }
 
 li:nth-last-child(2) {
 	position: absolute;
-	right:140px;
+	right: 140px;
 	top: 10px;
 }
 
 nav ul li:last-child a {
-    color: #941100;
-    white-space: pre-wrap;
+	color: #941100;
+	white-space: pre-wrap;
 }
 
 nav li {
-    margin: 0 15px;
+	margin: 0 15px;
 }
 
-@media (min-width: 45em) {
-    nav ul {
-        flex-direction: row;
-    }
-    nav li {
-        flex: 1;
-        font-size: 1em;
-    }
+@media ( min-width : 45em) {
+	nav ul {
+		flex-direction: row;
+	}
+	nav li {
+		flex: 1;
+		font-size: 1em;
+	}
 }
 
 nav a {
-    position: 0; /* Stellt die Position für das Pseudoelement fest */
-    padding-bottom: 3px; /* Fügt Platz für den Unterstrich hinzu */
-    text-decoration: none;
-    text-align: inline-flex;
-    color: black;
-    font-size: 14px;
-    transition: all 0.15s ease-in;
+	position: 0; /* Stellt die Position für das Pseudoelement fest */
+	padding-bottom: 3px; /* Fügt Platz für den Unterstrich hinzu */
+	text-decoration: none;
+	text-align: inline-flex;
+	color: black;
+	font-size: 14px;
+	transition: all 0.15s ease-in;
 }
 
 nav a:focus, nav a:hover, nav a.active {
-    color: gold;
-    position: relative;
-    color: rgb(55, 81, 128);
-    /* Schriftfarbe für Hover-Effekt, wenn nicht aktiv */
-    background-color: var(--accent1-color);
+	color: gold;
+	position: relative;
+	color: rgb(55, 81, 128);
+	/* Schriftfarbe für Hover-Effekt, wenn nicht aktiv */
+	background-color: var(--accent1-color);
 }
 
 nav a.active::after {
-    content: ''; /* Pseudoelement für den Unterstrich */
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%; /* Breite des Unterstrichs auf 100% des Links setzen */
-    height: 2px;
-    background-color: #b89e14; /* Farbe des Unterstrichs */
+	content: ''; /* Pseudoelement für den Unterstrich */
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%; /* Breite des Unterstrichs auf 100% des Links setzen */
+	height: 2px;
+	background-color: #b89e14; /* Farbe des Unterstrichs */
 }
 
 /* Ende horizontale Navigation */
 
 /* Aktionsbox Start */
-
 .aktionen {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 Spalten */
-    grid-gap: 15px; /* Abstand zwischen Spalten */
-    padding: 20px 60px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr); /* 3 Spalten */
+	grid-gap: 15px; /* Abstand zwischen Spalten */
+	padding: 20px 60px;
 }
 
 .aktion {
-    background-color: #f2f2f2;
-    padding: 20px;
+	background-color: #f2f2f2;
+	padding: 20px;
 }
 
 /* Aktionsbox Ende */
 
 /* User-Startseite und Kontostand */
 .grauBackground {
-    background-color: #d1d1d1;
-    box-sizing: border-box;
-    padding: 6px 0px 6px 60px;
-    width: 100%;
+	background-color: #d1d1d1;
+	box-sizing: border-box;
+	padding: 6px 0px 6px 60px;
+	width: 100%;
 }
 
 .kontostand {
-    box-sizing: border-box;
-    text-align: center;
-    background-color: #b89e14;
-    border-radius: 25px;
-    margin: 10px 450px;
-    font-size: 17px;
-    font-weight: bold;
-    padding: 8px 0px;
+	box-sizing: border-box;
+	text-align: center;
+	background-color: #b89e14;
+	border-radius: 25px;
+	margin: 10px 450px;
+	font-size: 17px;
+	font-weight: bold;
+	padding: 8px 0px;
 }
 
 .profilbild {
-    text-align: center;
-    margin: 20px 0;
+	text-align: center;
+	margin: 20px 0;
 }
 
 .profilbild img {
-    max-width: 150px;
-    max-height: 150px;
-    border-radius: 50%;
-    border: 2px solid #000;
+	max-width: 150px;
+	max-height: 150px;
+	border-radius: 50%;
+	border: 2px solid #000;
 }
 
 /* User-Startseite und Kontostand Ende */
 
 /* CSS für adminForm-Klasse */
 .internForm {
-    width: 80%; /* Breite des Formulars */
-    margin: 0 auto; /* Zentriert das Formular horizontal */
-    padding: 20px; /* Innenabstand des Formulars */
-    background-color: #f0f0f0; /* Hintergrundfarbe des Formulars */
-    border-radius: 10px; /* Abgerundete Ecken des Formulars */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Schatten um das Formular */
+	width: 80%; /* Breite des Formulars */
+	margin: 0 auto; /* Zentriert das Formular horizontal */
+	padding: 20px; /* Innenabstand des Formulars */
+	background-color: #f0f0f0; /* Hintergrundfarbe des Formulars */
+	border-radius: 10px; /* Abgerundete Ecken des Formulars */
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Schatten um das Formular */
 }
 
 /* Stil für Überschriften im Formular */
 .internForm h2 {
-    font-size: 24px; /* Schriftgröße */
-    margin-bottom: 20px; /* Abstand nach unten */
+	font-size: 24px; /* Schriftgröße */
+	margin-bottom: 20px; /* Abstand nach unten */
 }
 
 /* Stil für Formulareingabefelder */
-.internForm input[type="text"],
-.internForm input[type="email"],
-.internForm input[type="password"] {
-    width: 50%; /* Volle Breite des Eingabefeldes */
-    padding: 10px; /* Innenabstand des Eingabefeldes */
-    margin-bottom: 15px; /* Abstand nach unten zwischen den Eingabefeldern */
-    border: 1px solid #ccc; /* Rand des Eingabefeldes */
-    border-radius: 5px; /* Abgerundete Ecken des Eingabefeldes */
+.internForm input[type="text"], .internForm input[type="email"],
+	.internForm input[type="password"] {
+	width: 50%; /* Volle Breite des Eingabefeldes */
+	padding: 10px; /* Innenabstand des Eingabefeldes */
+	margin-bottom: 15px;
+	/* Abstand nach unten zwischen den Eingabefeldern */
+	border: 1px solid #ccc; /* Rand des Eingabefeldes */
+	border-radius: 5px; /* Abgerundete Ecken des Eingabefeldes */
 }
 
 /* Stil für Submit-Button im Formular */
 button[type="submit"], button[type="reset"] {
-    width: auto;
-    background-color: #b89e14;
-    color: #fff;
-    cursor: pointer;
-    padding: 5px 10px; /* Ändere den Padding nach Bedarf */
-    border: none; /* Entfernt die Standard-Bordereigenschaften */
-    border-radius: 5px; /* Rundet die Ecken des Buttons */
-    font-size: 14px; /* Ändere die Schriftgröße nach Bedarf */
+	width: auto;
+	background-color: #b89e14;
+	color: #fff;
+	cursor: pointer;
+	padding: 5px 10px; /* Ändere den Padding nach Bedarf */
+	border: none; /* Entfernt die Standard-Bordereigenschaften */
+	border-radius: 5px; /* Rundet die Ecken des Buttons */
+	font-size: 14px; /* Ändere die Schriftgröße nach Bedarf */
 }
 
 /* Button-Hover-Effekt */
 button[type="submit"]:hover, button[type="reset"]:hover {
-    background-color: #0056b3;
+	background-color: #0056b3;
 }
 
 /* Zusätzliche globale Stile für Formulareingabefelder und Buttons */
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus,
-button[type="submit"]:focus,
-button[type="reset"]:focus {
-    outline: none; /* Entfernt die Standard-Fokusrahmen */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Fügt einen benutzerdefinierten Fokus-Schatten hinzu */
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus,
+	button[type="submit"]:focus, button[type="reset"]:focus {
+	outline: none; /* Entfernt die Standard-Fokusrahmen */
+	box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+	/* Fügt einen benutzerdefinierten Fokus-Schatten hinzu */
 }
 
 .geldHintergrund {
 	background-image: url('../img/BildUeberweisung.jpeg');
-    background-size: cover;
-    background-position: center top;
-   	height: 80%;
-   	width: 100%;
-   	position: absolute;
-   	padding-top: 15px;
+	background-size: cover;
+	background-position: center top;
+	height: 80%;
+	width: 100%;
+	position: absolute;
+	padding-top: 15px;
 }
 
+/* Transaktionen im Verlauf.jsp darstellen */
+.transaktionen {
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff; /* Optional: Setze einen Hintergrund, um den Randabstand besser sichtbar zu machen */
+    border-radius: 8px; /* Optional: Abgerundete Ecken */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Schatten für ein besseres Aussehen */
+}
+
+.transaktionen-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    text-align: left;
+}
+
+.transaktionen-table th, .transaktionen-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+.transaktionen-table th {
+    background-color: #f2f2f2;
+}
+
+.transaktionen-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.transaktionen-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.transaktionen-table tbody tr td:last-child {
+    text-align: center;
+}

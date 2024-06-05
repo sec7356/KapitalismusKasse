@@ -39,7 +39,7 @@
 				class="active" title="Überweisen Sie bequem Ihr Geld!">Überweisen</a>
 			</li>
 			<li><a
-				href="${pageContext.request.contextPath}/html/verlauf.jsp"
+				href="${pageContext.request.contextPath}/VerlaufServlet"
 				title="Sehen Sie sich alle Ihre Buchungen an!">Verlauf</a></li>
 			<li><a
 				href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp"
@@ -123,8 +123,8 @@
 
 		<!-- Alle Überweisungen ansehen von verlauf.jsp -->
 		<div class="internForm">
-			<form method="post"
-				action="${pageContext.request.contextPath}/html/verlauf.jsp">
+			<form method="get"
+				action="${pageContext.request.contextPath}/VerlaufServlet">
 				<fieldset>
 					<legend>Letzte Überweisungen</legend>
 

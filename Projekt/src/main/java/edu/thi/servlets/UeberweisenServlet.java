@@ -1,5 +1,6 @@
 package edu.thi.servlets;
 
+import edu.thi.java.Konto;
 import jakarta.annotation.Resource;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -12,16 +13,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import java.io.IOException;
-
 import javax.sql.DataSource;
 
 @WebServlet("/UeberweisenServlet")
 public class UeberweisenServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    
-    @Resource(lookup="java:jboss/datasources/MySqlThidbDS")
+
+    @Resource(lookup = "java:jboss/datasources/MySqlThidbDS")
     private DataSource dataSource;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -30,28 +29,28 @@ public class UeberweisenServlet extends HttpServlet {
         String nachIBAN = request.getParameter("nach");
         String summeStr = request.getParameter("summe");
         double summe = Double.parseDouble(summeStr);
-        
+
         Connection conn = null;
-        // Zur INFO: Transaktionsmanagement über ChatGPT generiert 
 
         try {
             conn = dataSource.getConnection();
-            // Transaktion starten
             conn.setAutoCommit(false);
 
-            // Überprüfen, ob 'von' und 'nach' IBAN unterschiedlich sind
             if (vonIBAN.equals(nachIBAN)) {
-                session.setAttribute("showMessage", "true");		// Fehlermeldungen erscheinen noch nicht, eventuell über PopUp oder über Alert Boxen mitteilen
+                session.setAttribute("showMessage", "true");
                 session.setAttribute("errorMessage", "Überweisung an dasselbe Konto nicht erlaubt");
                 response.sendRedirect("html/Ueberweisungen.jsp");
                 return;
             }
 
-            // Überprüfen, ob genügend Guthaben auf dem 'von'-Konto vorhanden ist
-            double vonKontostand = getKontostand(conn, vonIBAN);
-            if (vonKontostand < summe) {
-                session.setAttribute("showMessage", "true");	// Fehlermeldungen erscheinen noch nicht, eventuell über PopUp oder über Alert Boxen mitteilen
-                session.setAttribute("errorMessage", "Nicht genügend Guthaben");
+            // Kontostand und Dispo abfragen
+            Konto kontoInfo = getKontoInfo(conn, vonIBAN);
+            double vonKontostand = kontoInfo.getKontoStand();
+            double dispo = kontoInfo.getDispoStand();
+
+            if (vonKontostand + dispo < summe) {
+                session.setAttribute("showMessage", "true");
+                session.setAttribute("errorMessage", "Nicht genügend Guthaben und Dispo");
                 response.sendRedirect("html/Ueberweisungen.jsp");
                 return;
             }
@@ -66,21 +65,17 @@ public class UeberweisenServlet extends HttpServlet {
             // Transaktion in der DB speichern
             speichereTransaktion(conn, vonIBAN, nachIBAN, summe);
 
-            // Transaktion abschließen
             conn.commit();
-            
-            // Aktualisierten Saldo abrufen und in der Sitzung speichern
+
             double neuerVonKontostand = getKontostand(conn, vonIBAN);
             session.setAttribute("kontostand", neuerVonKontostand);
 
-            // Erfolgsmeldung setzen und weiterleiten
+
             session.setAttribute("showMessage", "true");
-            session.setAttribute("successMessage", "Überweisung erfolgreich");	// statt auf die UserStartseite.jsp auf eine Überblick.jsp 
-            										//weiterleiten, wo alle Eingaben nochmal stehen, bzw. auch die Daten von der Transaktion Tabelle
+            session.setAttribute("successMessage", "Überweisung erfolgreich");
             response.sendRedirect("html/UserStartseite.jsp");
-            
-        } 
-        catch (SQLException e) {
+
+        } catch (SQLException e) {
             e.printStackTrace();
             if (conn != null) {
                 try {
@@ -90,7 +85,7 @@ public class UeberweisenServlet extends HttpServlet {
                 }
             }
             session.setAttribute("showMessage", "true");
-            session.setAttribute("errorMessage", "Fehler bei der Überweisung");	// Fehlermeldungen erscheinen noch nicht, eventuell über PopUp oder über Alert Boxen mitteilen
+            session.setAttribute("errorMessage", "Fehler bei der Überweisung");
             response.sendRedirect("html/Ueberweisungen.jsp");
         } finally {
             if (conn != null) {
@@ -98,6 +93,20 @@ public class UeberweisenServlet extends HttpServlet {
                     conn.close();
                 } catch (SQLException e) {
                     e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    private Konto getKontoInfo(Connection conn, String iban) throws SQLException {
+        String query = "SELECT kontostand, dispo FROM konto WHERE IBAN = ?";
+        try (PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setString(1, iban);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    return new Konto(iban, 0, "", rs.getDouble("kontostand"), rs.getDouble("dispo"));
+                } else {
+                    throw new SQLException("Konto nicht gefunden: " + iban);
                 }
             }
         }

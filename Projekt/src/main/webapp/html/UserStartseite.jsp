@@ -45,7 +45,7 @@
 				href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp"
 				title="Überweisen Sie bequem Ihr Geld!">Überweisen</a></li>
 			<li><a
-				href="${pageContext.request.contextPath}/html/verlauf.jsp"
+				href="${pageContext.request.contextPath}/VerlaufServlet"
 				title="Sehen Sie sich alle Ihre Buchungen an!">Verlauf</a></li>
 			<li><a
 				href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp"
@@ -100,7 +100,7 @@
 				<%=session.getAttribute("IBAN")%></p>
 		</div>
 		<div class="kontoinformationen">
-			<p id="disporahmen">Disporahmen: 500.0 €</p>
+			<p id="disporahmen">Disporahmen: <%=session.getAttribute("dispo")%> €</p>
 			<!--	Funktion fehlt nocht   -->
 			<p id="kontotyp">Kontotyp: KK-StartKonto</p>
 		</div>
