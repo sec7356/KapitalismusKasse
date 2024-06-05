@@ -328,37 +328,43 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 
 /* Transaktionen im Verlauf.jsp darstellen */
 .transaktionen {
-    padding: 20px;
-    margin: 20px;
-    background-color: #fff; /* Optional: Setze einen Hintergrund, um den Randabstand besser sichtbar zu machen */
-    border-radius: 8px; /* Optional: Abgerundete Ecken */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Schatten für ein besseres Aussehen */
+	padding: 20px;
+	margin: 20px;
+	background-color: #fff;
+	/* Optional: Setze einen Hintergrund, um den Randabstand besser sichtbar zu machen */
+	border-radius: 8px; /* Optional: Abgerundete Ecken */
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	/* Optional: Schatten für ein besseres Aussehen */
 }
 
 .transaktionen-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 14px;
-    text-align: left;
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 14px;
+	text-align: left;
 }
 
 .transaktionen-table th, .transaktionen-table td {
-    padding: 12px 15px;
-    border: 1px solid #ddd;
+	padding: 12px 15px;
+	border: 1px solid #ddd;
 }
 
 .transaktionen-table th {
-    background-color: #f2f2f2;
+	background-color: #f2f2f2;
 }
 
 .transaktionen-table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+	background-color: #f9f9f9;
 }
 
 .transaktionen-table tbody tr:hover {
-    background-color: #f1f1f1;
+	background-color: #f1f1f1;
 }
 
 .transaktionen-table tbody tr td:last-child {
-    text-align: center;
+	text-align: center;
+}
+
+.copy-button-container {
+	margin-left: 10px; 
 }

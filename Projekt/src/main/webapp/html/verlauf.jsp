@@ -17,6 +17,8 @@
 	href="${pageContext.request.contextPath}/css/styleIntern.css">
 <script src="${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
 <script src="${pageContext.request.contextPath}/JavaScript/greeting.js"></script>
+<script src="${pageContext.request.contextPath}/JavaScript/Zwischenablage.js"></script>
+
 </head>
 <body>
 
@@ -94,14 +96,19 @@
                     <th>Nach</th>
 					<th>Empfänger</th>
                     <th>Summe</th>
-                    <th>Zeitstempel</th>
+                    <th>Zeitstempel</th>                    
                 </tr>
             </thead>
             <tbody>
              <c:forEach var="transaktion" items="${transaktionen}">
                     <tr>
                         <td>${transaktion.von}</td>
-                        <td>${transaktion.nach}</td>
+                        <td>
+                        ${transaktion.nach}  
+                            <span class="copy-button-container">
+                                <button onclick="copyToClipboard('${transaktion.nach}')">Kopieren</button>
+                            </span>
+                            </td>
 						<td>${transaktion.vorname} ${transaktion.nachname}</td>
                         <td>
                             <fmt:formatNumber value="${transaktion.summe}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2"/>
