@@ -33,24 +33,28 @@ public class VerlaufServlet extends HttpServlet {
         List<Transaktion> transaktionen = new ArrayList<>();
 
         try (Connection con = ds.getConnection()) {
-            String sql = "SELECT t.t_id, t.von, t.nach, t.summe, t.zeitstempel, b.nachname "
-            		+ "FROM transaktion t "
-            		+ "JOIN konto k ON t.nach = k.IBAN JOIN benutzer b ON k.Besitzer = b.b_id "
-            		+ "WHERE t.von = ?";
+        	String sql = "SELECT t.t_id, t.von, t.nach, t.summe, t.zeitstempel, b.vorname, b.nachname " +
+                    "FROM transaktion t " +
+                    "JOIN konto k ON t.nach = k.IBAN " +
+                    "JOIN benutzer b ON k.Besitzer = b.b_id " +
+                    "WHERE t.von = ?";
+
             
             try (PreparedStatement pstmt = con.prepareStatement(sql)) {
                 pstmt.setString(1, iban);
                 try (ResultSet rs = pstmt.executeQuery()) {
-                    while (rs.next()) {
-                        Transaktion transaktion = new Transaktion();
-                        transaktion.setT_id(rs.getLong("t_id"));
-                        transaktion.setVon(rs.getString("von"));
-                        transaktion.setNach(rs.getString("nach"));
-                        transaktion.setSumme(rs.getDouble("summe"));
-                        transaktion.setZeitstempel(rs.getTimestamp("zeitstempel"));
-                        transaktion.setNachname(rs.getString("nachname")); 
-                        transaktionen.add(transaktion);
-                    }
+                	while (rs.next()) {
+                	    Transaktion transaktion = new Transaktion();
+                	    transaktion.setT_id(rs.getInt("t_id"));
+                	    transaktion.setVon(rs.getString("von"));
+                	    transaktion.setNach(rs.getString("nach"));
+                	    transaktion.setSumme(rs.getDouble("summe"));
+                	    transaktion.setZeitstempel(rs.getTimestamp("zeitstempel"));
+                	    transaktion.setVorname(rs.getString("vorname"));  // Vorname setzen
+                	    transaktion.setNachname(rs.getString("nachname"));  // Nachname setzen
+
+                	    transaktionen.add(transaktion);
+                	}
                 }
             }
         } catch (Exception ex) {
