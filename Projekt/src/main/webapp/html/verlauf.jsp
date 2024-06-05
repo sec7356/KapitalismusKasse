@@ -3,8 +3,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <fmt:setLocale value="de_DE" />
 
-
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -100,6 +98,7 @@
             </tr>
         </thead>
         <tbody>
+        <c:set var="transaktionenSize" value="${transaktionen.size()}" />
             <c:choose>
                 <c:when test="${empty transaktionen}">
                     <tr>
@@ -107,7 +106,9 @@
                     </tr>
                 </c:when>
                 <c:otherwise>
-                    <c:forEach var="transaktion" items="${transaktionen}">
+                <c:forEach var="index" begin="0" end="${transaktionenSize - 1}" step="1">
+            	<c:set var="reverseIndex" value="${transaktionenSize - 1 - index}" />
+            	<c:set var="transaktion" value="${transaktionen[reverseIndex]}" />
                         <tr>
                             <td>${transaktion.von}</td>
                             <td>
