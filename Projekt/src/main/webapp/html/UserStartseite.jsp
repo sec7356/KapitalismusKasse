@@ -1,4 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<fmt:setLocale value="de_DE" />
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -93,15 +97,14 @@
 		</div>
 		<div class="kontoinformationen">
 			<p id="kontostand">
-				Saldo:
-				<%=session.getAttribute("kontostand") + " €"%></p>
+				Saldo: <fmt:formatNumber value="${sessionScope.kontostand}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2"/>€
 			<p id="iban">
 				IBAN:
 				<%=session.getAttribute("IBAN")%></p>
 		</div>
 		<div class="kontoinformationen">
-			<p id="disporahmen">Disporahmen: <%=session.getAttribute("dispo")%> €</p>
-			<!--	Funktion fehlt nocht   -->
+			<p id="disporahmen">Disporahmen: <fmt:formatNumber value="${sessionScope.dispo}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2"/>€</p>
+			<!--	Funktion fehlt nocht für Kontotyp -->
 			<p id="kontotyp">Kontotyp: KK-StartKonto</p>
 		</div>
 	</div>
