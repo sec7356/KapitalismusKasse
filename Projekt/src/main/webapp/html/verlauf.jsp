@@ -67,23 +67,26 @@
 <div class="transaktionen">
     <table class="transaktionen-table">
         <thead>
-            <tr><th>Von</th><th>Nach</th><th>Empfänger</th><th>Summe</th><th>Zeitstempel</th>                    
+            <tr>
+                <th>Von</th>
+                <th>Nach</th>
+                <th>Empfänger</th>
+                <th>Summe</th>
+                <th>Zeitstempel</th>
             </tr>
         </thead>
         <tbody>
-        <c:set var="transaktionenSize" value="${transaktionen.size()}" />
             <c:choose>
                 <c:when test="${empty transaktionen}">
                     <tr><td colspan="5">Noch keine Transaktionen durchgeführt</td></tr>
                 </c:when>
                 <c:otherwise>
-                <c:forEach var="index" begin="0" end="${transaktionenSize - 1}" step="1">
-            	<c:set var="reverseIndex" value="${transaktionenSize - 1 - index}" />
-            	<c:set var="transaktion" value="${transaktionen[reverseIndex]}" />
+                    <c:forEach var="transaktion" items="${transaktionen}">
                         <tr>
                             <td>${transaktion.von}</td>
                             <td>${transaktion.nach}
-                            <span class="copy-button-container"><button onclick="copyToClipboardAndDisplayText('${transaktion.nach}')">Kopieren</button></span></td>
+                                <span class="copy-button-container"><button onclick="copyToClipboardAndDisplayText('${transaktion.nach}')">Kopieren</button></span>
+                            </td>
                             <td>${transaktion.vorname} ${transaktion.nachname}</td>
                             <td><fmt:formatNumber value="${transaktion.summe}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2"/>€</td>
                             <td><fmt:formatDate value="${transaktion.zeitstempel}" pattern="dd.MM.yyyy, HH:mm"/> Uhr</td>
@@ -94,6 +97,7 @@
         </tbody>
     </table>
 </div>
+
 
 	<footer>
 		<p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>

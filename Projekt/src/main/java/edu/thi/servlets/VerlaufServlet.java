@@ -14,6 +14,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import javax.sql.DataSource;
@@ -60,7 +62,10 @@ public class VerlaufServlet extends HttpServlet {
         } catch (Exception ex) {
             throw new ServletException(ex.getMessage());
         }
+        
+        Collections.sort(transaktionen, Comparator.comparing(Transaktion::getZeitstempel).reversed());
 
+        
         request.setAttribute("transaktionen", transaktionen);
         request.getRequestDispatcher("html/verlauf.jsp").forward(request, response);
     }
