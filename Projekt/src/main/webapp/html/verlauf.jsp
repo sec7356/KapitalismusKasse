@@ -113,7 +113,7 @@
                             <td>
                                 ${transaktion.nach}  
                                 <span class="copy-button-container">
-                                    <button onclick="copyToClipboard('${transaktion.nach}')">Kopieren</button>
+                                    <button onclick="copyToClipboardAndDisplayText('${transaktion.nach}')">Kopieren</button>
                                 </span>
                             </td>
                             <td>${transaktion.vorname} ${transaktion.nachname}</td>
