@@ -64,7 +64,7 @@
 		<table class="transaktionen-table">
 			<thead>
 				<tr>
-					<th>Einzahlender</th>
+					<th>Zahlender</th>
 					<th>Empfänger</th>
 					<th>IBAN</th>
 					<th>Summe</th>
@@ -108,7 +108,7 @@
 											
 										<td>${transaktion.von}</td>
 										
-										<td style="color: #ff6666;"><fmt:formatNumber value="${transaktion.summe}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2" /> €</td>
+										<td style="color: #ff6666;">- <fmt:formatNumber value="${transaktion.summe}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2" /> €</td>
 										<td class="verzweck-cell">${empty transaktion.verzweck ? '-' : transaktion.verzweck}</td>
 										
 										<td><fmt:formatDate value="${transaktion.zeitstempel}"
