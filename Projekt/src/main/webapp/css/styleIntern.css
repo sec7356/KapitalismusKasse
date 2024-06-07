@@ -120,7 +120,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 
 /* Transaktionen im Verlauf.jsp darstellen */
 .transaktionen {
-	width: calc(100% - 80px); 
+	width: calc(100% - 80px);
 	max-width: 100%;
 	padding: 20px;
 	margin: 21px;
@@ -160,8 +160,8 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
 
 .transaktionen-table .verzweck-cell {
-	max-width: 350px; 
-	overflow: auto; 
+	max-width: 350px;
+	overflow: auto;
 	white-space: pre-line;
 }
 
