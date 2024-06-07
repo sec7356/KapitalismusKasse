@@ -113,18 +113,11 @@
 	<article>
 	<br>
 		<h2>Registrieren Sie sich jetzt als Firmenkunde!</h2>
-		<a href="${pageContext.request.contextPath}/html/Registrierung.jsp" class="black-anchor">
-			<button>Klicken zum Registrieren</button>
-		</a>
+		<a href="${pageContext.request.contextPath}/html/Registrierung.jsp" class="black-anchor"><button>Klicken zum Registrieren</button></a>
 		<h3>Bereits registriert?</h3>
-		<p>
-			Klicken sie zum Einloggen <a href="${pageContext.request.contextPath}/html/Banking-Login.jsp"
-				class="black-anchor">hier</a>.
-		</p>
+		<p>Klicken sie zum Einloggen <a href="${pageContext.request.contextPath}/html/Banking-Login.jsp"class="black-anchor">hier</a>.</p>
 		<h3>Passwort vergessen?</h3>
-		<p>
-			Hilfe finden Sie <a href="${pageContext.request.contextPath}/html/passwortReset.jsp" class="black-anchor">hier</a>.
-		</p>
+		<p>Hilfe finden Sie <a href="${pageContext.request.contextPath}/html/passwortReset.jsp" class="black-anchor">hier</a>.</p>
 	</article>
 
 
