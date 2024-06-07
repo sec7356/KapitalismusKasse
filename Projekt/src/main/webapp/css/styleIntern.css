@@ -120,16 +120,14 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 
 /* Transaktionen im Verlauf.jsp darstellen */
 .transaktionen {
-	width: calc(100% - 80px); /* 42px für das linke und rechte Padding */
+	width: calc(100% - 80px); 
 	max-width: 100%;
-	/* Maximale Breite auf 100% des Browserfensters setzen */
 	padding: 20px;
 	margin: 21px;
 	background-color: #fff;
 	border-radius: 8px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	overflow-x: auto;
-	/* Horizontales Scrollen aktivieren, wenn die Tabelle zu breit ist */
 }
 
 .transaktionen-table {
@@ -162,12 +160,12 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
 
 .transaktionen-table .verzweck-cell {
-	max-width: 350px; /* Hier die gewünschte Breite eintragen */
-	overflow: auto; /* Überlauf verstecken, falls der Inhalt breiter ist */
-	white-space: pre-line; /* Verhindert, dass der Text umbricht */
+	max-width: 350px; 
+	overflow: auto; 
+	white-space: pre-line;
 }
 
 .copy-button {
 	margin-left: 10px;
-	margin-right: -40px;
+	margin-right: -70px;
 }
