@@ -1,55 +1,53 @@
 "use strict";
 
-// Variable zur Speicherung der Timer-ID
 var timerId;
+var logoutUrl = "/KapitalismusKasse/LogoutServlet";
 
-// Funktion zum Starten des Timers
 function startTimer() {
     var timer = document.getElementById('timer');
+    if (!timer) {
+        console.error("Timer Element nicht gefunden!");
+        return;
+    }
     var timeArray = timer.textContent.split(":");
-    var minuten = parseInt(timeArray[0]);
-    var sekunden = parseInt(timeArray[1]);
+    var minutes = parseInt(timeArray[0], 10);
+    var seconds = parseInt(timeArray[1], 10);
 
-    // Überprüfen, ob der Timer auf null ist
-    if (minuten === 0 && sekunden === 0) {
-        console.log("Logout ausgelöst!");
-        alert("Sie wurden aus Sicherheitsgründen abgemeldet!");
-        window.location.href = logoutUrl;  // logoutUrl ist eine globale Variable, die die Logout-URL speichert
+    if (isNaN(minutes) || isNaN(seconds)) {
+        console.error("Ungültiges Timer-Format!");
         return;
     }
 
-    sekunden--;
-    if (sekunden < 0) {
-        minuten--;
-        sekunden = 59;
+    if (minutes === 0 && seconds === 0) {
+        console.log("Logout ausgelöst!");
+        alert("Sie wurden aus Sicherheitsgründen abgemeldet!");
+        window.location.href = logoutUrl;
+        return;
     }
 
-    // Aktualisieren der Timer-Anzeige ohne führende Nullen für Minuten
-    timer.textContent = minuten + ":" + sekunden.toString().padStart(2, "0");
+    seconds--;
+    if (seconds < 0) {
+        minutes--;
+        seconds = 59;
+    }
 
-    // Speichern der verbleibenden Zeit in localStorage
+    timer.textContent = minutes + ":" + seconds.toString().padStart(2, "0");
+
     localStorage.setItem('remainingTime', timer.textContent);
 
-    // Planen des nächsten Timer-Updates
-    timerId = setTimeout(startTimer, 1000); // Test --> 1000 für 1 Sekunde
+    timerId = setTimeout(startTimer, 1000);
 }
 
-// Funktion zum Zurücksetzen des Timers bei Benutzerinteraktion
 function resetTimer() {
-    // Den bestehenden Timer löschen
     clearTimeout(timerId);
 
-    // Den Timer auf 5 Minuten zurücksetzen
     document.getElementById('timer').textContent = "5:00";
 
-    // Speichern der neuen verbleibenden Zeit in localStorage
     localStorage.setItem('remainingTime', "5:00");
 
-    // Den Timer erneut starten
     startTimer();
 }
 
-// Funktion zum Wiederherstellen des Timers aus localStorage
 function restoreTimer() {
     var savedTime = localStorage.getItem('remainingTime');
     if (savedTime) {
@@ -59,16 +57,14 @@ function restoreTimer() {
     }
 }
 
-// Ereignislistener für Benutzerinteraktionen hinzufügen (bei Bedarf anpassen)
 document.addEventListener("mousemove", resetTimer);
 document.addEventListener("keydown", resetTimer);
 document.addEventListener("click", resetTimer);
 
-// Den Timer anfangs wiederherstellen und starten
 document.addEventListener("DOMContentLoaded", function() {
     restoreTimer();
     startTimer();
 });
 
-// Globale Variable für die Logout-URL definieren
-var logoutUrl = "/KapitalismusKasse/LogoutServlet";
+localStorage.removeItem('remainingTime');
+

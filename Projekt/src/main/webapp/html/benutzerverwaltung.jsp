@@ -40,7 +40,7 @@
 		title="Überweisen Sie bequem Ihr Geld!">Überweisen</a>
 		</li>
 		<li><a href="${pageContext.request.contextPath}/VerlaufServlet"
-		title="Sehen Sie sich alle Ihre Buchungen an!">Verlauf</a>
+		title="Sehen Sie sich alle Ihre Buchungen an!">Kontoaktivitäten</a>
 		</li>
 		<li><a href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp" class="active"
 		title="Ändern Sie Ihr Profilbild oder Ihre Nutzerdaten!">Benutzerverwaltung</a>

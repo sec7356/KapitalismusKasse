@@ -19,6 +19,8 @@
 <title>Startseite - Kapitalismus-Kasse</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/UserStartseite_Design.css">
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 <script src="${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
 <script src="${pageContext.request.contextPath}/JavaScript/greeting.js"></script>
@@ -50,7 +52,7 @@
 				title="Überweisen Sie bequem Ihr Geld!">Überweisen</a></li>
 			<li><a
 				href="${pageContext.request.contextPath}/VerlaufServlet"
-				title="Sehen Sie sich alle Ihre Buchungen an!">Verlauf</a></li>
+				title="Sehen Sie sich alle Ihre Buchungen an!">Kontoaktivitäten</a></li>
 			<li><a
 				href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp"
 				title="Ändern Sie Ihr Profilbild oder Ihre Nutzerdaten!">Benutzerverwaltung</a></li>

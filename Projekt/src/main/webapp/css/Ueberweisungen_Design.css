@@ -1,0 +1,262 @@
+@import url('popup.css');
+
+@import url('navigation.css');
+
+/* Globale Stile */
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	padding-bottom: 60px; /* Platz für den Footer reservieren */
+	background-image: url('../img/BildUeberweisung.jpeg');
+	background-size: cover;
+	background-repeat: no-repeat; /* Das Bild nicht wiederholen */
+}
+
+main {
+	padding: 7rem;
+	line-height: 1.6;
+}
+
+section {
+	background-color: white;
+	margin: 1rem auto;
+	padding: 1rem;
+	border-radius: 5px;
+	max-width: 600px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	min-width: 600px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+}
+
+fieldset {
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 1rem;
+	margin-bottom: 1rem;
+}
+
+legend {
+	font-weight: bold;
+}
+
+.form-group {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+.form-group label {
+	flex: 0 0 150px; /* Set a fixed width for labels */
+	margin-right: 1rem;
+}
+
+.form-group label:last-child {
+	color: #941100;
+}
+
+textarea {
+	min-height: 8rem;
+	width: 100%;
+	resize: none;
+	word-wrap: break-word; /* Text nach Bedarf umbrechen */
+}
+
+.form-group span {
+	word-wrap: break-word;
+	max-width: 100%;
+	/* Maximale Breite des Verwendungszwecks auf 100% setzen */
+	word-break: break-all;
+	/* Wortumbruch auch innerhalb von Wörtern ermöglichen */
+}
+
+.form-group input {
+	flex: 1;
+	padding: 0.5rem;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.account-info {
+	display: flex;
+	justify-content: space-between;
+}
+
+.account-info .iban-info {
+	text-align: left;
+}
+
+.account-info .saldo-info {
+	text-align: right;
+}
+
+.account-info .iban-info span, .account-info .saldo-info span {
+	display: block;
+	text-align: inherit;
+}
+
+fieldset.account-info-container {
+	background-color: #e3e6e6;
+	margin: 0;
+	border: none;
+	box-sizing: border-box;
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 1rem;
+	margin-bottom: 1rem;
+}
+
+textarea {
+	min-height: 8rem;
+	width: 100%;
+	resize: none;
+}
+
+.small-text {
+	font-size: 0.8rem;
+	margin-top: 0.5rem;
+}
+
+.hint-text {
+	font-size: 0.8rem;
+	margin: 0.5rem 0 0 0;
+	margin-top: -15px;
+}
+
+.button-container {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 1rem;
+}
+
+/* Stil für Submit-Button im Formular */
+button[type="submit"], button[type="reset"] {
+	width: auto;
+	background-color: #b89e14;
+	color: #fff;
+	cursor: pointer;
+	padding: 5px 10px; /* Ändere den Padding nach Bedarf */
+	border: none; /* Entfernt die Standard-Bordereigenschaften */
+	border-radius: 5px; /* Rundet die Ecken des Buttons */
+	font-size: 14px; /* Ändere die Schriftgröße nach Bedarf */
+}
+
+/* Button-Hover-Effekt */
+button[type="submit"]:hover, button[type="reset"]:hover {
+	background-color: #0056b3;
+}
+
+.korrigieren-button {
+	width: auto;
+	background-color: #b89e14;
+	color: #fff;
+	cursor: pointer;
+	padding: 5px 10px;
+	border: none;
+	border-radius: 5px;
+	font-size: 14px;
+}
+
+.korrigieren-button:hover {
+	background-color: #0056b3;
+}
+
+.new-transfer-header-container {
+	display: flex;
+	justify-content: flex-end; /* Inhalte rechtsbündig ausrichten */
+	align-items: center; /* Vertikal zentrieren */
+	margin-bottom: 1rem; /* Optional: Abstand nach unten hinzufügen */
+}
+
+.new-transfer-header {
+	margin-right: auto; /* Überschrift auf der linken Seite ausrichten */
+	margin-bottom: -3rm;
+	/* Optional: Abstand zur nächsten Zeile entfernen */
+	align-self: baseline; /* Die Höhe des Inhalts anpassen */
+}
+
+.progress-container {
+	display: flex;
+	align-items: center;
+	margin-right: 1rem; /* Abstand zwischen den Elementen */
+}
+
+.step {
+	background-color: #b89e14;
+	color: white;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	font-size: 0.6em;
+}
+
+.step-description {
+	margin-left: 5px; /* Abstand zwischen Zeichen und Text */
+	font-weight: bold;
+	font-size: 0.6em;
+}
+
+.second-step {
+	background-color: gray;
+	/* Ändern der Hintergrundfarbe des zweiten Schritts */
+}
+
+.step-description-2 {
+	margin-left: 5px;
+	font-size: 0.6em; /* Schriftgröße für den zweiten Schritt */
+}
+
+.img-container {
+	display: flex;
+	justify-content: center;
+}
+
+.img-container img {
+	width: 200px;
+	height: 200px;
+	margin: 0 auto; /* Dies zentriert das Bild horizontal */
+}
+
+.form-group {
+	position: relative;
+	margin-bottom: 1.5em;
+}
+
+.form-group input {
+	width: calc(100% - 40px); /* Adjust width to make space for the icon */
+	padding-right: 40px; /* Add space for the icon */
+}
+
+.form-group .icon {
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 1.5em;
+}
+
+.form-group .icon.success {
+	color: green;
+}
+
+.form-group .icon.error {
+	color: red;
+}
+
+.error-message {
+	color: red;
+}
+
+.error-message-container {
+	text-align: center;
+	color: red;
+	margin-top: 0.5em;
+}

@@ -1,146 +1,161 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<fmt:setLocale value="de_DE" />
 
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/x-icon"
-	href="${pageContext.request.contextPath}/img/favicon.ico" />
-<title>Überweisen - Kapitalismus-Kasse</title>
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/css/styleIntern.css">
-<script src="${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
-<script src="${pageContext.request.contextPath}/JavaScript/greeting.js"></script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico" />
+    <title>Überweisung - Kapitalismus-Kasse</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/Ueberweisungen_Design.css">
+    <script src="${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
+    <script src="${pageContext.request.contextPath}/JavaScript/Verwendungszweck.js"></script>
+    <script src="${pageContext.request.contextPath}/JavaScript/eingabeUeberweisung.js"></script>
 </head>
 <body>
+    <nav id="navbar">
+        <ul>
+            <li>
+                <div class="container">
+                    <a href="${pageContext.request.contextPath}/html/UserStartseite.jsp" title="Die Bank der Zukunft!"> 
+                        <img src="${pageContext.request.contextPath}/img/logo.jpg" alt="Logo" class="imageMitLink"></a> 
+                        
+                    <a href="${pageContext.request.contextPath}/html/UserStartseite.jsp" title="Die Bank der Zukunft!" class="companyNameLink"> 
+                        <span>Kapitalismus-</span>
+                        <span>Kasse</span></a>
+                </div>
+            </li>
+            <li><a href="${pageContext.request.contextPath}/html/UserStartseite.jsp" title="Sehen Sie sich Ihr Dashboard an!">Startseite</a></li>
+            <li><a href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp" class="active" title="Überweisen Sie bequem Ihr Geld!">Überweisen</a></li>
+            <li><a href="${pageContext.request.contextPath}/VerlaufServlet" title="Sehen Sie sich alle Ihre Buchungen an!">Kontoaktivitäten</a></li>
+            <li><a href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp" title="Ändern Sie Ihr Profilbild oder Ihre Nutzerdaten!">Benutzerverwaltung</a></li>
+            <li>
+                <!-- Benutzer verwalten Icon -->
+                <a href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp" title="Nutzerdaten verwalten">
+                    <img src="${pageContext.request.contextPath}/img/accountBild.jpg" alt="Benutzerverwaltung" class="accountBild">
+                </a>
+            </li>
+            <li>
+                <div class="timer-logout-container">
+                    <div id="timer">05:00</div>
+                    <div class="divider"></div>
+                    <form method="post" action="${pageContext.request.contextPath}/LogoutServlet">
+                        <button name="loeschen" type="submit" class="logout-button" title="Melden Sie sich sicher ab!">Logout</button>
+                    </form>
+                </div>
+            </li>
+        </ul>
+    </nav>
 
-	<nav id="navbar">
-		<ul>
-			<li>
-				<div class="container">
-					<a
-						href="${pageContext.request.contextPath}/html/UserStartseite.jsp"
-						title="Die Bank der Zukunft!"> <img
-						src="${pageContext.request.contextPath}/img/logo.jpg" alt="Logo"
-						class="imageMitLink"></a> <a
-						href="${pageContext.request.contextPath}/html/UserStartseite.jsp"
-						title="Die Bank der Zukunft!" class="companyNameLink"> <span>Kapitalismus-</span>
-						<span>Kasse</span></a>
 
-				</div>
-			</li>
-			<li><a
-				href="${pageContext.request.contextPath}/html/UserStartseite.jsp"
-				title="Sehen Sie sich Ihr Dashboard an!">Startseite</a></li>
-			<li><a
-				href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp"
-				class="active" title="Überweisen Sie bequem Ihr Geld!">Überweisen</a>
-			</li>
-			<li><a
-				href="${pageContext.request.contextPath}/VerlaufServlet"
-				title="Sehen Sie sich alle Ihre Buchungen an!">Verlauf</a></li>
-			<li><a
-				href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp"
-				title="Ändern Sie Ihr Profilbild oder Ihre Nutzerdaten!">Benutzerverwaltung</a>
-			</li>
+    <main>
+        <form method="post" action="${pageContext.request.contextPath}/UeberweisungUeberpruefenServlet" id="ueberweisungForm" accept-charset="UTF-8">
+            <section>
+                <fieldset class="account-info-container">
+                    <legend>Ihr Konto</legend>
+                    <div class="account-info">
+                        <div class="iban-info">
+                            <label for="von">IBAN:</label>
+<!--                             IBAN wird hier in vier Teilstücke zerlegt um es besser lesbar zu machen -->
+                        <%
+                            String iban = (String) session.getAttribute("IBAN");
+                            String formattedIban = iban.replaceAll("(.{4})(?!$)", "$1 ");
+                        %>
+                        <span><%=formattedIban%></span>
+                        </div>
+                        <div class="saldo-info">
+                            <label for="konto-saldo">Aktueller Kontosaldo:</label>
+                            <span>
+                                <fmt:formatNumber value="${sessionScope.kontostand}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2" /> €
+                            </span>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="new-transfer-header-container">
+                    <h2 class="new-transfer-header">Neue Überweisung</h2>
+                    <div class="progress-container">
+                        <div class="step">1</div>
+                        <div class="step-description">Erfassung</div>
+                    </div>
+                    <div class="progress-container">
+                        <div class="step second-step">2</div>
+                        <div class="step-description-2">Prüfen & Bestätigen</div>
+                    </div>
+                    <div class="progress-container">
+                        <div class="step second-step">3</div>
+                        <div class="step-description-2">Abschluss</div>
+                    </div>
+                </div>
+                <fieldset>
+                    <legend>Empfängerdaten</legend>
+                    <div class="form-group">
+                        <label for="nach">IBAN*</label>
+                        <input type="text" id="nach" name="nach" required pattern=".{22,}" title="Die IBAN muss mindestens 22 Zeichen lang sein" maxlength="22">
+                        <span class="icon" id="nach-icon"></span>
+                    </div>
+                    <div class="error-message-container">
+                        <!-- Container für Fehlermeldung -->
+                        <% if (request.getAttribute("error") != null) { %>
+                            <div class="error-message">
+                                <%= request.getAttribute("error") %>
+                            </div>
+                        <% } %>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Zahlungsdaten</legend>
+                    <div class="form-group">
+                        <label for="summe">Betrag* EUR</label>
+                        <input type="number" id="summe" name="summe" required min="1" max="9999999999999.99" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1')">
+                        <span class="icon" id="summe-icon"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="betrag"></label>
+                        <p class="hint-text">
+                            Bitte beachten Sie eventuell die Meldepflicht ab 12.500 Euro <br>gemäß
+                            <a href="https://www.bundesbank.de/de/service/meldewesen/aussenwirtschaft" target="_blank">
+                                Außenwirtschaftsverordnung
+                                <img src="${pageContext.request.contextPath}/img/Link.png" alt="Logo" style="vertical-align: middle; width: 15px; height: 15px; margin-right: 5px;">
+                            </a>
+                        </p>
+                    </div>
+                    <div class="form-group">
+                        <label for="verwendungszweck">Verwendungszweck</label>
+                        <textarea id="verwendungszweck" name="verwendungszweck" maxlength="140" oninput="updateCharCount()"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="betrag"></label>
+                        <div id="char-count" class="hint-text">Sie können noch 140 Zeichen eingeben.</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="betrag">Hinweis</label>
+                        <p class="hint-text">
+                        <br><br>
+                            Wir möchten Sie darauf hinweisen, dass Überweisungen
+                            ausschließlich an Empfänger durchgeführt werden können, die
+                            ebenfalls Kunden der Kapitalismus-Kasse sind.<br>
+                            Dies gewährleistet die Sicherheit und Effizienz unserer
+                            Transaktionen innerhalb unseres Instituts.
+                        </p>
+                    </div>
 
-			<li>
-				<!-- Benutzer verwalten Icon --> <a
-				href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp"
-				title="Nutzerdaten verwalten"> <img
-					src="${pageContext.request.contextPath}/img/accountBild.jpg"
-					alt="Benutzerverwaltung" class="accountBild">
-			</a>
-			</li>
+                    <div class="form-group">
+                        <label for="betrag">*Pflichtfelder</label>
+                    </div>
+                </fieldset>
+                <div class="button-container">
+                    <button name="reset" type="reset">Zurücksetzen</button>
+                    <button name="submit" type="submit">Weiter</button>
+                </div>
+            </section>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>
+    </footer>
 
-			<li>
-				<div class="timer-logout-container">
-					<div id="timer">05:00</div>
-					<div class="divider"></div>
-					<form method="post"
-						action="${pageContext.request.contextPath}/LogoutServlet">
-						<button name="loeschen" type="submit" class="logout-button"
-							title="Melden Sie sich sicher ab!">Logout</button>
-					</form>
-				</div>
-			</li>
-		</ul>
-	</nav>
-	<br>
-
-	<div class="grauBackground">
-		<br>
-		<br>
-		<br>
-		<br>
-		<p>
-			Guten Tag,
-			<%=session.getAttribute("vorname")%>
-			<%=session.getAttribute("nachname")%>!
-		</p>
-
-		<div class="kontostand">
-			<p>IBAN und Kontostand</p>
-			<p><%=session.getAttribute("IBAN")%>
-				<br>
-				<%=session.getAttribute("kontostand")%></p>
-		</div>
-	</div>
-	<!-- Überweisung tätigen -->
-	<div class="geldHintergrund">
-		<div class="internForm">
-			<form method="post"
-				action="${pageContext.request.contextPath}/UeberweisenServlet">
-				<fieldset>
-					<legend>Überweisen</legend>
-					<div>
-						<label for="von">Von:</label>
-						<%=session.getAttribute("IBAN")%>
-					</div>
-					<div>
-						<label for="nach">Nach:</label> <input type="text" id="nach"
-							name="nach" required maxlength="34"><br>
-					</div>
-					<div>
-						<label for="summe">Summe:</label> <input type="number" id="summe"
-							name="summe" required step="0.01" min="0" max="9999999999999.99"
-							maxlength=""><br>
-					</div>
-					<br>
-					<div>
-						<button name="submit" type="submit">Überweisen</button>
-						<button name="reset" type="reset">Zurücksetzen</button>
-					</div>
-					<br>
-				</fieldset>
-			</form>
-
-		</div>
-
-		<br>
-
-		<!-- Alle Überweisungen ansehen von verlauf.jsp -->
-		<div class="internForm">
-			<form method="get"
-				action="${pageContext.request.contextPath}/VerlaufServlet">
-				<fieldset>
-					<legend>Letzte Überweisungen</legend>
-
-					<p>Sehen Sie sich all Ihre Überweisungen an!</p>
-					<div>
-						<button name="submit" type="submit">Verlauf anzeigen</button>
-					</div>
-					<br>
-				</fieldset>
-			</form>
-
-		</div>
-
-	</div>
-	<footer>
-		<p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>
-	</footer>
 </body>
 </html>

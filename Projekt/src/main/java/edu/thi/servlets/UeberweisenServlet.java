@@ -18,130 +18,143 @@ import javax.sql.DataSource;
 
 @WebServlet("/UeberweisenServlet")
 public class UeberweisenServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    @Resource(lookup = "java:jboss/datasources/MySqlThidbDS")
-    private DataSource dataSource;
+	@Resource(lookup = "java:jboss/datasources/MySqlThidbDS")
+	private DataSource dataSource;
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        String vonIBAN = (String) session.getAttribute("IBAN");
-        String nachIBAN = request.getParameter("nach");
-        String summeStr = request.getParameter("summe");
-        double summe = Double.parseDouble(summeStr);
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 
-        Connection conn = null;
+		HttpSession session = request.getSession();
+		String vonIBAN = request.getParameter("von");
+		String nachIBAN = request.getParameter("nach");
+		String summeStr = request.getParameter("summe");
+		String verzweck = request.getParameter("verwendungszweck");
 
-        try {
-            conn = dataSource.getConnection();
-            conn.setAutoCommit(false);
+		System.out.println("");
+		System.out.println(vonIBAN);
+		System.out.println(nachIBAN);
+		System.out.println(summeStr);
+		System.out.println(verzweck);
 
-            if (vonIBAN.equals(nachIBAN)) {
-                session.setAttribute("showMessage", "true");
-                session.setAttribute("errorMessage", "Überweisung an dasselbe Konto nicht erlaubt");
-                response.sendRedirect("html/Ueberweisungen.jsp");
-                return;
-            }
+		double summe = Double.parseDouble(summeStr);
 
-            // Kontostand und Dispo abfragen
-            Konto kontoInfo = getKontoInfo(conn, vonIBAN);
-            double vonKontostand = kontoInfo.getKontoStand();
-            double dispo = kontoInfo.getDispoStand();
+		Connection conn = null;
 
-            if (vonKontostand + dispo < summe) {
-                session.setAttribute("showMessage", "true");
-                session.setAttribute("errorMessage", "Nicht genügend Guthaben und Dispo");
-                response.sendRedirect("html/Ueberweisungen.jsp");
-                return;
-            }
+		try {
+			conn = dataSource.getConnection();
+			conn.setAutoCommit(false);
 
-            // Betrag vom 'von'-Konto abziehen
-            updateKontostand(conn, vonIBAN, vonKontostand - summe);
+			if (vonIBAN.equals(nachIBAN)) {
+				session.setAttribute("showMessage", "true");
+				session.setAttribute("errorMessage", "Überweisung an dasselbe Konto nicht erlaubt");
+				response.sendRedirect("html/Ueberweisungen.jsp");
+				return;
+			}
 
-            // Betrag zum 'nach'-Konto hinzufügen
-            double nachKontostand = getKontostand(conn, nachIBAN);
-            updateKontostand(conn, nachIBAN, nachKontostand + summe);
+			// Kontostand und Dispo abfragen
+			Konto kontoInfo = getKontoInfo(conn, vonIBAN);
+			double vonKontostand = kontoInfo.getKontoStand();
+			double dispo = kontoInfo.getDispoStand();
 
-            // Transaktion in der DB speichern
-            speichereTransaktion(conn, vonIBAN, nachIBAN, summe);
+			if (vonKontostand + dispo < summe) {
+				session.setAttribute("showMessage", "true");
+				session.setAttribute("errorMessage", "Nicht genügend Guthaben und Dispo");
+				response.sendRedirect("html/Ueberweisungen.jsp");
+				return;
+			}
 
-            conn.commit();
+			// Betrag vom 'von'-Konto abziehen
+			updateKontostand(conn, vonIBAN, vonKontostand - summe);
 
-            double neuerVonKontostand = getKontostand(conn, vonIBAN);
-            session.setAttribute("kontostand", neuerVonKontostand);
+			// Betrag zum 'nach'-Konto hinzufügen
+			double nachKontostand = getKontostand(conn, nachIBAN);
+			updateKontostand(conn, nachIBAN, nachKontostand + summe);
 
+			// Transaktion in der DB speichern
+			speichereTransaktion(conn, vonIBAN, nachIBAN, summe, verzweck);
 
-            session.setAttribute("showMessage", "true");
-            session.setAttribute("successMessage", "Überweisung erfolgreich");
-            response.sendRedirect("html/UserStartseite.jsp");
+			conn.commit();
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-            if (conn != null) {
-                try {
-                    conn.rollback();
-                } catch (SQLException se) {
-                    se.printStackTrace();
-                }
-            }
-            session.setAttribute("showMessage", "true");
-            session.setAttribute("errorMessage", "Fehler bei der Überweisung");
-            response.sendRedirect("html/Ueberweisungen.jsp");
-        } finally {
-            if (conn != null) {
-                try {
-                    conn.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
+			double neuerVonKontostand = getKontostand(conn, vonIBAN);
+			session.setAttribute("kontostand", neuerVonKontostand);
 
-    private Konto getKontoInfo(Connection conn, String iban) throws SQLException {
-        String query = "SELECT kontostand, dispo FROM konto WHERE IBAN = ?";
-        try (PreparedStatement stmt = conn.prepareStatement(query)) {
-            stmt.setString(1, iban);
-            try (ResultSet rs = stmt.executeQuery()) {
-                if (rs.next()) {
-                    return new Konto(iban, 0, "", rs.getDouble("kontostand"), rs.getDouble("dispo"));
-                } else {
-                    throw new SQLException("Konto nicht gefunden: " + iban);
-                }
-            }
-        }
-    }
+			session.setAttribute("showMessage", "true");
+			session.setAttribute("successMessage", "Überweisung erfolgreich");
+			response.sendRedirect("html/UeberweisungTeil3.jsp");
 
-    private double getKontostand(Connection conn, String iban) throws SQLException {
-        String query = "SELECT kontostand FROM konto WHERE IBAN = ?";
-        try (PreparedStatement stmt = conn.prepareStatement(query)) {
-            stmt.setString(1, iban);
-            try (ResultSet rs = stmt.executeQuery()) {
-                if (rs.next()) {
-                    return rs.getDouble("kontostand");
-                } else {
-                    throw new SQLException("Konto nicht gefunden: " + iban);
-                }
-            }
-        }
-    }
+		} catch (SQLException e) {
+			e.printStackTrace();
+			if (conn != null) {
+				try {
+					conn.rollback();
+				} catch (SQLException se) {
+					se.printStackTrace();
+				}
+			}
+			session.setAttribute("showMessage", "true");
+			session.setAttribute("errorMessage", "Fehler bei der Überweisung");
+			response.sendRedirect("html/Ueberweisungen.jsp");
+		} finally {
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
 
-    private void updateKontostand(Connection conn, String iban, double neuerKontostand) throws SQLException {
-        String update = "UPDATE konto SET kontostand = ? WHERE IBAN = ?";
-        try (PreparedStatement stmt = conn.prepareStatement(update)) {
-            stmt.setDouble(1, neuerKontostand);
-            stmt.setString(2, iban);
-            stmt.executeUpdate();
-        }
-    }
+	private Konto getKontoInfo(Connection conn, String iban) throws SQLException {
+		String query = "SELECT kontostand, dispo FROM konto WHERE IBAN = ?";
+		try (PreparedStatement stmt = conn.prepareStatement(query)) {
+			stmt.setString(1, iban);
+			try (ResultSet rs = stmt.executeQuery()) {
+				if (rs.next()) {
+					return new Konto(iban, 0, "", rs.getDouble("kontostand"), rs.getDouble("dispo"));
+				} else {
+					throw new SQLException("Konto nicht gefunden: " + iban);
+				}
+			}
+		}
+	}
 
-    private void speichereTransaktion(Connection conn, String vonIBAN, String nachIBAN, double summe) throws SQLException {
-        String insert = "INSERT INTO transaktion (von, nach, summe, zeitstempel) VALUES (?, ?, ?, CURRENT_TIMESTAMP)";
-        try (PreparedStatement stmt = conn.prepareStatement(insert)) {
-            stmt.setString(1, vonIBAN);
-            stmt.setString(2, nachIBAN);
-            stmt.setDouble(3, summe);
-            stmt.executeUpdate();
-        }
-    }
+	private double getKontostand(Connection conn, String iban) throws SQLException {
+		String query = "SELECT kontostand FROM konto WHERE IBAN = ?";
+		try (PreparedStatement stmt = conn.prepareStatement(query)) {
+			stmt.setString(1, iban);
+			try (ResultSet rs = stmt.executeQuery()) {
+				if (rs.next()) {
+					return rs.getDouble("kontostand");
+				} else {
+					throw new SQLException("Konto nicht gefunden: " + iban);
+				}
+			}
+		}
+	}
+
+	private void updateKontostand(Connection conn, String iban, double neuerKontostand) throws SQLException {
+		String update = "UPDATE konto SET kontostand = ? WHERE IBAN = ?";
+		try (PreparedStatement stmt = conn.prepareStatement(update)) {
+			stmt.setDouble(1, neuerKontostand);
+			stmt.setString(2, iban);
+			stmt.executeUpdate();
+		}
+	}
+
+	private void speichereTransaktion(Connection conn, String vonIBAN, String nachIBAN, double summe, String verzweck)
+			throws SQLException {
+		String insert = "INSERT INTO transaktion (von, nach, summe, zeitstempel, verzweck) VALUES (?, ?, ?, CURRENT_TIMESTAMP, ?)";
+		try (PreparedStatement stmt = conn.prepareStatement(insert)) {
+			stmt.setString(1, vonIBAN);
+			stmt.setString(2, nachIBAN);
+			stmt.setDouble(3, summe);
+			stmt.setString(4, verzweck);
+			stmt.executeUpdate();
+		}
+	}
+
 }

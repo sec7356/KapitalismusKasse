@@ -1,0 +1,226 @@
+/* Deaktiviere die Textauswahl auf der gesamten Webseite */
+body {
+	-webkit-user-select: none; /* Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Standard */
+}
+
+/* Timer- und Logout-Button Container */
+.timer-logout-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #b89e14; /* Hintergrundfarbe des Containers */
+	padding: 1px; /* Innenabstand des Containers */
+	border-radius: 10px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+	/* Optional: Schatten um das Rechteck */
+}
+
+#timer {
+	margin-top: 1px;
+	font-size: 14px;
+	color: white; /* Textfarbe */
+	margin-bottom: 2px; /* Abstand zur Trennlinie */
+}
+
+.divider {
+	width: 75%;
+	border: none;
+	border-top: 1.5px solid white;
+	margin: 0px; /* Abstand zur oberen und unteren Seite */
+}
+
+.logout-button {
+	color: white; /* Textfarbe */
+	border: none;
+	border-radius: 0px; /* Abgerundete Ecken */
+	margin-top: 1px; /* Abstand zur Trennlinie */
+	margin-bottom: 1px;
+}
+
+/* Navigation horizontal */
+.container {
+	position: absolute;
+	left: 0;
+	transform: translateY(-50%);
+	display: flex;
+	align-items: center;
+}
+
+.image {
+	height: 60px;
+	max-width: 60px;
+	margin: 3px;
+	margin-top: 8px;
+	left: 12px;
+	position: fixed;
+}
+
+.accountBild {
+	max-height: 60px;
+	max-width: 60px;
+	position: absolute;
+}
+
+.imageMitLink {
+	/* Neuer Style für das Logo ganz oben mit Link zur Startseite */
+	position: absolute;
+	height: 60px;
+	max-width: 60px;
+	left: 12px;
+	margin-top: -26px;
+	margin-left: 3px;
+}
+
+.company-name {
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	display: flex;
+	align-items: left;
+	flex-direction: column;
+	margin-left: 75px;
+	color: rgb(55, 81, 128);
+}
+
+.companyNameLink {
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	font-size: 1em;
+	display: flex;
+	align-items: left;
+	flex-direction: column;
+	margin-left: 75px;
+	color: rgb(55, 81, 128);
+}
+
+nav {
+	position: fixed;
+	left: 0;
+	width: 100%;
+	background-color: white;
+	display: flex;
+	justify-content: center;
+	z-index: 1000;
+	height: 80px;
+}
+
+nav.small {
+	background-color: #d1d1d1; /* Neue Hintergrundfarbe */
+	transition: background-color 0.3s ease-in-out;
+	/* Übergangseffekt für die Hintergrundfarbe */
+}
+
+nav.small a {
+	color: white; /* Ändere die Schriftfarbe auf Weiß */
+	transition: color 0.3s ease-in-out;
+	/* Übergangseffekt für die Schriftfarbe */
+}
+
+nav ul {
+	align-items: center;
+	border: none; /* Zum Testen hier Rahmen dotted */
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	/* Horizontale Zentrierung der Listenelemente */
+}
+
+li:last-child {
+	position: absolute;
+	right: 0;
+}
+
+li:nth-last-child(2) {
+	position: absolute;
+	right: 140px;
+	top: 10px;
+}
+
+nav ul li:last-child a {
+	color: #941100;
+	white-space: pre-wrap;
+}
+
+nav li {
+	margin: 0 15px;
+}
+
+@media ( min-width : 45em) {
+	nav ul {
+		flex-direction: row;
+	}
+	nav li {
+		flex: 1;
+		font-size: 1em;
+	}
+}
+
+nav a {
+	position: 0; /* Stellt die Position für das Pseudoelement fest */
+	padding-bottom: 3px; /* Fügt Platz für den Unterstrich hinzu */
+	text-decoration: none;
+	text-align: inline-flex;
+	color: black;
+	font-size: 14px;
+	transition: all 0.15s ease-in;
+}
+
+nav a:focus, nav a:hover, nav a.active {
+	color: gold;
+	position: relative;
+	color: rgb(55, 81, 128);
+	/* Schriftfarbe für Hover-Effekt, wenn nicht aktiv */
+	background-color: var(--accent1-color);
+}
+
+nav a.active::after {
+	content: ''; /* Pseudoelement für den Unterstrich */
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%; /* Breite des Unterstrichs auf 100% des Links setzen */
+	height: 2px;
+	background-color: #b89e14; /* Farbe des Unterstrichs */
+}
+
+/* Ende horizontale Navigation */
+
+/* Footer-Stile */
+footer {
+	height: 40px;
+	position: fixed;
+	justify-content: center;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: #d1d1d1;
+	color: rgb(0, 0, 0);
+	text-align: center;
+	padding: 0px;
+	transition: bottom 1s ease; /* Fügt eine sanfte Animation hinzu */
+}
+
+footer nav ul {
+	list-style: none;
+	padding: 0;
+}
+
+footer nav ul li {
+	display: inline;
+	margin: 0 1rem;
+}
+
+footer nav ul li a {
+	color: white;
+	text-decoration: none;
+}
+
+footer nav ul li a:hover {
+	text-decoration: underline;
+}

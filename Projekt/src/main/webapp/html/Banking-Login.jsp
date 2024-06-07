@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -10,6 +12,23 @@
     <script src="${pageContext.request.contextPath}/JavaScript/popupLöschen.js" defer></script>
 </head>
 <body>
+
+
+
+<script>
+        // JavaScript-Funktion, um das Logout-Element nach einer bestimmten Zeit auszublenden
+        function hideLogoutMessage() {
+            var logoutMessageElement = document.getElementById("logout-message");
+            logoutMessageElement.style.display = "none";
+        }
+
+        // Versteckt die Logout-Meldung nach 5 Sekunden (5000 Millisekunden)
+        setTimeout(hideLogoutMessage, 5000);
+    </script>
+    
+    
+    
+    
 <nav id="navbar">
     <ul>
         <li>
@@ -40,6 +59,9 @@
                 <% if (request.getAttribute("errorMessage") != null) { %>
                     <p class="error-message"><%= request.getAttribute("errorMessage") %></p>
                 <% } %>
+                <c:if test="${not empty sessionScope.logoutMessage}">
+        		<div id="logout-message">${sessionScope.logoutMessage}</div>
+    			</c:if>
                 <label for="email">Direct-Banking-Email*</label>
                 <input type="email" id="email" name="email" required maxlength="50">
             </div>

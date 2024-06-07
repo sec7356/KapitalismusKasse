@@ -520,5 +520,16 @@ textarea {
     padding: 10px;
     border-radius: 5px;
     text-align: center;
+    margin-top: -25px;
     margin-bottom: 15px;
+}
+
+#logout-message {
+	color: white;
+    background-color: #ff6666;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: -25px;
+    margin-bottom: 15px;	
 }
