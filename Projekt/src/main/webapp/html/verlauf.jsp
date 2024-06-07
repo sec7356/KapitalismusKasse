@@ -64,7 +64,8 @@
 		<table class="transaktionen-table">
 			<thead>
 				<tr>
-					<th>Kontoinhaber</th>
+					<th>Einzahlender</th>
+					<th>Empfänger</th>
 					<th>IBAN</th>
 					<th>Summe</th>
 					<th>Verwendungszweck</th>
@@ -83,28 +84,33 @@
 								<c:when test="${transaktion.nach eq sessionScope.IBAN}">
 									<tr>
 										<td>${transaktion.senderVorname} ${transaktion.senderNachname}</td>
+										
+										<td>${transaktion.empfaengerVorname} ${transaktion.empfaengerNachname}</td>
+										
 										<td> ${transaktion.von} <button class="copy-button" onclick="copyToClipboardAndDisplayText('${transaktion.von}')">Kopieren</button></td>
+										
 										<td style="color: green;">+ <fmt:formatNumber
 												value="${transaktion.summe}" type="number"
 												groupingUsed="true" maxFractionDigits="2"
 												minFractionDigits="2" /> €
 										</td>
 										<td class="verzweck-cell">${empty transaktion.verzweck ? '-' : transaktion.verzweck}</td>
+										
 										<td><fmt:formatDate value="${transaktion.zeitstempel}"
 												pattern="dd.MM.yyyy, HH:mm" /> Uhr</td>
 									</tr>
 								</c:when>
 								<c:otherwise>
 									<tr>
-										<td>${transaktion.senderVorname}
-											${transaktion.senderNachname}</td>
+										<td>${transaktion.senderVorname} ${transaktion.senderNachname}</td>
+											
+										<td>${transaktion.empfaengerVorname} ${transaktion.empfaengerNachname}</td>
+											
 										<td>${transaktion.von}</td>
-										<td style="color: #ff6666;">- <fmt:formatNumber
-												value="${transaktion.summe}" type="number"
-												groupingUsed="true" maxFractionDigits="2"
-												minFractionDigits="2" /> €
-										</td>
+										
+										<td style="color: #ff6666;"><fmt:formatNumber value="${transaktion.summe}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2" /> €</td>
 										<td class="verzweck-cell">${empty transaktion.verzweck ? '-' : transaktion.verzweck}</td>
+										
 										<td><fmt:formatDate value="${transaktion.zeitstempel}"
 												pattern="dd.MM.yyyy, HH:mm" /> Uhr</td>
 									</tr>
