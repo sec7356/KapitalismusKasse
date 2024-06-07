@@ -85,7 +85,7 @@
 									<tr>
 										<td>${transaktion.senderVorname} ${transaktion.senderNachname}</td>
 										
-										<td>${transaktion.empfaengerVorname} ${transaktion.empfaengerNachname}</td>
+										<td style="text-align: center;">-</td>
 										
 										<td> ${transaktion.von} <button class="copy-button" onclick="copyToClipboardAndDisplayText('${transaktion.von}')">Kopieren</button></td>
 										
@@ -94,7 +94,7 @@
 												groupingUsed="true" maxFractionDigits="2"
 												minFractionDigits="2" /> €
 										</td>
-										<td class="verzweck-cell">${empty transaktion.verzweck ? '-' : transaktion.verzweck}</td>
+										<td class="verzweck-cell">${empty transaktion.verzweck ? ' - keine Angaben - ' : transaktion.verzweck}</td>
 										
 										<td><fmt:formatDate value="${transaktion.zeitstempel}"
 												pattern="dd.MM.yyyy, HH:mm" /> Uhr</td>
@@ -102,14 +102,14 @@
 								</c:when>
 								<c:otherwise>
 									<tr>
-										<td>${transaktion.senderVorname} ${transaktion.senderNachname}</td>
+										<td style="text-align: center;">-</td>
 											
 										<td>${transaktion.empfaengerVorname} ${transaktion.empfaengerNachname}</td>
 											
 										<td>${transaktion.von}</td>
 										
 										<td style="color: #ff6666;">- <fmt:formatNumber value="${transaktion.summe}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2" /> €</td>
-										<td class="verzweck-cell">${empty transaktion.verzweck ? '-' : transaktion.verzweck}</td>
+										<td class="verzweck-cell">${empty transaktion.verzweck ? ' - keine Angaben - ' : transaktion.verzweck}</td>
 										
 										<td><fmt:formatDate value="${transaktion.zeitstempel}"
 												pattern="dd.MM.yyyy, HH:mm" /> Uhr</td>

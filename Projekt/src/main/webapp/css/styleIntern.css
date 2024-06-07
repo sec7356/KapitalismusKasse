@@ -169,4 +169,5 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 
 .copy-button {
 	margin-left: 10px;
+	margin-right: -40px;
 }
