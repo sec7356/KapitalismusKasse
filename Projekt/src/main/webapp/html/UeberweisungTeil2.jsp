@@ -118,9 +118,8 @@
 				<fieldset>
 					<legend>Zahlungsdaten</legend>
 					<div class="form-group">
-						<label for="summe">Betrag* EUR</label> <span><%=request.getAttribute("summe")%>
-							€</span>
-
+						<label for="summe">Betrag* EUR</label> <span><fmt:formatNumber value="${requestScope.summe}" 
+						type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2" /> €</span>
 					</div>
 					<div class="form-group">
 						<label for="betrag"></label>

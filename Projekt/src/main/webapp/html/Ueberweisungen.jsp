@@ -136,7 +136,7 @@
                         <br><br>
                             Wir möchten Sie darauf hinweisen, dass Überweisungen
                             ausschließlich an Empfänger durchgeführt werden können, die
-                            ebenfalls Kunden der Kapitalismus-Kasse sind.<br>
+                            ebenfalls Kunden der Kapitalismus-Kasse sind.<br><br>
                             Dies gewährleistet die Sicherheit und Effizienz unserer
                             Transaktionen innerhalb unseres Instituts.
                         </p>
