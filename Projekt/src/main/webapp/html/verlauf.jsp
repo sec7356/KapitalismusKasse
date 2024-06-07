@@ -33,8 +33,8 @@
 						<span>Kasse</span></a>
 				</div>
 			</li>
-			<li><a href="${pageContext.request.contextPath}/html/UserStartseite.jsp" title="Sehen Sie sich Ihr Dashboard an!">Startseite</a></li>
-			<li><a href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp" title="Überweisen Sie bequem Ihr Geld!">Überweisen</a></li>
+			<li><a href="${pageContext.request.contextPath}/html/UserStartseite.jsp" title="Sehen Sie sich Ihr Dashboard an!">Dashboard</a></li>
+			<li><a href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp" title="Überweisen Sie bequem Ihr Geld!">Überweisung</a></li>
 				
 			<li><a href="${pageContext.request.contextPath}/VerlaufServlet" class="active" title="Sehen Sie sich alle Ihre Buchungen an!">Kontoaktivitäten</a></li>
 			<li><a href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp" title="Ändern Sie Ihr Profilbild oder Ihre Nutzerdaten!">Benutzerverwaltung</a></li>

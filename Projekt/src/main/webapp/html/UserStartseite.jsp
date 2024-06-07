@@ -46,10 +46,10 @@
 			</li>
 			<li><a
 				href="${pageContext.request.contextPath}/html/UserStartseite.jsp"
-				class="active" title="Sehen Sie sich Ihr Dashboard an!">Startseite</a></li>
+				class="active" title="Sehen Sie sich Ihr Dashboard an!">Dashboard</a></li>
 			<li><a
 				href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp"
-				title="Überweisen Sie bequem Ihr Geld!">Überweisen</a></li>
+				title="Überweisen Sie bequem Ihr Geld!">Überweisung</a></li>
 			<li><a
 				href="${pageContext.request.contextPath}/VerlaufServlet"
 				title="Sehen Sie sich alle Ihre Buchungen an!">Kontoaktivitäten</a></li>
