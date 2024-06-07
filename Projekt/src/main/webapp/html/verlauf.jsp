@@ -106,7 +106,7 @@
 											
 										<td>${transaktion.empfaengerVorname} ${transaktion.empfaengerNachname}</td>
 											
-										<td>${transaktion.von}</td>
+										<td>${transaktion.nach} <button class="copy-button" onclick="copyToClipboardAndDisplayText('${transaktion.nach}')">Kopieren</button></td>
 										
 										<td style="color: #ff6666;">- <fmt:formatNumber value="${transaktion.summe}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2" /> €</td>
 										<td class="verzweck-cell">${empty transaktion.verzweck ? ' - keine Angaben - ' : transaktion.verzweck}</td>
