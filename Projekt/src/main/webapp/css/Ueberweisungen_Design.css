@@ -68,7 +68,7 @@ textarea {
 
 .form-group span {
 	word-wrap: break-word;
-	max-width: 100%;
+	max-width: 100%;	
 }
 
 .form-group input {
@@ -110,7 +110,7 @@ fieldset.account-info-container {
 textarea {
 	min-height: 8rem;
 	width: 100%;
-	resize: none;
+	resize: none;	
 }
 
 .small-text {
@@ -223,6 +223,7 @@ button[type="submit"]:hover, button[type="reset"]:hover {
 .form-group {
 	position: relative;
 	margin-bottom: 1.5em;
+	word-break: break-all;
 }
 
 .form-group input {
