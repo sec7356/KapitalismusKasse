@@ -115,9 +115,7 @@
                         <label for="betrag"></label>
                         <p class="hint-text">
                             Bitte beachten Sie eventuell die Meldepflicht ab 12.500 Euro <br>gemäß
-                            <a href="https://www.bundesbank.de/de/service/meldewesen/aussenwirtschaft" target="_blank">
-                                Außenwirtschaftsverordnung
-                                <img src="${pageContext.request.contextPath}/img/Link.png" alt="Logo" style="vertical-align: middle; width: 15px; height: 15px; margin-right: 5px;">
+                            <a href="https://www.bundesbank.de/de/service/meldewesen/aussenwirtschaft" target="_blank">Außenwirtschaftsverordnung<img src="${pageContext.request.contextPath}/img/Link.png" alt="Logo" style="vertical-align: middle; width: 15px; height: 15px; margin-right: 5px;">
                             </a>
                         </p>
                     </div>
