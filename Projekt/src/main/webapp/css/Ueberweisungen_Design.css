@@ -50,6 +50,16 @@ legend {
 	margin-bottom: 1rem;
 }
 
+label[for="verwendungszweck"]+span {
+	display: block;
+	width: 100%;
+}
+
+label[for="verwendungszweck"]+span p, label[for="verwendungszweck"]+span span
+	{
+	word-break: break-all;
+}
+
 .form-group label {
 	flex: 0 0 150px;
 	margin-right: 1rem;
@@ -68,7 +78,7 @@ textarea {
 
 .form-group span {
 	word-wrap: break-word;
-	max-width: 100%;	
+	max-width: 100%;
 }
 
 .form-group input {
@@ -110,7 +120,7 @@ fieldset.account-info-container {
 textarea {
 	min-height: 8rem;
 	width: 100%;
-	resize: none;	
+	resize: none;
 }
 
 .small-text {
@@ -122,6 +132,7 @@ textarea {
 	font-size: 0.8rem;
 	margin: 0.5rem 0 0 0;
 	margin-top: -15px;
+	word-wrap: break-word;
 }
 
 .button-container {
@@ -223,12 +234,19 @@ button[type="submit"]:hover, button[type="reset"]:hover {
 .form-group {
 	position: relative;
 	margin-bottom: 1.5em;
-	word-break: break-all;
 }
 
 .form-group input {
 	width: calc(100% - 40px);
 	padding-right: 40px;
+}
+
+label#done {
+	text-align: center; 
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px; 
 }
 
 .form-group .icon {

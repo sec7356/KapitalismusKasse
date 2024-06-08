@@ -84,14 +84,12 @@
 					<div class="step-description">Abschluss</div>
 				</div>
 			</div>
-			<fieldset>
-				<legend></legend>
 				<div class="img-container">
     				<img src="${pageContext.request.contextPath}/img/UeberweisungDone.jpg" alt="Logo">
 				</div>
-			</fieldset>
+				<label id="done">Ihre Überweisung wurde erfolgreich durchgeführt!</label>
 
-			<a href="${pageContext.request.contextPath}/html/UserStartseite.jsp" title="Sehen Sie sich Ihr Dashboard an!">Zur Startseite</a>
+<%-- 			<a href="${pageContext.request.contextPath}/html/UserStartseite.jsp" title="Sehen Sie sich Ihr Dashboard an!">Zur Startseite</a> --%>
 				
 		</section>
 		</form>

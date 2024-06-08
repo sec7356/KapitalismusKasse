@@ -135,7 +135,8 @@
 					</div>
 
 					<div class="form-group">
-						<label for="verwendungszweck">Verwendungszweck</label> <span>
+						<label for="verwendungszweck">Verwendungszweck</label> 
+						<span>
 							<%
 							// Verwendungszweck aus der Anfrage abrufen
 							String verwendungszweck = (String) request.getAttribute("verwendungszweck");
