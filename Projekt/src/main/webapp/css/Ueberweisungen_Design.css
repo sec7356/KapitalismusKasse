@@ -7,10 +7,10 @@ body {
 	font-family: Arial, sans-serif;
 	margin: 0;
 	padding: 0;
-	padding-bottom: 60px; /* Platz für den Footer reservieren */
+	padding-bottom: 60px;
 	background-image: url('../img/BildUeberweisung.jpeg');
 	background-size: cover;
-	background-repeat: no-repeat; /* Das Bild nicht wiederholen */
+	background-repeat: no-repeat;
 }
 
 main {
@@ -51,7 +51,7 @@ legend {
 }
 
 .form-group label {
-	flex: 0 0 150px; /* Set a fixed width for labels */
+	flex: 0 0 150px;
 	margin-right: 1rem;
 }
 
@@ -63,15 +63,12 @@ textarea {
 	min-height: 8rem;
 	width: 100%;
 	resize: none;
-	word-wrap: break-word; /* Text nach Bedarf umbrechen */
+	word-wrap: break-word;
 }
 
 .form-group span {
 	word-wrap: break-word;
 	max-width: 100%;
-	/* Maximale Breite des Verwendungszwecks auf 100% setzen */
-	word-break: break-all;
-	/* Wortumbruch auch innerhalb von Wörtern ermöglichen */
 }
 
 .form-group input {
@@ -139,10 +136,10 @@ button[type="submit"], button[type="reset"] {
 	background-color: #b89e14;
 	color: #fff;
 	cursor: pointer;
-	padding: 5px 10px; /* Ändere den Padding nach Bedarf */
-	border: none; /* Entfernt die Standard-Bordereigenschaften */
-	border-radius: 5px; /* Rundet die Ecken des Buttons */
-	font-size: 14px; /* Ändere die Schriftgröße nach Bedarf */
+	padding: 5px 10px;
+	border: none;
+	border-radius: 5px;
+	font-size: 14px;
 }
 
 /* Button-Hover-Effekt */
@@ -167,29 +164,28 @@ button[type="submit"]:hover, button[type="reset"]:hover {
 
 .new-transfer-header-container {
 	display: flex;
-	justify-content: flex-end; /* Inhalte rechtsbündig ausrichten */
-	align-items: center; /* Vertikal zentrieren */
-	margin-bottom: 1rem; /* Optional: Abstand nach unten hinzufügen */
+	justify-content: flex-end;
+	align-items: center;
+	margin-bottom: 1rem;
 }
 
 .new-transfer-header {
-	margin-right: auto; /* Überschrift auf der linken Seite ausrichten */
+	margin-right: auto;
 	margin-bottom: -3rm;
-	/* Optional: Abstand zur nächsten Zeile entfernen */
-	align-self: baseline; /* Die Höhe des Inhalts anpassen */
+	align-self: baseline;
 }
 
 .progress-container {
 	display: flex;
 	align-items: center;
-	margin-right: 1rem; /* Abstand zwischen den Elementen */
+	margin-right: 1rem;
 }
 
 .step {
 	background-color: #b89e14;
 	color: white;
-	width: 30px;
-	height: 30px;
+	width: 25px;
+	height: 25px;
 	border-radius: 50%;
 	display: flex;
 	justify-content: center;
@@ -199,19 +195,18 @@ button[type="submit"]:hover, button[type="reset"]:hover {
 }
 
 .step-description {
-	margin-left: 5px; /* Abstand zwischen Zeichen und Text */
+	margin-left: 5px;
 	font-weight: bold;
-	font-size: 0.6em;
+	font-size: 0.7em;
 }
 
 .second-step {
 	background-color: gray;
-	/* Ändern der Hintergrundfarbe des zweiten Schritts */
 }
 
 .step-description-2 {
 	margin-left: 5px;
-	font-size: 0.6em; /* Schriftgröße für den zweiten Schritt */
+	font-size: 0.6em;
 }
 
 .img-container {
@@ -222,7 +217,7 @@ button[type="submit"]:hover, button[type="reset"]:hover {
 .img-container img {
 	width: 200px;
 	height: 200px;
-	margin: 0 auto; /* Dies zentriert das Bild horizontal */
+	margin: 0 auto;
 }
 
 .form-group {
@@ -231,8 +226,8 @@ button[type="submit"]:hover, button[type="reset"]:hover {
 }
 
 .form-group input {
-	width: calc(100% - 40px); /* Adjust width to make space for the icon */
-	padding-right: 40px; /* Add space for the icon */
+	width: calc(100% - 40px);
+	padding-right: 40px;
 }
 
 .form-group .icon {
@@ -244,19 +239,19 @@ button[type="submit"]:hover, button[type="reset"]:hover {
 }
 
 .form-group .icon.success {
-	color: green;
+	color: #b89e14;
 }
 
 .form-group .icon.error {
-	color: red;
+	color: #941100;
 }
 
 .error-message {
-	color: red;
+	color: #941100;
 }
 
 .error-message-container {
 	text-align: center;
-	color: red;
+	color: #941100;
 	margin-top: 0.5em;
 }

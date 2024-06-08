@@ -17,15 +17,14 @@ body {
 }
 
 .profile-box {
-	display: flex; /* Flexbox verwenden */
-	align-items: center; /* Elemente vertikal zentrieren */
+	display: flex;
+	align-items: center;
 	background-color: #ffffff;
 	border: 1px solid #ccc;
 	border-radius: 30px;
 	padding: 15px;
 	margin: 15px auto 20px 0;
-	/* Margin oben/unten auf 30px setzen, automatisch auf der linken Seite, und 30px auf der rechten Seite */
-	max-width: 600px; /* Maximale Breite des Profilkastens festlegen */
+	max-width: 600px;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -34,27 +33,26 @@ body {
 	max-height: 150px;
 	border-radius: 50%;
 	border: 1px solid #b89e14;
-	margin-right: 10px; /* Abstand zwischen Profilbild und Anrede */
+	margin-right: 10px;
 }
 
 .profile-box #greeting {
 	font-size: 24px;
 	font-weight: bold;
-	margin-right: 15px; /* Abstand zwischen Anrede und Profiltext */
+	margin-right: 15px;
 }
 
 .kontoinformationen {
 	background: linear-gradient(to bottom, rgba(184, 158, 20, 0.8) 25%,
 		rgba(255, 255, 255, 0) 25%);
-	display: inline-block; /* Flexbox verwenden */
-	align-items: left; /* Elemente vertikal zentrieren */
+	display: inline-block;
+	align-items: left;
 	background-color: #ffffff;
 	border: 1px solid #ccc;
 	border-radius: 30px;
 	padding: 10px;
 	margin: 5px auto 20px 30px;
-	/* Margin oben/unten auf 30px setzen, automatisch auf der linken Seite, und 30px auf der rechten Seite */
-	max-width: 600px; /* Maximale Breite des Profilkastens festlegen */
+	max-width: 600px; 
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -87,20 +85,19 @@ body {
 }
 
 .verlinkungen {
-	position: fixed; /* Position festlegen */
-	top: 30%; /* Oben mittig positionieren */
+	position: fixed; 
+	top: 30%; 
 	transform: translateY(-50%);
-	/* Zurück verschieben um die Hälfte der Höhe */
-	right: 100px; /* Abstand vom rechten Bildschirmrand */
-	display: flex; /* Flexbox verwenden */
-	flex-direction: column; /* Vertikale Ausrichtung */
+	right: 100px;
+	display: flex; 
+	flex-direction: column; 
 	padding: 5px;
 }
 
 .verlinkungen a {
 	padding: 10px;
-	margin-top: 30px; /* Abstand zwischen den Links */
-	text-decoration: none; /* Unterstreichungen entfernen */
+	margin-top: 30px; 
+	text-decoration: none;
 }
 
 /* User-Startseite und Kontostand Ende */
@@ -108,12 +105,11 @@ body {
 /* Stil für Formulareingabefelder */
 .internForm input[type="text"], .internForm input[type="email"],
 	.internForm input[type="password"] {
-	width: 50%; /* Volle Breite des Eingabefeldes */
-	padding: 10px; /* Innenabstand des Eingabefeldes */
+	width: 50%; 
+	padding: 10px; 
 	margin-bottom: 15px;
-	/* Abstand nach unten zwischen den Eingabefeldern */
-	border: 1px solid #ccc; /* Rand des Eingabefeldes */
-	border-radius: 5px; /* Abgerundete Ecken des Eingabefeldes */
+	border: 1px solid #ccc; 
+	border-radius: 5px; 
 }
 
 /* Stil für Submit-Button im Formular */
@@ -122,10 +118,10 @@ button[type="submit"], button[typ="reset"] {
 	background-color: #b89e14;
 	color: #fff;
 	cursor: pointer;
-	padding: 5px 10px; /* Ändere den Padding nach Bedarf */
-	border: none; /* Entfernt die Standard-Bordereigenschaften */
-	border-radius: 5px; /* Rundet die Ecken des Buttons */
-	font-size: 14px; /* Ändere die Schriftgröße nach Bedarf */
+	padding: 5px 10px; 
+	border: none; 
+	border-radius: 5px; 
+	font-size: 14px; 
 }
 
 /* Button-Hover-Effekt */
@@ -136,7 +132,6 @@ button[type="submit"]:hover, button[type="reset"]:hover {
 /* Zusätzliche globale Stile für Formulareingabefelder und Buttons */
 input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus,
 	button[type="submit"]:focus, button[type="reset"]:focus {
-	outline: none; /* Entfernt die Standard-Fokusrahmen */
+	outline: none; 
 	box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-	/* Fügt einen benutzerdefinierten Fokus-Schatten hinzu */
 }
