@@ -74,7 +74,7 @@
                     </div>
                 </fieldset>
                 <div class="new-transfer-header-container">
-                    <h2 class="new-transfer-header">Neue Überweisung</h2>
+                    <h2 class="new-transfer-header">Echtzeit-<br>Überweisung</h2>
                     <div class="progress-container">
                         <div class="step">1</div>
                         <div class="step-description">Erfassung</div>
@@ -115,8 +115,7 @@
                         <label for="betrag"></label>
                         <p class="hint-text">
                             Bitte beachten Sie eventuell die Meldepflicht ab 12.500 Euro <br>gemäß
-                            <a href="https://www.bundesbank.de/de/service/meldewesen/aussenwirtschaft" target="_blank">Außenwirtschaftsverordnung<img src="${pageContext.request.contextPath}/img/Link.png" alt="Logo" style="vertical-align: middle; width: 15px; height: 15px; margin-right: 5px;">
-                            </a>
+                            <a href="https://www.bundesbank.de/de/service/meldewesen/aussenwirtschaft" target="blank">Außenwirtschaftsverordnung<img src="${pageContext.request.contextPath}/img/Link.png" alt="Logo" style="vertical-align: middle; width: 30px; height: 30px; margin-left: -7px;"></a>
                         </p>
                     </div>
                     <div class="form-group">

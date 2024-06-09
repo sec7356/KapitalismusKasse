@@ -87,9 +87,13 @@
 				<div class="img-container">
     				<img src="${pageContext.request.contextPath}/img/UeberweisungDone.jpg" alt="Logo">
 				</div>
-				<label id="done">Ihre Überweisung wurde erfolgreich durchgeführt!</label>
-
-<%-- 			<a href="${pageContext.request.contextPath}/html/UserStartseite.jsp" title="Sehen Sie sich Ihr Dashboard an!">Zur Startseite</a> --%>
+				<label id="done">Ihre Überweisung wurde erfolgreich durchgeführt!<br><br>
+				Kapitalismus-Kasse: Geld fliegt schneller als Gedankenblitze.<br>Ihr Geld ist weg, bevor Sie es merken.<br><br>Treu unserem Motto: Ihr Geld gehört uns sowieso.<br></label><br>
+				
+			<div class="button-container">
+				<button type="reset" onclick="window.location.href = '${pageContext.request.contextPath}/html/UserStartseite.jsp';" title="Überweisen Sie bequem Ihr Geld!">Zur Startseite</button>
+				<button type="reset" onclick="window.location.href = '${pageContext.request.contextPath}/html/Ueberweisungen.jsp';" title="Überweisen Sie bequem Ihr Geld!">Neue Überweisung</button>
+			</div>
 				
 		</section>
 		</form>

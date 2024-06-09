@@ -40,7 +40,6 @@ public class UeberweisungUeberpruefenServlet extends HttpServlet {
             return; // Beende die Methode, um die Weiterleitung zu verhindern
         }
         
-
         // Datenbankzugriff, um den Vor- und Nachnamen des Empfängers zu erhalten
         try (Connection con = ds.getConnection()) {
             String checkIbanQuery = "SELECT COUNT(*) AS count FROM konto WHERE IBAN = ?";
