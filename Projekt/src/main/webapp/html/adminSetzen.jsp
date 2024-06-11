@@ -28,16 +28,13 @@
 			</li>
 			<li><a
 				href="${pageContext.request.contextPath}/html/adminFormular.jsp"
-				title="Suchen sie einen bestimmten Nutzer!">Benutzer suchen</a></li>
+				title="Suchen sie einen bestimmten Nutzer!">Benutzersuche</a></li>
 			<li><a
 				href="${pageContext.request.contextPath}/html/adminSetzen.jsp"
 				title="Setzten sie den Status anderer Nutzer!">Adminverwaltung</a></li>
-			<li><a
-				href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp"
-				title="Ändern Sie Ihr Profilbild oder Ihre Nutzerdaten!">Benutzerverwaltung</a></li>
 			<li>
 				<!-- Benutzer verwalten Icon --> <a
-				href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp"
+				href="${pageContext.request.contextPath}/html/benutzerverwaltungAdmin.jsp"
 				title="Nutzerdaten verwalten"> <img
 					src="${pageContext.request.contextPath}/img/accountBild.jpg"
 					alt="Benutzerverwaltung" class="accountBild">
@@ -60,7 +57,8 @@
 
 <div class="grauBackground">
 	<br><br><br><br>												<!-- falsch formatiert? -->
-	<p>Guten Tag, <%= session.getAttribute("vorname") %>!</p>		
+	<p>Guten Tag, Admin!
+	<br>Hier können Sie einen anderen Benutzer als Admin setzen.</p>		
 </div>
 <br>
     <div class="internForm">

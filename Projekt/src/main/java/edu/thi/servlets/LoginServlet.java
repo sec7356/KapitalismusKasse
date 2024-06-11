@@ -74,7 +74,7 @@ public class LoginServlet extends HttpServlet {
 
 		// Umleitung basierend auf der E-Mail-Adresse
 		RequestDispatcher dispatcher;
-		if ("admin.admin@demo.org".equals(email) || benutzer.isAdmin()) {
+		if ("admin@demo.org".equals(email) || benutzer.isAdmin()) {
 			dispatcher = request.getRequestDispatcher("html/adminFormular.jsp");
 		} else {
 			dispatcher = request.getRequestDispatcher("html/UserStartseite.jsp");

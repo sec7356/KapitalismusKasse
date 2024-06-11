@@ -28,16 +28,13 @@
 			</li>
 			<li><a
 				href="${pageContext.request.contextPath}/html/adminFormular.jsp"
-				title="Suchen sie einen bestimmten Nutzer!">Benutzer suchen</a></li>
+				title="Suchen sie einen bestimmten Nutzer!">Benutzersuche</a></li>
 			<li><a
 				href="${pageContext.request.contextPath}/html/adminSetzen.jsp"
 				title="Setzten sie den Status anderer Nutzer!">Adminverwaltung</a></li>
-			<li><a
-				href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp"
-				title="Ändern Sie Ihr Profilbild oder Ihre Nutzerdaten!">Benutzerverwaltung</a></li>
 			<li>
 				<!-- Benutzer verwalten Icon --> <a
-				href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp"
+				href="${pageContext.request.contextPath}/html/benutzerverwaltungAdmin.jsp"
 				title="Nutzerdaten verwalten"> <img
 					src="${pageContext.request.contextPath}/img/accountBild.jpg"
 					alt="Benutzerverwaltung" class="accountBild">
@@ -60,7 +57,8 @@
 
 <div class="grauBackground">
 	<br><br><br><br>												<!-- falsch formatiert? -->
-	<p>Guten Tag, <%= session.getAttribute("vorname") %>!</p>		
+	<p>Guten Tag, Admin!
+	<br>Hier können Sie einen Benutzer suchen.</p>		
 </div>
 <br>
     <div class="internForm">
@@ -68,15 +66,18 @@
 			<fieldset><legend>Benutzer suchen</legend>
 				<div>
                 	<label for="vorname">Vorname:</label>
-                	<input type="text" id="vorname" name="vorname" required maxlength="30"><br>          <!-- mit Daten aus DB vorbelegen z.B. value= request.getParameter("vorname") -->
+                	<input type="text" id="vorname" name="vorname" required maxlength="30"><br>         
+                	 <!-- mit Daten aus DB vorbelegen z.B. value= request.getParameter("vorname") -->
             	</div>
             	<div>
                 	<label for="nachname">Nachname:</label>
-                	<input type="text" id="nachname" name="nachname" required maxlength="30"><br>               <!-- mit Daten aus DB vorbelegen -->
+                	<input type="text" id="nachname" name="nachname" required maxlength="30"><br>        
+                	       <!-- mit Daten aus DB vorbelegen -->
            	 	</div>
            	 	<div>
                 	<label for="email">Email:</label>
-                	<input type="email" id="email" name="email" required maxlength="30"><br>               <!-- mit Daten aus DB vorbelegen -->
+                	<input type="email" id="email" name="email" required maxlength="30"><br>           
+                	    <!-- mit Daten aus DB vorbelegen -->
            	 	</div>
 				<div>
 				  <button name="submit" type="submit">Benutzer suchen</button>
@@ -85,6 +86,10 @@
 			</fieldset>
 		</form>
     </div>
+    
+    
+    <!-- Hier Tabelle mit allen Benutzern einblenden, oben Suchfunktion, rechts neben Benutzer-Details sind Buttons zur Bearbeitung -->
+    
     <footer>
         <p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>
     </footer>
