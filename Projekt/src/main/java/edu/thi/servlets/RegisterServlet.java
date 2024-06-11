@@ -84,6 +84,7 @@ public class RegisterServlet extends HttpServlet {
 		session.setAttribute("admin", benutzer.isAdmin());
 		session.setAttribute("kontostand", konto.getKontoStand());
 		session.setAttribute("IBAN", konto.getIBAN());
+		session.setAttribute("dispo", konto.getDispoStand());
 
 		// Weiterleiten an JSP
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/UserStartseite.jsp");
