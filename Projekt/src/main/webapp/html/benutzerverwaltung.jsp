@@ -65,7 +65,7 @@
 
 	<div class="grauBackground">
 		<br><br><br><br>						
-		<p>Guten Tag, <%= session.getAttribute("vorname")%>  <%= session.getAttribute("nachname") %>!</p>
+		<p>Guten Tag, ${sessionScope.vorname}  ${sessionScope.nachname}!</p>
 	</div>
 	<br>
 
@@ -113,16 +113,16 @@
 </div>
 
 
-<!-- Hier wird die Popup-Nachricht angezeigt -->
-<div id="popup" class="popup">
-    <p id="popupMessage" class="popup-message"></p>
-    <button onclick="hidePopup()" class="popup-button">Verstanden!</button>
-</div>
+<!-- <!-- Hier wird die Popup-Nachricht angezeigt --> -->
+<!-- <div id="popup" class="popup"> -->
+<!--     <p id="popupMessage" class="popup-message"></p> -->
+<!--     <button onclick="hidePopup()" class="popup-button">Verstanden!</button> -->
+<!-- </div> -->
 
-<!-- Setze die Werte der versteckten Felder basierend auf den Attributen -->
-<input type="hidden" id="showMessage" value="<%= request.getAttribute("showMessage") != null ? request.getAttribute("showMessage") : "false" %>">
-<input type="hidden" id="errorMessage" value="<%= request.getAttribute("errorMessage") != null ? request.getAttribute("errorMessage") : "" %>">
-<input type="hidden" id="successMessage" value="<%= request.getAttribute("successMessage") != null ? request.getAttribute("successMessage") : "" %>">
+<!-- <!-- Setze die Werte der versteckten Felder basierend auf den Attributen --> -->
+<%-- <input type="hidden" id="showMessage" value="<%= request.getAttribute("showMessage") != null ? request.getAttribute("showMessage") : "false" %>"> --%>
+<%-- <input type="hidden" id="errorMessage" value="<%= request.getAttribute("errorMessage") != null ? request.getAttribute("errorMessage") : "" %>"> --%>
+<%-- <input type="hidden" id="successMessage" value="<%= request.getAttribute("successMessage") != null ? request.getAttribute("successMessage") : "" %>"> --%>
 
 	<footer>
 		<p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>

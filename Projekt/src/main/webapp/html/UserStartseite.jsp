@@ -8,17 +8,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta http-equiv="cache-control"
-	content="no-cache, no-store, must-revalidate">
-<meta http-equiv="pragma" content="no-cache">
-<meta http-equiv="expires" content="0">
-
-<link rel="icon" type="image/x-icon"
-	href="${pageContext.request.contextPath}/img/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico" />
 <title>Startseite - Kapitalismus-Kasse</title>
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/css/UserStartseite_Design.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/UserStartseite_Design.css">
 <!-- Font Awesome for icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
@@ -92,17 +84,15 @@
 			</div>
 			<div class="profile-text">
 				<p id="greeting">
-					Guten Tag, <span id="vorname"><%=session.getAttribute("vorname")%></span>
-					<span id="nachname"><%=session.getAttribute("nachname")%></span>!
+					Guten Tag, <span id="vorname">${sessionScope.vorname}</span>
+					<span id="nachname">${sessionScope.nachname}</span>
 				</p>
 			</div>
 		</div>
 		<div class="kontoinformationen">
 			<p id="kontostand">
 				Saldo: <fmt:formatNumber value="${sessionScope.kontostand}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2"/>€
-			<p id="iban">
-				IBAN:
-				<%=session.getAttribute("IBAN")%></p>
+			<p id="iban">IBAN: ${sessionScope.IBAN}</p>
 		</div>
 		<div class="kontoinformationen">
 			<p id="disporahmen">Disporahmen: <fmt:formatNumber value="${sessionScope.dispo}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2"/>€</p>

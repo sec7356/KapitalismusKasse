@@ -3,7 +3,7 @@ window.addEventListener("scroll", function() {
 	var image = document.querySelector(".image");
 	var smallNavHeight = 42; // Höhe der verkleinerten Navigationsleiste
 	var smallNavImageSize = 36; // Größe des verkleinerten Logos
-	var imageTopOffset = 6; // Gewünschter vertikaler Versatz des Logos beim Scrollen
+	var imageTopOffset = 8.5; // Gewünschter vertikaler Versatz des Logos beim Scrollen
 
 
 	if (window.scrollY > 0) {

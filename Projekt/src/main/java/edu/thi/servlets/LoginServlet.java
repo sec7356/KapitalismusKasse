@@ -24,8 +24,7 @@ public class LoginServlet extends HttpServlet {
 	private DataSource ds;
 
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 
 		request.setCharacterEncoding("UTF-8");
@@ -71,6 +70,10 @@ public class LoginServlet extends HttpServlet {
 		session.setAttribute("kontostand", konto.getKontoStand());
 		session.setAttribute("IBAN", konto.getIBAN());
 		session.setAttribute("dispo", konto.getDispoStand());
+		
+		// Formatieren der IBAN
+        String formattedIban = formatIban(konto.getIBAN());
+        session.setAttribute("formattedIban", formattedIban);
 
 		// Umleitung basierend auf der E-Mail-Adresse
 		RequestDispatcher dispatcher;
@@ -172,4 +175,9 @@ public class LoginServlet extends HttpServlet {
 
 		return dispoStand;
 	}
+	
+	// Methode zur IBAN-Formatierung
+    private String formatIban(String iban) {
+        return iban.replaceAll("(.{4})(?!$)", "$1 ");
+    }
 }

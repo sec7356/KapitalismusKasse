@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <fmt:setLocale value="de_DE" />
 
@@ -58,12 +59,7 @@
                     <div class="account-info">
                         <div class="iban-info">
                             <label for="von">IBAN:</label>
-<!--                             IBAN wird hier in vier Teilstücke zerlegt um es besser lesbar zu machen -->
-                        <%
-                            String iban = (String) session.getAttribute("IBAN");
-                            String formattedIban = iban.replaceAll("(.{4})(?!$)", "$1 ");
-                        %>
-                        <span><%=formattedIban%></span>
+                        <span>${sessionScope.formattedIban}</span>
                         </div>
                         <div class="saldo-info">
                             <label for="konto-saldo">Aktueller Kontosaldo:</label>
@@ -96,12 +92,13 @@
                         <span class="icon" id="nach-icon"></span>
                     </div>
                     <div class="error-message-container">
-                        <!-- Container für Fehlermeldung -->
-                        <% if (request.getAttribute("error") != null) { %>
-                            <div class="error-message">
-                                <%= request.getAttribute("error") %>
-                            </div>
-                        <% } %>
+                      <!-- Container für Fehlermeldung -->
+					<c:if test="${not empty requestScope.error}">
+    					<div class="message error-message">
+        				${requestScope.error}
+    					</div>
+					</c:if>
+
                     </div>
                 </fieldset>
                 <fieldset>

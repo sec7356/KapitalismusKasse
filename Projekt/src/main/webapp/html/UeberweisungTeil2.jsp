@@ -1,6 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+	
 <fmt:setLocale value="de_DE" />
 <!DOCTYPE html>
 <html lang="de">
@@ -73,11 +74,7 @@
 					<div class="account-info">
 						<div class="iban-info">
 							<label for="von">IBAN:</label>  
-							<%
-                            String iban = (String) session.getAttribute("IBAN");
-                            String formattedIban = iban.replaceAll("(.{4})(?!$)", "$1 ");
-                       		%>
-                        <span><%=formattedIban%></span>
+                        <span>${sessionScope.formattedIban}</span>
 						</div>
 						<div class="saldo-info">
 							<label for="konto-saldo">Aktueller Kontosaldo:</label> <span><fmt:formatNumber
@@ -106,13 +103,13 @@
 				<fieldset>
 					<legend>Empfängerdaten</legend>
 					<div class="form-group">
-						<label for="nach">IBAN*</label><span><%=request.getAttribute("nach")%></span>
+						<label for="nach">IBAN*</label><span>${requestScope.nach}</span>
 					</div>
 					<div class="form-group">
-						<label for="nach">Vorname</label><span><%=request.getAttribute("nachVorname")%></span>
+						<label for="nach">Vorname</label><span>${requestScope.nachVorname}</span>
 					</div>
 					<div class="form-group">
-						<label for="nach">Nachname</label><span><%=request.getAttribute("nachNachname")%></span>
+						<label for="nach">Nachname</label><span>${requestScope.nachNachname}</span>
 					</div>
 				</fieldset>
 				<fieldset>
@@ -132,19 +129,15 @@
 					<div class="form-group">
 						<label for="verwendungszweck">Verwendungszweck</label> 
 						<span>
-							<%
-							// Verwendungszweck aus der Anfrage abrufen
-							String verwendungszweck = (String) request.getAttribute("verwendungszweck");
-
-							// Überprüfen, ob Verwendungszweck vorhanden ist
-							if (verwendungszweck == null || verwendungszweck.isEmpty()) {
-								// Wenn kein Verwendungszweck vorhanden ist, eine Meldung ausgeben
-								out.println("<p> - keine Angaben - </p>");
-							} else {
-								// Wenn ein Verwendungszweck vorhanden ist, diesen anzeigen
-								out.println("<span>" + verwendungszweck + "</span>");
-							}
-							%>
+							<!-- Verwendungszweck aus der Anfrage abrufen und anzeigen -->
+							<c:choose>
+    							<c:when test="${empty requestScope.verwendungszweck}">
+        							<p> - keine Angaben - </p>
+    							</c:when>
+   								<c:otherwise>
+       	 							<span>${requestScope.verwendungszweck}</span>
+   		 						</c:otherwise>
+							</c:choose>
 						</span>
 					</div>
 					<div class="form-group">
