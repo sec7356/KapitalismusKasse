@@ -1,3 +1,4 @@
+<!-- Getestet -->
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!DOCTYPE html>
@@ -5,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico">
     <title>Karriere - Kapitalismuss-Kasse</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 </head>
@@ -28,7 +29,7 @@
 		</li>
 		<li><a href="${pageContext.request.contextPath}/html/Immobilien.jsp">Immobilien</a>
 		</li>
-		<li><a href="${pageContext.request.contextPath}/html/Karriere.jsp"class="active">Karriere</a>
+		<li><a href="${pageContext.request.contextPath}/html/Karriere.jsp" class="active">Karriere</a>
 		</li>
 		<li><a href="${pageContext.request.contextPath}/html/Banking-Login.jsp">Banking-Login</a>
 		</li>
@@ -41,15 +42,15 @@
   <div class="mySlides fade">
   	<div class="text">Auf der Suche<br> nach Reichtum?</div>
   	<div class="text_info">Denn von jedem neuen Kunden  <br> profitieren unseren Mitglieder - <br>und auch wir!</div>
-    <img src="../img/Bild5.jpg">
+    <img src="${pageContext.request.contextPath}/img/Bild5.jpg" alt="Werbung">
   </div>
 
   <div class="mySlides fade">
-    <img src="${pageContext.request.contextPath}/img/Bild1.jpeg">
+    <img src="${pageContext.request.contextPath}/img/Bild1.jpeg" alt="Werbung">
   </div>
 
   <div class="mySlides fade">
-    <img src="${pageContext.request.contextPath}/img/Bild4.jpg">
+    <img src="${pageContext.request.contextPath}/img/Bild4.jpg" alt="Werbung">
   </div>
   
 
@@ -90,13 +91,13 @@
     </article>
 
     <aside>
-        <h3>Bewerben Sie sich jetzt!</h3>
+<!--         <h3>Bewerben Sie sich jetzt!</h3> -->
 
-        <a href="${pageContext.request.contextPath}/html/adminFormular.jsp" class="black-anchor">
+<%--         <a href="${pageContext.request.contextPath}/html/adminFormular.jsp" class="black-anchor"> --%>
 
-        <button>Klicken zum Bewerben</button>
+<!--         <button>Klicken zum Bewerben</button> -->
 
-        </a>
+<!--         </a> -->
 
         <h3>Passwort vergessen?</h3>
 

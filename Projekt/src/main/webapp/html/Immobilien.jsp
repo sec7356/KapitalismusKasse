@@ -1,3 +1,4 @@
+<!-- Getestet -->
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!DOCTYPE html>
@@ -5,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico">
     <title>Immobilien - Kapitalismuss-Kasse</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 </head>
@@ -26,7 +27,7 @@
 		</li>
 		<li><a href="${pageContext.request.contextPath}/html/Firmenkunden.jsp">Firmenkunden</a>
 		</li>
-		<li><a href="${pageContext.request.contextPath}/html/Immobilien.jsp"class="active">Immobilien</a>
+		<li><a href="${pageContext.request.contextPath}/html/Immobilien.jsp" class="active">Immobilien</a>
 		</li>
 		<li><a href="${pageContext.request.contextPath}/html/Karriere.jsp">Karriere</a>
 		</li>
@@ -42,15 +43,15 @@
   <div class="mySlides fade">
   	<div class="text">x<br> x</div>
   	<div class="text_info">x <br> x <br>x</div>
-    <img src="${pageContext.request.contextPath}/img/Bild4.jpg">
+    <img src="${pageContext.request.contextPath}/img/Bild4.jpg" alt="Werbung">
   </div>
 
   <div class="mySlides fade">
-    <img src="${pageContext.request.contextPath}/img/Bild2.jpeg">
+    <img src="${pageContext.request.contextPath}/img/Bild2.jpeg" alt="Werbung">
   </div>
 
   <div class="mySlides fade">
-    <img src="${pageContext.request.contextPath}/img/Bild3.jpg">
+    <img src="${pageContext.request.contextPath}/img/Bild3.jpg" alt="Werbung">
   </div>
   
 
@@ -86,10 +87,7 @@
 <!-- Hier Link und Beschriftung zur Seite für Immobilien/Registrieren einfügen -->
     <article>
         <h3>Registrieren Sie sich jetzt!</h3>
-        <a href="${pageContext.request.contextPath}/html/Registrierung.jsp" class="black-anchor">
-        <button>Klicken zum Registrieren</button>
-        </a>
-        
+    	<button type="button" onclick="location.href='${pageContext.request.contextPath}/html/Registrierung.jsp'">Klicken zum Registrieren</button>        
         <h3>Passwort vergessen?</h3>
         <p>Hilfe finden Sie <a href="${pageContext.request.contextPath}/html/kontakt.jsp" class="black-anchor">hier</a>.</p>
     </article>

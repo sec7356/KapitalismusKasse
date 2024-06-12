@@ -1,3 +1,4 @@
+<!-- Getestet -->
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!DOCTYPE html>
@@ -5,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico">
     <title>Firmenkunden - Kapitalismuss-Kasse</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 </head>
@@ -24,7 +25,7 @@
 		</li>
 		<li><a href="${pageContext.request.contextPath}/index.jsp">Privatkunden</a>
 		</li>
-		<li><a href="${pageContext.request.contextPath}/html/Firmenkunden.jsp"class="active">Firmenkunden</a>
+		<li><a href="${pageContext.request.contextPath}/html/Firmenkunden.jsp" class="active">Firmenkunden</a>
 		</li>
 		<li><a href="${pageContext.request.contextPath}/html/Immobilien.jsp">Immobilien</a>
 		</li>
@@ -41,13 +42,13 @@
   <div class="mySlides fade">
   	<div class="text">Deine Firma<br> Unsere Firma!</div>
   	<div class="text_info">Denn als Gemeinschaftsbank <br> teilen wir alles mit unseren Mitgliedern. <br>Bei uns ist Ihre Firma sicher!</div>
-    <img src="${pageContext.request.contextPath}//img/Bild4.jpg">
+    <img src="${pageContext.request.contextPath}/img/Bild4.jpg" alt="Werbung">
   </div>
   <div class="mySlides fade">
-    <img src="${pageContext.request.contextPath}//img/Bild2.jpeg">
+    <img src="${pageContext.request.contextPath}/img/Bild2.jpeg" alt="Werbung">
   </div>
   <div class="mySlides fade">
-    <img src="${pageContext.request.contextPath}//img/Bild3.jpg">
+    <img src="${pageContext.request.contextPath}/img/Bild3.jpg" alt="Werbung">
   </div>
   <div class="dots">
   		<span class="dot"></span> 
