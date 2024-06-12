@@ -187,7 +187,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 
 .Suchfeld label {
 	min-width: 30px; 
-	text-align: right; 
+	text-align: left; 
 }
 
 .Suchfeld input[type="text"], .Suchfeld button {
