@@ -32,6 +32,7 @@ public class UpdateServlet extends HttpServlet {
         String vorname = (String) session.getAttribute("vorname");
         String nachname = (String) session.getAttribute("nachname");
         String email = (String) session.getAttribute("email");
+        boolean isAdmin = (boolean) session.getAttribute("admin");
         
         Benutzer benutzer = new Benutzer();
         benutzer.setB_id((Long) session.getAttribute("b_id"));
@@ -77,7 +78,11 @@ public class UpdateServlet extends HttpServlet {
 
         persist(benutzer, pin, fileContent);
 
-        response.sendRedirect(request.getContextPath() + "/html/UserStartseite.jsp");
+        if (!isAdmin) {
+            response.sendRedirect(request.getContextPath() + "/html/UserStartseite.jsp");
+        } else {
+            response.sendRedirect(request.getContextPath() + "/AdminBenutzerListeServlet");
+        }
     }
 
     private void persist(Benutzer benutzer, Integer pin, InputStream fileContent) throws ServletException {
