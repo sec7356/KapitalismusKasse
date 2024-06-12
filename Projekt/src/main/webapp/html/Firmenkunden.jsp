@@ -76,10 +76,7 @@
 
     <article>
         <h3>Registrieren Sie sich jetzt als Firmenkunde!</h3>
-        <a href="${pageContext.request.contextPath}/html/Registrierung.jsp" class="black-anchor">
-        <button>Klicken zum Registrieren</button>
-        </a>
-        
+    	<button type="button" onclick="location.href='${pageContext.request.contextPath}/html/Registrierung.jsp'">Klicken zum Registrieren</button>
         <h3>Passwort vergessen?</h3>
         <p>Hilfe finden Sie <a href="${pageContext.request.contextPath}/html/kontakt.jsp" class="black-anchor">hier</a>.</p>
     </article>    
