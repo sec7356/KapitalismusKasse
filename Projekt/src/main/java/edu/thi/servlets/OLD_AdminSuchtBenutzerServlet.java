@@ -22,7 +22,7 @@ import edu.thi.java.Benutzer;
  * Servlet implementation class AdminSuchtBenutzer
  */
 @WebServlet("/AdminSuchtBenutzerServlet")
-public class AdminSuchtBenutzerServlet extends HttpServlet {
+public class OLD_AdminSuchtBenutzerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
 	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
@@ -31,7 +31,7 @@ public class AdminSuchtBenutzerServlet extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AdminSuchtBenutzerServlet() {
+    public OLD_AdminSuchtBenutzerServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

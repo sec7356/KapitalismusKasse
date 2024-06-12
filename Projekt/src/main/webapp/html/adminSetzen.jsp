@@ -16,7 +16,7 @@
 			<li>
 				<div class="container">
 					<a
-						href="${pageContext.request.contextPath}/html/adminFormular.jsp"
+						href="${pageContext.request.contextPath}/AdminBenutzerListeServlet"
 						title="Die Bank der Zukunft!"> <img
 						src="${pageContext.request.contextPath}/img/logo.jpg" alt="Logo"
 						class="imageMitLink"></a> <a
@@ -26,9 +26,7 @@
 
 				</div>
 			</li>
-			<li><a
-				href="${pageContext.request.contextPath}/html/adminFormular.jsp"
-				title="Suchen sie einen bestimmten Nutzer!">Benutzersuche</a></li>
+        <li><a href="${pageContext.request.contextPath}/AdminBenutzerListeServlet" title="Suchen sie einen bestimmten Nutzer!">Benutzersuche</a></li>
 			<li><a
 				href="${pageContext.request.contextPath}/html/adminSetzen.jsp"
 				title="Setzten sie den Status anderer Nutzer!">Adminverwaltung</a></li>

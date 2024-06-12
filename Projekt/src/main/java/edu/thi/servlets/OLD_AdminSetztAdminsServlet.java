@@ -19,13 +19,13 @@ import edu.thi.java.Benutzer;
  * Servlet implementation class AdminSetztAdminsServlet
  */
 @WebServlet("/AdminSetztAdminsServlet")
-public class AdminSetztAdminsServlet extends HttpServlet {
+public class OLD_AdminSetztAdminsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
 	
-    public AdminSetztAdminsServlet() {
+    public OLD_AdminSetztAdminsServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

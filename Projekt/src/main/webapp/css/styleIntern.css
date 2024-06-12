@@ -168,3 +168,48 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 .copy-button {
 	margin-left: 10px;
 }
+
+.Suchfeld {
+	text-align: center; /* Zentriert den Inhalt horizontal */
+	margin-top: 20px;
+}
+
+.Suchfeld form {
+	display: flex;
+	/* Verwendet Flexbox, um die Elemente in einer Zeile anzuordnen */
+	justify-content: center; /* Zentriert die Elemente horizontal */
+	align-items: center; /* Zentriert die Elemente vertikal */
+	flex-wrap: wrap; /* Umbruch der Elemente bei Bedarf */
+}
+
+.Suchfeld label, .Suchfeld input[type="text"], .Suchfeld button {
+	margin: 10px; /* Abstand um die Elemente herum */
+}
+
+.Suchfeld label {
+	min-width: 30px; /* Mindestbreite für Labels */
+	text-align: right; /* Labels rechts ausrichten */
+}
+
+.Suchfeld input[type="text"], .Suchfeld button {
+	padding: 3px;
+	font-size: 12px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+
+.transaktionen-table .pin-cell {
+	position: relative;	
+	}
+
+.transaktionen-table .pin-cell .pin-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 5px;
+    z-index: 1;
+    top: 50%; /* Zentriert die pin-content vertikal */
+    left: 25%; /* Zentriert die pin-content horizontal */
+    transform: translate(-50%, -50%); /* Zentriert die pin-content vollständig */
+}

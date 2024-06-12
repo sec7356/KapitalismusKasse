@@ -34,7 +34,7 @@
 				</div>
 			</li>
 			<li><a
-				href="${pageContext.request.contextPath}/html/adminFormular.jsp"
+				href="${pageContext.request.contextPath}/AdminBenutzerListeServlet"
 				title="Suchen sie einen bestimmten Nutzer!">Benutzersuche</a></li>
 			<li><a
 				href="${pageContext.request.contextPath}/html/adminSetzen.jsp"
