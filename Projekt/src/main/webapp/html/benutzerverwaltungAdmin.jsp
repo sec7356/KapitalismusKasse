@@ -87,11 +87,6 @@
             <input type="password" id="pin2" name="pin2" maxlength="6" required><br>
         </div>
         <div>
-            <label for="profilbild">Profilbild:</label>
-            <input type="file" id="profilbild" name="profilbild" accept="image/*"><br>
-        </div>
-        <br>
-        <div>
             <button name="submit" type="submit">Änderungen speichern</button>
             <button name="reset" type="reset">Zurücksetzen</button>
         </div>
@@ -99,28 +94,6 @@
    </form>
 </div>
 <br>
-<div class="internForm">
-        <form action="${pageContext.request.contextPath}/LoeschenServlet" method="POST">
-        <fieldset><legend>Account verwalten</legend>
-        	<div>
-                <p>Profil löschen:</p>
-                <button name="loeschen" type="submit">Löschen</button><br> 
-       	 </div>
-        </fieldset>
-   		</form>
-</div>
-
-
-<!-- Hier wird die Popup-Nachricht angezeigt -->
-<div id="popup" class="popup">
-    <p id="popupMessage" class="popup-message"></p>
-    <button onclick="hidePopup()" class="popup-button">Verstanden!</button>
-</div>
-
-<!-- Setze die Werte der versteckten Felder basierend auf den Attributen -->
-<input type="hidden" id="showMessage" value="<%= request.getAttribute("showMessage") != null ? request.getAttribute("showMessage") : "false" %>">
-<input type="hidden" id="errorMessage" value="<%= request.getAttribute("errorMessage") != null ? request.getAttribute("errorMessage") : "" %>">
-<input type="hidden" id="successMessage" value="<%= request.getAttribute("successMessage") != null ? request.getAttribute("successMessage") : "" %>">
 
 	<footer>
 		<p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>
