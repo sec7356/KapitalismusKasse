@@ -152,7 +152,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
 
 .transaktionen-table tbody tr:hover {
-	background-color: #d3d3d3;
+	background-color: #eaeaea;
 }
 
 .transaktionen-table tbody tr td:last-child {
@@ -214,3 +214,22 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	left: 50%; 
 	transform: translate(-50%, -50%);
 }
+
+
+.action-link {
+    display: inline-block;
+    padding: 3px 0;
+    background-color: #b89e14; 
+    color: white; 
+    text-decoration: none; 
+    border-radius: 4px; 
+}
+
+.action-link:hover {
+    background-color: #0056b3; /* Farbe ändern beim Hovern */
+}
+
+.transaktionen-table td {
+    padding: 10px;
+}
+

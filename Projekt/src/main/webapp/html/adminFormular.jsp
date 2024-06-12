@@ -103,7 +103,9 @@
                             <c:when test="${konten.admin}"> Ja </c:when>
                             <c:otherwise>Nein</c:otherwise>
                             </c:choose>
-                            <td>Platzhalter</td>
+                            <td>
+            					<a class="action-link" href="${pageContext.request.contextPath}/BenutzerDetailsServlet?userId=${konten.b_id}">Änderungen vornehmen</a>
+        					</td>
                         </tr>
                     </c:forEach>
                 </c:otherwise>
