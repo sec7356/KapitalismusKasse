@@ -45,7 +45,7 @@
 					<br>
 					<!-- Prüfe, ob das errorMessage Attribut gesetzt und nicht null ist -->
 					<c:if test="${not empty requestScope.errorMessage}">
-						<p class="error message">${requestScope.errorMessage}</p>
+					    <div id="logout-message">${requestScope.errorMessage}</div>
 					</c:if>
 					<!-- Prüfe, ob das logoutMessage Session-Attribut existiert und nicht leer ist -->
 					<c:if test="${not empty sessionScope.logoutMessage}">
