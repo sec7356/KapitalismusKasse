@@ -108,7 +108,30 @@
 		</div>
 	</div>
 
-	<article>
+	
+	<article class="contentIndex">
+        <h2>Darum Kapitalismus Kasse</h2>
+        <div class="flexIndexContainer">
+            <div class="content-item">
+                <img src="${pageContext.request.contextPath}/img/beratung.png" alt="Persönliche Beratung und Unterstützung">
+                <p>Persönliche Beratung und Unterstützung</p>
+            </div>
+            <div class="content-item">
+                <img src="${pageContext.request.contextPath}/img/macht.png" alt="Globale politische Macht">
+                <p>Globale politische Macht</p>
+            </div>
+            <div class="content-item">
+                <img src="${pageContext.request.contextPath}/img/online.png" alt="Innovatives Online-Banking">
+                <p>Innovatives Online-Banking</p>
+            </div>
+            <div class="content-item">
+                <img src="${pageContext.request.contextPath}/img/professionell.png" alt="Professionelles Management-Team">
+                <p>Professionelles Management-Team</p>
+            </div>
+        </div>
+    </article>
+    
+    <article>
 	<br>
 		<h2>Registrieren Sie sich jetzt als Firmenkunde!</h2>
 		<p>Klicken sie <a href="${pageContext.request.contextPath}/html/Registrierung.jsp" class="black-anchor">hier</a> zum Registrieren </p>
@@ -120,6 +143,9 @@
 
 	<footer>
 		<p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>
+		
+		<p>Soweit auf dieser Internetseite von der Kapitalismus Kasse die Rede ist, bezieht sich dies auf die Angebote der Kapitalismus 
+		Kasse AG, Kapitalismusstr. 1, 60329 Frankfurt am Main.</p>
 	</footer>
 
 </body>
