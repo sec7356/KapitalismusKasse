@@ -1,11 +1,10 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java"%>
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico" />
 <title>Kapitalismus Kasse - Deine Bank!</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 </head>
@@ -44,7 +43,7 @@
 		</div>
 
 		<div class="mySlides fade">
-		<div class="text">
+			<div class="text">
 				Kleine Summen<br> Großer Effekt!
 			</div>
 			<div class="text_info">
@@ -54,7 +53,7 @@
 		</div>
 
 		<div class="mySlides fade">
-		<div class="text">
+			<div class="text">
 				Ihr lacht?<br> Wir lachen mehr!
 			</div>
 			<div class="text_info">
@@ -62,7 +61,6 @@
 			</div>
 			<img src="${pageContext.request.contextPath}/img/Bild1.jpeg">
 		</div>
-
 
 		<div class="dots">
 			<span class="dot"></span> <span class="dot"></span> <span class="dot"></span>
@@ -73,11 +71,11 @@
 
 	</div>
 
-	<script src="JavaScript/navigation_extended.js"></script>
-	<script src="JavaScript/navigation.js"></script>
-	<script src="JavaScript/slideshow.js"></script>
+	<script src="${pageContext.request.contextPath}/JavaScript/navigation_extended.js"></script>
+	<script src="${pageContext.request.contextPath}/JavaScript/navigation.js"></script>
+	<script src="${pageContext.request.contextPath}/JavaScript/slideshow.js"></script>
 
-	<!--  Weiterer Inhalt unter der SlideShow -->
+	<!-- Weiterer Inhalt unter der SlideShow -->
 
 	<br>
 	<br>
@@ -109,17 +107,15 @@
 		</div>
 	</div>
 
-
 	<article>
 	<br>
 		<h2>Registrieren Sie sich jetzt als Firmenkunde!</h2>
 		<a href="${pageContext.request.contextPath}/html/Registrierung.jsp" class="black-anchor"><button>Klicken zum Registrieren</button></a>
 		<h3>Bereits registriert?</h3>
-		<p>Klicken sie zum Einloggen <a href="${pageContext.request.contextPath}/html/Banking-Login.jsp"class="black-anchor">hier</a>.</p>
+		<p>Klicken sie zum Einloggen <a href="${pageContext.request.contextPath}/html/Banking-Login.jsp" class="black-anchor">hier</a>.</p>
 		<h3>Passwort vergessen?</h3>
 		<p>Hilfe finden Sie <a href="${pageContext.request.contextPath}/html/passwortReset.jsp" class="black-anchor">hier</a>.</p>
 	</article>
-
 
 	<footer>
 		<p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>

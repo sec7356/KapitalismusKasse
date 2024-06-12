@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico" />
 <title>Login - Kapitalismus-Kasse</title>
-<link rel="stylesheet"href="${pageContext.request.contextPath}/css/style.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 <script src="${pageContext.request.contextPath}/JavaScript/popupLöschen.js"></script>
 <script src="${pageContext.request.contextPath}/JavaScript/logout-message.js"></script> 
 
