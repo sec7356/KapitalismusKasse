@@ -39,7 +39,7 @@
 				Denn als Gemeinschaftsbank <br> gehören wir unseren
 				Mitgliedern. <br>Bei uns könnt Ihr Geld gut aufbewahren.
 			</div>
-			<img src="${pageContext.request.contextPath}/img/Bild3.jpg">
+			<img src="${pageContext.request.contextPath}/img/Bild3.jpg" alt="Logo">
 		</div>
 
 		<div class="mySlides fade">
@@ -49,7 +49,7 @@
 			<div class="text_info">
 				Ihre kleinen Summen bedeuten <br> für uns viel. Denn auch <br>diese gehören uns!
 			</div>
-			<img src="${pageContext.request.contextPath}/img/Bild2.jpeg">
+			<img src="${pageContext.request.contextPath}/img/Bild2.jpeg" alt="Menschen voir Solarpanel">
 		</div>
 
 		<div class="mySlides fade">
@@ -59,7 +59,7 @@
 			<div class="text_info">
 				Ihr lacht, weil ihr die wahren <br> Absichten nicht kennt. Wir lachen, weil <br>wir die wahren Absichten kennen!
 			</div>
-			<img src="${pageContext.request.contextPath}/img/Bild1.jpeg">
+			<img src="${pageContext.request.contextPath}/img/Bild1.jpeg" alt="Lachende Menschen auf Sofa">
 		</div>
 
 		<div class="dots">
@@ -110,7 +110,7 @@
 	<article>
 	<br>
 		<h2>Registrieren Sie sich jetzt als Firmenkunde!</h2>
-		<a href="${pageContext.request.contextPath}/html/Registrierung.jsp" class="black-anchor"><button>Klicken zum Registrieren</button></a>
+		<p>Klicken sie <a href="${pageContext.request.contextPath}/html/Registrierung.jsp" class="black-anchor">hier</a> zum Registrieren </p>
 		<h3>Bereits registriert?</h3>
 		<p>Klicken sie zum Einloggen <a href="${pageContext.request.contextPath}/html/Banking-Login.jsp" class="black-anchor">hier</a>.</p>
 		<h3>Passwort vergessen?</h3>
