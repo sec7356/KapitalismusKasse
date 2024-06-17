@@ -135,7 +135,7 @@
                             </c:choose>
                             </td>
                             <td>
-            					<a class="action-link" href="${pageContext.request.contextPath}/BenutzerDetailsServlet?userId=${konten.b_id}">Änderungen vornehmen</a>
+            					<a class="action-link" href="${pageContext.request.contextPath}/BenutzerDetailsServlet?b_id=${konten.b_id}">Mehr</a>
         					</td>
                         </tr>
                     </c:forEach>
