@@ -35,10 +35,7 @@
 			</li>
 			<li><a
 				href="${pageContext.request.contextPath}/AdminBenutzerListeServlet"
-				title="Suchen sie einen bestimmten Nutzer!">Benutzersuche</a></li>
-			<li><a
-				href="${pageContext.request.contextPath}/html/adminSetzen.jsp"
-				title="Setzten sie den Status anderer Nutzer!">Adminverwaltung</a></li>
+				title="Admin-Konsole" id="keinUmbruch">Zurück zur Admin-Konsole</a></li>
 			<li>
 				<!-- Benutzer verwalten Icon --> <a
 				href="${pageContext.request.contextPath}/html/benutzerverwaltungAdmin.jsp"

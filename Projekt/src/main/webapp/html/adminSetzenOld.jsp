@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+<!-- VON NAVIGATIONSLEISTE GELÖSCHT, ALTE SEITE, NICHT GENUTZT -->
+
 <!DOCTYPE html>
 <html lang="de">
 <head>

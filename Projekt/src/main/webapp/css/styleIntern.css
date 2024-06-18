@@ -229,4 +229,12 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
     background-color: #0056b3; 
 }
 
+#keinUmbruch {
+	white-space: nowrap;
+}
 
+#adminKonsoleTitel {
+	white-space: nowrap;
+	color: red;
+	font-size: 2em;
+}

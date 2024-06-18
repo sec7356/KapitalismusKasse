@@ -58,8 +58,7 @@
                 </a>
             </div>
         </li>
-        <li><a href="${pageContext.request.contextPath}/AdminBenutzerListeServlet" class="active" title="Suchen sie einen bestimmten Nutzer!">Benutzersuche</a></li>
-        <li><a href="${pageContext.request.contextPath}/html/adminSetzen.jsp" title="Setzen sie den Status anderer Nutzer!">Adminverwaltung</a></li>
+        <li><h1 id="adminKonsoleTitel">**Admin-Konsole**</h1></li>
         <li>
             <!-- Benutzer verwalten Icon --> 
             <a href="${pageContext.request.contextPath}/html/benutzerverwaltungAdmin.jsp" title="Nutzerdaten verwalten"> 
