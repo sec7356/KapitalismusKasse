@@ -27,7 +27,8 @@
 			<li><a href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp" class="active" title="Überweisen Sie bequem Ihr Geld!">Überweisung</a>
 			</li>
 			<li><a href="${pageContext.request.contextPath}/VerlaufServlet" title="Sehen Sie sich alle Ihre Buchungen an!">Kontoaktivitäten</a></li>
-			<li><a href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp" title="Ändern Sie Ihr Profilbild oder Ihre Nutzerdaten!">Benutzerverwaltung</a>
+			<li><a href="${pageContext.request.contextPath}/html/hilfeIntern.jsp"
+			title="Holen Sie sich Hilfe!">Hilfe</a>
 			</li>
 
 			<li>
