@@ -165,7 +165,6 @@ public class EditBenutzerServlet extends HttpServlet {
 
         try (Connection con = ds.getConnection()) {
             String sql = "SELECT IBAN, kontoStand, Dispo FROM Konto WHERE besitzer = ?";
-            System.out.println("SQL-Abfrage für Konto: " + sql);
 
             try (PreparedStatement pstmt = con.prepareStatement(sql)) {
                 pstmt.setString(1, b_id);
@@ -181,7 +180,6 @@ public class EditBenutzerServlet extends HttpServlet {
                 }
             }
         } catch (Exception ex) {
-            System.err.println("Fehler beim Abrufen der Kontoinformationen: " + ex.getMessage());
             throw new ServletException(ex.getMessage());
         }
 
@@ -224,7 +222,6 @@ public class EditBenutzerServlet extends HttpServlet {
                 }
             }
         } catch (Exception ex) {
-            System.err.println("Fehler beim Abrufen der Transaktionsinformationen: " + ex.getMessage());
             throw new ServletException(ex.getMessage());
         }
 

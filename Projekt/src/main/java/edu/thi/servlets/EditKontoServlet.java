@@ -111,7 +111,6 @@ public class EditKontoServlet extends HttpServlet {
 
     private Benutzer getBenutzerDetails(String b_id) throws ServletException {
         Benutzer benutzer = null;
-        System.out.println("b_id aus Funktion:" + b_id);
 
         try (Connection con = ds.getConnection()) {
             String selectSQL = "SELECT * FROM benutzer WHERE b_id = ?";
@@ -142,7 +141,6 @@ public class EditKontoServlet extends HttpServlet {
 
         try (Connection con = ds.getConnection()) {
             String sql = "SELECT IBAN, kontoStand, Dispo FROM Konto WHERE besitzer = ?";
-            System.out.println("SQL-Abfrage für Konto: " + sql);
 
             try (PreparedStatement pstmt = con.prepareStatement(sql)) {
                 pstmt.setString(1, b_id);
