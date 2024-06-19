@@ -13,6 +13,7 @@
 <!-- Überprüfen (Infos & required) -->
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <!-- Google reCaptcha -->
+
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     const emailInput = document.getElementById('email');
