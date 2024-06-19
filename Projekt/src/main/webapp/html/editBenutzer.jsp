@@ -81,9 +81,13 @@
 	</div>
 
 	<div class="transaktionen">
-		<h2>Bearbeitung: Benutzer-Informationen</h2>
-		<form action="${pageContext.request.contextPath}/EditBenutzerServlet"
-			method="post">
+	<div style="position: relative;">
+    <h2 style="display: inline-block;">Bearbeitung: Benutzer-Informationen</h2>
+    <form action="${pageContext.request.contextPath}/EditBenutzerServlet" method="post" style="position: relative;">
+        <span style="position: absolute; top: -50px; right: 0;">
+            <input type="submit" value="Speichern">
+        </span>
+	</div>
 			<table class="transaktionen-table">
 				<thead>
 					<tr>
@@ -92,8 +96,6 @@
 						<th>Email</th>
 						<th>PIN</th>
 						<th>Admin</th>
-						<th></th>
-						<!-- Leere Spalte für den Submit-Button -->
 					</tr>
 				</thead>
 				<tbody>
@@ -103,8 +105,8 @@
 						<td><input type="text" id="nachname" name="nachname"
 							value="${empty benutzer ? '' : benutzer.nachname}" required></td>
 						<td>${empty benutzer ? '' : benutzer.email}</td>
-						<td><input type="text" id="pin" name="pin"
-							value="${empty benutzer ? '' : benutzer.pin}" required></td>
+						<td><input type="text" id="pin" name="pin" pattern="[0-9]{1,6}" maxlength="6" value="${empty benutzer ? '' : benutzer.pin}" required 
+						title="Bitte geben Sie nur bis zu 6 Ziffern ein."></td>
 						<td><select id="admin" name="admin" required>
 								<c:choose>
 									<c:when test="${sessionScope.b_id == benutzer.b_id}">
@@ -124,7 +126,6 @@
 									</c:otherwise>
 								</c:choose>
 						</select></td>
-						<td><input type="submit" value="Speichern"></td>
 					</tr>
 				</tbody>
 			</table>

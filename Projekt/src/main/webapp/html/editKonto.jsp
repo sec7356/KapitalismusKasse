@@ -98,8 +98,13 @@
 
 <div class="transaktionen">
 	<table class="transaktionen-table">
-	<h2 style="display: inline-block;">Bearbeitung: Konto-Informationen</h2> 
-	<form action="${pageContext.request.contextPath}/EditKontoServlet" method="post">
+		<div style="position: relative;">
+    <h2 style="display: inline-block;">Bearbeitung: Konto-Informationen</h2>
+    <form action="${pageContext.request.contextPath}/EditKontoServlet" method="post" style="position: relative;">
+        <span style="position: absolute; top: 18px; right: 0;">
+            <input type="submit" value="Speichern">
+        </span>
+	</div>
             <input type="hidden" name="b_id" value="${benutzer.b_id}" />
             <input type="hidden" name="iban" value="${konto.IBAN}" />
 
@@ -109,7 +114,6 @@
                         <th>IBAN</th>
                         <th>Kontostand</th>
                         <th>Disporahmen</th>
-                        <th></th> <!-- Leere Spalte für den Submit-Button -->
                     </tr>
                 </thead>
                 <tbody>
@@ -117,7 +121,6 @@
                         <td>${konto.IBAN}</td> <!-- IBAN als nicht bearbeitbares Feld -->
                         <td><input type="number" id="kontoStand" name="kontoStand" value="${empty konto ? '' : konto.kontoStand}" required></td>
                         <td><input type="number" id="dispoStand" name="dispoStand" value="${empty konto ? '' : konto.dispoStand}"></td>
-                        <td><input type="submit" value="Speichern"></td>
                     </tr>
                 </tbody>
             </table>

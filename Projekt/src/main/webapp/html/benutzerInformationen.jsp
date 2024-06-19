@@ -69,7 +69,7 @@
 	
 	<c:forEach var="benutzer" items="${benutzerinformationen}">
     	<span style="float: right; font-size: 90%; line-height: 4.5; vertical-align: middle;">
-       		<a href="${pageContext.request.contextPath}/EditBenutzerServlet?b_id=${benutzer.b_id}" style="text-decoration: underline; color: black;">(Bearbeiten)</a>
+       		<a href="${pageContext.request.contextPath}/EditBenutzerServlet?b_id=${benutzer.b_id}" class="custom-button">Bearbeiten</a>
 		</span>
 	</c:forEach>
 
@@ -111,10 +111,9 @@
 	
 	<c:forEach var="benutzer" items="${benutzerinformationen}">
     	<span style="float: right; font-size: 90%; line-height: 4.5; vertical-align: middle;">
-       		<a href="${pageContext.request.contextPath}/EditKontoServlet?b_id=${benutzer.b_id}" style="text-decoration: underline; color: black;">(Bearbeiten)</a>
+       		<a href="${pageContext.request.contextPath}/EditKontoServlet?b_id=${benutzer.b_id}" class="custom-button">Bearbeiten</a>
 		</span>
 	</c:forEach>
-</span>
 	
 	<c:if test="${empty kontoinformationen}">
         <p>Keine Konto-Informationen gefunden.</p>
