@@ -65,8 +65,6 @@
 </script>
 </head>
 <body>
-
-
 	<nav id="navbar">
 		<ul>
 			<li>
