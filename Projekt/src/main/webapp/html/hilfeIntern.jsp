@@ -1,4 +1,6 @@
-<!-- Getestet -->
+
+<!--  onsubmit() bei internForm ausbauen! -->
+
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 
 <!DOCTYPE html>
@@ -9,7 +11,7 @@
 <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico">
 <title>Hilfe - Kapitalismus-Kasse</title>
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/css/styleIntern.css">
+	href="${pageContext.request.contextPath}/css/hilfeIntern.css">
 <script src="${pageContext.request.contextPath}/JavaScript/popup.js" defer></script>
 <script  src= "${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
 <script  src="${pageContext.request.contextPath}/JavaScript/greeting.js"></script>
@@ -69,33 +71,48 @@
 		<p>Sie suchen nach Hilfe? Dann sind Sie hier genau richtig!</p>
 	</div>
 	<br>
+	
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="${pageContext.request.contextPath}/JavaScript/hilfeMail.js"></script>
+</head>
 
-<div class="internForm">
-    <form  method="post" action="${pageContext.request.contextPath}/UpdateServlet" enctype="multipart/form-data">
-        <fieldset><legend>Formular zum Problem</legend>
-        <div>
-            <label for="vorname">Betreff:</label><br>
-            <input type="text" id="vorname" name="vorname" maxlength="30" ><br>
-        </div>
-        <div>
-            <label for="nachname">Beschreibung:</label><br>
-            <input type="text" id="nachname" name="nachname" maxlength="30" ><br>
-        </div>
-        <div>
-            <label for="pin1">PIN:</label><br>
-            <input type="password" id="pin1" name="pin1" maxlength="6" required><br>
-        </div>
-        
-        
-        <br>
-        <div>
-            <button name="submit" type="submit">Hilfe anfordern</button>
-            <button name="reset" type="reset">Zurücksetzen</button>
-        </div>
-        </fieldset>
-   </form>
-</div>
-<br>
+<body>
+    <div class="internForm">
+        <form id="problemForm" method="post" action="mailto:kpt-kasse@navalcadets.com" enctype="multipart/form-data" onsubmit="sendMail(event)">
+            <fieldset><legend>Formular zum Problem</legend>
+            <div class="hilfeFormular">
+            <div class="betreff">
+                <label for="betreff">Betreff:</label><br>
+                <input type="text" id="betreff" name="betreff" maxlength="30" placeholder="Titel oder Art des Problems..." required><br>
+            </div>
+            
+                <label for="beschreibung">Beschreibung:</label><br>
+                <textarea id="beschreibung" name="beschreibung" rows="10" cols="75" maxlength="500" 
+                placeholder="Beschreiben Sie ausführlich Ihr Problem..." required></textarea><br>
+            </div>
+            <br>
+            <div>
+                <button name="submit" type="submit">Hilfe anfordern</button>
+                <button name="reset" type="reset">Zurücksetzen</button>
+            </div>
+            </fieldset>
+       </form>
+    </div>
+    
+	<br> <div class="teilOder">oder</div><br>
+
+	<div class="internForm">
+	            <fieldset><legend>Nehmen Sie direkten Kontakt auf!</legend>
+	            
+	            
+	           <p>Zögern Sie nicht und kontaktieren Sie jederzeit unsere Kapitalismus-Experten!</p>
+	           <p>Ansprechpartner:</p><ul class="reset-ul">
+	           <li class="partner">Selim Cingitas (sec7356@thi.de)</li>
+	           <li class="partner">Salih Can Pepeoglu (sap7224@thi.de)</li>
+	           <li class="partner">Diane Stegmüller (dis8584@thi.de)</li></ul>
+	            <br>
+	            </fieldset>
+	    </div>
 
 
 	<footer>

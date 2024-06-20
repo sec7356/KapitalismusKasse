@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico">
     <title>Karriere - Kapitalismuss-Kasse</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleExtern.css">
 </head>
 <body>    
 
@@ -74,7 +74,7 @@
 
     <article>
         <h2>Ihre Vorteile bei einer Karriere bei uns:</h2>
-        <ul>
+        <ul  class="reset-ul">
         <li>Einblicke auf alle Kontostände</li>
         <li>Anpassung des eigenen Kontostands</li>
         <li>Kostenlose Arbeitsbekleidung mit Kapitalismus-Kasse-Emblem</li>
@@ -82,7 +82,7 @@
         </ul>
         
         <h2>Was wir von Ihnen erwarten:</h2>
-        <ul>
+        <ul  class="reset-ul">
         <li>Lebenslange Arbeitspflicht</li>
         <li>Keine Kentnisse oder Arbeitserfahrung notwendig</li>
         <li>Gefühlslosigkeit</li>

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico">
     <title>Firmenkunden - Kapitalismuss-Kasse</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleExtern.css">
 </head>
 <body>
 
@@ -67,7 +67,7 @@
 
     <aside>
         <h2>Ihre Vorteile bei uns als Firmenkunde:</h2>
-        <ul>
+        <ul class="reset-ul">
         <li>Kostenlose Internationale Überweisungen jeglicher Art</li>
         <li>Rund um die Uhr Support-Möglichkeiten mit unseren Betreuern</li>
         <li>Überweisungen ohne die Überwachung Ihrer Firma</li>

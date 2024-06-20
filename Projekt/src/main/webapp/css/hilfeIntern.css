@@ -1,0 +1,56 @@
+@import url('styleIntern.css');
+
+body {
+	background-image: url('../img/hilfeBild.jpeg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.betreff {
+	margin-top: 9px;
+	margin-bottom: 6px;
+}
+
+.hilfeFormular {
+	display: block;
+}
+
+.teilOder {
+	margin-top: 4px;
+	margin-bottom: 2px;
+	font-size: 2.1em;
+	font-style: bold;
+	position: absolute;
+	left: 50%; /* Zentrieren horizontal zur Trennlinie */
+    transform: translate(-50%, -50%); /* Zentrieren des Textes */
+    color: #f0f0f0; /* Hintergrundfarbe des Textes (optional) */
+    padding: 0 10px; /* Innenabstand des Textes (optional) */
+    z-index: 1; /* Text über der Trennlinie anzeigen */
+}
+
+/* liste resetten wegen navigation (nach rechts gerutscht) */
+.reset-ul {
+    list-style: disc; /* Default list style */
+    padding-left: 40px; /* Default padding */
+    margin: 10px 0; /* Default margin */
+    position: relative; /* Ensure these elements are positioned normally */
+}
+.reset-ul li {
+    position: static; /* Override any absolute positioning */
+    margin-bottom: 5px; /* Add some space between items */
+}
+
+.internForm {
+	margin-top: 10px;
+	width: 60%;
+}
+
+/* Stil für Formulareingabefelder */
+.internForm input[type="text"] , .internForm textarea{
+	width: 70%; /* Volle Breite des Eingabefeldes */
+	padding: 10px; /* Innenabstand des Eingabefeldes */
+	margin-bottom: 15px;
+	/* Abstand nach unten zwischen den Eingabefeldern */
+	border: 1px solid #ccc; /* Rand des Eingabefeldes */
+	border-radius: 5px; /* Abgerundete Ecken des Eingabefeldes */
+}

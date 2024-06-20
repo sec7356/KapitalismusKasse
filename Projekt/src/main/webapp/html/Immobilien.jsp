@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico">
     <title>Immobilien - Kapitalismuss-Kasse</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleExtern.css">
 </head>
 <body>
   
@@ -77,7 +77,7 @@
 
     <aside>
         <h2>Ihre Vorteile bei uns für Ihre Immobilien:</h2>
-        <ul>
+        <ul  class="reset-ul">
         <li>x</li>
         <li>x</li>
         <li>x</li>
