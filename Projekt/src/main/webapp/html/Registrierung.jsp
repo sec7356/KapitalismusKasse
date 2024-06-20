@@ -13,6 +13,7 @@
 <!-- Überprüfen (Infos & required) -->
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <!-- Google reCaptcha -->
+
 <script>
 	"use strict";
 	document.addEventListener("DOMContentLoaded", init);

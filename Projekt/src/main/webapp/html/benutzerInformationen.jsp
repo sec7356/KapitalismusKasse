@@ -65,7 +65,15 @@
 
 	<div class="transaktionen">
 	<table class="transaktionen-table">
-	<h2>Benutzer-Informationen</h2>
+	<h2 style="display: inline-block;">Benutzer-Informationen</h2> 
+	
+	<c:forEach var="benutzer" items="${benutzerinformationen}">
+    	<span style="float: right; font-size: 90%; line-height: 4.5; vertical-align: middle;">
+       		<a href="${pageContext.request.contextPath}/EditBenutzerServlet?b_id=${benutzer.b_id}" class="custom-button">Bearbeiten</a>
+		</span>
+	</c:forEach>
+
+	
     <c:if test="${empty benutzerinformationen}">
         <p>Keine Benutzerinformationen gefunden.</p>
     </c:if>
@@ -85,7 +93,12 @@
                     <td>${benutzer.nachname}</td>
                     <td>${benutzer.email}</td>
                     <td>${benutzer.pin}</td>
-                    <td>${benutzer.admin}</td>
+                    <td> 
+                    <c:choose>
+                    <c:when test="${benutzer.admin}"> Ja </c:when>
+                    <c:otherwise>Nein</c:otherwise>
+                    </c:choose>
+                    </td>
                 </tr>
             </c:forEach>
         </tbody>
@@ -94,7 +107,14 @@
     
     <div class="transaktionen">
 	<table class="transaktionen-table">
-	<h2>Konto-Informationen</h2>
+	<h2 style="display: inline-block;">Konto-Informationen</h2>
+	
+	<c:forEach var="benutzer" items="${benutzerinformationen}">
+    	<span style="float: right; font-size: 90%; line-height: 4.5; vertical-align: middle;">
+       		<a href="${pageContext.request.contextPath}/EditKontoServlet?b_id=${benutzer.b_id}" class="custom-button">Bearbeiten</a>
+		</span>
+	</c:forEach>
+	
 	<c:if test="${empty kontoinformationen}">
         <p>Keine Konto-Informationen gefunden.</p>
     </c:if>
@@ -109,9 +129,11 @@
             <c:forEach var="konto" items="${kontoinformationen}">
                 <tr>
                     <td>${konto.IBAN}</td>
-                    <td>${konto.kontoStand}</td>
-                    <td>${konto.dispoStand}</td>
-                </tr>
+                    
+                    <td><fmt:formatNumber value="${konto.kontoStand}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2" /> €</td>
+                    <td><fmt:formatNumber value="${konto.dispoStand}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2" /> €</td>
+                    
+                 </tr>
             </c:forEach>
         </tbody>
     </table>
@@ -121,8 +143,8 @@
 
 	<div class="transaktionen">
 		<table class="transaktionen-table">
-			<h2>Transaktion-Informationen</h2>
-		
+			<h2 style="display: inline-block;">Transaktion-Informationen</h2>
+				
 			<thead>
 				<tr>
 					<th>Zahlender</th>

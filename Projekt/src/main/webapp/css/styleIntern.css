@@ -84,7 +84,7 @@ body {
 }
 
 /* Stil für Submit-Button im Formular */
-button[type="submit"], button[type="reset"] {
+button[type="submit"], input[type="submit"], button[type="reset"], input[type="reset"] {
 	width: auto;
 	background-color: #b89e14;
 	color: #fff;
@@ -96,9 +96,25 @@ button[type="submit"], button[type="reset"] {
 }
 
 /* Button-Hover-Effekt */
-button[type="submit"]:hover, button[type="reset"]:hover {
+button[type="submit"]:hover, input[type="submit"]:hover, button[type="reset"]:hover, input[type="reset"]:hover {
 	background-color: #0056b3;
 }
+
+.custom-button {
+    background-color: #b89e14;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none; /* Entfernt die unterstrichene Textdekoration */
+    font-size: 14px;
+}
+
+.custom-button:hover {
+    background-color: #0056b3;
+}
+
+
+
 
 /* Zusätzliche globale Stile für Formulareingabefelder und Buttons */
 input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus,

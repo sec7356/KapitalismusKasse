@@ -47,7 +47,7 @@
 		</li>
 		<li> <!-- Benutzer verwalten Icon -->
         	<a href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp" title="Nutzerdaten verwalten">
-        	<img src="${pageContext.request.contextPath}/img/accountBild.jpg" alt="Benutzerverwaltung" class="accountBild">
+        	<img src="${pageContext.request.contextPath}/img/accountBildFokus.jpg" alt="Benutzerverwaltung" class="accountBild">
         	</a>
         </li>
 			<li>

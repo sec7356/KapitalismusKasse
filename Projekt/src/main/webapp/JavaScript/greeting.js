@@ -18,7 +18,7 @@ function Begruessung() {
     
     var vorname = document.getElementById('vorname').textContent;
     var nachname = document.getElementById('nachname').textContent;
-    document.getElementById('greeting').textContent = begruessung + ", " + vorname + " " + nachname + "!";
+    document.getElementById('greeting').textContent = begruessung + ", " + vorname + " " + nachname + " 👋";
 }
 
 // Begrüßung bei Seitenladen einstellen
