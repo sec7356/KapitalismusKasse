@@ -213,9 +213,11 @@ button[type="submit"], button[type="reset"], button[type="register"] {
 }
 
 /* Button: Hover-Effekt */
-.buttons button[type="submit"]:hover, .buttons button[type="reset"]:hover {
+.buttons button[type="submit"]:hover, .buttons button[type="reset"]:hover, .buttons button[type="register"]:hover,
+#disabledButton:hover {
     background-color: rgb(55, 81, 128); 
 }
+
 
 
 .g-recaptcha-container {
@@ -229,7 +231,7 @@ button[type="submit"], button[type="reset"], button[type="register"] {
     justify-content: space-between;
 }
 
-.buttons button {
+.buttons button{
     width: calc(50% - 5px); 
     padding: 10px 20px;
     border: none;
@@ -246,13 +248,6 @@ button[type="submit"], button[type="reset"], button[type="register"] {
     margin-left: 10px;
 }
 
-.buttons button[type="reset"] {
-    background-color: #b89e14;
-}
-
-.buttons button[type="submit"] {
-    background-color: #b89e14; 
-}
 
 
 

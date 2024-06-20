@@ -14,6 +14,7 @@
 <script src="https://www.google.com/recaptcha/api.js"defer></script>
 <!-- Google reCaptcha -->
 <style>
+ 
 .email-container {
     position: relative;
     width: 100%;
@@ -32,58 +33,76 @@
     transform: translateY(-50%);
 }
 
+
 </style>
 
 
 
 <script>
-        document.addEventListener("DOMContentLoaded", init);
+    document.addEventListener("DOMContentLoaded", init);
 
-        function init() {
-            const emailInput = document.getElementById('email');
-            emailInput.addEventListener('input', handleEmailInput);
+    function init() {
+        const emailInput = document.getElementById('email');
+        emailInput.addEventListener('input', handleEmailInput);
+    }
+
+    function handleEmailInput() {
+        const email = document.getElementById('email').value.trim();
+        if (email !== '') {
+            checkEmailAvailability(email);
+        } else {
+            clearEmailStatus();
+            disableRegisterButton(); // Button deaktivieren, wenn das E-Mail-Feld leer ist
         }
+    }
 
-        function handleEmailInput() {
-            const email = document.getElementById('email').value.trim();
-            if (email !== '') {
-                checkEmailAvailability(email);
-            } else {
-                clearEmailStatus();
+    function checkEmailAvailability(email) {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.responseType = "json";
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                handleEmailResponse(xmlhttp.response);
             }
-        }
+        };
+        xmlhttp.open("POST", `${pageContext.request.contextPath}/CheckEmailAvailability`, true);
+        xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xmlhttp.send("email=" + encodeURIComponent(email));
+    }
 
-        function checkEmailAvailability(email) {
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.responseType = "json";
-            xmlhttp.onreadystatechange = function() {
-                if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-                    handleEmailResponse(xmlhttp.response);
-                }
-            };
-            xmlhttp.open("POST", `${pageContext.request.contextPath}/CheckEmailAvailability`, true);
-            xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xmlhttp.send("email=" + encodeURIComponent(email));
+    function handleEmailResponse(response) {
+        const emailStatus = document.getElementById('emailStatus');
+        const registerButton = document.getElementById('registerButton');
+        if (response && response.available === false) {
+            emailStatus.textContent = '✘'; // Kreuz
+            emailStatus.style.color = '#941100';
+            disableRegisterButton(); // Button deaktivieren
+        } else if (response && response.available === true) {
+            emailStatus.textContent = '✔'; // Häkchen
+            emailStatus.style.color = '#b89e14';
+            enableRegisterButton(); // Button aktivieren
+        } else {
+            clearEmailStatus();
+            disableRegisterButton(); // Button deaktivieren, falls keine gültige Antwort
         }
+    }
 
-        function handleEmailResponse(response) {
-            const emailStatus = document.getElementById('emailStatus');
-            if (response && response.available === false) {
-                emailStatus.textContent = '✘'; // Kreuz
-                emailStatus.style.color = '#941100';
-            } else if (response && response.available === true) {
-                emailStatus.textContent = '✔'; // Häkchen
-                emailStatus.style.color = '#b89e14';
-            } else {
-                clearEmailStatus();
-            }
-        }
+    function clearEmailStatus() {
+        const emailStatus = document.getElementById('emailStatus');
+        emailStatus.textContent = '';
+    }
 
-        function clearEmailStatus() {
-            const emailStatus = document.getElementById('emailStatus');
-            emailStatus.textContent = '';
-        }
-    </script>
+    function disableRegisterButton() {
+        const registerButton = document.getElementById('registerButton');
+        registerButton.disabled = true;
+    }
+
+    function enableRegisterButton() {
+        const registerButton = document.getElementById('registerButton');
+        registerButton.disabled = false;
+    }
+</script>
+
+
     
     
 </head>
@@ -155,16 +174,17 @@
                     <input type="password" id="pin2" name="pin2" required maxlength="6">
                 </div>
             </div>
+             <div class="form-group">
+                <span class="required-fields">*Pflichtfelder</span>
+            </div>
             <div class="form-group">
             	<div class="g-recaptcha-container">
                 <div class="g-recaptcha" data-sitekey="6LezhuwpAAAAAIeLzgoFKHqHqLqkTqgEqpj33xBN"></div>
                 </div>
             </div>
-            <div class="form-group">
-                <span class="required-fields">*Pflichtfelder</span>
-            </div>
+           
             <div class="form-group buttons">
-    			<button type="submit">Registrieren</button>
+				<button id="registerButton" type="submit">Registrieren</button>
     			<button type="reset">Zurücksetzen</button>
     			
 			</div>
