@@ -72,8 +72,11 @@
             <c:forEach var="benutzer" items="${benutzerinformationen}">
                 <div class="button-container">
                     <form id="deleteForm" action="${pageContext.request.contextPath}/DeleteBenutzerServlet?b_id=${benutzer.b_id}" method="POST">
-    				<button name="loeschen" type="button" class="delete-button" onclick="confirmDelete()">Account löschen</button>
-                    </form>
+    					<button name="loeschen" type="button" class="delete-button" onclick="confirmDelete()" 
+        				${sessionScope.b_id == benutzer.b_id ? 'disabled' : ''}>
+        				${sessionScope.b_id == benutzer.b_id ? 'Account nicht löschbar' : 'Account löschen'}
+    					</button>
+					</form>
                     <a href="${pageContext.request.contextPath}/EditBenutzerServlet?b_id=${benutzer.b_id}" class="custom-button">Bearbeiten</a>
                 </div>
             </c:forEach>

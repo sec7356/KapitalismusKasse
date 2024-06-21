@@ -28,7 +28,6 @@ public class DeleteBenutzerServlet extends HttpServlet {
             deleteKonto(id);
             deleteBenutzer(id);
         
-        // Leite zurück zum Login und gebe Info an Benutzer, dass Konto gelöscht wurde
         RequestDispatcher dispatcher = request.getRequestDispatcher("/AdminBenutzerListeServlet");
         dispatcher.forward(request, response);
     }
