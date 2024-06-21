@@ -4,14 +4,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/x-icon"
-	href="${pageContext.request.contextPath}/img/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico" />
 <title>Registrierung - Kapitalismus-Kasse</title>
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/css/RegisterStyle.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/RegisterStyle.css">
 <script src="${pageContext.request.contextPath}/JavaScript/captcha.js"></script>
+<script src="${pageContext.request.contextPath}/JavaScript/navigation_extended2.js"></script>
+<script src="${pageContext.request.contextPath}/JavaScript/navigation.js"></script>
 <!-- Überprüfen (Infos & required) -->
 <script src="https://www.google.com/recaptcha/api.js"defer></script>
+
 <!-- Google reCaptcha -->
 <style>
  
@@ -32,7 +33,6 @@
     top: 70%;
     transform: translateY(-50%);
 }
-
 
 </style>
 
@@ -102,42 +102,31 @@
     }
 </script>
 
-
-    
-    
+       
 </head>
 <body>
+
 	<nav id="navbar">
 		<ul>
 			<li>
 				<div class="container">
-					<img src="${pageContext.request.contextPath}/img/logo.jpg"
-						alt="Logo" class="image">
-					<div class="company-name">
-						<span>Kapitalismus-</span> <span>Kasse</span>
+					<img src="${pageContext.request.contextPath}/img/logo.jpg" alt="Logo" class="image">
+					<div class="company-name">Kapitalismus<br> Kasse
 					</div>
 				</div>
 			</li>
-			<li><a href="${pageContext.request.contextPath}/index.jsp">Privatkunden</a>
-			</li>
-			<li><a
-				href="${pageContext.request.contextPath}/html/Firmenkunden.jsp">Firmenkunden</a>
-			</li>
-			<li><a
-				href="${pageContext.request.contextPath}/html/Immobilien.jsp">Immobilien</a>
-			</li>
-			<li><a
-				href="${pageContext.request.contextPath}/html/Karriere.jsp">Karriere</a>
-			</li>
-			<li><a
-				href="${pageContext.request.contextPath}/html/Banking-Login.jsp"
-				class="active">Banking-Login</a></li>
+			<li><a href="${pageContext.request.contextPath}/index.jsp">Privatkunden</a></li>
+			<li><a href="${pageContext.request.contextPath}/html/Firmenkunden.jsp">Firmenkunden</a></li>
+			<li><a href="${pageContext.request.contextPath}/html/Immobilien.jsp">Immobilien</a></li>
+			<li><a href="${pageContext.request.contextPath}/html/Karriere.jsp">Karriere</a></li>
+			<li><a href="${pageContext.request.contextPath}/html/Banking-Login.jsp" class="active">Banking-Login</a></li>
 		</ul>
 	</nav>
 	<br>
 	<br>
 	<br>
-	<main>
+	
+
 <div class="login_window">
     <div class="register-form">
         <div class="background-image"></div>
@@ -199,7 +188,6 @@
 </div>
 
 
-	</main>
 	<footer>
 		<p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>
 	</footer>

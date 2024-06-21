@@ -583,3 +583,4 @@ textarea {
 .reset-ul li {
     position: static; /* Override any absolute positioning */
     margin-bottom: 5px; /* Add some space between items */
+}

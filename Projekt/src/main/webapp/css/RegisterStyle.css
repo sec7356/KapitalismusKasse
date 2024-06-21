@@ -35,106 +35,146 @@ footer {
 }
 
 /* Navigation horizontal */
+
 .container {
-    position: absolute;
-    left: 0;
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
+	position: absolute;
+	left: 0;
+	transform: translateY(-50%);
+	display: flex;
+	align-items: center;
 }
 
 .image {
-    height: 60px;
-    max-width: 60px;
-    margin: 3px;
-    margin-top: 8px;
-    left: 12px;
-    position: fixed;
+	height: 60px;
+	max-width: 60px;
+	margin: 3px;
+	margin-top: 8px;
+	left: 12px;
+	position: fixed;
+}
+
+.imageMitLink { /*Neuer Style für das Logo ganz oben mit Link zur Startseite*/
+	position: absolute;
+	height: 60px;
+	max-width: 60px;
+	left: 12px;
+	margin-top: -26px;
+	margin-left: 3px;
+	
 }
 
 .company-name {
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-    display: flex;
-    align-items: left;
-    flex-direction: column;
-    margin-left: 75px;
-    color: rgb(55, 81, 128);
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	display: flex;
+	align-items: left;
+	flex-direction: column;
+	margin-left: 75px;
+	color: rgb(55, 81, 128);
+}
+
+.companyNameLink {
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	font-size: 1em;
+	display: flex;
+	align-items: left;
+	flex-direction: column;
+	margin-left: 75px;
+	color: rgb(55, 81, 128);
 }
 
 nav {
-    position: fixed;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    z-index: 1000;
-    height: 80px;
+	position: fixed;
+	left: 0;
+	width: 99.3%;						/* Wieso funktioniert es nicht wie beim style.css ?? */
+	background-color: white;
+	display: flex;
+	justify-content: center;
+	z-index: 1000;
+	height: 70px;		
+}
+
+nav.small {
+	background-color: #d1d1d1; /* Neue Hintergrundfarbe */
+	transition: background-color 0.3s ease-in-out;	/* Übergangseffekt für die Hintergrundfarbe */
+}
+
+nav.small a {
+	color: white; /* Ändere die Schriftfarbe auf Weiß */
+	transition: color 0.3s ease-in-out;
+	/* Übergangseffekt für die Schriftfarbe */
 }
 
 nav ul {
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    justify-content: center;
+	align-items: center;
+	border: none; /* Zum testen hier Rahmen dotted */
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	/* Horizontale Zentrierung der Listenelemente */
 }
 
 li:last-child {
-    position: absolute;
-    right: 0;
+	position: absolute;
+	right: 0;
 }
 
 nav ul li:last-child a {
-    color: #941100;
-    white-space: pre-wrap;
+	color: #941100;
+	white-space: pre-wrap;
 }
 
 nav li {
-    margin: 0 15px;
+	margin: 0 15px;
 }
 
-@media (min-width: 45em) {
-    nav ul {
-        flex-direction: row;
-    }
-    nav li {
-        flex: 1;
-        font-size: 1em;
-    }
+@media ( min-width : 45em) {
+	nav ul {
+		flex-direction: row;
+	}
+	nav li {
+		flex: 1;
+		font-size: 1em;
+	}
 }
 
 nav a {
-    padding-bottom: 3px;
-    text-decoration: none;
-    text-align: inline-flex;
-    color: black;
-    font-size: 14px;
-    transition: all .15s ease-in;
+	position: 0; /* Stellt die Position für das Pseudoelement fest */
+	padding-bottom: 3px; /* Fügt Platz für den Unterstrich hinzu */
+	text-decoration: none;
+	text-align: inline-flex;
+	color: black;
+	font-size: 14px;
+	transition: all .15s ease-in;
 }
 
 nav a:focus, nav a:hover, nav a.active {
-    position: relative;
-    color: rgb(55, 81, 128);
-    background-color: var(--accent1-color);
+	color: gold;
+	position: relative;
+	color: rgb(55, 81, 128);
+	/* Schriftfarbe für Hover-Effekt, wenn nicht aktiv */
+	background-color: var(--accent1-color);
 }
 
 nav a.active::after {
-    content: ''; 
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%; 
-    height: 2px;
-    background-color: #b89e14; 
+	content: ''; /* Pseudoelement für den Unterstrich */
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%; /* Breite des Unterstrichs auf 100% des Links setzen */
+	height: 2px;
+	background-color: #b89e14; /* Farbe des Unterstrichs */
 }
 
 /* Ende horizontale Navigation */
 
-/*LOGIN-Fenster*/
+
+/*LOGIN-Fenster */
 .login_window {
     margin-top: 30px;
     position: relative;

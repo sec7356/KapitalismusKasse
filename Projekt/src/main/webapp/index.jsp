@@ -7,6 +7,8 @@
 <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico" />
 <title>Kapitalismus Kasse - Deine Bank!</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+<script src="${pageContext.request.contextPath}/JavaScript/navigation_extended.js"></script>
+<script src="${pageContext.request.contextPath}/JavaScript/navigation.js"></script>
 </head>
 <body>
 
@@ -15,8 +17,7 @@
 			<li>
 				<div class="container">
 					<img src="${pageContext.request.contextPath}/img/logo.jpg" alt="Logo" class="image">
-					<div class="company-name">
-						Kapitalismus-<br> Kasse
+					<div class="company-name">Kapitalismus<br> Kasse
 					</div>
 				</div>
 			</li>
@@ -71,8 +72,7 @@
 
 	</div>
 
-	<script src="${pageContext.request.contextPath}/JavaScript/navigation_extended.js"></script>
-	<script src="${pageContext.request.contextPath}/JavaScript/navigation.js"></script>
+	
 	<script src="${pageContext.request.contextPath}/JavaScript/slideshow.js"></script>
 
 	<!-- Weiterer Inhalt unter der SlideShow -->
