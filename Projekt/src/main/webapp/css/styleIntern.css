@@ -1,256 +1,308 @@
 @import url('popup.css');
-
 @import url('navigation.css');
 
 /* Globale Stile */
 body {
-	font-family: Arial, sans-serif;
-	margin: 0;
-	padding: 0;
-	padding-bottom: 60px; /* Platz für den Footer reservieren */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 60px; /* Platz für den Footer reservieren */
 }
 
 /* Aktionsbox Start */
 .aktionen {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr); /* 3 Spalten */
-	grid-gap: 15px; /* Abstand zwischen Spalten */
-	padding: 20px 60px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Spalten */
+    grid-gap: 15px; /* Abstand zwischen Spalten */
+    padding: 20px 60px;
 }
 
 .aktion {
-	background-color: #f2f2f2;
-	padding: 20px;
+    background-color: #f2f2f2;
+    padding: 20px;
 }
 /* Aktionsbox Ende */
 
 /* User-Startseite und Kontostand */
 .grauBackground {
-	background-color: #d1d1d1;
-	box-sizing: border-box;
-	padding: 6px 0px 6px 60px;
-	width: 100%;
+    background-color: #d1d1d1;
+    box-sizing: border-box;
+    padding: 6px 0px 6px 60px;
+    width: 100%;
 }
 
 .kontostand {
-	box-sizing: border-box;
-	text-align: center;
-	background-color: #b89e14;
-	border-radius: 25px;
-	margin: 10px 450px;
-	font-size: 17px;
-	font-weight: bold;
-	padding: 8px 0px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #b89e14;
+    border-radius: 25px;
+    margin: 10px 450px;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 8px 0px;
 }
 
 .profilbild {
-	text-align: center;
-	margin: 20px 0;
+    text-align: center;
+    margin: 20px 0;
 }
 
 .profilbild img {
-	max-width: 150px;
-	max-height: 150px;
-	border-radius: 50%;
-	border: 2px solid #000;
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 50%;
+    border: 2px solid #000;
 }
 /* User-Startseite und Kontostand Ende */
 
 /* CSS für adminForm-Klasse */
 .internForm {
-	width: 80%; /* Breite des Formulars */
-	margin: 0 auto; /* Zentriert das Formular horizontal */
-	padding: 20px; /* Innenabstand des Formulars */
-	background-color: #f0f0f0; /* Hintergrundfarbe des Formulars */
-	border-radius: 10px; /* Abgerundete Ecken des Formulars */
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Schatten um das Formular */
+    width: 80%; /* Breite des Formulars */
+    margin: 0 auto; /* Zentriert das Formular horizontal */
+    padding: 20px; /* Innenabstand des Formulars */
+    background-color: #f0f0f0; /* Hintergrundfarbe des Formulars */
+    border-radius: 10px; /* Abgerundete Ecken des Formulars */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Schatten um das Formular */
 }
 
 /* Stil für Überschriften im Formular */
 .internForm h2 {
-	font-size: 24px; /* Schriftgröße */
-	margin-bottom: 20px; /* Abstand nach unten */
+    font-size: 24px; /* Schriftgröße */
+    margin-bottom: 20px; /* Abstand nach unten */
 }
 
 /* Stil für Formulareingabefelder */
-.internForm input[type="text"], .internForm input[type="email"],
-	.internForm input[type="password"] {
-	width: 50%; /* Volle Breite des Eingabefeldes */
-	padding: 10px; /* Innenabstand des Eingabefeldes */
-	margin-bottom: 15px;
-	/* Abstand nach unten zwischen den Eingabefeldern */
-	border: 1px solid #ccc; /* Rand des Eingabefeldes */
-	border-radius: 5px; /* Abgerundete Ecken des Eingabefeldes */
+.internForm input[type="text"], .internForm input[type="email"], .internForm input[type="password"] {
+    width: 50%; /* Volle Breite des Eingabefeldes */
+    padding: 10px; /* Innenabstand des Eingabefeldes */
+    margin-bottom: 15px;
+    /* Abstand nach unten zwischen den Eingabefeldern */
+    border: 1px solid #ccc; /* Rand des Eingabefeldes */
+    border-radius: 5px; /* Abgerundete Ecken des Eingabefeldes */
 }
 
-/* Stil für Submit-Button im Formular */
+/* Allgemeine Stile für Formulareingabefelder und Buttons */
 button[type="submit"], input[type="submit"], button[type="reset"], input[type="reset"] {
-	width: auto;
-	background-color: #b89e14;
-	color: #fff;
-	cursor: pointer;
-	padding: 5px 10px; /* Ändere den Padding nach Bedarf */
-	border: none; /* Entfernt die Standard-Bordereigenschaften */
-	border-radius: 5px; /* Rundet die Ecken des Buttons */
-	font-size: 14px; /* Ändere die Schriftgröße nach Bedarf */
+    width: auto;
+    background-color: #b89e14;
+    color: #fff;
+    cursor: pointer;
+    padding: 5px 10px; 
+    border: none; 
+    border-radius: 5px; 
+    font-size: 14px; 
 }
 
-/* Button-Hover-Effekt */
-button[type="submit"]:hover, input[type="submit"]:hover, button[type="reset"]:hover, input[type="reset"]:hover {
-	background-color: #0056b3;
+/* Zusätzliche globale Stile für Formulareingabefelder und Buttons */
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, button[type="submit"]:focus, button[type="reset"]:focus {
+    outline: none; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Fügt einen benutzerdefinierten Fokus-Schatten hinzu */
 }
 
 .custom-button {
     background-color: #b89e14;
     color: #fff;
-    padding: 5px 10px;
+    padding: 10px 20px;
     border-radius: 5px;
-    text-decoration: none; /* Entfernt die unterstrichene Textdekoration */
+    text-decoration: none;
     font-size: 14px;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px; 
+    box-sizing: border-box;
+    margin-left: 10px;
+}
+
+.custom-button:first-child {
+    margin-left: 0;
 }
 
 .custom-button:hover {
     background-color: #0056b3;
 }
 
+.delete-button {
+    background-color: #d9534f !important; 
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px; 
+    box-sizing: border-box; 
+    margin-left: 10px; 
+}
 
+.delete-button:hover {
+    background-color: #8e2b14!important; 
+}
 
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.button-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-left: 10px; 
+}
+
+form {
+    margin: 0; 
+}
 
 /* Zusätzliche globale Stile für Formulareingabefelder und Buttons */
-input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus,
-	button[type="submit"]:focus, button[type="reset"]:focus {
-	outline: none; /* Entfernt die Standard-Fokusrahmen */
-	box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-	/* Fügt einen benutzerdefinierten Fokus-Schatten hinzu */
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, button[type="submit"]:focus, button[type="reset"]:focus {
+    outline: none; /* Entfernt die Standard-Fokusrahmen */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    /* Fügt einen benutzerdefinierten Fokus-Schatten hinzu */
 }
 
 .geldHintergrund {
-	background-image: url('../img/BildUeberweisung.jpeg');
-	background-size: cover;
-	background-position: center top;
-	height: 80%;
-	width: 100%;
-	position: absolute;
-	padding-top: 15px;
+    background-image: url('../img/BildUeberweisung.jpeg');
+    background-size: cover;
+    background-position: center top;
+    height: 80%;
+    width: 100%;
+    position: absolute;
+    padding-top: 15px;
 }
 
 /* Transaktionen im Verlauf.jsp darstellen */
 .transaktionen {
-	width: calc(100% - 80px);
-	max-width: 100%;
-	padding: 20px;
-	margin: 21px;
-	background-color: #fff;
-	border-radius: 8px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	overflow-x: auto;
+    width: calc(100% - 80px);
+    max-width: 100%;
+    padding: 20px;
+    margin: 21px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
 }
 
 .transaktionen-table {
-	width: 100%;
-	border-collapse: collapse;
-	font-size: 14px;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
 }
 
 .transaktionen-table th, .transaktionen-table td {
-	padding: 12px 15px;
-	border: 1px solid #ddd;
-	white-space: normal;
-	text-align: left;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    white-space: normal;
+    text-align: left;
 }
 
 .transaktionen-table th {
-	background-color: #d1d1d1;
+    background-color: #d1d1d1;
 }
 
 .transaktionen-table tbody tr:nth-child(even) {
-	background-color: #f9f9f9;
+    background-color: #f9f9f9;
 }
 
 .transaktionen-table tbody tr:hover {
-	background-color: #eaeaea;
+    background-color: #eaeaea;
 }
 
 .transaktionen-table tbody tr td:last-child {
-	text-align: center;
+    text-align: center;
 }
 
 .transaktionen-table .verzweck-cell {
-	max-width: 350px;
-	overflow: auto;
-	white-space: pre-line;
+    max-width: 350px;
+    overflow: auto;
+    white-space: pre-line;
 }
 
 .copy-button {
-	margin-left: 10px;
+    margin-left: 10px;
 }
 
 .Suchfeld {
-	text-align: center; 
-	margin-top: 20px;
+    text-align: center;
+    margin-top: 20px;
 }
 
 .Suchfeld form {
-	display: flex;
-	justify-content: center; 
-	align-items: center;
-	flex-wrap: wrap; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .Suchfeld label, .Suchfeld input[type="text"], .Suchfeld button {
-	margin: 10px; 
+    margin: 10px;
 }
 
 .Suchfeld label {
-	min-width: 30px; 
-	text-align: left; 
+    min-width: 30px;
+    text-align: left;
 }
 
 .Suchfeld input[type="text"], .Suchfeld button {
-	padding: 3px;
-	font-size: 12px;
-	border: 1px solid #ccc;
-	border-radius: 3px;
+    padding: 3px;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
 }
 
 .transaktionen-table .pin-cell {
-	position: relative;
-	text-align: center; 
-	
+    position: relative;
+    text-align: center;
 }
 
 .transaktionen-table .pin-cell .pin-content {
-	display: none;
-	position: absolute;
-	background-color: white;
-	border: 1px solid #ddd;
-	padding: 5px;
-	z-index: 1;
-	top: 50%; 
-	left: 50%; 
-	transform: translate(-50%, -50%);
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 5px;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-
 
 .action-link {
     display: inline-block;
     padding: 5px 5px;
-    background-color: #b89e14; 
-    color: white; 
-    text-decoration: none; 
-    border-radius: 5px; 
+    background-color: #b89e14;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
 .action-link:hover {
-    background-color: #0056b3; 
+    background-color: #0056b3;
 }
 
 #keinUmbruch {
-	white-space: nowrap;
+    white-space: nowrap;
 }
 
 #adminKonsoleTitel {
-	white-space: nowrap;
-	color: red;
-	font-size: 2em;
+    white-space: nowrap;
+    color: red;
+    font-size: 2em;
 }
+
+
+

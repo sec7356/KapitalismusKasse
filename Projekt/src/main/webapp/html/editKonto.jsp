@@ -102,7 +102,7 @@
     <h2 style="display: inline-block;">Bearbeitung: Konto-Informationen</h2>
     <form action="${pageContext.request.contextPath}/EditKontoServlet" method="post" style="position: relative;">
         <span style="position: absolute; top: 18px; right: 0;">
-            <input type="submit" value="Speichern">
+            <input type="submit" class="custom-button" value="Speichern">
         </span>
 	</div>
             <input type="hidden" name="b_id" value="${benutzer.b_id}" />

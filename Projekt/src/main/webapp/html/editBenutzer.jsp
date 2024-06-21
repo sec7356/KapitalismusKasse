@@ -85,7 +85,7 @@
     <h2 style="display: inline-block;">Bearbeitung: Benutzer-Informationen</h2>
     <form action="${pageContext.request.contextPath}/EditBenutzerServlet" method="post" style="position: relative;">
         <span style="position: absolute; top: -50px; right: 0;">
-            <input type="submit" value="Speichern">
+            <input type="submit" class="custom-button" value="Speichern">
         </span>
 	</div>
 			<table class="transaktionen-table">

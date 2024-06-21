@@ -16,6 +16,8 @@
 <script src="${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
 <script src="${pageContext.request.contextPath}/JavaScript/greeting.js"></script>
 <script src="${pageContext.request.contextPath}/JavaScript/Zwischenablage.js"></script>
+<script src="${pageContext.request.contextPath}/JavaScript/AccountLoeschen.js"></script>
+
 
 </head>
 <body>
@@ -63,20 +65,21 @@
     <a href="${pageContext.request.contextPath}/AdminBenutzerListeServlet">Zurück zur Benutzersuche</a>
 </div>
 
-	<div class="transaktionen">
-	<table class="transaktionen-table">
-	<h2 style="display: inline-block;">Benutzer-Informationen</h2> 
-	
-	<c:forEach var="benutzer" items="${benutzerinformationen}">
-    	<span style="float: right; font-size: 90%; line-height: 4.5; vertical-align: middle;">
-       		<a href="${pageContext.request.contextPath}/EditBenutzerServlet?b_id=${benutzer.b_id}" class="custom-button">Bearbeiten</a>
-		</span>
-	</c:forEach>
-
-	
-    <c:if test="${empty benutzerinformationen}">
-        <p>Keine Benutzerinformationen gefunden.</p>
-    </c:if>
+<div class="transaktionen">
+    <div class="header-container">
+        <h2>Benutzer-Informationen</h2>
+        <div class="button-wrapper">
+            <c:forEach var="benutzer" items="${benutzerinformationen}">
+                <div class="button-container">
+                    <form id="deleteForm" action="${pageContext.request.contextPath}/DeleteBenutzerServlet?b_id=${benutzer.b_id}" method="POST">
+    				<button name="loeschen" type="button" class="delete-button" onclick="confirmDelete()">Account löschen</button>
+                    </form>
+                    <a href="${pageContext.request.contextPath}/EditBenutzerServlet?b_id=${benutzer.b_id}" class="custom-button">Bearbeiten</a>
+                </div>
+            </c:forEach>
+        </div>
+    </div>
+    <table class="transaktionen-table">
         <thead>
             <tr>
                 <th>Vorname</th>
@@ -93,17 +96,22 @@
                     <td>${benutzer.nachname}</td>
                     <td>${benutzer.email}</td>
                     <td>${benutzer.pin}</td>
-                    <td> 
-                    <c:choose>
-                    <c:when test="${benutzer.admin}"> Ja </c:when>
-                    <c:otherwise>Nein</c:otherwise>
-                    </c:choose>
+                    <td>
+                        <c:choose>
+                            <c:when test="${benutzer.admin}"> Ja </c:when>
+                            <c:otherwise>Nein</c:otherwise>
+                        </c:choose>
                     </td>
                 </tr>
             </c:forEach>
         </tbody>
     </table>
-    </div>
+    <c:if test="${empty benutzerinformationen}">
+        <p>Keine Benutzerinformationen gefunden.</p>
+    </c:if>
+</div>
+
+
     
     <div class="transaktionen">
 	<table class="transaktionen-table">

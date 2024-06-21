@@ -77,9 +77,9 @@ public class LoginServlet extends HttpServlet {
 
         // Umleitung basierend auf der E-Mail-Adresse und Admin-Status
         RequestDispatcher dispatcher;
-        if ("admin@demo.org".equals(email) || benutzer.isAdmin()) {
+        if (benutzer.isAdmin()) {
             // Weiterleitung zum Admin-Servlet
-            dispatcher = request.getRequestDispatcher("/AdminBenutzerListeServlet");  // Sicherstellen, dass das Mapping korrekt ist
+            dispatcher = request.getRequestDispatcher("/AdminBenutzerListeServlet");  
         } else {
             dispatcher = request.getRequestDispatcher("/html/UserStartseite.jsp");
         }
