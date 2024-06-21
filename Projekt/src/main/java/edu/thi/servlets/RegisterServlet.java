@@ -85,6 +85,11 @@ public class RegisterServlet extends HttpServlet {
 		session.setAttribute("kontostand", konto.getKontoStand());
 		session.setAttribute("IBAN", konto.getIBAN());
 		session.setAttribute("dispo", konto.getDispoStand());
+		
+		// Formatieren der IBAN
+        String formattedIban = formatIban(konto.getIBAN());
+        session.setAttribute("formattedIban", formattedIban);
+
 
 		// Weiterleiten an JSP
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("html/UserStartseite.jsp");
@@ -220,5 +225,12 @@ Hier rein probieren von stackoverflow und profilbild rein
 
 		return IBAN;
 	}
+	
+	
+	
+	// Methode zur IBAN-Formatierung
+    private String formatIban(String iban) {
+        return iban.replaceAll("(.{4})(?!$)", "$1 ");
+    }
 
 }
