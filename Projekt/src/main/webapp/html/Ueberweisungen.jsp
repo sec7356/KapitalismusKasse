@@ -14,26 +14,26 @@
     <script src="${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
     <script src="${pageContext.request.contextPath}/JavaScript/Verwendungszweck.js"></script>
     <script src="${pageContext.request.contextPath}/JavaScript/eingabeUeberweisung.js"></script>
+    <script src="${pageContext.request.contextPath}/JavaScript/navigation_extended.js"></script>
+	<script src="${pageContext.request.contextPath}/JavaScript/navigation.js"></script>
 </head>
 <body>
     <nav id="navbar">
         <ul>
             <li>
-                <div class="container">
-                    <a href="${pageContext.request.contextPath}/html/UserStartseite.jsp" title="Die Bank der Zukunft!"> 
-                        <img src="${pageContext.request.contextPath}/img/logo.jpg" alt="Logo" class="imageMitLink"></a> 
-                        
-                    <a href="${pageContext.request.contextPath}/html/UserStartseite.jsp" title="Die Bank der Zukunft!" class="companyNameLink"> 
-                        <span>Kapitalismus-</span>
-                        <span>Kasse</span></a>
-                </div>
+				<div class="container">
+					<img src="${pageContext.request.contextPath}/img/logo.jpg" alt="Logo" class="image">
+					<div class="company-name">Kapitalismus<br> Kasse
+					</div>
+				</div>
+
             </li>
             <li><a href="${pageContext.request.contextPath}/html/UserStartseite.jsp" title="Sehen Sie sich Ihr Dashboard an!">Dashboard</a></li>
             <li><a href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp" class="active" title="Überweisen Sie bequem Ihr Geld!">Überweisung</a></li>
             <li><a href="${pageContext.request.contextPath}/VerlaufServlet" title="Sehen Sie sich alle Ihre Buchungen an!">Kontoaktivitäten</a></li>
-            <li><a href="${pageContext.request.contextPath}/html/hilfeIntern.jsp"
-			title="Holen Sie sich Hilfe!">Hilfe</a>
-			</li><li>
+            <li><a href="${pageContext.request.contextPath}/html/hilfeIntern.jsp"title="Holen Sie sich Hilfe!">Hilfe</a>
+			</li>
+			<li>
                 <!-- Benutzer verwalten Icon -->
                 <a href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp" title="Nutzerdaten verwalten">
                     <img src="${pageContext.request.contextPath}/img/accountBild.jpg" alt="Benutzerverwaltung" class="accountBild">

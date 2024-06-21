@@ -16,6 +16,8 @@
 <script src="${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
 <script src="${pageContext.request.contextPath}/JavaScript/greeting.js"></script>
 <script src="${pageContext.request.contextPath}/JavaScript/Zwischenablage.js"></script>
+    <script src="${pageContext.request.contextPath}/JavaScript/navigation_extended.js"></script>
+	<script src="${pageContext.request.contextPath}/JavaScript/navigation.js"></script>
 
 </head>
 <body>
@@ -23,14 +25,9 @@
 		<ul>
 			<li>
 				<div class="container">
-					<a
-						href="${pageContext.request.contextPath}/html/UserStartseite.jsp"
-						title="Die Bank der Zukunft!"> <img
-						src="${pageContext.request.contextPath}/img/logo.jpg" alt="Logo"
-						class="imageMitLink"></a> <a
-						href="${pageContext.request.contextPath}/html/UserStartseite.jsp"
-						title="Die Bank der Zukunft!" class="companyNameLink"> <span>Kapitalismus-</span>
-						<span>Kasse</span></a>
+					<img src="${pageContext.request.contextPath}/img/logo.jpg" alt="Logo" class="image">
+					<div class="company-name">Kapitalismus<br> Kasse
+					</div>
 				</div>
 			</li>
 			<li><a href="${pageContext.request.contextPath}/html/UserStartseite.jsp" title="Sehen Sie sich Ihr Dashboard an!">Dashboard</a></li>

@@ -13,6 +13,7 @@
 <script src="${pageContext.request.contextPath}/JavaScript/popup.js" defer></script>
 <script  src= "${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
 <script  src="${pageContext.request.contextPath}/JavaScript/greeting.js"></script>
+
 	
 </head>
 <body>
@@ -28,7 +29,7 @@
 					
 					<a href="${pageContext.request.contextPath}/html/UserStartseite.jsp"
 					title="Die Bank der Zukunft!" class="companyNameLink">
-						<span>Kapitalismus-</span>
+						<span>Kapitalismus</span>
 						<span>Kasse</span></a>
 					
 				</div>
