@@ -223,7 +223,7 @@ label {
 .required-fields {
     display: inline-block;
     font-size: 12px;
-    color: #d9534f; 
+    color: #d9534f; /* Rote Farbe für den Hinweistext */
     margin-top: 5px;
 }
 

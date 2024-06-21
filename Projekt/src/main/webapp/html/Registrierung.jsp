@@ -42,8 +42,8 @@
         top: 100%; /* Position directly below the email input */
         left: 0;
         width: 100%;
-        text-align: center;
-        color: #941100;
+        text-align: left;
+        color: #d9534f;
         font-size: 12px;
         display: none; /* Initially hide the error message */
     }
