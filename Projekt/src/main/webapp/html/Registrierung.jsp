@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -14,27 +16,72 @@
 <script src="https://www.google.com/recaptcha/api.js"defer></script>
 
 <!-- Google reCaptcha -->
-<style>
+
  
-.email-container {
+<style>
+    .email-container {
+        position: relative;
+        width: 100%;
+    }
+
+    #email {
+        width: 100%;
+        box-sizing: border-box; /* Include padding in width calculation */
+        padding-right: 30px; /* Space for the status icon */
+    }
+
+    #emailStatus {
+        position: absolute;
+        right: 10px;
+        top: 70%; /* Adjust as needed */
+        transform: translateY(-50%);
+    }
+
+    #emailErrorMessage {
+        position: absolute;
+        top: 100%; /* Position directly below the email input */
+        left: 0;
+        width: 100%;
+        text-align: center;
+        color: #941100;
+        font-size: 12px;
+        display: none; /* Initially hide the error message */
+    }
+    
+  .pin-input-container {
     position: relative;
-    width: 100%;
 }
 
-#email {
-    width: 100%;
-    box-sizing: border-box; /* Include padding in width calculation */
-    padding-right: 30px; /* Space for the status icon */
+.pin-input-container input {
+    padding-right: 25px; /* Platz für das Feedback reservieren */
+    box-sizing: border-box; /* Padding in Berechnung einbeziehen */
 }
 
-#emailStatus {
+.pin-input-container::after {
+    content: attr(data-feedback); /* Pseudo-Element für das visuelle Feedback */
     position: absolute;
-    right: 10px;
-    top: 70%;
+    top: 50%;
+    right: 5px; /* Abstand vom rechten Rand anpassen */
     transform: translateY(-50%);
+    font-size: 18px; /* Optional: Größe des Symbols anpassen */
+    color: #941100; /* Farbe für das Kreuz */
 }
 
+.pin-input-container.correct::after {
+    content: '✔'; /* Inhalt für das Häkchen */
+    color: #b89e14; /* Farbe für das Häkchen */
+}
+
+.pin-input-container.incorrect::after {
+    content: '✘'; /* Inhalt für das Kreuz */
+}
+
+}
+    
 </style>
+
+
+
 
 
 
@@ -71,14 +118,20 @@
 
     function handleEmailResponse(response) {
         const emailStatus = document.getElementById('emailStatus');
+        const emailErrorMessage = document.getElementById('emailErrorMessage');
         const registerButton = document.getElementById('registerButton');
+
         if (response && response.available === false) {
             emailStatus.textContent = '✘'; // Kreuz
             emailStatus.style.color = '#941100';
+            emailErrorMessage.textContent = 'Diese E-Mail ist nicht verfügbar. Wähle eine andere Adresse aus.';
+            emailErrorMessage.style.display = 'block'; // Fehlermeldung anzeigen
             disableRegisterButton(); // Button deaktivieren
         } else if (response && response.available === true) {
             emailStatus.textContent = '✔'; // Häkchen
             emailStatus.style.color = '#b89e14';
+            emailErrorMessage.textContent = ''; // Fehlermeldung zurücksetzen
+            emailErrorMessage.style.display = 'none'; // Fehlermeldung verstecken
             enableRegisterButton(); // Button aktivieren
         } else {
             clearEmailStatus();
@@ -100,6 +153,25 @@
         const registerButton = document.getElementById('registerButton');
         registerButton.disabled = false;
     }
+    
+    // PIN Überprüfung
+    function checkPINConfirmation() {
+    const pin1 = document.getElementById('pin1').value;
+    const pin2 = document.getElementById('pin2').value;
+    const pinInputContainer = document.querySelector('.pin-input-container');
+
+    if (pin1 === pin2 && pin2 !== '') {
+        pinInputContainer.classList.remove('incorrect');
+        pinInputContainer.classList.add('correct');
+        pinInputContainer.setAttribute('data-feedback', '✔');
+    } else {
+        pinInputContainer.classList.remove('correct');
+        pinInputContainer.classList.add('incorrect');
+        pinInputContainer.setAttribute('data-feedback', '✘');
+    }
+}
+
+
 </script>
 
        
@@ -146,22 +218,31 @@
                     <input type="text" id="nachname" name="nachname" required maxlength="30">
                 </div>
             </div>
+			<br>
             <div class="form-group">
                <div class="email-container">
 				<label for="email">Email*</label>
 				<input type="email" id="email" name="email" required maxlength="50">
 				<span id="emailStatus"></span>
-				</div>
+    			<div class="form-group">
+					<span id="emailErrorMessage" class="required-fields" style="display: none;">Diese E-Mail ist nicht verfügbar. Wähle eine andere Adresse aus.</span>
+    			</div>    			
+			   </div>
             </div>
+            <br>
             <div class="form-group flex-container">
                 <div class="flex-item">
-                    <label for="pin1">PIN*</label>
-                    <input type="password" id="pin1" name="pin1" placeholder="max. 6 Ziffern" required maxlength="6">
-                </div>
-                <div class="flex-item">
-                    <label for="pin2">PIN bestätigen*</label>
-                    <input type="password" id="pin2" name="pin2" required maxlength="6">
-                </div>
+    			<label for="pin1">PIN*</label>
+    			<input type="password" id="pin1" name="pin1" placeholder="min. 4 Zahlen, max. 6 Zahlen" required maxlength="6">
+				</div>			
+			<div class="flex-item">
+   			<label for="pin2">PIN bestätigen*</label>
+    		<div class="pin-input-container">
+        		<input type="password" id="pin2" name="pin2" required maxlength="6" oninput="checkPINConfirmation()">
+    		</div>
+			</div>
+
+
             </div>
              <div class="form-group">
                 <span class="required-fields">*Pflichtfelder</span>
