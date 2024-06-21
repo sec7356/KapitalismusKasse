@@ -21,7 +21,7 @@
 
 </head>
 <body>
-	<nav id="navbar">
+<nav id="navbar">
     <ul>
         <li>
             <div class="container">
@@ -33,14 +33,7 @@
                 </a>
             </div>
         </li>
-        <li><a href="${pageContext.request.contextPath}/AdminBenutzerListeServlet" class="active" title="Suchen sie einen bestimmten Nutzer!">Benutzersuche</a></li>
-        <li><a href="${pageContext.request.contextPath}/html/adminSetzen.jsp" title="Setzen sie den Status anderer Nutzer!">Adminverwaltung</a></li>
-        <li>
-            <!-- Benutzer verwalten Icon --> 
-            <a href="${pageContext.request.contextPath}/html/benutzerverwaltungAdmin.jsp" title="Nutzerdaten verwalten"> 
-                <img src="${pageContext.request.contextPath}/img/accountBild.jpg" alt="Benutzerverwaltung" class="accountBild">
-            </a>
-        </li>
+        <li></li>
         <li>
             <div class="timer-logout-container">
                 <div id="timer">05:00</div>

@@ -59,12 +59,7 @@
             </div>
         </li>
         <li><h1 id="adminKonsoleTitel">**Admin-Konsole**</h1></li>
-        <li>
-            <!-- Benutzer verwalten Icon --> 
-            <a href="${pageContext.request.contextPath}/html/benutzerverwaltungAdmin.jsp" title="Nutzerdaten verwalten"> 
-                <img src="${pageContext.request.contextPath}/img/accountBild.jpg" alt="Benutzerverwaltung" class="accountBild">
-            </a>
-        </li>
+        <li></li>
         <li>
             <div class="timer-logout-container">
                 <div id="timer">05:00</div>

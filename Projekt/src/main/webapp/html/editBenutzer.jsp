@@ -19,49 +19,30 @@
 	src="${pageContext.request.contextPath}/JavaScript/Zwischenablage.js"></script>
 </head>
 <body>
-	<nav id="navbar">
-		<ul>
-			<li>
-				<div class="container">
-					<a
-						href="${pageContext.request.contextPath}/AdminBenutzerListeServlet"
-						title="Die Bank der Zukunft!"> <img
-						src="${pageContext.request.contextPath}/img/logo.jpg" alt="Logo"
-						class="imageMitLink">
-					</a> <a
-						href="${pageContext.request.contextPath}/html/adminFormular.jsp"
-						title="Die Bank der Zukunft!" class="companyNameLink"> <span>Kapitalismus-</span>
-						<span>Kasse</span>
-					</a>
-				</div>
-			</li>
-			<li><a
-				href="${pageContext.request.contextPath}/AdminBenutzerListeServlet"
-				class="active" title="Suchen sie einen bestimmten Nutzer!">Benutzersuche</a></li>
-			<li><a
-				href="${pageContext.request.contextPath}/html/adminSetzen.jsp"
-				title="Setzen sie den Status anderer Nutzer!">Adminverwaltung</a></li>
-			<li>
-				<!-- Benutzer verwalten Icon --> <a
-				href="${pageContext.request.contextPath}/html/benutzerverwaltungAdmin.jsp"
-				title="Nutzerdaten verwalten"> <img
-					src="${pageContext.request.contextPath}/img/accountBild.jpg"
-					alt="Benutzerverwaltung" class="accountBild">
-			</a>
-			</li>
-			<li>
-				<div class="timer-logout-container">
-					<div id="timer">05:00</div>
-					<div class="divider"></div>
-					<form method="post"
-						action="${pageContext.request.contextPath}/LogoutServlet">
-						<button name="loeschen" type="submit" class="logout-button"
-							title="Melden Sie sich sicher ab!">Logout</button>
-					</form>
-				</div>
-			</li>
-		</ul>
-	</nav>
+<nav id="navbar">
+    <ul>
+        <li>
+            <div class="container">
+                <a href="${pageContext.request.contextPath}/AdminBenutzerListeServlet" title="Die Bank der Zukunft!"> 
+                    <img src="${pageContext.request.contextPath}/img/logo.jpg" alt="Logo" class="imageMitLink">
+                </a> 
+                <a href="${pageContext.request.contextPath}/html/adminFormular.jsp" title="Die Bank der Zukunft!" class="companyNameLink">
+                    <span>Kapitalismus-</span> <span>Kasse</span>
+                </a>
+            </div>
+        </li>
+        <li></li>
+        <li>
+            <div class="timer-logout-container">
+                <div id="timer">05:00</div>
+                <div class="divider"></div>
+                <form method="post" action="${pageContext.request.contextPath}/LogoutServlet">
+                    <button name="loeschen" type="submit" class="logout-button" title="Melden Sie sich sicher ab!">Logout</button>
+                </form>
+            </div>
+        </li>
+    </ul>
+</nav>
 
 	<br>
 	<br>
