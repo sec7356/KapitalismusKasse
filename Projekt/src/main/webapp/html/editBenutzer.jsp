@@ -1,3 +1,7 @@
+<!-- Autor:  -->
+<!-- Validierung: er erkennt das Form element nicht richtig weil der div Kontailer davor geöffnet und im form Tag geschlossen wird -->
+<!-- Validierung: h2 ist nicht in table erlaubt -->
+
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
@@ -19,30 +23,36 @@
 	src="${pageContext.request.contextPath}/JavaScript/Zwischenablage.js"></script>
 </head>
 <body>
-<nav id="navbar">
-    <ul>
-        <li>
-            <div class="container">
-                <a href="${pageContext.request.contextPath}/AdminBenutzerListeServlet" title="Die Bank der Zukunft!"> 
-                    <img src="${pageContext.request.contextPath}/img/logo.jpg" alt="Logo" class="imageMitLink">
-                </a> 
-                <a href="${pageContext.request.contextPath}/html/adminFormular.jsp" title="Die Bank der Zukunft!" class="companyNameLink">
-                    <span>Kapitalismus-</span> <span>Kasse</span>
-                </a>
-            </div>
-        </li>
-        <li></li>
-        <li>
-            <div class="timer-logout-container">
-                <div id="timer">05:00</div>
-                <div class="divider"></div>
-                <form method="post" action="${pageContext.request.contextPath}/LogoutServlet">
-                    <button name="loeschen" type="submit" class="logout-button" title="Melden Sie sich sicher ab!">Logout</button>
-                </form>
-            </div>
-        </li>
-    </ul>
-</nav>
+	<nav id="navbar">
+		<ul>
+			<li>
+				<div class="container">
+					<a
+						href="${pageContext.request.contextPath}/AdminBenutzerListeServlet"
+						title="Die Bank der Zukunft!"> <img
+						src="${pageContext.request.contextPath}/img/logo.jpg" alt="Logo"
+						class="imageMitLink">
+					</a> <a
+						href="${pageContext.request.contextPath}/html/adminFormular.jsp"
+						title="Die Bank der Zukunft!" class="companyNameLink"> <span>Kapitalismus-</span>
+						<span>Kasse</span>
+					</a>
+				</div>
+			</li>
+			<li></li>
+			<li>
+				<div class="timer-logout-container">
+					<div id="timer">05:00</div>
+					<div class="divider"></div>
+					<form method="post"
+						action="${pageContext.request.contextPath}/LogoutServlet">
+						<button name="loeschen" type="submit" class="logout-button"
+							title="Melden Sie sich sicher ab!">Logout</button>
+					</form>
+				</div>
+			</li>
+		</ul>
+	</nav>
 
 	<br>
 	<br>
@@ -51,8 +61,8 @@
 	<div class="grauBackground">
 		<br>
 		<p>
-			Guten Tag, Admin!<br>
-			<br>Hier können Sie einen Benutzer suchen.
+			Guten Tag, Admin!<br> <br>Hier können Sie einen Benutzer
+			suchen.
 		</p>
 	</div>
 	<br>
@@ -62,55 +72,60 @@
 	</div>
 
 	<div class="transaktionen">
-	<div style="position: relative;">
-    <h2 style="display: inline-block;">Bearbeitung: Benutzer-Informationen</h2>
-    <form action="${pageContext.request.contextPath}/EditBenutzerServlet" method="post" style="position: relative;">
-        <span style="position: absolute; top: -50px; right: 0;">
-            <input type="submit" class="custom-button" value="Speichern">
-        </span>
-	</div>
-			<table class="transaktionen-table">
-				<thead>
-					<tr>
-						<th>Vorname</th>
-						<th>Nachname</th>
-						<th>Email</th>
-						<th>PIN</th>
-						<th>Admin</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><input type="text" id="vorname" name="vorname"
-							value="${empty benutzer ? '' : benutzer.vorname}" required></td>
-						<td><input type="text" id="nachname" name="nachname"
-							value="${empty benutzer ? '' : benutzer.nachname}" required></td>
-						<td>${empty benutzer ? '' : benutzer.email}</td>
-						<td><input type="text" id="pin" name="pin" pattern="[0-9]{1,6}" maxlength="6" value="${empty benutzer ? '' : benutzer.pin}" required 
+		<div style="position: relative;">
+			<h2 style="display: inline-block;">Bearbeitung:
+				Benutzer-Informationen</h2>
+			<form action="${pageContext.request.contextPath}/EditBenutzerServlet"
+				method="post" style="position: relative;">
+				<span style="position: absolute; top: -50px; right: 0;"> <input
+					type="submit" class="custom-button" value="Speichern">
+				</span>
+		</div>
+		<table class="transaktionen-table">
+			<thead>
+				<tr>
+					<th>Vorname</th>
+					<th>Nachname</th>
+					<th>Email</th>
+					<th>PIN</th>
+					<th>Admin</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input type="text" id="vorname" name="vorname"
+						value="${empty benutzer ? '' : benutzer.vorname}" required></td>
+					<td><input type="text" id="nachname" name="nachname"
+						value="${empty benutzer ? '' : benutzer.nachname}" required></td>
+					<td>${empty benutzer ? '' : benutzer.email}</td>
+					<td><input type="text" id="pin" name="pin"
+						pattern="[0-9]{1,6}" maxlength="6"
+						value="${empty benutzer ? '' : benutzer.pin}" required
 						title="Bitte geben Sie nur bis zu 6 Ziffern ein."></td>
-						<td><select id="admin" name="admin" required>
-								<c:choose>
-									<c:when test="${sessionScope.b_id == benutzer.b_id}">
-										<option value="true" disabled selected>Ja (nicht änderbar)</option>
-									</c:when>
-									<c:otherwise>
-										<c:choose>
-											<c:when test="${empty benutzer or benutzer.admin}">
-												<option value="true" selected>Ja</option>
-												<option value="false">Nein</option>
-											</c:when>
-											<c:otherwise>
-												<option value="true">Ja</option>
-												<option value="false" selected>Nein</option>
-											</c:otherwise>
-										</c:choose>
-									</c:otherwise>
-								</c:choose>
-						</select></td>
-					</tr>
-				</tbody>
-			</table>
-			<input type="hidden" name="b_id" value="${benutzer.b_id}">
+					<td><select id="admin" name="admin" required>
+							<c:choose>
+								<c:when test="${sessionScope.b_id == benutzer.b_id}">
+									<option value="true" disabled selected>Ja (nicht
+										änderbar)</option>
+								</c:when>
+								<c:otherwise>
+									<c:choose>
+										<c:when test="${empty benutzer or benutzer.admin}">
+											<option value="true" selected>Ja</option>
+											<option value="false">Nein</option>
+										</c:when>
+										<c:otherwise>
+											<option value="true">Ja</option>
+											<option value="false" selected>Nein</option>
+										</c:otherwise>
+									</c:choose>
+								</c:otherwise>
+							</c:choose>
+					</select></td>
+				</tr>
+			</tbody>
+		</table>
+		<input type="hidden" name="b_id" value="${benutzer.b_id}">
 		</form>
 	</div>
 
