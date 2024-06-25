@@ -31,7 +31,7 @@
 						src="${pageContext.request.contextPath}/img/logo.jpg" alt="Logo"
 						class="imageMitLink"></a> <a
 						href="${pageContext.request.contextPath}/html/UserStartseite.jsp"
-						title="Die Bank der Zukunft!" class="companyNameLink"> <span>Kapitalismus-</span>
+						title="Die Bank der Zukunft!" class="companyNameLink"> <span>Kapitalismus</span>
 						<span>Kasse</span></a>
 
 				</div>
@@ -91,7 +91,7 @@
 		<div class="kontoinformationen">
 			<p id="kontostand">
 				Saldo: <fmt:formatNumber value="${sessionScope.kontostand}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2"/>€
-			<p id="iban">IBAN: ${sessionScope.IBAN}</p>
+			<p id="iban">IBAN: ${sessionScope.formattedIban}</p>
 		</div>
 		<div class="kontoinformationen">
 			<p id="disporahmen">Disporahmen: <fmt:formatNumber value="${sessionScope.dispo}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2"/>€</p>

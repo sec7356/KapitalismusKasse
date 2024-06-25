@@ -31,7 +31,7 @@
 					
 					<a href="${pageContext.request.contextPath}/html/UserStartseite.jsp"
 					title="Die Bank der Zukunft!" class="companyNameLink">
-						<span>Kapitalismus-</span>
+						<span>Kapitalismus</span>
 						<span>Kasse</span></a>
 					
 				</div>

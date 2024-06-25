@@ -31,7 +31,7 @@
 						src="${pageContext.request.contextPath}/img/logo.jpg" alt="Logo"
 						class="imageMitLink"></a> <a
 						href="${pageContext.request.contextPath}/html/UserStartseite.jsp"
-						title="Die Bank der Zukunft!" class="companyNameLink"> <span>Kapitalismus-</span><span>Kasse</span></a>
+						title="Die Bank der Zukunft!" class="companyNameLink"> <span>Kapitalismus</span><span>Kasse</span></a>
 				</div>
 			</li>
 			<li><a

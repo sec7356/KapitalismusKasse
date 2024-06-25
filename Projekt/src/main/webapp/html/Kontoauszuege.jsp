@@ -35,12 +35,13 @@
 		<li><a href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp"
 		title="Überweisen Sie bequem Ihr Geld!">Überweisung</a>
 		</li>
-		<li><a href="${pageContext.request.contextPath}/html/verlauf.jsp"
+		<li><a href="${pageContext.request.contextPath}/VerlaufServlet"
 		title="Sehen Sie sich alle Ihre Buchungen an!">Kontoaktivitäten</a>
 		</li>
-		<li><a href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp"
-		title="Ändern Sie Ihr Profilbild oder Ihre Nutzerdaten!">Benutzerverwaltung</a>
-		</li>
+		<li><a href="${pageContext.request.contextPath}/html/hilfeIntern.jsp"
+			title="Holen Sie sich Hilfe!">Hilfe</a>
+			</li>
+			<li>
 		<li> <!-- Benutzer verwalten Icon -->
         	<a href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp" title="Nutzerdaten verwalten">
         	<img src="${pageContext.request.contextPath}/img/accountBild.jpg" alt="Benutzerverwaltung" class="accountBild">
