@@ -1,3 +1,7 @@
+<!-- Validiert -->
+<!-- Autoren: Can, Diane -->
+<!-- Style muss noch entfernt werden! -->
+
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -13,7 +17,7 @@
 <script src="${pageContext.request.contextPath}/JavaScript/navigation_extended2.js"></script>
 <script src="${pageContext.request.contextPath}/JavaScript/navigation.js"></script>
 <!-- Überprüfen (Infos & required) -->
-<script src="https://www.google.com/recaptcha/api.js"defer></script>
+<script src="https://www.google.com/recaptcha/api.js" defer></script>
 
 <!-- Google reCaptcha -->
 
@@ -74,10 +78,7 @@
 
 .pin-input-container.incorrect::after {
     content: '✘'; /* Inhalt für das Kreuz */
-}
-
-}
-    
+}    
 </style>
 
 
@@ -233,7 +234,7 @@
             <div class="form-group flex-container">
                 <div class="flex-item">
     			<label for="pin1">PIN*</label>
-    			<input type="password" id="pin1" name="pin1" placeholder="min. 4 Zahlen, max. 6 Zahlen" required maxlength="6">
+    			<input type="password" id="pin1" name="pin1" placeholder="min. 3 Zahlen, max. 6 Zahlen" required maxlength="6">
 				</div>			
 			<div class="flex-item">
    			<label for="pin2">PIN bestätigen*</label>

@@ -1,4 +1,5 @@
-
+<!-- Validiert -->
+<!-- Autor: Selim -->
 <!--  onsubmit() bei internForm ausbauen! -->
 
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
@@ -74,9 +75,7 @@
 	
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="${pageContext.request.contextPath}/JavaScript/hilfeMail.js"></script>
-</head>
 
-<body>
     <div class="internForm">
         <form id="problemForm" method="post" action="mailto:kpt-kasse@navalcadets.com" enctype="multipart/form-data" onsubmit="sendMail(event)">
             <fieldset><legend>Formular zum Problem</legend>

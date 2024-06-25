@@ -1,3 +1,6 @@
+<!-- Validiert -->
+<!-- Autor: Diane -->
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!DOCTYPE html>
@@ -20,12 +23,11 @@
             <p>Es sieht so aus, als hätten wir ein Problem bei der Registrierung. Bitte versuchen Sie es erneut.</p>
         </div>
         <div>
-            <a href="login.jsp">Zurück zur Startseite</a>
+            <a href="${pageContext.request.contextPath}/html/Banking-Login.jsp"">Zurück zur Startseite</a>
         </div>
     </aside>
 
     <article>
-        <h3></h3>
         <h3>Benötigen Sie Hilfe?</h3>
         <p>Erste Fehlerbehandlung finden Sie <a href="${pageContext.request.contextPath}/html/hilfe.jsp" class="black-anchor">hier</a>.</p>
         <p>Oder kontaktieren Sie uns <a href="${pageContext.request.contextPath}/html/kontakt.jsp" class="black-anchor">hier</a>.</p>

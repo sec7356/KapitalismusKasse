@@ -1,3 +1,7 @@
+<!-- Autor: Can -->
+<!-- FEHLERMELDUNG: The value of the for attribute of the label element must be the ID of a non-hidden form control.! -->
+
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
@@ -31,7 +35,7 @@
             <li><a href="${pageContext.request.contextPath}/html/UserStartseite.jsp" title="Sehen Sie sich Ihr Dashboard an!">Dashboard</a></li>
             <li><a href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp" class="active" title="Überweisen Sie bequem Ihr Geld!">Überweisung</a></li>
             <li><a href="${pageContext.request.contextPath}/VerlaufServlet" title="Sehen Sie sich alle Ihre Buchungen an!">Kontoaktivitäten</a></li>
-            <li><a href="${pageContext.request.contextPath}/html/hilfeIntern.jsp"title="Holen Sie sich Hilfe!">Hilfe</a>
+            <li><a href="${pageContext.request.contextPath}/html/hilfeIntern.jsp" title="Holen Sie sich Hilfe!">Hilfe</a>
 			</li>
 			<li>
                 <!-- Benutzer verwalten Icon -->

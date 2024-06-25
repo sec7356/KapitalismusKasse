@@ -26,7 +26,6 @@
     </aside>
 
     <article>
-        <h3></h3>
         <h3>Benötigen Sie Hilfe?</h3>
         <p>Erste Fehlerbehandlung finden Sie <a href="${pageContext.request.contextPath}/html/hilfe.jsp" class="black-anchor">hier</a>.</p>
         <p>Oder kontaktieren Sie uns <a href="${pageContext.request.contextPath}/html/kontakt.jsp" class="black-anchor">hier</a>.</p>

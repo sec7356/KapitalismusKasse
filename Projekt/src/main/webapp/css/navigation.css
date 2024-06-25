@@ -1,3 +1,5 @@
+/* Autor: ... */
+
 /* Deaktiviere die Textauswahl auf der gesamten Webseite */
 body {
 	-webkit-user-select: none; /* Safari */

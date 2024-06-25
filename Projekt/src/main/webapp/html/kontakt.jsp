@@ -31,6 +31,7 @@
     </aside>
     
     <article>
+        <h2>Ein wenig Geduld bitte.</h2>
         <p>Vielen Dank für Ihr Interesse an unserer Website! Wir freuen uns über Ihr Feedback, 
         Ihre Fragen und Anregungen. Bitte haben Sie Verständnis dafür, dass wir aufgrund eines 
         hohen Aufkommens an Anfragen bis zu 4 Werktage benötigen, um Ihnen zu antworten. 
