@@ -1,88 +1,21 @@
-<!-- Validiert -->
-<!-- Autoren: Can, Diane -->
-<!-- Style muss noch entfernt werden! -->
-
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico" />
-<title>Registrierung - Kapitalismus-Kasse</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/RegisterStyle.css">
-<script src="${pageContext.request.contextPath}/JavaScript/captcha.js"></script>
-<script src="${pageContext.request.contextPath}/JavaScript/navigation_extended2.js"></script>
-<script src="${pageContext.request.contextPath}/JavaScript/navigation.js"></script>
-<!-- Überprüfen (Infos & required) -->
-<script src="https://www.google.com/recaptcha/api.js" defer></script>
-<script src="${pageContext.request.contextPath}/JavaScript/registerValidation.js" defer></script>
-
-
-<style>
-    .email-container {
-        position: relative;
-        width: 100%;
-    }
-
-    #email {
-        width: 100%;
-        box-sizing: border-box; /* Include padding in width calculation */
-        padding-right: 30px; /* Space for the status icon */
-    }
-
-    #emailStatus {
-        position: absolute;
-        right: 10px;
-        top: 70%; /* Adjust as needed */
-        transform: translateY(-50%);
-    }
-
-    #emailErrorMessage {
-        position: absolute;
-        top: 100%; /* Position directly below the email input */
-        left: 0;
-        width: 100%;
-        text-align: left;
-        color: #d9534f;
-        font-size: 12px;
-        display: none; /* Initially hide the error message */
-    }
-    
-  .pin-input-container {
-    position: relative;
-}
-
-.pin-input-container input {
-    padding-right: 25px; /* Platz für das Feedback reservieren */
-    box-sizing: border-box; /* Padding in Berechnung einbeziehen */
-}
-
-.pin-input-container::after {
-    content: attr(data-feedback); /* Pseudo-Element für das visuelle Feedback */
-    position: absolute;
-    top: 50%;
-    right: 5px; /* Abstand vom rechten Rand anpassen */
-    transform: translateY(-50%);
-    font-size: 18px; /* Optional: Größe des Symbols anpassen */
-    color: #941100; /* Farbe für das Kreuz */
-}
-
-.pin-input-container.correct::after {
-    content: '✔'; /* Inhalt für das Häkchen */
-    color: #b89e14; /* Farbe für das Häkchen */
-}
-
-.pin-input-container.incorrect::after {
-    content: '✘'; /* Inhalt für das Kreuz */
-}    
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico" />
+    <title>Registrierung - Kapitalismus-Kasse</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/RegisterStyle.css">
+    <script src="${pageContext.request.contextPath}/JavaScript/captcha.js"></script>
+    <script src="${pageContext.request.contextPath}/JavaScript/navigation_extended2.js"></script>
+    <script src="${pageContext.request.contextPath}/JavaScript/navigation.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" defer></script>
+    <script src="${pageContext.request.contextPath}/JavaScript/register.js" defer></script>
 </head>
 <body>
-
     <nav id="navbar">
         <ul>
             <li>
@@ -98,18 +31,14 @@
             <li><a href="${pageContext.request.contextPath}/html/Banking-Login.jsp" class="active">Banking-Login</a></li>
         </ul>
     </nav>
-    <br>
-    <br>
-    <br>
-    
+    <br><br><br>
     <div class="login_window">
         <div class="register-form">
             <div class="background-image"></div>
             <form method="post" action="${pageContext.request.contextPath}/RegisterServlet">
                 <div class="form-group">
                     <h2>Willkommen im KPT-Kasse <br><span>Online-Banking</span></h2>
-                    <p>Bitte geben Sie alle Daten ein.</p>
-                    <br>
+                    <p>Bitte geben Sie alle Daten ein.</p><br>
                 </div>
                 <div class="form-group flex-container">
                     <div class="flex-item">
@@ -123,14 +52,14 @@
                 </div>
                 <br>
                 <div class="form-group">
-                   <div class="email-container">
+                    <div class="email-container">
                         <label for="email">Email*</label>
                         <input type="email" id="email" name="email" required maxlength="50">
                         <span id="emailStatus"></span>
                         <div class="form-group">
                             <span id="emailErrorMessage" class="required-fields" style="display: none;">Diese E-Mail ist nicht verfügbar. Wähle eine andere Adresse aus.</span>
                         </div>
-                   </div>
+                    </div>
                 </div>
                 <br>
                 <div class="form-group flex-container">
@@ -165,7 +94,6 @@
             </form>
         </div>
     </div>
-
     <footer>
         <p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>
     </footer>

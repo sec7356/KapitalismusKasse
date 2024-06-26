@@ -1,8 +1,18 @@
+/* register.js */
+
+console.log("Skript erfolgreich geladen.");
+
 document.addEventListener("DOMContentLoaded", init);
 
 function init() {
+    console.log("DOM-Inhalt geladen.");
+    
     const emailInput = document.getElementById('email');
-    emailInput.addEventListener('input', handleEmailInput);
+    if (emailInput) {
+        emailInput.addEventListener('input', handleEmailInput);
+    } else {
+        console.error("E-Mail-Eingabefeld nicht gefunden.");
+    }
 }
 
 function handleEmailInput() {
@@ -11,11 +21,13 @@ function handleEmailInput() {
         checkEmailAvailability(email);
     } else {
         clearEmailStatus();
-        disableRegisterButton(); // Button deaktivieren, wenn das E-Mail-Feld leer ist
+        disableRegisterButton();
     }
 }
 
 function checkEmailAvailability(email) {
+    console.log("Überprüfe Verfügbarkeit der E-Mail für: " + email);
+    
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.responseType = "json";
     xmlhttp.onreadystatechange = function() {
@@ -23,51 +35,65 @@ function checkEmailAvailability(email) {
             handleEmailResponse(xmlhttp.response);
         }
     };
-    const contextPath = document.getElementById('contextPath').value;
-    xmlhttp.open("POST", contextPath + "/CheckEmailAvailability", true);
+    
+    // Hier direkt den Pfad zum Servlet angeben, z.B. '/CheckEmailAvailability'
+    xmlhttp.open("POST", '../CheckEmailAvailability', true);
     xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xmlhttp.send("email=" + encodeURIComponent(email));
 }
 
 function handleEmailResponse(response) {
+    console.log("Behandle E-Mail-Antwort:", response);
+    
     const emailStatus = document.getElementById('emailStatus');
     const emailErrorMessage = document.getElementById('emailErrorMessage');
     const registerButton = document.getElementById('registerButton');
 
     if (response && response.available === false) {
-        emailStatus.textContent = '✘'; // Kreuz
+        emailStatus.textContent = '✘';
         emailStatus.style.color = '#941100';
         emailErrorMessage.textContent = 'Diese E-Mail ist nicht verfügbar. Wähle eine andere Adresse aus.';
-        emailErrorMessage.style.display = 'block'; // Fehlermeldung anzeigen
-        disableRegisterButton(); // Button deaktivieren
+        emailErrorMessage.style.display = 'block';
+        disableRegisterButton();
     } else if (response && response.available === true) {
-        emailStatus.textContent = '✔'; // Häkchen
+        emailStatus.textContent = '✔';
         emailStatus.style.color = '#b89e14';
-        emailErrorMessage.textContent = ''; // Fehlermeldung zurücksetzen
-        emailErrorMessage.style.display = 'none'; // Fehlermeldung verstecken
-        enableRegisterButton(); // Button aktivieren
+        emailErrorMessage.textContent = '';
+        emailErrorMessage.style.display = 'none';
+        enableRegisterButton();
     } else {
         clearEmailStatus();
-        disableRegisterButton(); // Button deaktivieren, falls keine gültige Antwort
+        disableRegisterButton();
     }
 }
 
 function clearEmailStatus() {
     const emailStatus = document.getElementById('emailStatus');
-    emailStatus.textContent = '';
+    if (emailStatus) {
+        emailStatus.textContent = '';
+    } else {
+        console.error("E-Mail-Status-Element nicht gefunden.");
+    }
 }
 
 function disableRegisterButton() {
     const registerButton = document.getElementById('registerButton');
-    registerButton.disabled = true;
+    if (registerButton) {
+        registerButton.disabled = true;
+    } else {
+        console.error("Registrierungsbutton nicht gefunden.");
+    }
 }
 
 function enableRegisterButton() {
     const registerButton = document.getElementById('registerButton');
-    registerButton.disabled = false;
+    if (registerButton) {
+        registerButton.disabled = false;
+    } else {
+        console.error("Registrierungsbutton nicht gefunden.");
+    }
 }
 
-// PIN Überprüfung
 function checkPINConfirmation() {
     const pin1 = document.getElementById('pin1').value;
     const pin2 = document.getElementById('pin2').value;

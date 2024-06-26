@@ -291,5 +291,64 @@ button[type="submit"], button[type="reset"], button[type="register"] {
 }
 
 
+/* RegisterStyle.css */
+
+.email-container {
+    position: relative;
+    width: 100%;
+}
+
+#email {
+    width: 100%;
+    box-sizing: border-box; /* Include padding in width calculation */
+    padding-right: 30px; /* Space for the status icon */
+}
+
+#emailStatus {
+    position: absolute;
+    right: 10px;
+    top: 70%; /* Adjust as needed */
+    transform: translateY(-50%);
+}
+
+#emailErrorMessage {
+    position: absolute;
+    top: 100%; /* Position directly below the email input */
+    left: 0;
+    width: 100%;
+    text-align: left;
+    color: #d9534f;
+    font-size: 12px;
+    display: none; /* Initially hide the error message */
+}
+
+.pin-input-container {
+    position: relative;
+}
+
+.pin-input-container input {
+    padding-right: 25px; /* Platz für das Feedback reservieren */
+    box-sizing: border-box; /* Padding in Berechnung einbeziehen */
+}
+
+.pin-input-container::after {
+    content: attr(data-feedback); /* Pseudo-Element für das visuelle Feedback */
+    position: absolute;
+    top: 50%;
+    right: 5px; /* Abstand vom rechten Rand anpassen */
+    transform: translateY(-50%);
+    font-size: 18px; /* Optional: Größe des Symbols anpassen */
+    color: #941100; /* Farbe für das Kreuz */
+}
+
+.pin-input-container.correct::after {
+    content: '✔'; /* Inhalt für das Häkchen */
+    color: #b89e14; /* Farbe für das Häkchen */
+}
+
+.pin-input-container.incorrect::after {
+    content: '✘'; /* Inhalt für das Kreuz */
+}
+
 
 
