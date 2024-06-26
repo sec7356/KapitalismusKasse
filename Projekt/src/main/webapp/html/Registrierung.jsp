@@ -13,7 +13,7 @@
     <script src="${pageContext.request.contextPath}/JavaScript/navigation_extended2.js"></script>
     <script src="${pageContext.request.contextPath}/JavaScript/navigation.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" defer></script>
-    <script src="${pageContext.request.contextPath}/JavaScript/register.js" defer></script>
+    <script src="${pageContext.request.contextPath}/JavaScript/registerValidation.js" defer></script>
 </head>
 <body>
     <nav id="navbar">
