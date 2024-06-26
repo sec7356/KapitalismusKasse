@@ -3,6 +3,7 @@
 @import url('style.css');
 @import url('popup.css');
 
+
 /* liste resetten wegen navigation (nach rechts gerutscht) */
 .reset-ul {
     list-style: disc; /* Default list style */

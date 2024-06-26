@@ -10,6 +10,7 @@
     <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico">
     <title>Firmenkunden - Kapitalismuss-Kasse</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleExtern.css">
+    <script src="${pageContext.request.contextPath}/JavaScript/navigation_extended.js"></script>
 </head>
 <body>
 
@@ -60,9 +61,9 @@
   <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
 
-<script src="../JavaScript/navigation_extended.js"></script>
-<script src="../JavaScript/navigation.js"></script>
-<script src="../JavaScript/slideshow.js"></script>
+
+	<script src="${pageContext.request.contextPath}/JavaScript/slideshow.js"></script>
+
 
 <br><br><br><br>
 

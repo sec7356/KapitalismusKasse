@@ -49,10 +49,14 @@ body {
 
 /* Stil für Formulareingabefelder */
 .internForm input[type="text"] , .internForm textarea{
-	width: 70%; /* Volle Breite des Eingabefeldes */
+	width: 97%; /* Volle Breite des Eingabefeldes */
 	padding: 10px; /* Innenabstand des Eingabefeldes */
 	margin-bottom: 15px;
 	/* Abstand nach unten zwischen den Eingabefeldern */
 	border: 1px solid #ccc; /* Rand des Eingabefeldes */
 	border-radius: 5px; /* Abgerundete Ecken des Eingabefeldes */
+}
+
+textarea {
+	resize: none; /* nicht per Maus Größe ändern */
 }

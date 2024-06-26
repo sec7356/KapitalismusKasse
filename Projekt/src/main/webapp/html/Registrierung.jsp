@@ -15,7 +15,6 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/RegisterStyle.css">
 <script src="${pageContext.request.contextPath}/JavaScript/captcha.js"></script>
 <script src="${pageContext.request.contextPath}/JavaScript/navigation_extended2.js"></script>
-<script src="${pageContext.request.contextPath}/JavaScript/navigation.js"></script>
 <!-- Überprüfen (Infos & required) -->
 <script src="https://www.google.com/recaptcha/api.js" defer></script>
 

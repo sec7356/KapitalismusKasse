@@ -1,6 +1,6 @@
 <!-- Validiert -->
 <!-- Autor: Selim -->
-<!--  onsubmit() bei internForm ausbauen! -->
+<!--  onsubmit() bei internForm ausbauen! und navigation Scrollen bearbeiten-->
 
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 
@@ -16,6 +16,7 @@
 <script src="${pageContext.request.contextPath}/JavaScript/popup.js" defer></script>
 <script  src= "${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
 <script  src="${pageContext.request.contextPath}/JavaScript/greeting.js"></script>
+<script  src="${pageContext.request.contextPath}/JavaScript/navigation_extended.js"></script>
 	
 </head>
 <body>
