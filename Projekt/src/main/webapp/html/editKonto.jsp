@@ -101,7 +101,7 @@
         <span style="position: absolute; top: 18px; right: 0;">
             <input type="submit" class="custom-button" value="Speichern">
         </span>
-	</div>
+		</div>
             <input type="hidden" name="b_id" value="${benutzer.b_id}" />
             <input type="hidden" name="iban" value="${konto.IBAN}" />
 
@@ -116,13 +116,13 @@
                 <tbody>
                     <tr>
                         <td>${konto.IBAN}</td> <!-- IBAN als nicht bearbeitbares Feld -->
-                        <td><input type="number" id="kontoStand" name="kontoStand" value="${empty konto ? '' : konto.kontoStand}" required></td>
-                        <td><input type="number" id="dispoStand" name="dispoStand" value="${empty konto ? '' : konto.dispoStand}"></td>
+                        <td><input type="number" id="kontoStand" name="kontoStand" value="${empty konto ? '' : konto.kontoStand}" required min="0" max="9999999999999"></td>
+                        <td><input type="number" id="dispoStand" name="dispoStand" value="${empty konto ? '' : konto.dispoStand}" required min="0" max="99999999"></td>
                     </tr>
                 </tbody>
             </table>
         </form>
-</table>
+	</table>
 </div>
 
     
