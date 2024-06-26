@@ -76,67 +76,62 @@
 			<h2 style="display: inline-block;">Bearbeitung:
 				Benutzer-Informationen</h2>
 			<form action="${pageContext.request.contextPath}/EditBenutzerServlet"
-				method="post" style="position: relative;">
+				method="post">
 				<span style="position: absolute; top: -50px; right: 0;"> <input
 					type="submit" class="custom-button" value="Speichern">
 				</span>
-		</div>
-		<table class="transaktionen-table">
-			<thead>
-				<tr>
-					<th>Vorname</th>
-					<th>Nachname</th>
-					<th>Email</th>
-					<th>PIN</th>
-					<th>Admin</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td><input type="text" id="vorname" name="vorname"
-						value="${empty benutzer ? '' : benutzer.vorname}" required></td>
-					<td><input type="text" id="nachname" name="nachname"
-						value="${empty benutzer ? '' : benutzer.nachname}" required></td>
-					<td>${empty benutzer ? '' : benutzer.email}</td>
-					<td><input type="text" id="pin" name="pin"
-						pattern="[0-9]{1,6}" maxlength="6"
-						value="${empty benutzer ? '' : benutzer.pin}" required
-						title="Bitte geben Sie nur bis zu 6 Ziffern ein."></td>
-					<td><select id="admin" name="admin" required>
-							<c:choose>
-								<c:when test="${sessionScope.b_id == benutzer.b_id}">
-									<option value="true" disabled selected>Ja (nicht
-										änderbar)</option>
-								</c:when>
-								<c:otherwise>
+				<table class="transaktionen-table">
+					<thead>
+						<tr>
+							<th>Vorname</th>
+							<th>Nachname</th>
+							<th>Email</th>
+							<th>PIN</th>
+							<th>Admin</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><input type="text" id="vorname" name="vorname"
+								value="${empty benutzer ? '' : benutzer.vorname}" required></td>
+							<td><input type="text" id="nachname" name="nachname"
+								value="${empty benutzer ? '' : benutzer.nachname}" required></td>
+							<td>${empty benutzer ? '' : benutzer.email}</td>
+							<td><input type="text" id="pin" name="pin"
+								pattern="[0-9]{1,6}" maxlength="6"
+								value="${empty benutzer ? '' : benutzer.pin}" required
+								title="Bitte geben Sie nur bis zu 6 Ziffern ein."></td>
+							<td><select id="admin" name="admin" required>
 									<c:choose>
-										<c:when test="${empty benutzer or benutzer.admin}">
-											<option value="true" selected>Ja</option>
-											<option value="false">Nein</option>
+										<c:when test="${sessionScope.b_id == benutzer.b_id}">
+											<option value="true" disabled selected>Ja (nicht
+												änderbar)</option>
 										</c:when>
 										<c:otherwise>
-											<option value="true">Ja</option>
-											<option value="false" selected>Nein</option>
+											<c:choose>
+												<c:when test="${empty benutzer or benutzer.admin}">
+													<option value="true" selected>Ja</option>
+													<option value="false">Nein</option>
+												</c:when>
+												<c:otherwise>
+													<option value="true">Ja</option>
+													<option value="false" selected>Nein</option>
+												</c:otherwise>
+											</c:choose>
 										</c:otherwise>
 									</c:choose>
-								</c:otherwise>
-							</c:choose>
-					</select></td>
-				</tr>
-			</tbody>
-		</table>
-		<input type="hidden" name="b_id" value="${benutzer.b_id}">
-		</form>
+							</select></td>
+						</tr>
+					</tbody>
+				</table>
+				<input type="hidden" name="b_id" value="${benutzer.b_id}">
+			</form>
+		</div>
 	</div>
 
 	<div class="transaktionen">
+		<h2>Konto-Informationen</h2>
 		<table class="transaktionen-table">
-			<h2 style="display: inline-block;">Konto-Informationen</h2>
-			</span>
-
-			<c:if test="${empty kontoinformationen}">
-				<p>Keine Konto-Informationen gefunden.</p>
-			</c:if>
 			<thead>
 				<tr>
 					<th>IBAN</th>
@@ -145,6 +140,11 @@
 				</tr>
 			</thead>
 			<tbody>
+				<c:if test="${empty kontoinformationen}">
+					<tr>
+						<td colspan="3">Keine Konto-Informationen gefunden.</td>
+					</tr>
+				</c:if>
 				<c:forEach var="konto" items="${kontoinformationen}">
 					<tr>
 						<td>${konto.IBAN}</td>
@@ -158,14 +158,11 @@
 				</c:forEach>
 			</tbody>
 		</table>
-
 	</div>
 
-
 	<div class="transaktionen">
+		<h2>Transaktion-Informationen</h2>
 		<table class="transaktionen-table">
-			<h2 style="display: inline-block;">Transaktion-Informationen</h2>
-
 			<thead>
 				<tr>
 					<th>Zahlender</th>
@@ -185,61 +182,25 @@
 					</c:when>
 					<c:otherwise>
 						<c:forEach var="transaktion" items="${transaktionen}">
-							<c:choose>
-								<c:when test="${transaktion.nach eq sessionScope.IBAN}">
-									<tr>
-										<td>${transaktion.senderVorname}
-											${transaktion.senderNachname}</td>
-
-										<td style="text-align: center;">-</td>
-
-										<td>${transaktion.von}
-											<button class="copy-button"
-												onclick="copyToClipboardAndDisplayText('${transaktion.von}')">Kopieren</button>
-										</td>
-
-										<td><fmt:formatNumber value="${transaktion.summe}"
-												type="number" groupingUsed="true" maxFractionDigits="2"
-												minFractionDigits="2" /> €</td>
-										<td class="verzweck-cell">${empty transaktion.verzweck ? ' - keine Angaben - ' : transaktion.verzweck}</td>
-
-										<td><fmt:formatDate value="${transaktion.zeitstempel}"
-												pattern="dd.MM.yyyy, HH:mm" /> Uhr</td>
-									</tr>
-								</c:when>
-								<c:otherwise>
-									<tr>
-										<td style="text-align: center;">-</td>
-
-										<td>${transaktion.empfaengerVorname}
-											${transaktion.empfaengerNachname}</td>
-
-										<td>${transaktion.nach}
-											<button class="copy-button"
-												onclick="copyToClipboardAndDisplayText('${transaktion.nach}')">Kopieren</button>
-										</td>
-
-										<td><fmt:formatNumber value="${transaktion.summe}"
-												type="number" groupingUsed="true" maxFractionDigits="2"
-												minFractionDigits="2" /> €</td>
-										<td class="verzweck-cell">${empty transaktion.verzweck ? ' - keine Angaben - ' : transaktion.verzweck}</td>
-
-										<td><fmt:formatDate value="${transaktion.zeitstempel}"
-												pattern="dd.MM.yyyy, HH:mm" /> Uhr</td>
-									</tr>
-								</c:otherwise>
-							</c:choose>
+							<tr>
+								<td>${transaktion.senderVorname}
+									${transaktion.senderNachname}</td>
+								<td>${transaktion.empfaengerVorname}
+									${transaktion.empfaengerNachname}</td>
+								<td>${transaktion.nach}</td>
+								<td><fmt:formatNumber value="${transaktion.summe}"
+										type="number" groupingUsed="true" maxFractionDigits="2"
+										minFractionDigits="2" /> €</td>
+								<td class="verzweck-cell">${empty transaktion.verzweck ? ' - keine Angaben - ' : transaktion.verzweck}</td>
+								<td><fmt:formatDate value="${transaktion.zeitstempel}"
+										pattern="dd.MM.yyyy, HH:mm" /> Uhr</td>
+							</tr>
 						</c:forEach>
 					</c:otherwise>
 				</c:choose>
 			</tbody>
-
-
 		</table>
 	</div>
-
-
-
 
 	<footer>
 		<p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>
