@@ -31,14 +31,12 @@
 
 /* FAQ-Stile */
 .faq-section {
-    max-width: 800px;
+    width: 96%;
     margin: auto;
     background-color: #e0e0e0;
-    padding: 20px;
+    padding: 15px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    float: left;
-    margin-left: 60px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -57,7 +55,6 @@
 .faq-answer {
     margin: 5px 0 0 0;
     padding-left: 20px;
-    text-indent: -20px;
     position: relative;
 }
 
@@ -66,4 +63,35 @@
     position: absolute;
     left: -20px;
     color: #000;
+}
+
+.vorteile {
+	width: 96%;
+    margin: auto;
+    background-color: #e0e0e0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+}
+
+.regBox {
+	width: 96%;
+    margin: auto;
+    background-color: #e0e0e0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.buttonStyle {
+	width: auto;
+	background-color: #b89e14;
+	color: #fff;
+	cursor: pointer;
+	padding: 5px 10px; /* Ändere den Padding nach Bedarf */
+	border: none; /* Entfernt die Standard-Bordereigenschaften */
+	border-radius: 5px; /* Rundet die Ecken des Buttons */
+	font-size: 14px; /* Ändere die Schriftgröße nach Bedarf */
 }
