@@ -18,10 +18,10 @@
     <script src="${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
     <script src="${pageContext.request.contextPath}/JavaScript/Verwendungszweck.js"></script>
     <script src="${pageContext.request.contextPath}/JavaScript/eingabeUeberweisung.js"></script>
-    <script src="${pageContext.request.contextPath}/JavaScript/navigation_extended2.js"></script>
+    <script src="${pageContext.request.contextPath}/JavaScript/navigation_intern.js"></script>
 </head>
 <body>
-    <nav id="navbar">
+    <nav>
         <ul>
             <li>
 				<div class="container">
@@ -101,6 +101,7 @@
         				${requestScope.error}
     					</div>
 					</c:if>
+					
 
                     </div>
                 </fieldset>

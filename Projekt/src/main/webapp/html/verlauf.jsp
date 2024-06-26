@@ -8,19 +8,19 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico" />
-<title>Alle Buchungen - Kapitalismus-Kasse</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleIntern.css">
-<script src="${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
-<script src="${pageContext.request.contextPath}/JavaScript/greeting.js"></script>
-<script src="${pageContext.request.contextPath}/JavaScript/Zwischenablage.js"></script>
-<script src="${pageContext.request.contextPath}/JavaScript/navigation_extended.js"></script>
-
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico" />
+	<title>Alle Buchungen - Kapitalismus-Kasse</title>
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleIntern.css">
+	<script src="${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
+	<script src="${pageContext.request.contextPath}/JavaScript/greeting.js"></script>
+	<script src="${pageContext.request.contextPath}/JavaScript/Zwischenablage.js"></script>
+	<script src="${pageContext.request.contextPath}/JavaScript/navigation_intern.js"></script>
 </head>
 <body>
-	<nav id="navbar">
+
+	<nav>
 		<ul>
 			<li>
 				<div class="container">
@@ -36,18 +36,22 @@
 			<li><a href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp" title="Nutzerdaten verwalten"> 
 				<img src="${pageContext.request.contextPath}/img/accountBild.jpg"	alt="Benutzerverwaltung" class="accountBild"></a>
 			</li>
-			<li><div class="timer-logout-container"><div id="timer">05:00</div><div class="divider"></div>
-					<form method="post" action="${pageContext.request.contextPath}/LogoutServlet">
-						<button name="loeschen" type="submit" class="logout-button" title="Melden Sie sich sicher ab!">Logout</button>
-					</form>
-				</div>
+			<li>
+			<div class="timer-logout-container">
+                    <div id="timer">05:00</div>
+                    <div class="divider"></div>
+                    <form method="post" action="${pageContext.request.contextPath}/LogoutServlet">
+                        <button name="loeschen" type="submit" class="logout-button" title="Melden Sie sich sicher ab!">Logout</button>
+                    </form>
+                </div>
 			</li>
 		</ul>
 	</nav>
-	<br>
+
+<main>
 
 	<div class="grauBackground">
-		<br> <br> <br> <br>
+			<br><br><br><br><br>						
 		<div class="profile-text">
 				<p id="greeting">
 					Guten Tag, <span id="vorname">${sessionScope.vorname}</span>
@@ -104,7 +108,7 @@
 			</tbody>
 		</table>
 	</div>
-
+</main>
 
 	<footer>
 		<p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>

@@ -165,11 +165,13 @@
 
 				</div>
 			</section>
-			<!-- 		Parameter werden an UeberweisenServlet weitergegeben, keine bessere Lösung gefunden!? @Can-->
-			<input type="hidden" name="von" value="<%=session.getAttribute("IBAN")%>"> 
-			<input type="hidden" name="nach" value="<%=request.getAttribute("nach")%>">
-			<input type="hidden" name="summe" value="<%=request.getAttribute("summe")%>">
-			<input type="hidden" name="verwendungszweck" value="<%=request.getAttribute("verwendungszweck")%>">
+<!-- 			Parameter werden an UeberweisenServlet weitergegeben -->
+			<input type="hidden" name="von" value="${sessionScope.IBAN}"> 
+			<input type="hidden" name="nach" value="${requestScope.nach}">
+			<input type="hidden" name="summe" value="${requestScope.summe}">
+			<input type="hidden" name="verwendungszweck" value="${requestScope.verwendungszweck}">
+			
+			
 			
 			
 		</form>
