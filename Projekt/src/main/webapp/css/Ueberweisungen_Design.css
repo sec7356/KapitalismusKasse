@@ -56,11 +56,13 @@ legend {
 label[for="verwendungszweck"]+span {
 	display: block;
 	width: 100%;
+	
 }
 
 label[for="verwendungszweck"]+span p, label[for="verwendungszweck"]+span span
 	{
 	word-break: break-all;
+	
 }
 
 .form-group label {
@@ -70,13 +72,6 @@ label[for="verwendungszweck"]+span p, label[for="verwendungszweck"]+span span
 
 .form-group label:last-child {
 	color: #941100;
-}
-
-textarea {
-	min-height: 8rem;
-	width: 100%;
-	resize: none;
-	word-wrap: break-word;
 }
 
 .form-group span {
@@ -124,6 +119,8 @@ textarea {
 	min-height: 8rem;
 	width: 100%;
 	resize: none;
+	border: 1px solid #ccc;	
+	border-radius: 5px;
 }
 
 .small-text {

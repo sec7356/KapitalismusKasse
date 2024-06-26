@@ -146,7 +146,7 @@
                     </div>
                 </fieldset>
                 <div class="button-container">
-                    <button name="reset" type="reset">Zurücksetzen</button>
+                    <button name="reset" onclick="resetForm()" type="reset">Zurücksetzen</button>
                     <button name="submit" type="submit">Weiter</button>
                 </div>
             </section>
