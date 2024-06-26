@@ -6,9 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico" />
 <title>Kapitalismus Kasse - Deine Bank!</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleExtern.css">
 <script src="${pageContext.request.contextPath}/JavaScript/navigation_extended.js"></script>
-<%-- <script src="${pageContext.request.contextPath}/JavaScript/navigation.js"></script> --%>
+<script src="${pageContext.request.contextPath}/JavaScript/navigation.js"></script>
 </head>
 <body>
 
@@ -67,8 +67,8 @@
 			<span class="dot"></span> <span class="dot"></span> <span class="dot"></span>
 		</div>
 
-		<a class="prev" onclick="plusSlides(-1)">&#10094;</a> 
-		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a> <a class="next"
+			onclick="plusSlides(1)">&#10095;</a>
 
 	</div>
 
@@ -88,14 +88,14 @@
 			<br>Neu! Forscher fanden eine spezielle Art von Pflanzen aus einer Nachbargalaxie, worauf Euro-Scheine wachsen.
 			Desshalb jetzt 100€ Startguthaben bei der Registrierung als Neukunde!
 			<br><br>
-			<a href="#">Mehr</a>
+			<a href="${pageContext.request.contextPath}/html/kptNews.jsp">Mehr</a>
 		</div>
 		<div class="grid-item">
 			Selbstständig werden?<br>
 			<br>Wir unterstützen Sie auch bei dieser Herausforderung mit
 			unseren attraktiven Angeboten. Sie werden jedoch trotzdem nicht erfolgreich!<br>
-			<br>
-			<a href="#">Mehr</a>
+			<br><br>
+			<a href="${pageContext.request.contextPath}/html/kptNews.jsp">Mehr</a>
 		</div>
 		<div class="grid-item">
 			Sie haben Ihr Geld versoffen?<br>
@@ -103,7 +103,7 @@
 			Kredit-Angeboten katapultieren wir Sie in die nächstgrößere
 			Katastrophe!<br>
 			<br>
-			<a href="#">Mehr</a>
+			<a href="${pageContext.request.contextPath}/html/kptNews.jsp">Mehr</a>
 		</div>
 	</div>
 

@@ -14,3 +14,17 @@
 .reset-ul li {
     position: static; /* Override any absolute positioning */
     margin-bottom: 5px; /* Add some space between items */
+}
+
+#bold {
+	font-weight: bold;
+}
+
+#weiteres {
+	padding: 10px 0px 10px 60px;
+	color: black; /* Ändere die Textfarbe auf rot */
+	font-size: 1.5em;
+	font-family: Verdana, sans-serif;
+	/* Füge weitere CSS-Regeln hinzu, um die Formatierung anzupassen */
+	background-color: #ddd;
+}
