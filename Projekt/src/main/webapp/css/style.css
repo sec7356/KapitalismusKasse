@@ -37,6 +37,8 @@ footer {
     text-align: center;
     padding: 0px;
     justify-content: center;
+   	transition: bottom 1s ease; /* Fügt eine sanfte Animation hinzu */
+    
 }
 
 /* Navigation horizontal */

@@ -69,7 +69,12 @@
 
 	<div class="grauBackground">
 		<br><br><br><br>						
-		<p>Guten Tag, ${sessionScope.vorname}  ${sessionScope.nachname}!</p>
+		<div class="profile-text">
+				<p id="greeting">
+					Guten Tag, <span id="vorname">${sessionScope.vorname}</span>
+					<span id="nachname">${sessionScope.nachname}</span>
+				</p>
+		</div>
 		<p>Sie suchen nach Hilfe? Dann sind Sie hier genau richtig!</p>
 	</div>
 	<br>

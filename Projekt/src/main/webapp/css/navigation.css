@@ -60,9 +60,7 @@ body {
 	margin: 3px;
 	margin-top: 8px;
 	left: 12px;
-	position: fixed;
-	transition: width 0.3s ease-in-out, height 0.3s ease-in-out; /* Übergang für Breite und Höhe */
-	
+	position: fixed;	
 }
 
 .accountBild {
