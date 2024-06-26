@@ -202,14 +202,14 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 .transaktionen-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 14px;
+    font-size: 14px;    
+    text-align: center; /* Zentriert den Text innerhalb der Tabelle */
 }
 
 .transaktionen-table th, .transaktionen-table td {
     padding: 12px 15px;
     border: 1px solid #ddd;
     white-space: normal;
-    text-align: left;
 }
 
 .transaktionen-table th {
@@ -342,5 +342,17 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 .summe-negative {
     color: #ff6666;
 }
+
+.centered-cell {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 

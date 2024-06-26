@@ -112,8 +112,12 @@
 
     
 <div class="transaktionen">
-    <div class="form-container">
-            <h2 class="form-title">Konto-Informationen</h2>
+    <div class="header-container">
+        <h2>Konto-Informationen</h2>
+            <c:forEach var="benutzer" items="${benutzerinformationen}">
+           	<div class="button-container"> <a href="${pageContext.request.contextPath}/EditKontoServlet?b_id=${benutzer.b_id}" class="custom-button">Bearbeiten</a></div>
+            </c:forEach>
+        </div>
         	<table class="transaktionen-table">
 			<c:if test="${empty kontoinformationen}">
 				<p>Keine Konto-Informationen gefunden.</p>
@@ -136,7 +140,6 @@
 			</tbody>
 			</table>
 	</div>
-</div>
 
 <div class="transaktionen">
     <div class="form-container">

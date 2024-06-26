@@ -79,9 +79,9 @@
 							<c:choose>
 								<c:when test="${transaktion.nach eq sessionScope.IBAN}">
 									<tr>
-										<td>${transaktion.senderVorname} ${transaktion.senderNachname}</td>
+										<td class="centered-cell">${transaktion.senderVorname} ${transaktion.senderNachname}</td>
                                         <td class="empty-cell">-</td>
-										<td> ${transaktion.von} <button class="copy-button" onclick="copyToClipboardAndDisplayText('${transaktion.von}')">Kopieren</button></td>
+                                        <td class="centered-cell"><div class="centered-content">${transaktion.von} <button class="copy-button" onclick="copyToClipboardAndDisplayText('${transaktion.von}')">Kopieren</button></div></td>
 										<td class="summe-positive">+ <fmt:formatNumber value="${transaktion.summe}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2" /> €</td>
 										<td class="verzweck-cell">${empty transaktion.verzweck ? ' - keine Angaben - ' : transaktion.verzweck}</td>
 										<td><fmt:formatDate value="${transaktion.zeitstempel}" pattern="dd.MM.yyyy, HH:mm" /> Uhr</td>
@@ -91,7 +91,7 @@
 									<tr>
                                         <td class="empty-cell">-</td>
 										<td>${transaktion.empfaengerVorname} ${transaktion.empfaengerNachname}</td>
-										<td>${transaktion.nach} <button class="copy-button" onclick="copyToClipboardAndDisplayText('${transaktion.nach}')">Kopieren</button></td>
+                                        <td class="centered-cell"><div class="centered-content">${transaktion.nach} <button class="copy-button" onclick="copyToClipboardAndDisplayText('${transaktion.nach}')">Kopieren</button></div></td>
 										<td class="summe-negative">- <fmt:formatNumber value="${transaktion.summe}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2" /> €</td>
 										<td class="verzweck-cell">${empty transaktion.verzweck ? ' - keine Angaben - ' : transaktion.verzweck}</td>
 										<td><fmt:formatDate value="${transaktion.zeitstempel}" pattern="dd.MM.yyyy, HH:mm" /> Uhr</td>
@@ -102,8 +102,6 @@
 					</c:otherwise>
 				</c:choose>
 			</tbody>
-
-
 		</table>
 	</div>
 
