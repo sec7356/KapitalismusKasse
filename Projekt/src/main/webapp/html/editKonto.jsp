@@ -57,9 +57,11 @@
 
 
 <div class="transaktionen">
-    <h2>Benutzer-Informationen</h2>
-    <table class="transaktionen-table">
-        <thead>
+    <div class="form-container">
+        <h2 class="form-title">Benutzer-Informationen</h2>
+	        <table class="transaktionen-table">
+
+          	<thead>
             <tr>
                 <th>Vorname</th>
                 <th>Nachname</th>
@@ -67,92 +69,110 @@
                 <th>PIN</th>
                 <th>Admin</th>
             </tr>
-        </thead>
-        <tbody>
-            <c:forEach var="benutzer" items="${benutzerinformationen}">
+        	</thead>
+        	<tbody>
                 <tr>
                     <td>${benutzer.vorname}</td>
                     <td>${benutzer.nachname}</td>
                     <td>${benutzer.email}</td>
                     <td>${benutzer.pin}</td>
-                    <td>${benutzer.admin ? 'Ja' : 'Nein'}</td>
+                    <td> 
+                    <c:choose>
+                    <c:when test="${benutzer.admin}"> Ja </c:when>
+                    <c:otherwise>Nein</c:otherwise>
+                    </c:choose>
+                    </td>
                 </tr>
-            </c:forEach>
-        </tbody>
-    </table>
+        	</tbody>
+    		</table>
+    </div>
 </div>
 
+
 <div class="transaktionen">
-    <h2>Bearbeitung: Konto-Informationen</h2>
-    <form action="${pageContext.request.contextPath}/EditKontoServlet" method="post">
-        <div style="position: relative;">
-            <span style="position: absolute; top: 18px; right: 0;">
+    <div class="form-container">
+        <h2 class="form-title">Bearbeitung: Konto-Informationen</h2>        
+            <form action="${pageContext.request.contextPath}/EditKontoServlet" method="post" class="form" id="editBenutzerForm">
+    		<span class="form-submit">
                 <input type="submit" class="custom-button" value="Speichern">
             </span>
-            <input type="hidden" name="b_id" value="${benutzer.b_id}" />
-            <input type="hidden" name="iban" value="${konto.IBAN}" />
-        </div>
         
+            <table class="transaktionen-table">
+                <thead>
+                    <tr>
+                        <th>IBAN</th>
+                        <th>Kontostand</th>
+                        <th>Disporahmen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>${konto.IBAN}</td> <!-- IBAN als nicht bearbeitbares Feld -->
+                        <td><input type="number" id="kontoStand" name="kontoStand" value="${empty konto ? '' : konto.kontoStand}" required min="0" max="9999999999999"></td>
+                        <td><input type="number" id="dispoStand" name="dispoStand" value="${empty konto ? '' : konto.dispoStand}" required min="0" max="99999999"></td>
+                    </tr>
+                </tbody>
+            </table>
+			<input type="hidden" name="b_id" value="${benutzer.b_id}">
+			</form>
+	</div>
+</div>
+
+    
+    
+
+	<div class="transaktionen">
+    <div class="form-container">
+        <h2 class="form-title">Transaktion-Informationen</h2>
         <table class="transaktionen-table">
             <thead>
                 <tr>
+                    <th>Zahlender</th>
+                    <th>Empfänger</th>
                     <th>IBAN</th>
-                    <th>Kontostand</th>
-                    <th>Disporahmen</th>
+                    <th>Summe</th>
+                    <th>Verwendungszweck</th>
+                    <th>Zeitstempel</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>${konto.IBAN}</td> <!-- IBAN als nicht bearbeitbares Feld -->
-                    <td><input type="number" id="kontoStand" name="kontoStand" value="${empty konto ? '' : konto.kontoStand}" required min="0" max="9999999999999"></td>
-                    <td><input type="number" id="dispoStand" name="dispoStand" value="${empty konto ? '' : konto.dispoStand}" required min="0" max="99999999"></td>
-                </tr>
+                <c:choose>
+                    <c:when test="${empty transaktionen}">
+                        <tr>
+                            <td colspan="6">Keine Transaktionen durchgeführt</td>
+                        </tr>
+                    </c:when>
+                    <c:otherwise>
+                        <c:forEach var="transaktion" items="${transaktionen}">
+                            <c:choose>
+                                <c:when test="${transaktion.nach eq sessionScope.IBAN}">
+                                    <tr>
+                                        <td>${transaktion.senderVorname} ${transaktion.senderNachname}</td>
+                                        <td class="empty-cell">-</td>
+                                        <td>${transaktion.von} <button class="copy-button" onclick="copyToClipboardAndDisplayText('${transaktion.von}')">Kopieren</button></td>
+                                        <td><fmt:formatNumber value="${transaktion.summe}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2" /> €</td>
+                                        <td class="verzweck-cell">${empty transaktion.verzweck ? ' - keine Angaben - ' : transaktion.verzweck}</td>
+                                        <td><fmt:formatDate value="${transaktion.zeitstempel}" pattern="dd.MM.yyyy, HH:mm" /> Uhr</td>
+                                    </tr>
+                                </c:when>
+                                <c:otherwise>
+                                    <tr>
+                                        <td class="empty-cell">-</td>
+                                        <td>${transaktion.empfaengerVorname} ${transaktion.empfaengerNachname}</td>
+                                        <td>${transaktion.nach} <button class="copy-button" onclick="copyToClipboardAndDisplayText('${transaktion.nach}')">Kopieren</button></td>
+                                        <td><fmt:formatNumber value="${transaktion.summe}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2" /> €</td>
+                                        <td class="verzweck-cell">${empty transaktion.verzweck ? ' - keine Angaben - ' : transaktion.verzweck}</td>
+                                        <td><fmt:formatDate value="${transaktion.zeitstempel}" pattern="dd.MM.yyyy, HH:mm" /> Uhr</td>
+                                    </tr>
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
+                    </c:otherwise>
+                </c:choose>
             </tbody>
         </table>
-    </form>
+    </div>
 </div>
-
-<div class="transaktionen">
-    <h2>Transaktion-Informationen</h2>
-    <table class="transaktionen-table">
-        <thead>
-            <tr>
-                <th>Zahlender</th>
-                <th>Empfänger</th>
-                <th>IBAN</th>
-                <th>Summe</th>
-                <th>Verwendungszweck</th>
-                <th>Zeitstempel</th>
-            </tr>
-        </thead>
-        <tbody>
-            <c:choose>
-                <c:when test="${empty transaktionen}">
-                    <tr>
-                        <td colspan="6">Keine Transaktionen durchgeführt</td>
-                    </tr>
-                </c:when>
-                <c:otherwise>
-                    <c:forEach var="transaktion" items="${transaktionen}">
-                        <tr>
-                            <td>${transaktion.senderVorname} ${transaktion.senderNachname}</td>
-                            <td>${transaktion.empfaengerVorname} ${transaktion.empfaengerNachname}</td>
-                            <td>${transaktion.nach}</td>
-                            <td>
-                                <fmt:formatNumber value="${transaktion.summe}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2" /> €
-                            </td>
-                            <td class="verzweck-cell">${empty transaktion.verzweck ? ' - keine Angaben - ' : transaktion.verzweck}</td>
-                            <td>
-                                <fmt:formatDate value="${transaktion.zeitstempel}" pattern="dd.MM.yyyy, HH:mm" /> Uhr
-                            </td>
-                        </tr>
-                    </c:forEach>
-                </c:otherwise>
-            </c:choose>
-        </tbody>
-    </table>
-</div>
-
     
     
     

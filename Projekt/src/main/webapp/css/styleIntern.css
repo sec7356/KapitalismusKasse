@@ -306,5 +306,35 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
     font-size: 2em;
 }
 
+.form-container {
+    position: relative;
+}
+
+.form-title {
+    display: inline-block;
+}
+
+.form {
+    position: relative; 
+}
+
+.form-submit {
+    position: absolute;
+    top: -50px;
+    right: 0;
+}
+
+.transaktionen-table td.empty-cell {
+    /* Stile für Zellen ohne Inhalt */
+    text-align: center;
+}
+
+.transaktionen-table td.verzweck-cell {
+    /* Stile für Zellen mit dem Verwendungszweck */
+    text-align: center;
+    
+}
+
+
 
 
