@@ -13,38 +13,6 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleIntern.css">
     <script src="${pageContext.request.contextPath}/JavaScript/PinAusblenden.js"></script>
     <script src="${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
-    
-    <script>
-        // Funktion zum Speichern der Formulareingaben im Local Storage
-        function saveFormInputs() {
-            localStorage.setItem('adminSuchen_vorname', document.getElementById('vorname').value);
-            localStorage.setItem('adminSuchen_nachname', document.getElementById('nachname').value);
-            localStorage.setItem('adminSuchen_email', document.getElementById('email').value);
-        }
-
-        // Funktion zum Laden der gespeicherten Werte beim Laden der Seite
-        window.onload = function() {
-            document.getElementById('vorname').value = localStorage.getItem('adminSuchen_vorname') || '';
-            document.getElementById('nachname').value = localStorage.getItem('adminSuchen_nachname') || '';
-            document.getElementById('email').value = localStorage.getItem('adminSuchen_email') || '';
-        }
-
-        // Funktion zum Löschen der Eingaben
-        function clearFormInputs() {
-            localStorage.removeItem('adminSuchen_vorname');
-            localStorage.removeItem('adminSuchen_nachname');
-            localStorage.removeItem('adminSuchen_email');
-            
-            // Eingabefelder leeren
-            document.getElementById('vorname').value = '';
-            document.getElementById('nachname').value = '';
-            document.getElementById('email').value = '';
-            
-            window.location.href = "${pageContext.request.contextPath}/AdminBenutzerListeServlet";
-
-        }
-    </script>
-    
 </head>
 <body>
 
@@ -83,13 +51,12 @@
 <div class="Suchfeld">
     <form id="AdminSuchen" method="get" action="${pageContext.request.contextPath}/AdminBenutzerListeServlet" onsubmit="saveFormInputs()">
         <label for="vorname">Vorname:</label>
-        <input type="text" id="vorname" name="vorname" value="${sessionScope.vorname}">
+        <input type="text" id="vorname" name="vorname">
         <label for="nachname">Nachname:</label>
-        <input type="text" id="nachname" name="nachname" value="${sessionScope.nachname}">
+        <input type="text" id="nachname" name="nachname">
         <label for="email">E-Mail:</label>
-        <input type="text" id="email" name="email" value="${sessionScope.email}">
+        <input type="text" id="email" name="email">
         <button type="submit">Suchen</button>
-        <button type="reset" onclick="clearFormInputs()">Löschen</button>
     </form>
 </div>
     
