@@ -21,7 +21,8 @@
     <script src="${pageContext.request.contextPath}/JavaScript/navigation_intern.js"></script>
 </head>
 <body>
-    <nav>
+
+    <nav id="navbar">
         <ul>
             <li>
 				<div class="container">

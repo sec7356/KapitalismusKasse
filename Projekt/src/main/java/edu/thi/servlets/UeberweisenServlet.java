@@ -34,11 +34,10 @@ public class UeberweisenServlet extends HttpServlet {
 	    String summeStr = request.getParameter("summe");
 	    String verzweck = request.getParameter("verwendungszweck");
 
-	    System.out.println("");
-	    System.out.println(vonIBAN);
-	    System.out.println(nachIBAN);
-	    System.out.println(summeStr);
-	    System.out.println(verzweck);
+	    System.out.println("Absender " + vonIBAN);
+	    System.out.println("Empfänger " + nachIBAN);
+	    System.out.println("Summe " + summeStr);
+	    System.out.println("Verwendungszweck " + verzweck);
 
 	    double summe = Double.parseDouble(summeStr);
 

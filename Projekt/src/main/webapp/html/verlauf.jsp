@@ -20,7 +20,7 @@
 </head>
 <body>
 
-	<nav>
+    <nav id="navbar">
 		<ul>
 			<li>
 				<div class="container">
