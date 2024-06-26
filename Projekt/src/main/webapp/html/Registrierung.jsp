@@ -15,11 +15,8 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/RegisterStyle.css">
 <script src="${pageContext.request.contextPath}/JavaScript/captcha.js"></script>
 <script src="${pageContext.request.contextPath}/JavaScript/navigation_extended2.js"></script>
-<<<<<<< HEAD
 <script src="${pageContext.request.contextPath}/JavaScript/navigation.js"></script>
-=======
 <!-- Überprüfen (Infos & required) -->
->>>>>>> c4ebe2f3f9b4d2707783dfe5394d3264468ef935
 <script src="https://www.google.com/recaptcha/api.js" defer></script>
 <script src="${pageContext.request.contextPath}/JavaScript/registerValidation.js" defer></script>
 
