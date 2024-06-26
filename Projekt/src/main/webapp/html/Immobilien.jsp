@@ -51,14 +51,9 @@
   <div class="mySlides fade">
     <img src="${pageContext.request.contextPath}/img/Bild2.jpeg" alt="Werbung">
   </div>
-
-  <div class="mySlides fade">
-    <img src="${pageContext.request.contextPath}/img/Bild3.jpg" alt="Werbung">
-  </div>
   
 
   <div class="dots">
-  		<span class="dot"></span> 
   		<span class="dot"></span> 
   		<span class="dot"></span> 
  </div>
@@ -70,8 +65,6 @@
 
 	<script src="${pageContext.request.contextPath}/JavaScript/slideshow.js"></script>
 
-
-<!-- Vorteile oder Informationen als Liste -->
 <br><br><br><br>
 
 <!-- Vorteile oder Informationen als Liste -->
@@ -132,14 +125,12 @@
 			</div>
         </aside>
 
-<!-- Hier Link und Beschriftung zur Seite für Immobilien/Registrieren einfügen -->
     <article class="regBox">
         <h3>Registrieren Sie sich jetzt um Ihre Immobilien zu verwalten!</h3>
-    	<button type="button" onclick="location.href='${pageContext.request.contextPath}/html/Registrierung.jsp'">Klicken zum Registrieren</button>        
+    	<button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/Registrierung.jsp'">Klicken zum Registrieren</button>        
        
         <h3>Benötigen Sie Hilfe?</h3>
         <p>Hilfe finden Sie <a href="${pageContext.request.contextPath}/html/kontakt.jsp" class="black-anchor">hier</a>.</p>
-   
     </article>
 
     <footer>

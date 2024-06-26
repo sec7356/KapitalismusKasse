@@ -67,7 +67,7 @@
 
 <br><br><br><br>
 
-    <aside>
+    <aside class="vorteile">
         <h2>Ihre Vorteile bei uns als Firmenkunde:</h2>
         <ul class="reset-ul">
         <li>Kostenlose Internationale Überweisungen jeglicher Art</li>
@@ -76,13 +76,16 @@
         <li>High-Level Support für Ihre Geldwäsche</li>
         </ul>
     </aside>
+    
+    <br>
 
-    <article>
-        <h3>Registrieren Sie sich jetzt als Firmenkunde!</h3>
-    	<button type="button" onclick="location.href='${pageContext.request.contextPath}/html/Registrierung.jsp'">Klicken zum Registrieren</button>
-        <h3>Passwort vergessen?</h3>
+    <article class="regBox">
+        <h3>Registrieren Sie sich jetzt!</h3>
+    	<button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/Registrierung.jsp'">Klicken zum Registrieren</button>        
+       
+        <h3>Benötigen Sie Hilfe?</h3>
         <p>Hilfe finden Sie <a href="${pageContext.request.contextPath}/html/kontakt.jsp" class="black-anchor">hier</a>.</p>
-    </article>    
+    </article>  
 
     <footer>
 		<p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>

@@ -82,5 +82,16 @@
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.buttonStyle {
+	width: auto;
+	background-color: #b89e14;
+	color: #fff;
+	cursor: pointer;
+	padding: 5px 10px; /* Ändere den Padding nach Bedarf */
+	border: none; /* Entfernt die Standard-Bordereigenschaften */
+	border-radius: 5px; /* Rundet die Ecken des Buttons */
+	font-size: 14px; /* Ändere die Schriftgröße nach Bedarf */
 }
