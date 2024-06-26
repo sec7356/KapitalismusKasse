@@ -1,9 +1,9 @@
 window.addEventListener("scroll", function() {
 	var nav = document.querySelector("#navbar");
 	var image = document.querySelector(".image");
-	var smallNavHeight = 32; // Höhe der verkleinerten Navigationsleiste
+	var smallNavHeight = 42; // Höhe der verkleinerten Navigationsleiste
 	var smallNavImageSize = 36; // Größe des verkleinerten Logos
-	var imageTopOffset = 8.5; // Gewünschter vertikaler Versatz des Logos beim Scrollen
+	var imageTopOffset = 8; // Gewünschter vertikaler Versatz des Logos beim Scrollen
 
 
 	if (window.scrollY > 0) {

@@ -10,19 +10,19 @@
     <title>Registrierung - Kapitalismus-Kasse</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/RegisterStyle.css">
     <script src="${pageContext.request.contextPath}/JavaScript/captcha.js"></script>
-    <script src="${pageContext.request.contextPath}/JavaScript/navigation_extended2.js"></script>
-    <script src="${pageContext.request.contextPath}/JavaScript/navigation.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" defer></script>
+    <script src="${pageContext.request.contextPath}/JavaScript/navigation_extern.js"></script>
     <script src="${pageContext.request.contextPath}/JavaScript/registerValidation.js" defer></script>
+    <script src="https://www.google.com/recaptcha/api.js" defer></script>
 </head>
 <body>
     <nav id="navbar">
         <ul>
             <li>
                 <div class="container">
-                    <img src="${pageContext.request.contextPath}/img/logo.jpg" alt="Logo" class="image">
-                    <div class="company-name">Kapitalismus<br> Kasse</div>
-                </div>
+					<img src="${pageContext.request.contextPath}/img/logo.jpg" alt="Logo" class="image">
+					<div class="company-name">Kapitalismus<br> Kasse
+					</div>
+				</div>
             </li>
             <li><a href="${pageContext.request.contextPath}/index.jsp">Privatkunden</a></li>
             <li><a href="${pageContext.request.contextPath}/html/Firmenkunden.jsp">Firmenkunden</a></li>

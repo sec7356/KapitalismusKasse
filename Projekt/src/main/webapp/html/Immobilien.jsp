@@ -10,7 +10,7 @@
     <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico">
     <title>Immobilien - Kapitalismuss-Kasse</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleExtern.css">
-    <script src="${pageContext.request.contextPath}/JavaScript/navigation_extended.js"></script>
+    <script src="${pageContext.request.contextPath}/JavaScript/navigation_extern.js"></script>
 </head>
 <body>
   
@@ -18,23 +18,16 @@
 	<ul>
 		<li>
 			<div class="container">
-				<img src="../img/logo.jpg" alt="Logo" class="image">
-				<div class="company-name">
-					Kapitalismus-<br>
-					Kasse
-    			</div>
-    		</div>
+					<img src="${pageContext.request.contextPath}/img/logo.jpg" alt="Logo" class="image">
+					<div class="company-name">Kapitalismus<br> Kasse
+					</div>
+			</div>
 		</li>
-		<li><a href="${pageContext.request.contextPath}/index.jsp">Privatkunden</a>
-		</li>
-		<li><a href="${pageContext.request.contextPath}/html/Firmenkunden.jsp">Firmenkunden</a>
-		</li>
-		<li><a href="${pageContext.request.contextPath}/html/Immobilien.jsp" class="active">Immobilien</a>
-		</li>
-		<li><a href="${pageContext.request.contextPath}/html/Karriere.jsp">Karriere</a>
-		</li>
-		<li><a href="${pageContext.request.contextPath}/html/Banking-Login.jsp">Banking-Login</a>
-		</li>
+		<li><a href="${pageContext.request.contextPath}/index.jsp">Privatkunden</a></li>
+		<li><a href="${pageContext.request.contextPath}/html/Firmenkunden.jsp">Firmenkunden</a></li>
+		<li><a href="${pageContext.request.contextPath}/html/Immobilien.jsp" class="active">Immobilien</a></li>
+		<li><a href="${pageContext.request.contextPath}/html/Karriere.jsp">Karriere</a></li>
+		<li><a href="${pageContext.request.contextPath}/html/Banking-Login.jsp">Banking-Login</a></li>
 	</ul>
 </nav>
 

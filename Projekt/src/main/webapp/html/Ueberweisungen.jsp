@@ -18,7 +18,7 @@
     <script src="${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
     <script src="${pageContext.request.contextPath}/JavaScript/Verwendungszweck.js"></script>
     <script src="${pageContext.request.contextPath}/JavaScript/eingabeUeberweisung.js"></script>
-    <script src="${pageContext.request.contextPath}/JavaScript/navigation_extended.js"></script>
+    <script src="${pageContext.request.contextPath}/JavaScript/navigation_extended2.js"></script>
 </head>
 <body>
     <nav id="navbar">
@@ -29,7 +29,6 @@
 					<div class="company-name">Kapitalismus<br> Kasse
 					</div>
 				</div>
-
             </li>
             <li><a href="${pageContext.request.contextPath}/html/UserStartseite.jsp" title="Sehen Sie sich Ihr Dashboard an!">Dashboard</a></li>
             <li><a href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp" class="active" title="Überweisen Sie bequem Ihr Geld!">Überweisung</a></li>

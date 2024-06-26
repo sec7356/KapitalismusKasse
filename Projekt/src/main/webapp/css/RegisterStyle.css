@@ -91,7 +91,7 @@ footer {
 nav {
 	position: fixed;
 	left: 0;
-	width: 99.3%;						/* Wieso funktioniert es nicht wie beim style.css ?? */
+	width: 100%;						/* Wieso funktioniert es nicht wie beim style.css ?? 99.3%*/ 
 	background-color: white;
 	display: flex;
 	justify-content: center;

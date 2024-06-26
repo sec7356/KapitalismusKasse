@@ -7,8 +7,7 @@
 <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico" />
 <title>Kapitalismus Kasse - Deine Bank!</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleExtern.css">
-<script src="${pageContext.request.contextPath}/JavaScript/navigation_extended.js"></script>
-<script src="${pageContext.request.contextPath}/JavaScript/navigation.js"></script>
+<script src="${pageContext.request.contextPath}/JavaScript/navigation_extern.js"></script>
 </head>
 <body>
 

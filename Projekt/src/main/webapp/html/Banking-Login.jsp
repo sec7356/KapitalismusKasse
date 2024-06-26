@@ -15,6 +15,8 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 <script src="${pageContext.request.contextPath}/JavaScript/popupLöschen.js"></script>
 <script src="${pageContext.request.contextPath}/JavaScript/logout-message.js"></script> 
+<script src="${pageContext.request.contextPath}/JavaScript/navigation_extern.js"></script>
+
 
 </head>
 <body>
@@ -22,11 +24,8 @@
 		<ul>
 			<li>
 				<div class="container">
-					<img src="${pageContext.request.contextPath}/img/logo.jpg"
-						alt="Logo" class="image">
-					<div class="company-name">
-						<span>Kapitalismus-</span> <span>Kasse</span>
-					</div>
+					<img src="${pageContext.request.contextPath}/img/logo.jpg" alt="Logo" class="image">
+					<div class="company-name">Kapitalismus<br> Kasse</div>
 				</div>
 			</li>
 			<li><a href="${pageContext.request.contextPath}/index.jsp">Privatkunden</a></li>
@@ -57,12 +56,10 @@
     					<c:remove var="logoutMessage" scope="session"/>
 					</c:if>
 					
-					<label for="email">Direct-Banking-Email*</label> <input
-						type="email" id="email" name="email" required maxlength="50">
+					<label for="email">Direct-Banking-Email*</label> <input type="email" id="email" name="email" required maxlength="50">
 				</div>
 				<div class="form-group">
-					<label for="pin">PIN (Direct-Banking-PIN)*</label> <input
-						type="password" id="pin" name="pin" required maxlength="6">
+					<label for="pin">PIN (Direct-Banking-PIN)*</label> <input type="password" id="pin" name="pin" required maxlength="6">
 				</div>
 				<div class="form-group">
 					<span class="required-fields">*Pflichtfelder</span>
@@ -73,17 +70,14 @@
 						<b>Passwort vergessen?</b>
 					</p>
 					<p>
-						Hilfe finden Sie <a
-							href="${pageContext.request.contextPath}/html/kontakt.jsp"
-							class="black-anchor">hier</a>.
+						Hilfe finden Sie <a href="${pageContext.request.contextPath}/html/kontakt.jsp" class="black-anchor">hier</a>.
 					</p>
 					<p>
 						<b>Neu hier?</b>
 					</p>
 					<p>
 						Registrieren Sie sich <a
-							href="${pageContext.request.contextPath}/html/Registrierung.jsp"
-							class="black-anchor">hier</a>.
+							href="${pageContext.request.contextPath}/html/Registrierung.jsp" class="black-anchor">hier</a>.
 					</p>
 				</div>
 			</form>
