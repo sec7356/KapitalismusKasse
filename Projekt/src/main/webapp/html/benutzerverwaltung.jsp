@@ -115,16 +115,14 @@
 </div>
 
 
-<!-- Hier wird die Popup-Nachricht angezeigt -->
-<!-- <div id="popup" class="popup"> -->
-<!--     <p id="popupMessage" class="popup-message"></p> -->
-<!--     <button onclick="hidePopup()" class="popup-button">Verstanden!</button> -->
-<!-- </div> -->
+<div id="popup" class="popup">
+    <p id="popupMessage" class="popup-message"></p>
+    <button onclick="hidePopup()" class="popup-button">Verstanden!</button>
+</div>
 
-<!-- Setze die Werte der versteckten Felder basierend auf den Attributen -->
-<%-- <input type="hidden" id="showMessage" value="<%= request.getAttribute("showMessage") != null ? request.getAttribute("showMessage") : "false" %>"> --%>
-<%-- <input type="hidden" id="errorMessage" value="<%= request.getAttribute("errorMessage") != null ? request.getAttribute("errorMessage") : "" %>"> --%>
-<%-- <input type="hidden" id="successMessage" value="<%= request.getAttribute("successMessage") != null ? request.getAttribute("successMessage") : "" %>"> --%>
+<input type="hidden" id="showMessage" value="${not empty requestScope.showMessage ? requestScope.showMessage : 'false'}">
+<input type="hidden" id="errorMessage" value="${not empty requestScope.errorMessage ? requestScope.errorMessage : ''}">
+<input type="hidden" id="successMessage" value="${not empty requestScope.successMessage ? requestScope.successMessage : ''}">
 
 	<footer>
 		<p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>
