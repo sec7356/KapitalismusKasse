@@ -23,7 +23,7 @@
             <p>Es sieht so aus, als hätten wir ein Problem bei der Registrierung. Bitte versuchen Sie es erneut.</p>
         </div>
         <div>
-            <a href="${pageContext.request.contextPath}/html/Banking-Login.jsp"">Zurück zur Startseite</a>
+            <a href="${pageContext.request.contextPath}/html/Banking-Login.jsp">Zurück zur Startseite</a>
         </div>
     </aside>
 

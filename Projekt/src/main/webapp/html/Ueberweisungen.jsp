@@ -82,7 +82,7 @@
                     </div>
                     <div class="progress-container">
                         <div class="step second-step">2</div>
-                        <div class="step-description-2">Prüfen & Bestätigen</div>
+                        <div class="step-description-2">Prüfen &amp; Bestätigen</div>
                     </div>
                     <div class="progress-container">
                         <div class="step second-step">3</div>
