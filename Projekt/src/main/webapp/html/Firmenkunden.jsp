@@ -85,7 +85,10 @@
     </article>    
 
     <footer>
-        <p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>
-    </footer>
+		<p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>
+		
+		<p>Soweit auf dieser Internetseite von der Kapitalismus Kasse die Rede ist, bezieht sich dies auf die Angebote der Kapitalismus 
+		Kasse AG, Kapitalismusstr. 1, 60329 Frankfurt am Main.</p>
+	</footer>
 </body>
 </html>

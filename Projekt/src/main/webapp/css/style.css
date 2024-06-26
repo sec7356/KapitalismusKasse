@@ -12,35 +12,34 @@ body {
 
 /* Globale Stile */
 body {
-	font-family: Arial, sans-serif;
-	margin: 0;
-	padding: 0;
-	padding-bottom: 60px; /* Platz für den Footer reservieren */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-header, nav, aside, article, footer {
-	margin: 0px;
-	padding: 5px;
+header, nav, aside, article {
+    margin: 0px;
+    padding: 5px;
+}
+
+main {
+    flex: 1; /* Wichtig, damit der Inhalt den restlichen Platz einnimmt */
 }
 
 /* Footer-Stile */
 footer {
-	height: 40px;
-	position: fixed;
-	justify-content: center;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	background-color: #d1d1d1;
-	color: rgb(0, 0, 0);
-	text-align: center;
-	padding: 0px;
-	transition: bottom 1s ease; /* Fügt eine sanfte Animation hinzu */
+    height: 70px;
+    background-color: #d1d1d1;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 0px;
+    justify-content: center;
 }
-/* Um den Footer beim Hochscrollen zu verstecken */
 
 /* Navigation horizontal */
-
 .container {
 	position: absolute;
 	left: 0;
