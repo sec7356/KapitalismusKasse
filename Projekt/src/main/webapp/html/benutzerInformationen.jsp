@@ -14,8 +14,7 @@
 <link rel="icon" type="image/x-icon"
 	href="${pageContext.request.contextPath}/img/favicon.ico" />
 <title>Alle Buchungen - Kapitalismus-Kasse</title>
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/css/styleIntern.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleIntern.css">
 <script src="${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
 <script src="${pageContext.request.contextPath}/JavaScript/greeting.js"></script>
 <script src="${pageContext.request.contextPath}/JavaScript/Zwischenablage.js"></script>
@@ -112,108 +111,85 @@
 
 
     
-    <div class="transaktionen">
-	<table class="transaktionen-table">
-	<h2 style="display: inline-block;">Konto-Informationen</h2>
-	
-	<c:forEach var="benutzer" items="${benutzerinformationen}">
-    	<span style="float: right; font-size: 90%; line-height: 4.5; vertical-align: middle;">
-       		<a href="${pageContext.request.contextPath}/EditKontoServlet?b_id=${benutzer.b_id}" class="custom-button">Bearbeiten</a>
-		</span>
-	</c:forEach>
-	
-	<c:if test="${empty kontoinformationen}">
-        <p>Keine Konto-Informationen gefunden.</p>
-    </c:if>
-	<thead>
-            <tr>
-                <th>IBAN</th>
-                <th>Kontostand</th>
-                <th>Disporahmen</th>
-            </tr>
-        </thead>
-        <tbody>
-            <c:forEach var="konto" items="${kontoinformationen}">
-                <tr>
-                    <td>${konto.IBAN}</td>
-                    
-                    <td><fmt:formatNumber value="${konto.kontoStand}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2" /> €</td>
-                    <td><fmt:formatNumber value="${konto.dispoStand}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2" /> €</td>
-                    
-                 </tr>
-            </c:forEach>
-        </tbody>
-    </table>
-
-	</div>
-
-
-	<div class="transaktionen">
-		<table class="transaktionen-table">
-			<h2 style="display: inline-block;">Transaktion-Informationen</h2>
-				
+<div class="transaktionen">
+    <div class="form-container">
+            <h2 class="form-title">Konto-Informationen</h2>
+        	<table class="transaktionen-table">
+			<c:if test="${empty kontoinformationen}">
+				<p>Keine Konto-Informationen gefunden.</p>
+			</c:if>
 			<thead>
 				<tr>
-					<th>Zahlender</th>
-					<th>Empfänger</th>
 					<th>IBAN</th>
-					<th>Summe</th>
-					<th>Verwendungszweck</th>
-					<th>Zeitstempel</th>
+					<th>Kontostand</th>
+					<th>Disporahmen</th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:choose>
-					<c:when test="${empty transaktionen}">
-						<tr> <td colspan="6">Keine Transaktionen durchgeführt</td>
-						</tr>
-					</c:when>
-					<c:otherwise>
-						<c:forEach var="transaktion" items="${transaktionen}">
-							<c:choose>
-								<c:when test="${transaktion.nach eq sessionScope.IBAN}">
-									<tr>
-										<td>${transaktion.senderVorname} ${transaktion.senderNachname}</td>
-										
-										<td style="text-align: center;">-</td>
-										
-										<td> ${transaktion.von} <button class="copy-button" onclick="copyToClipboardAndDisplayText('${transaktion.von}')">Kopieren</button></td>
-										
-										<td> <fmt:formatNumber
-												value="${transaktion.summe}" type="number"
-												groupingUsed="true" maxFractionDigits="2"
-												minFractionDigits="2" /> €
-										</td>
-										<td class="verzweck-cell">${empty transaktion.verzweck ? ' - keine Angaben - ' : transaktion.verzweck}</td>
-										
-										<td><fmt:formatDate value="${transaktion.zeitstempel}"
-												pattern="dd.MM.yyyy, HH:mm" /> Uhr</td>
-									</tr>
-								</c:when>
-								<c:otherwise>
-									<tr>
-										<td style="text-align: center;">-</td>
-											
-										<td>${transaktion.empfaengerVorname} ${transaktion.empfaengerNachname}</td>
-											
-										<td>${transaktion.nach} <button class="copy-button" onclick="copyToClipboardAndDisplayText('${transaktion.nach}')">Kopieren</button></td>
-										
-										<td><fmt:formatNumber value="${transaktion.summe}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2" /> €</td>
-										<td class="verzweck-cell">${empty transaktion.verzweck ? ' - keine Angaben - ' : transaktion.verzweck}</td>
-										
-										<td><fmt:formatDate value="${transaktion.zeitstempel}"
-												pattern="dd.MM.yyyy, HH:mm" /> Uhr</td>
-									</tr>
-								</c:otherwise>
-							</c:choose>
-						</c:forEach>
-					</c:otherwise>
-				</c:choose>
+				<c:forEach var="konto" items="${kontoinformationen}">
+					<tr>
+						<td>${konto.IBAN}</td>
+						<td><fmt:formatNumber value="${konto.kontoStand}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2" /> €</td>
+						<td><fmt:formatNumber value="${konto.dispoStand}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2" /> €</td>
+					</tr>
+				</c:forEach>
 			</tbody>
-
-
-		</table>
+			</table>
 	</div>
+</div>
+
+<div class="transaktionen">
+    <div class="form-container">
+        <h2 class="form-title">Konto-Informationen</h2>
+        <table class="transaktionen-table">
+            <thead>
+                <tr>
+                    <th>Zahlender</th>
+                    <th>Empfänger</th>
+                    <th>IBAN</th>
+                    <th>Summe</th>
+                    <th>Verwendungszweck</th>
+                    <th>Zeitstempel</th>
+                </tr>
+            </thead>
+            <tbody>
+                <c:choose>
+                    <c:when test="${empty transaktionen}">
+                        <tr>
+                            <td colspan="6">Keine Transaktionen durchgeführt</td>
+                        </tr>
+                    </c:when>
+                    <c:otherwise>
+                        <c:forEach var="transaktion" items="${transaktionen}">
+                            <c:choose>
+                                <c:when test="${transaktion.nach eq sessionScope.IBAN}">
+                                    <tr>
+                                        <td>${transaktion.senderVorname} ${transaktion.senderNachname}</td>
+                                        <td class="empty-cell">-</td>
+                                        <td>${transaktion.von} <button class="copy-button" onclick="copyToClipboardAndDisplayText('${transaktion.von}')">Kopieren</button></td>
+                                        <td><fmt:formatNumber value="${transaktion.summe}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2" /> €</td>
+                                        <td class="verzweck-cell">${empty transaktion.verzweck ? ' - keine Angaben - ' : transaktion.verzweck}</td>
+                                        <td><fmt:formatDate value="${transaktion.zeitstempel}" pattern="dd.MM.yyyy, HH:mm" /> Uhr</td>
+                                    </tr>
+                                </c:when>
+                                <c:otherwise>
+                                    <tr>
+                                        <td class="empty-cell">-</td>
+                                        <td>${transaktion.empfaengerVorname} ${transaktion.empfaengerNachname}</td>
+                                        <td>${transaktion.nach} <button class="copy-button" onclick="copyToClipboardAndDisplayText('${transaktion.nach}')">Kopieren</button></td>
+                                        <td><fmt:formatNumber value="${transaktion.summe}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2" /> €</td>
+                                        <td class="verzweck-cell">${empty transaktion.verzweck ? ' - keine Angaben - ' : transaktion.verzweck}</td>
+                                        <td><fmt:formatDate value="${transaktion.zeitstempel}" pattern="dd.MM.yyyy, HH:mm" /> Uhr</td>
+                                    </tr>
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
+                    </c:otherwise>
+                </c:choose>
+            </tbody>
+        </table>
+    </div>
+</div>
 
 </main>
 	<footer>
