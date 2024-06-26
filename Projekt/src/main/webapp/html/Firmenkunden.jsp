@@ -82,7 +82,8 @@
     <article class="regBox">
         <h3>Registrieren Sie sich jetzt!</h3>
     	<button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/Registrierung.jsp'">Klicken zum Registrieren</button>        
-       
+       <h3>Bereits registriert?</h3>
+		<button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/Banking-Login.jsp'">Klicken zum Anmelden</button>
         <h3>Benötigen Sie Hilfe?</h3>
         <p>Hilfe finden Sie <a href="${pageContext.request.contextPath}/html/kontakt.jsp" class="black-anchor">hier</a>.</p>
     </article>  

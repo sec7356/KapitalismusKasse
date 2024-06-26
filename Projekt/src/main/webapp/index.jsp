@@ -130,12 +130,13 @@
         </div>
     </article>
     
-    <article>
+    
+    <article class="regBox">
 	<br>
 		<h2>Registrieren Sie sich jetzt als Firmenkunde!</h2>
-		<p>Klicken sie <a href="${pageContext.request.contextPath}/html/Registrierung.jsp" class="black-anchor">hier</a> zum Registrieren </p>
+		<button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/Registrierung.jsp'">Klicken zum Registrieren</button>
 		<h3>Bereits registriert?</h3>
-		<p>Klicken sie zum Einloggen <a href="${pageContext.request.contextPath}/html/Banking-Login.jsp" class="black-anchor">hier</a>.</p>
+		<button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/Banking-Login.jsp'">Klicken zum Anmelden</button>
 		<h3>Passwort vergessen?</h3>
 		<p>Hilfe finden Sie <a href="${pageContext.request.contextPath}/html/passwortReset.jsp" class="black-anchor">hier</a>.</p>
 	</article>
