@@ -1,5 +1,5 @@
 <!-- Autor:  -->
-<!-- Validierung: er erkennt das Form element nicht richtig weil der div Kontailer davor geöffnet und im form Tag geschlossen wird -->
+<!-- Validierung: er erkennt das Form element nicht richtig weil der div Kontainer davor geöffnet und im form Tag geschlossen wird -->
 <!-- Validierung: h2 ist nicht in table erlaubt -->
 
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
