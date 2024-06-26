@@ -19,7 +19,6 @@
     <script src="${pageContext.request.contextPath}/JavaScript/Verwendungszweck.js"></script>
     <script src="${pageContext.request.contextPath}/JavaScript/eingabeUeberweisung.js"></script>
     <script src="${pageContext.request.contextPath}/JavaScript/navigation_extended.js"></script>
-	<script src="${pageContext.request.contextPath}/JavaScript/navigation.js"></script>
 </head>
 <body>
     <nav id="navbar">
