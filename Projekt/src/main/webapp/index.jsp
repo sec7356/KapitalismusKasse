@@ -8,7 +8,7 @@
 <title>Kapitalismus Kasse - Deine Bank!</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 <script src="${pageContext.request.contextPath}/JavaScript/navigation_extended.js"></script>
-<script src="${pageContext.request.contextPath}/JavaScript/navigation.js"></script>
+<%-- <script src="${pageContext.request.contextPath}/JavaScript/navigation.js"></script> --%>
 </head>
 <body>
 
@@ -67,8 +67,8 @@
 			<span class="dot"></span> <span class="dot"></span> <span class="dot"></span>
 		</div>
 
-		<a class="prev" onclick="plusSlides(-1)">&#10094;</a> <a class="next"
-			onclick="plusSlides(1)">&#10095;</a>
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a> 
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
 
 	</div>
 
