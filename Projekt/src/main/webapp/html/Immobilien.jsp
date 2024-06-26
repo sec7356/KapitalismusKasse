@@ -79,16 +79,43 @@
     <aside>
         <h2>Ihre Vorteile bei uns für Ihre Immobilien:</h2>
         <ul  class="reset-ul">
-        <li>x</li>
-        <li>x</li>
-        <li>x</li>
+        <li>schnelle und einfache Finanzierungen</li>
+        <li>personalisierte Kapitalismus-Beratung</li>
+        <li>rein digitale Dienste zu jeder Uhrzeit verfügbar</li>
+        <li>transparente Gebührenstruktur</li>
         </ul>
     </aside>
+    
+    
+    <aside class="faq-section">
+    <h2>FAQ - Häufig gestellte Fragen</h2>
+            <div class="faq-item">
+                <h2 class="faq-question">• Wie funktioniert das Online-Banking bei euch?</h2>
+                <p class="faq-answer">Unser Online-Banking ermöglicht es Ihnen, alle Ihre Bankgeschäfte bequem von zu Hause oder unterwegs zu erledigen. Sie können Überweisungen tätigen, Ihren Kontostand überprüfen, Daueraufträge einrichten und vieles mehr.</p>
+            </div>
+            <div class="faq-item">
+                <h2 class="faq-question">• Wie melde ich mich für das Online-Banking an?</h2>
+                <p class="faq-answer">Um sich für das Online-Banking anzumelden, besuchen Sie unsere Webseite und klicken Sie auf den "Anmelden"-Button. Folgen Sie den Anweisungen zur Registrierung und Verifizierung Ihrer Identität.</p>
+            </div>
+            <div class="faq-item">
+                <h2 class="faq-question">• Welche Sicherheitsmaßnahmen gibt es beim Online-Banking?</h2>
+                <p class="faq-answer">Wir verwenden die neuesten Sicherheitsprotokolle, einschließlich SSL-Verschlüsselung und Zwei-Faktor-Authentifizierung, um Ihre Daten zu schützen und Ihre Transaktionen sicher zu machen.</p>
+            </div>
+            <div class="faq-item">
+                <h2 class="faq-question">• Wie erreiche ich den Kundenservice?</h2>
+                <p class="faq-answer">Unser Kundenservice ist per Telefon, E-Mail und Live-Chat erreichbar. Besuchen Sie unsere Kontaktseite für weitere Informationen und Öffnungszeiten.</p>
+            </div>
+            <div class="faq-item">
+                <h2 class="faq-question">• Kann ich meine Kontoinformationen auch mobil abrufen?</h2>
+                <p class="faq-answer">Ja, mit unserer mobilen App haben Sie jederzeit und überall Zugriff auf Ihre Kontoinformationen. Die App ist für iOS und Android verfügbar.</p>
+            </div>
+        </aside>
 
 <!-- Hier Link und Beschriftung zur Seite für Immobilien/Registrieren einfügen -->
     <article>
         <h3>Registrieren Sie sich jetzt!</h3>
     	<button type="button" onclick="location.href='${pageContext.request.contextPath}/html/Registrierung.jsp'">Klicken zum Registrieren</button>        
+       
         <h3>Passwort vergessen?</h3>
         <p>Hilfe finden Sie <a href="${pageContext.request.contextPath}/html/kontakt.jsp" class="black-anchor">hier</a>.</p>
     </article>
