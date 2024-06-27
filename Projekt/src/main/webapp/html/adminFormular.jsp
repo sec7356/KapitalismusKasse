@@ -12,6 +12,7 @@
     <title>Admin Formular - Kapitalismus-Kasse</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleIntern.css">
     <script src="${pageContext.request.contextPath}/JavaScript/PinAusblenden.js"></script>
+    <script src="${pageContext.request.contextPath}/JavaScript/greeting.js"></script>
     <script src="${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
 </head>
 <body>
@@ -43,10 +44,15 @@
 </nav>
 <br>
 <div class="grauBackground">
-    <br><br><br><br> <!-- falsch formatiert? -->
-    <p>Guten Tag, Admin!
-    <br><br>Hier können Sie einen Benutzer suchen.</p>        
-</div>  
+		<br><br><br><br>						
+		<div class="profile-text">
+				<p id="greeting">
+					Guten Tag, <span id="vorname">${sessionScope.vorname}</span>
+					<span id="nachname">${sessionScope.nachname}</span>
+				</p>
+		</div>
+		<p>Sie haben als berechtigter Mitarbeiter "unbegrenzte Möglichkeiten" für jeden Kunden bei uns!</p>
+	</div>
 
 <div class="Suchfeld">
     <form id="AdminSuchen" method="get" action="${pageContext.request.contextPath}/AdminBenutzerListeServlet" onsubmit="saveFormInputs()">

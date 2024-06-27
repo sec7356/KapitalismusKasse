@@ -45,16 +45,21 @@
     </ul>
 </nav>
 
-    <br><br><br><br>
-    <div class="grauBackground">
-        <br>
-        <p>Guten Tag, Admin!<br><br>Hier können Sie einen Benutzer suchen.</p>  
-    </div>
-    <br>
-    <div class="grauBackground">    
-        <a href="${pageContext.request.contextPath}/AdminBenutzerListeServlet">Zurück zur Benutzersuche</a>
-    </div>
-
+<br>
+<div class="grauBackground">
+		<br><br><br><br>						
+		<div class="profile-text">
+				<p id="greeting">
+					Guten Tag, <span id="vorname">${sessionScope.vorname}</span>
+					<span id="nachname">${sessionScope.nachname}</span>
+				</p>
+		</div>
+		<p>Hier können Sie den Kontostand oder auch das Disporahmen nach Ihrer Wahl frei entscheiden!</p>
+	</div>
+	<br>
+<div class="grauBackground">    
+    <a href="${pageContext.request.contextPath}/AdminBenutzerListeServlet">Zurück zur Benutzersuche</a>
+</div>
 
 <div class="transaktionen">
     <div class="form-container">

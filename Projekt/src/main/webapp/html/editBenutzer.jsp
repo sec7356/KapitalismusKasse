@@ -53,22 +53,21 @@
 		</ul>
 	</nav>
 
-	<br>
-	<br>
-	<br>
-	<br>
-	<div class="grauBackground">
-		<br>
-		<p>
-			Guten Tag, Admin!<br> <br>Hier können Sie einen Benutzer
-			suchen.
-		</p>
+<br>
+<div class="grauBackground">
+		<br><br><br><br>						
+		<div class="profile-text">
+				<p id="greeting">
+					Guten Tag, <span id="vorname">${sessionScope.vorname}</span>
+					<span id="nachname">${sessionScope.nachname}</span>
+				</p>
+		</div>
+		<p>Hier können Sie den Vor- und Nachnamen, die PIN oder ändern oder auch dem Nutzer die Admin-Rolle geben!</p>
 	</div>
 	<br>
-	<div class="grauBackground">
-		<a href="${pageContext.request.contextPath}/AdminBenutzerListeServlet">Zurück
-			zur Benutzersuche</a>
-	</div>
+<div class="grauBackground">    
+    <a href="${pageContext.request.contextPath}/AdminBenutzerListeServlet">Zurück zur Benutzersuche</a>
+</div>
 
 	<div class="transaktionen">
     <div class="form-container">

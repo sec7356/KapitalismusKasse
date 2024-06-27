@@ -47,15 +47,20 @@
         </li>
     </ul>
 </nav>
-<br><br><br>
+
 <main>
 <br>
 <div class="grauBackground">
+		<br><br><br><br>						
+		<div class="profile-text">
+				<p id="greeting">
+					Guten Tag, <span id="vorname">${sessionScope.vorname}</span>
+					<span id="nachname">${sessionScope.nachname}</span>
+				</p>
+		</div>
+		<p>Hier sehen Sie auf einen Blick alle relevanten Daten des Kunden und können Änderungen vornehmen!</p>
+	</div>
 	<br>
-    <p>Guten Tag, Admin!
-    <br><br>Hier können Sie einen Benutzer suchen.</p>  
-</div>
-<br>
 <div class="grauBackground">    
     <a href="${pageContext.request.contextPath}/AdminBenutzerListeServlet">Zurück zur Benutzersuche</a>
 </div>
