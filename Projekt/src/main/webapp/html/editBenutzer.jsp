@@ -89,14 +89,16 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><input type="text" id="vorname" name="vorname"
-                            value="${empty benutzer ? '' : benutzer.vorname}" required></td>
+                    <td><input type="text" id="vorname" name="vorname" 
+           				value="${empty benutzer ? '' : benutzer.vorname}" required maxlength="49">
+					</td>
+
                     <td><input type="text" id="nachname" name="nachname"
-                            value="${empty benutzer ? '' : benutzer.nachname}" required></td>
+                            value="${empty benutzer ? '' : benutzer.nachname}" required maxlength="49"></td>
                     <td>${empty benutzer ? '' : benutzer.email}</td>
                     <td><input type="text" id="pin" name="pin"
                             pattern="[0-9]{1,6}" maxlength="6"
-                            value="${empty benutzer ? '' : benutzer.pin}" required
+                            value="${empty benutzer ? '' : benutzer.pin}" required maxlength="6"
                             title="Bitte geben Sie nur bis zu 6 Ziffern ein."></td>
                     <td><select id="admin" name="admin" required>
                             <c:choose>

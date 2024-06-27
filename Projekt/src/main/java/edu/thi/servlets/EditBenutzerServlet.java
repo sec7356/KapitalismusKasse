@@ -50,7 +50,10 @@ public class EditBenutzerServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String benutzerId = request.getParameter("b_id");
+    	request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+    	
+    	String benutzerId = request.getParameter("b_id");
         String vorname = request.getParameter("vorname");
         String nachname = request.getParameter("nachname");
         String email = request.getParameter("email");
