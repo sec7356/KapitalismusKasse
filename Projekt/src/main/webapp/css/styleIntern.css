@@ -9,6 +9,7 @@ body {
     margin: 0;
     padding: 0;
     padding-bottom: 60px; /* Platz für den Footer reservieren */
+    background-color: #fbfbfb;
 }
 
 /* Aktionsbox Start */
@@ -353,6 +354,5 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
     justify-content: center;
     align-items: center;
 }
-
 
 

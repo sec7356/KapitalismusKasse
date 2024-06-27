@@ -27,7 +27,7 @@
 		<li><a href="${pageContext.request.contextPath}/html/Firmenkunden.jsp">Firmenkunden</a></li>
 		<li><a href="${pageContext.request.contextPath}/html/Immobilien.jsp" class="active">Immobilien</a></li>
 		<li><a href="${pageContext.request.contextPath}/html/Karriere.jsp">Karriere</a></li>
-		<li><a href="${pageContext.request.contextPath}/html/Banking-Login.jsp">Banking-Login</a></li>
+		<li class="right2"><a href="${pageContext.request.contextPath}/html/Banking-Login.jsp">Banking-Login</a></li>
 	</ul>
 </nav>
 
@@ -36,12 +36,14 @@
 
 <div class="slideshow-container">
   <div class="mySlides fade">
-  	<div class="text">x<br> x</div>
-  	<div class="text_info">x <br> x <br>x</div>
-    <img src="${pageContext.request.contextPath}/img/Bild4.jpg" alt="Werbung">
+  	<div class="text">Geld ist Immobilien<br> und Immobilien ist Geld</div>
+  	<div class="text_info">Sichern Sie sich jetzt die  <br>attraktivsten Angebote zu Finanzierungen <br>und Krediten!</div>
+    <img src="${pageContext.request.contextPath}/img/immo.jpg" alt="Werbung">
   </div>
 
   <div class="mySlides fade">
+  <div class="text">Sie haben<br>ein Plan?</div>
+  	<div class="text_info">Wir setzen ihn um! <br>Sie bringen die Ideen, wir das Geld - <br>denn davon haben wir viel!</div>
     <img src="${pageContext.request.contextPath}/img/Bild2.jpeg" alt="Werbung">
   </div>
   
@@ -123,7 +125,7 @@
     	<button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/Registrierung.jsp'">Klicken zum Registrieren</button>        
        
         <h3>Benötigen Sie Hilfe?</h3>
-        <p>Hilfe finden Sie <a href="${pageContext.request.contextPath}/html/kontakt.jsp" class="black-anchor">hier</a>.</p>
+        <button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/kontakt.jsp'">Klicken für Hilfe</button>
     </article>
 
     <footer>

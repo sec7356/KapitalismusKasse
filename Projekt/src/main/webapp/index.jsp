@@ -24,7 +24,7 @@
 			<li><a href="${pageContext.request.contextPath}/html/Firmenkunden.jsp">Firmenkunden</a></li>
 			<li><a href="${pageContext.request.contextPath}/html/Immobilien.jsp">Immobilien</a></li>
 			<li><a href="${pageContext.request.contextPath}/html/Karriere.jsp">Karriere</a></li>
-			<li><a href="${pageContext.request.contextPath}/html/Banking-Login.jsp">Banking-Login</a></li>
+			<li class="right2"><a href="${pageContext.request.contextPath}/html/Banking-Login.jsp">Banking-Login</a></li>
 		</ul>
 	</nav>
 
@@ -73,8 +73,6 @@
 
 	
 	<script src="${pageContext.request.contextPath}/JavaScript/slideshow.js"></script>
-
-	<!-- Weiterer Inhalt unter der SlideShow -->
 
 	<br>
 	<br>
@@ -129,6 +127,51 @@
         </div>
     </article>
     
+    <aside class="faq-section">
+    <h2>FAQ - Häufig gestellte Fragen</h2>
+    
+            <div class="faq-item">
+                <h2 class="faq-question">• Wie funktioniert das Online-Banking bei euch?</h2>
+                <p class="faq-answer">Unser Online-Banking ermöglicht es Ihnen, alle Ihre Bankgeschäfte bequem von zu Hause oder unterwegs 
+                zu erledigen. Sie können Überweisungen tätigen, Ihren Kontostand überprüfen, Daueraufträge einrichten und vieles mehr.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h2 class="faq-question">• Wie melde ich mich für das Online-Banking an?</h2>
+                <p class="faq-answer">Um sich für das Online-Banking anzumelden, besuchen Sie unsere Webseite und klicken Sie auf den 
+                "Login"-Button. Folgen Sie den Anweisungen zur Anmeldung und Verifizierung Ihrer Identität.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h2 class="faq-question">• Welche Sicherheitsmaßnahmen gibt es beim Online-Banking?</h2>
+                <p class="faq-answer">Wir verwenden die neuesten Sicherheitsprotokolle, einschließlich SSL-Verschlüsselung und 
+                Google Recaptcha-Algorithmus, um Ihre Daten zu schützen und Ihre Transaktionen sicher zu machen.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h2 class="faq-question">• Wie erreiche ich den Kundenservice?</h2>
+                <p class="faq-answer">Unser Kundenservice ist per E-Mail erreichbar. Besuchen Sie unsere Kontaktseite für weitere Informationen.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h2 class="faq-question">• Kann ich meine Kontoinformationen auch mobil abrufen?</h2>
+                <p class="faq-answer">Ja, mit unserer mobilen App haben Sie jederzeit und überall Zugriff auf Ihre Kontoinformationen. Die App ist für iOS und Android verfügbar.</p>
+            </div>
+            
+            <div class="faq-item">
+		    <h2 class="faq-question">• Wie ändere ich mein Online-Banking Passwort?</h2>
+		    <p class="faq-answer">Um Ihr Passwort für das Online-Banking zu ändern, loggen Sie sich ein und navigieren Sie zu den 
+		    Kontoeinstellungen. Dies befindet sich auf der oberen rechten Seite des Bildschirms. Dort finden Sie die Option zur 
+		    Passwortänderung.</p>
+			</div>
+		
+			<div class="faq-item">
+		    <h2 class="faq-question">• Gibt es eine Begrenzung für Überweisungen über das Online-Banking?</h2>
+		    <p class="faq-answer">Ja, für Ihre Sicherheit gibt es tägliche und wöchentliche Limits für Überweisungen über das 
+		    Online-Banking. Diese können Sie in den Einstellungen Ihres Kontos einsehen und verwalten.</p>
+			</div>
+        </aside>
+    
     
     <article class="regBox">
 	<br>
@@ -137,7 +180,7 @@
 		<h3>Bereits registriert?</h3>
 		<button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/Banking-Login.jsp'">Klicken zum Anmelden</button>
 		<h3>Passwort vergessen?</h3>
-		<p>Hilfe finden Sie <a href="${pageContext.request.contextPath}/html/passwortReset.jsp" class="black-anchor">hier</a>.</p>
+		<button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/hilfe.jsp'">Klicken für Hilfe</button>
 	</article>
 
 	<footer>

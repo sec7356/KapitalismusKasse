@@ -12,10 +12,13 @@ body {
 
 /* User-Startseite und Kontostand */
 .grauBackground {
-	background-color: #d1d1d1;
-	box-sizing: border-box;
-	padding: 6px 0px 6px 60px;
-	width: 100%;
+	width: 96%;
+    margin: auto;
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 70px;
 }
 
 .profile-box {
@@ -87,7 +90,7 @@ body {
 }
 
 .verlinkungen {
-	position: fixed; 
+	position: absolute; 
 	top: 30%; 
 	transform: translateY(-50%);
 	right: 100px;
@@ -136,4 +139,85 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	button[type="submit"]:focus, button[type="reset"]:focus {
 	outline: none; 
 	box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/*Sicherheitshinweise Content*/
+.sicherheitshinweise {
+    width: 96%;
+    margin: auto;
+    background-color: #e0e0e0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.sicherheitshinweise h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.sicherheitshinweise ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sicherheitshinweise ul li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.sicherheitshinweise ul li:before {
+    content: '\2022';
+    color: #b89e14; /* Bulletpoint */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: 0.4em;
+    position: absolute;
+    left: 0;
+}
+
+/*Kredit Rechner*/
+
+.kredit-rechner {
+    width: 96%;
+    margin: auto;
+    background-color: #e0e0e0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.kredit-rechner h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.input-container {
+	padding: 8px;
+}
+
+.input-container label {
+    font-weight: bold;
+}
+
+.input-container input[type="number"],
+.input-container input[type="range"] {
+    width: 80%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input-container output {
+    display: block;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    margin-top: 5px;
+    font-weight: bold;
 }

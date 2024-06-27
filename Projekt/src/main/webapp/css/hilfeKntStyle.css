@@ -1,0 +1,98 @@
+/*  CSS für Hilfeseite und Kontaktseite */
+@import url('styleExtern.css');
+
+body{
+	margin-top: 40px;
+	margin-bottom: 40px;
+} 
+
+.titelHeader {
+	color: black;
+	padding: 60px 0px 0px 40px;
+	font-size: 1.7em;
+	font-weight: bold;
+}
+
+.company-name {
+	text-align: left;
+}
+
+#navbar{
+	position: fixed;
+	top: 0px;
+} 
+
+nav ul {
+    list-style-type: none;
+    background-color: #ffffff;
+    overflow: hidden;
+    color: white;
+    padding: 0;
+    text-align: center;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    padding: 0px 20px;
+}
+
+nav ul li a {
+    color: rgb(55, 81, 128);
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #575757;
+}
+
+nav ul li:last-child a {
+	color: #941100;
+	white-space: pre-wrap;
+}
+
+
+
+article p {
+    line-height: 1.6;
+}
+
+article ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+article ul li {
+    margin-bottom: 10px;
+}
+
+/* Footer-Stile */
+footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+    height: 70px;
+    background-color: #d1d1d1;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 0px;
+    justify-content: center;
+   	transition: bottom 1s ease; /* Fügt eine sanfte Animation hinzu */
+    margin-top: 40px;
+}
+
+.helpBox {
+	width: 96%;
+    margin: auto;
+    background-color: #e0e0e0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.abstandli li {
+	padding: 5px 0px;
+}

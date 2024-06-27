@@ -1,0 +1,26 @@
+@import url('styleExtern.css');
+
+.login_window {
+	margin-top: 60px;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: url('../img/login.jpeg') no-repeat center right;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form {
+    background: rgb(209, 209, 209, 0.9); /* Weißer, halbtransparenter Hintergrund für das Formular */
+    padding: 30px;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    margin-right: 40%;
+}
+
+

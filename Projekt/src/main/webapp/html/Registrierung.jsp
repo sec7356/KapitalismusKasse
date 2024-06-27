@@ -28,11 +28,11 @@
             <li><a href="${pageContext.request.contextPath}/html/Firmenkunden.jsp">Firmenkunden</a></li>
             <li><a href="${pageContext.request.contextPath}/html/Immobilien.jsp">Immobilien</a></li>
             <li><a href="${pageContext.request.contextPath}/html/Karriere.jsp">Karriere</a></li>
-            <li><a href="${pageContext.request.contextPath}/html/Banking-Login.jsp" class="active">Banking-Login</a></li>
+            <li class="right2"><a href="${pageContext.request.contextPath}/html/Banking-Login.jsp" class="active">Banking-Login</a></li>
         </ul>
     </nav>
     <br><br><br>
-    <div class="login_window">
+    <div class="reg_window">
         <div class="register-form">
             <div class="background-image"></div>
             <form method="post" action="${pageContext.request.contextPath}/RegisterServlet">
@@ -88,14 +88,17 @@
                 </div>
                 <div class="form-group">
                     <p><b>Sie kommen nicht weiter?</b></p>
-                    <p>Hilfe finden Sie <a href="${pageContext.request.contextPath}/html/hilfe.jsp" class="black-anchor">hier</a>.</p>
-                    <p>Oder kontaktieren Sie uns <a href="${pageContext.request.contextPath}/html/kontakt.jsp" class="black-anchor">hier</a>.</p>
+                    <button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/hilfe.jsp'">Klicken für Hilfe</button><br><br>
+                    <button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/kontakt.jsp'">Klicken zum Kontaktieren</button>
                 </div>
             </form>
         </div>
     </div>
     <footer>
-        <p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>
-    </footer>
+		<p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>
+		
+		<p>Soweit auf dieser Internetseite von der Kapitalismus Kasse die Rede ist, bezieht sich dies auf die Angebote der Kapitalismus 
+		Kasse AG, Kapitalismusstr. 1, 60329 Frankfurt am Main.</p>
+	</footer>
 </body>
 </html>

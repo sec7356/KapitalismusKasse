@@ -1,6 +1,5 @@
 <!-- Validiert -->
 <!-- Autor: Diane -->
-<!-- Style muss noch entfernt werden! -->
 
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -12,10 +11,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico" />
 <title>Login - Kapitalismus-Kasse</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/loginStyle.css">
 <script src="${pageContext.request.contextPath}/JavaScript/popupLöschen.js"></script>
 <script src="${pageContext.request.contextPath}/JavaScript/logout-message.js"></script> 
-<script src="${pageContext.request.contextPath}/JavaScript/navigation_extern.js"></script>
 
 
 </head>
@@ -32,13 +30,14 @@
 			<li><a href="${pageContext.request.contextPath}/html/Firmenkunden.jsp">Firmenkunden</a></li>
 			<li><a href="${pageContext.request.contextPath}/html/Immobilien.jsp">Immobilien</a></li>
 			<li><a href="${pageContext.request.contextPath}/html/Karriere.jsp">Karriere</a></li>
-			<li><a href="${pageContext.request.contextPath}/html/Banking-Login.jsp" class="active">Banking-Login</a></li>
+			<li class="right2"><a href="${pageContext.request.contextPath}/html/Banking-Login.jsp" class="active">Banking-Login</a></li>
 		</ul>
 	</nav>
+	
 	<br>
+	
 	<div class="login_window">
 		<div class="login-form">
-			<div class="background-image"></div>
 			<form action="${pageContext.request.contextPath}/LoginServlet"
 				method="post">
 				<div class="form-group">
@@ -66,23 +65,16 @@
 					<button type="submit">Anmelden</button>
 				</div>
 				<div class="form-group">
-					<p>
-						<b>Passwort vergessen?</b>
-					</p>
-					<p>
-						Hilfe finden Sie <a href="${pageContext.request.contextPath}/html/kontakt.jsp" class="black-anchor">hier</a>.
-					</p>
-					<p>
-						<b>Neu hier?</b>
-					</p>
-					<p>
-						Registrieren Sie sich <a
-							href="${pageContext.request.contextPath}/html/Registrierung.jsp" class="black-anchor">hier</a>.
-					</p>
+					<p><b>Probleme beim Anmelden?</b></p>
+					<button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/hilfe.jsp'">Klicken für Hilfe</button>
+					
+					<p><b>Neu hier?</b></p>
+					<button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/Registrierung.jsp'">Klicken zum Registrieren</button>
 				</div>
 			</form>
 		</div>
 	</div>
+	
 	<footer>
 		<p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>
 		

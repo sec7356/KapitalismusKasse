@@ -1,7 +1,6 @@
 /* Autor: ... */
 
 @import url('style.css');
-@import url('popup.css');
 
 
 /* liste resetten wegen navigation (nach rechts gerutscht) */
@@ -94,4 +93,14 @@
 	border: none; /* Entfernt die Standard-Bordereigenschaften */
 	border-radius: 5px; /* Rundet die Ecken des Buttons */
 	font-size: 14px; /* Ändere die Schriftgröße nach Bedarf */
+}
+
+.karriereBox {
+	width: 96%;
+    margin: auto;
+    background-color: #e0e0e0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
 }

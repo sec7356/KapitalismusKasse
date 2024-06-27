@@ -153,9 +153,9 @@ li:last-child {
 	right: 0;
 }
 
-li:nth-last-child(2) {
+.accountBild {
 	position: absolute;
-	right: 140px;
+	right: 110px;
 	top: 10px;
 }
 

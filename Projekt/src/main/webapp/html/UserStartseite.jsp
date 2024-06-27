@@ -7,20 +7,21 @@
 
 <!DOCTYPE html>
 <html lang="de">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico" />
-<title>Startseite - Kapitalismus-Kasse</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/UserStartseite_Design.css">
-<!-- Font Awesome for icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-<script src="${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
-<script src="${pageContext.request.contextPath}/JavaScript/greeting.js"></script>
-
-
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico" />
+		<title>Startseite - Kapitalismus-Kasse</title>
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/UserStartseite_Design.css">
+		<!-- Font Awesome for icons -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+		
+		<script src="${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
+		<script src="${pageContext.request.contextPath}/JavaScript/greeting.js"></script>
+		<script  src="${pageContext.request.contextPath}/JavaScript/kredit.js"></script>
+	
+	</head>
+	
 <body>
 
 	<nav id="navbar">
@@ -55,8 +56,7 @@
 				href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp"
 				title="Nutzerdaten verwalten"> <img
 					src="${pageContext.request.contextPath}/img/accountBild.jpg"
-					alt="Benutzerverwaltung" class="accountBild">
-			</a>
+					alt="Benutzerverwaltung" class="accountBild"></a>
 			</li>
 			<li>
 				<div class="timer-logout-container">
@@ -74,10 +74,7 @@
 	<br>
 
 	<div class="grauBackground">
-		<br>
-		<br>
-		<br>
-		<br>
+		
 		<div class="profile-box">
 			<div class="profilbild">
 				<img src="${pageContext.request.contextPath}/DisplayImageServlet"
@@ -125,6 +122,35 @@
 			</div>
 		</div>
 	</div>
+	
+	
+	
+	<div class="kredit-rechner">
+    <h2>Kredit-Rechner</h2>
+    <div class="input-container">
+        <label for="kredithoehe">Kredithöhe (in Euro):</label>
+        <input type="number" id="kredithoehe" min="1000" max="100000" step="1000" value="10000">
+    </div>
+    <div class="input-container">
+        <label for="laufzeit">Laufzeit (in Monaten):</label>
+        <input type="range" id="laufzeit" min="1" max="60" value="12">
+        <output id="laufzeit-anzeige">12 Monate</output>
+    </div>
+    <div class="input-container">
+        <label for="rate">Monatliche Rate:</label>
+        <output id="rate-anzeige">0,00€</output>
+    </div>
+</div>
+
+	
+	<div class="sicherheitshinweise">
+    <h2>Sicherheitshinweise</h2>
+    <ul>
+        <li>Halten Sie Ihre Zugangsdaten geheim und teilen Sie sie niemals mit anderen.</li>
+        <li>Aktualisieren Sie regelmäßig Ihr Passwort und verwenden Sie starke Passwörter.</li>
+        <li>Überprüfen Sie Ihre Kontobewegungen regelmäßig auf verdächtige Aktivitäten.</li>
+    </ul>
+</div>
 
 
 	<footer>
