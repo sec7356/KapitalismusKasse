@@ -36,10 +36,8 @@ public class LoginServlet extends HttpServlet {
 
         // Überprüfen, ob die E-Mail und die PIN korrekt eingegeben wurden
         if (email == null || email.isEmpty() || pinStr == null || !pinStr.matches("\\d+")) {
-            request.setAttribute("errorMessage",
-                    "Die E-Mail-Adresse und die PIN müssen korrekt eingegeben werden. Die PIN darf nur aus Zahlen bestehen.");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/html/Banking-Login.jsp");
-            dispatcher.forward(request, response);
+            session.setAttribute("errorMessage", "Die E-Mail-Adresse und die PIN müssen korrekt eingegeben werden. Die PIN darf nur aus Zahlen bestehen.");
+            response.sendRedirect(request.getContextPath() + "/html/Banking-Login.jsp");  
             return;
         }
 
@@ -50,9 +48,8 @@ public class LoginServlet extends HttpServlet {
 
         if (benutzer == null || benutzer.getB_id() == null) {
             // Benutzer nicht gefunden oder falsche Eingaben
-            request.setAttribute("errorMessage", "Diese Angaben sind ungültig. Bitte korrigieren Sie Ihre Eingabe.");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/html/Banking-Login.jsp");
-            dispatcher.forward(request, response);
+            session.setAttribute("errorMessage", "Diese Angaben sind ungültig. Bitte korrigieren Sie Ihre Eingabe.");
+            response.sendRedirect(request.getContextPath() + "/html/Banking-Login.jsp");
             return;
         }
 

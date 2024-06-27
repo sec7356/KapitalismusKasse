@@ -37,43 +37,47 @@
 	<br>
 	
 	<div class="login_window">
-		<div class="login-form">
-			<form action="${pageContext.request.contextPath}/LoginServlet"
-				method="post">
-				<div class="form-group">
-					<h2>Willkommen im KPT-Kasse Online-Banking</h2>
-					<p>Bitte loggen Sie sich ein.</p>
-					<br>
-					<!-- Prüfe, ob das errorMessage Attribut gesetzt und nicht null ist -->
-					<c:if test="${not empty requestScope.errorMessage}">
-					    <div id="logout-message">${requestScope.errorMessage}</div>
-					</c:if>
-					<!-- Prüfe, ob das logoutMessage Session-Attribut existiert und nicht leer ist -->
-					<c:if test="${not empty sessionScope.logoutMessage}">
-    					<div id="logout-message">${sessionScope.logoutMessage}</div>
-   						<!-- Lösche das logoutMessage Session-Attribut -->
-    					<c:remove var="logoutMessage" scope="session"/>
-					</c:if>
-					
-					<label for="email">Direct-Banking-Email*</label> <input type="email" id="email" name="email" required maxlength="50">
-				</div>
-				<div class="form-group">
-					<label for="pin">PIN (Direct-Banking-PIN)*</label> <input type="password" id="pin" name="pin" required maxlength="6">
-				</div>
-				<div class="form-group">
-					<span class="required-fields">*Pflichtfelder</span>
-					<button type="submit">Anmelden</button>
-				</div>
-				<div class="form-group">
-					<p><b>Probleme beim Anmelden?</b></p>
-					<button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/hilfe.jsp'">Klicken für Hilfe</button>
-					
-					<p><b>Neu hier?</b></p>
-					<button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/Registrierung.jsp'">Klicken zum Registrieren</button>
-				</div>
-			</form>
-		</div>
-	</div>
+    <div class="login-form">
+        <form action="${pageContext.request.contextPath}/LoginServlet" method="post">
+            <div class="form-group">
+                <h2>Willkommen im KPT-Kasse Online-Banking</h2>
+                <p>Bitte loggen Sie sich ein.</p>
+                <br>
+                <c:if test="${not empty sessionScope.errorMessage}">                
+                    <div id="logout-message">${sessionScope.errorMessage}</div>
+                    <!-- Lösche das errorMessage Session-Attribut -->
+                    <c:remove var="errorMessage" scope="session"/>
+                </c:if>
+                
+                <!-- Prüfe, ob das logoutMessage Session-Attribut existiert und nicht leer ist -->
+                <c:if test="${not empty sessionScope.logoutMessage}">
+                    <div id="logout-message">${sessionScope.logoutMessage}</div>
+                    <!-- Lösche das logoutMessage Session-Attribut -->
+                    <c:remove var="logoutMessage" scope="session"/>
+                </c:if>
+                
+                <label for="email">Direct-Banking-Email*</label>
+                <input type="email" id="email" name="email" required maxlength="50">
+            </div>
+            <div class="form-group">
+                <label for="pin">PIN (Direct-Banking-PIN)*</label>
+                <input type="password" id="pin" name="pin" required maxlength="6">
+            </div>
+            <div class="form-group">
+                <span class="required-fields">*Pflichtfelder</span>
+                <button type="submit">Anmelden</button>
+            </div>
+            <div class="form-group">
+                <p><b>Probleme beim Anmelden?</b></p>
+                <button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/hilfe.jsp'">Klicken für Hilfe</button>
+                
+                <p><b>Neu hier?</b></p>
+                <button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/Registrierung.jsp'">Klicken zum Registrieren</button>
+            </div>
+        </form>
+    </div>
+</div>
+	
 	
 	<footer>
 		<p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>
