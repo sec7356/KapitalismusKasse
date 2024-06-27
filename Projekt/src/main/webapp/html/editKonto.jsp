@@ -114,6 +114,8 @@
                 </tbody>
             </table>
 			<input type="hidden" name="b_id" value="${benutzer.b_id}">
+			<input type="hidden" name="iban" value="${konto.IBAN}" />
+			
 			</form>
 	</div>
 </div>
