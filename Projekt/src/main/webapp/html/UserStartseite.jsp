@@ -18,7 +18,7 @@
 		
 		<script src="${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
 		<script src="${pageContext.request.contextPath}/JavaScript/greeting.js"></script>
-		<script  src="${pageContext.request.contextPath}/JavaScript/kredit.js"></script>
+		
 	 	<script src="${pageContext.request.contextPath}/JavaScript/navigation_intern.js"></script>
 		
 	
@@ -115,15 +115,15 @@
     </div>
     <div class="input-container">
         <label for="laufzeit">Laufzeit (in Monaten):</label>
-        <input type="range" id="laufzeit" min="1" max="60" value="12">
+        <input type="range" id="laufzeit" min="6" max="90" value="24">
         <output id="laufzeit-anzeige">12 Monate</output>
     </div>
     <div class="input-container">
-        <label for="rate">Monatliche Rate:</label>
+        <label for="rate">Monatliche Rate (inkl. 21,5% Zins):</label>
         <output id="rate-anzeige">0,00€</output>
     </div>
 </div>
-
+<script  src="${pageContext.request.contextPath}/JavaScript/kredit.js"></script>
 	
 	<div class="sicherheitshinweise">
     <h2>Sicherheitshinweise</h2>

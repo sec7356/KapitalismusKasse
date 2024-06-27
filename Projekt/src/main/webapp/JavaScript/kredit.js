@@ -1,11 +1,8 @@
 "use strict";
 
-// Elemente aus dem DOM holen
-
-
 // Event Listener für Änderungen an Kredithöhe und Laufzeit
-document.getElementById("kredithoehe").addEventListener('keydown', updateMonatlicheRate);
-document.getElementById("laufzeit").addEventListener('click', function() {
+document.getElementById("kredithoehe").addEventListener('input', updateMonatlicheRate);
+document.getElementById("laufzeit").addEventListener('input', function() {
     document.getElementById("laufzeit-anzeige").innerHTML = document.getElementById("laufzeit").value + ' Monate';
     updateMonatlicheRate();
 });
@@ -15,7 +12,7 @@ updateMonatlicheRate();
 
 // Funktion zur Berechnung der monatlichen Rate
 function berechneMonatlicheRate(kredithoehe, laufzeit) {
-    var zinssatz = 3.5; // Beispiel-Zinssatz in Prozent (hier festgelegt)
+    var zinssatz = 21.5; // Zinssatz in Prozent
     var monatlicherZinssatz = zinssatz / 100 / 12;
     var anzahlRaten = laufzeit;
     if (anzahlRaten === 0) {
@@ -27,12 +24,18 @@ function berechneMonatlicheRate(kredithoehe, laufzeit) {
 
 // Funktion, um die Rate dynamisch zu aktualisieren
 function updateMonatlicheRate() {
-	var kredithoeheInput = document.getElementById("kredithoehe");
-	var laufzeitInput = document.getElementById("laufzeit");
-	
-	var rateAnzeige = document.getElementById("rate-anzeige");
-    var kredithoehe = parseFloat(kredithoeheInput.value);
-    var laufzeit = parseInt(laufzeitInput.value);
+    var kredithoeheInput = document.getElementById("kredithoehe").value;
+    var laufzeitInput = document.getElementById("laufzeit").value;
+    
+    var kredithoehe = parseFloat(kredithoeheInput);
+    var laufzeit = parseInt(laufzeitInput);
+    
+    if (isNaN(kredithoehe) || isNaN(laufzeit)) {
+        document.getElementById("rate-anzeige").innerHTML = '0.00€';
+        return;
+    }
+    
     var monatlicheRate = berechneMonatlicheRate(kredithoehe, laufzeit);
-    rateAnzeige.innerHTML = monatlicheRate.toFixed(2) + '€';
+    document.getElementById("rate-anzeige").innerHTML = monatlicheRate.toFixed(2) + '€';
 }
+
