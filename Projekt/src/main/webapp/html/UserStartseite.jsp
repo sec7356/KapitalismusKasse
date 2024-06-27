@@ -19,6 +19,8 @@
 		<script src="${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
 		<script src="${pageContext.request.contextPath}/JavaScript/greeting.js"></script>
 		<script  src="${pageContext.request.contextPath}/JavaScript/kredit.js"></script>
+	 	<script src="${pageContext.request.contextPath}/JavaScript/navigation_intern.js"></script>
+		
 	
 	</head>
 	
@@ -28,46 +30,26 @@
 		<ul>
 			<li>
 				<div class="container">
-					<a
-						href="${pageContext.request.contextPath}/html/UserStartseite.jsp"
-						title="Die Bank der Zukunft!"> <img
-						src="${pageContext.request.contextPath}/img/logo.jpg" alt="Logo"
-						class="imageMitLink"></a> <a
-						href="${pageContext.request.contextPath}/html/UserStartseite.jsp"
-						title="Die Bank der Zukunft!" class="companyNameLink"> <span>Kapitalismus</span>
-						<span>Kasse</span></a>
-
+					<img src="${pageContext.request.contextPath}/img/logo.jpg" alt="Logo" class="image">
+					<div class="company-name">Kapitalismus<br> Kasse
+					</div>
 				</div>
 			</li>
-			<li><a
-				href="${pageContext.request.contextPath}/html/UserStartseite.jsp"
-				class="active" title="Sehen Sie sich Ihr Dashboard an!">Dashboard</a></li>
-			<li><a
-				href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp"
-				title="Überweisen Sie bequem Ihr Geld!">Überweisung</a></li>
-			<li><a
-				href="${pageContext.request.contextPath}/VerlaufServlet"
-				title="Sehen Sie sich alle Ihre Buchungen an!">Kontoaktivitäten</a></li>
-			<li><a href="${pageContext.request.contextPath}/html/hilfeIntern.jsp"
-			title="Holen Sie sich Hilfe!">Hilfe</a>
+			<li><a href="${pageContext.request.contextPath}/html/UserStartseite.jsp" class="active" title="Sehen Sie sich Ihr Dashboard an!">Dashboard</a></li>
+			<li><a href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp" title="Überweisen Sie bequem Ihr Geld!">Überweisung</a></li>
+			<li><a href="${pageContext.request.contextPath}/VerlaufServlet" title="Sehen Sie sich alle Ihre Buchungen an!">Kontoaktivitäten</a></li>
+			<li><a href="${pageContext.request.contextPath}/html/hilfeIntern.jsp" title="Holen Sie sich Hilfe!">Hilfe</a></li>
+			<li><a href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp" title="Nutzerdaten verwalten"> 
+				<img src="${pageContext.request.contextPath}/img/accountBild.jpg"	alt="Benutzerverwaltung" class="accountBild"></a>
 			</li>
 			<li>
-				<!-- Benutzer verwalten Icon --> <a
-				href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp"
-				title="Nutzerdaten verwalten"> <img
-					src="${pageContext.request.contextPath}/img/accountBild.jpg"
-					alt="Benutzerverwaltung" class="accountBild"></a>
-			</li>
-			<li>
-				<div class="timer-logout-container">
-					<div id="timer">05:00</div>
-					<div class="divider"></div>
-					<form method="post"
-						action="${pageContext.request.contextPath}/LogoutServlet">
-						<button name="loeschen" type="submit" class="logout-button"
-							title="Melden Sie sich sicher ab!">Logout</button>
-					</form>
-				</div>
+			<div class="timer-logout-container">
+                    <div id="timer">05:00</div>
+                    <div class="divider"></div>
+                    <form method="post" action="${pageContext.request.contextPath}/LogoutServlet">
+                        <button name="loeschen" type="submit" class="logout-button" title="Melden Sie sich sicher ab!">Logout</button>
+                    </form>
+                </div>
 			</li>
 		</ul>
 	</nav>
