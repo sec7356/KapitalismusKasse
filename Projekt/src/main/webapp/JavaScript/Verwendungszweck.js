@@ -1,3 +1,7 @@
+//Autor: @Can
+
+document.getElementById("resetZeichen").addEventListener("onclick", resetForm());
+
 window.onload = function() {
     updateCharCount();
     var form = document.getElementById('myForm');

@@ -1,14 +1,16 @@
+<!-- Autor: @Selim -->
+<!-- Validiert am 28.06 -->
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico">
 <title>Kapitalismus Kasse - Deine Bank!</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleExtern.css">
-<script src="${pageContext.request.contextPath}/JavaScript/navigation_extended.js"></script>
-<script src="${pageContext.request.contextPath}/JavaScript/navigation.js"></script>
+<script src="${pageContext.request.contextPath}/JavaScript/navigation_extern.js"></script>
 </head>
 <body>
 
@@ -25,7 +27,7 @@
 			<li><a href="${pageContext.request.contextPath}/html/Firmenkunden.jsp">Firmenkunden</a></li>
 			<li><a href="${pageContext.request.contextPath}/html/Immobilien.jsp">Immobilien</a></li>
 			<li><a href="${pageContext.request.contextPath}/html/Karriere.jsp">Karriere</a></li>
-			<li><a href="${pageContext.request.contextPath}/html/Banking-Login.jsp">Banking-Login</a></li>
+			<li class="right2"><a href="${pageContext.request.contextPath}/html/Banking-Login.jsp">Banking-Login</a></li>
 		</ul>
 	</nav>
 
@@ -87,7 +89,7 @@
 		
 		</div>
 		<div class="grid-item">
-			<p id="bold">Selbstständig werden?</p><br>
+			<p class="bold">Selbstständig werden?</p><br>
 			<br>Wir unterstützen Sie auch bei dieser Herausforderung mit
 			unseren attraktiven Angeboten. Sie werden jedoch trotzdem nicht erfolgreich!<br><br>
 			Dies mag zunächst entmutigend klingen, doch es gibt gute Nachrichten: Mit der richtigen Anleitung und den passenden Ressourcen kann 

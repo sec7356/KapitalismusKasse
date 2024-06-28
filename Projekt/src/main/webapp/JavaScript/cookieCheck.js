@@ -1,3 +1,5 @@
+//Autor: @Selim
+
 "use strict";
 
 // Überprüfung der Cookies nach dem Laden der Seite

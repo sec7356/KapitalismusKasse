@@ -1,3 +1,5 @@
+//Autor: @Can
+
 "use strict";
 
 var timerId;

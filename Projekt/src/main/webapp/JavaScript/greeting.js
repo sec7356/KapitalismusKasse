@@ -1,3 +1,5 @@
+//Autor: @Can
+
 "use strict";
 
 // Funktion zur Bestimmung der Begrüßung basierend auf der Tageszeit

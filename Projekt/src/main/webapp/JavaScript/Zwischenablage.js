@@ -1,3 +1,5 @@
+//Autor: @Diane
+
 function copyToClipboardAndDisplayText(text) {
     navigator.clipboard.writeText(text).then(function() {
         alert('IBAN wurde in die Zwischenablage kopiert!');

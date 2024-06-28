@@ -1,3 +1,5 @@
+//Autor: @Selim
+
 "use strict";
 
 // Event Listener für Änderungen an Kredithöhe und Laufzeit

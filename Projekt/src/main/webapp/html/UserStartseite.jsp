@@ -1,5 +1,4 @@
-<!-- Autor:  -->
-<!-- Fehler bei Validation in Zeile 122: "The value of the for attribute of the label element must be the ID of a non-hidden form control." -->
+<!-- Autor:  @Selim-->
 
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -15,10 +14,8 @@
 		<title>Startseite - Kapitalismus-Kasse</title>
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/UserStartseite_Design.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-		
 		<script src="${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
 		<script src="${pageContext.request.contextPath}/JavaScript/greeting.js"></script>
-		
 	 	<script src="${pageContext.request.contextPath}/JavaScript/navigation_intern.js"></script>
 		
 	

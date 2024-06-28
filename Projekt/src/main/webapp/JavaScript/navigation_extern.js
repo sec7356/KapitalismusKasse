@@ -1,3 +1,5 @@
+//Autor: @Can, @Selim
+
 window.addEventListener("scroll", function() {
 	var nav = document.querySelector("#navbar");
 	var image = document.querySelector(".image");

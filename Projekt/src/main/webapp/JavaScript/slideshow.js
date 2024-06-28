@@ -1,3 +1,5 @@
+//Autor: @Can
+
 "use strict";
 
 let slideIndex = 1;

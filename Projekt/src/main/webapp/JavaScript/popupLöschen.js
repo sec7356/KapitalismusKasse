@@ -1,3 +1,5 @@
+//Autor: @Diane
+
 "use strict";
 
 // Funktion zum Abrufen von Werten aus versteckten HTML-Feldern

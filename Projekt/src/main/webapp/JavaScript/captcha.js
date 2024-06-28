@@ -1,3 +1,5 @@
+//Autor: @Selim
+
 "use strict";
 
 /*

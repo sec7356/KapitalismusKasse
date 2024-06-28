@@ -1,3 +1,5 @@
+//Autor: @Can
+
 'use strict'
 
 document.addEventListener("DOMContentLoaded", function() {

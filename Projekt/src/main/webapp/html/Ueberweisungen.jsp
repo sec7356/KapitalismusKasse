@@ -1,5 +1,6 @@
 <!-- Autor: Can -->
 <!-- FEHLERMELDUNG: "The value of the for attribute of the label element must be the ID of a non-hidden form control."! -->
+<!-- onClick nicht erlaubt!!! Verbessern -->
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -11,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico">
     <title>Überweisung - Kapitalismus-Kasse</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/Ueberweisungen_Design.css">
     <script src="${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
@@ -111,6 +112,7 @@
                         <span class="icon" id="summe-icon"></span>
                     </div>
                     <div class="form-group">
+					<label></label>
                         <p class="hint-text">
                             Bitte beachten Sie eventuell die Meldepflicht ab 12.500 Euro <br>gemäß
                             <a href="https://www.bundesbank.de/de/service/meldewesen/aussenwirtschaft" target="blank">Außenwirtschaftsverordnung<img src="${pageContext.request.contextPath}/img/Link.png" alt="Logo" style="vertical-align: middle; width: 30px; height: 30px; margin-left: -7px;"></a>
@@ -121,6 +123,7 @@
                         <textarea id="verwendungszweck" name="verwendungszweck" maxlength="140" oninput="updateCharCount()"></textarea>
                     </div>
                     <div class="form-group">
+                   	<label></label> 
                         <div id="char-count" class="hint-text">Sie können noch 140 Zeichen eingeben.</div>
                     </div>
                     <div class="form-group">
@@ -139,7 +142,7 @@
                     </div>
                 </fieldset>
                 <div class="button-container">
-                    <button name="reset" onclick="resetForm()" type="reset">Zurücksetzen</button>
+                    <button name="reset" id="resetZeichen" type="reset">Zurücksetzen</button>
                     <button name="submit" type="submit">Weiter</button>
                 </div>
             </section>

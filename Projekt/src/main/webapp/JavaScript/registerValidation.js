@@ -1,13 +1,13 @@
 /* register.js */
+//Autor: Diane 
 
-console.log("Skript erfolgreich geladen.");
 
 document.addEventListener("DOMContentLoaded", init);
 
 function init() {
     console.log("DOM-Inhalt geladen.");
     
-    const emailInput = document.getElementById('email');
+    var emailInput = document.getElementById('email');
     if (emailInput) {
         emailInput.addEventListener('input', handleEmailInput);
     } else {
@@ -16,7 +16,7 @@ function init() {
 }
 
 function handleEmailInput() {
-    const email = document.getElementById('email').value.trim();
+    var email = document.getElementById('email').value.trim();
     if (email !== '') {
         checkEmailAvailability(email);
     } else {
@@ -45,9 +45,8 @@ function checkEmailAvailability(email) {
 function handleEmailResponse(response) {
     console.log("Behandle E-Mail-Antwort:", response);
     
-    const emailStatus = document.getElementById('emailStatus');
-    const emailErrorMessage = document.getElementById('emailErrorMessage');
-    const registerButton = document.getElementById('registerButton');
+    var emailStatus = document.getElementById('emailStatus');
+    var emailErrorMessage = document.getElementById('emailErrorMessage');
 
     if (response && response.available === false) {
         emailStatus.textContent = '✘';
@@ -68,7 +67,7 @@ function handleEmailResponse(response) {
 }
 
 function clearEmailStatus() {
-    const emailStatus = document.getElementById('emailStatus');
+    var emailStatus = document.getElementById('emailStatus');
     if (emailStatus) {
         emailStatus.textContent = '';
     } else {
@@ -77,7 +76,7 @@ function clearEmailStatus() {
 }
 
 function disableRegisterButton() {
-    const registerButton = document.getElementById('registerButton');
+    var registerButton = document.getElementById('registerButton');
     if (registerButton) {
         registerButton.disabled = true;
     } else {
@@ -86,7 +85,7 @@ function disableRegisterButton() {
 }
 
 function enableRegisterButton() {
-    const registerButton = document.getElementById('registerButton');
+    var registerButton = document.getElementById('registerButton');
     if (registerButton) {
         registerButton.disabled = false;
     } else {
@@ -95,9 +94,9 @@ function enableRegisterButton() {
 }
 
 function checkPINConfirmation() {
-    const pin1 = document.getElementById('pin1').value;
-    const pin2 = document.getElementById('pin2').value;
-    const pinInputContainer = document.querySelector('.pin-input-container');
+    var pin1 = document.getElementById('pin1').value;
+    var pin2 = document.getElementById('pin2').value;
+    var pinInputContainer = document.querySelector('.pin-input-container');
 
     if (pin1 === pin2 && pin2 !== '') {
         pinInputContainer.classList.remove('incorrect');
