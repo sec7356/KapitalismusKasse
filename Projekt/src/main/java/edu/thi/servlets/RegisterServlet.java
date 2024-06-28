@@ -49,7 +49,6 @@ public class RegisterServlet extends HttpServlet {
 		// Überprüfen, ob mindestens einer der PINS nicht nur aus Zahlen besteht
 		if (!pin1.matches("\\d+") || !pin2.matches("\\d+")) {
 			// Wenn mindestens einer der PINS nicht nur aus Zahlen besteht
-			// Weiterleitung zu einer Fehlerseite oder entsprechende Fehlerbehandlung
 			response.sendRedirect("html/fehlermeldungPIN.jsp");
 			return; // Beende die Methode
 		}
@@ -58,7 +57,6 @@ public class RegisterServlet extends HttpServlet {
 		if (!pin1.equals(pin2)) {
 
 			// Wenn die PINS nicht übereinstimmen
-			// Weiterleitung zu einer Fehlerseite oder entsprechende Fehlerbehandlung
 			response.sendRedirect("html/fehlermeldungPIN.jsp");
 			return; // Beende die Methode
 		}
@@ -125,14 +123,7 @@ public class RegisterServlet extends HttpServlet {
 				}
 			}
 			
-/*
-ByteArrayOutputStream os = new ByteArrayOutputStream();
-ImageIO.write(image,"png", os); 
-InputStream fis = new ByteArrayInputStream(os.toByteArray());
-Hier rein probieren von stackoverflow und profilbild rein
- */
-			
-					//Registrierungs Infos von Benutzer-Bean in die DB schreiben
+			//Registrierungs Infos von Benutzer-Bean in die DB schreiben
 			try (PreparedStatement pstmt = con.prepareStatement(
 					"INSERT INTO Benutzer (vorname, nachname, email, pin, admin) VALUES (?,?,?,?,?)", generatedKeys)) {
 				// Zugriff über Klasse java.sql.PreparedStatement
