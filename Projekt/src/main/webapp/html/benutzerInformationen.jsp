@@ -1,5 +1,4 @@
-<!-- Autor:  -->
-<!-- Fehlermeldung h2 ist nicht in table erlaubt -->
+<!-- Autor: @Can-->
 
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -11,8 +10,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/x-icon"
-	href="${pageContext.request.contextPath}/img/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico">
 <title>Alle Buchungen - Kapitalismus-Kasse</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleIntern.css">
 <script src="${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>

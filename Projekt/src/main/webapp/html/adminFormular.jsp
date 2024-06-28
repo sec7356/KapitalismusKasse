@@ -9,8 +9,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico" />
-    <title>Admin Formular - Kapitalismus-Kasse</title>
+    <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico">
+    <title>Admin Übersichtsseite - Kapitalismus-Kasse</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleIntern.css">
     <script src="${pageContext.request.contextPath}/JavaScript/PinAusblenden.js"></script>
     <script src="${pageContext.request.contextPath}/JavaScript/greetingAdmin.js"></script>

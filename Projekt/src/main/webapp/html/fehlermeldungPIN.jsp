@@ -1,3 +1,5 @@
+<!-- Autor: Diane -->
+<!-- Validierung steht noch aus -->
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>

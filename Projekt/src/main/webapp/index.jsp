@@ -1,10 +1,13 @@
+<!-- Validiert am 28.06 @Can -->
+<!-- Autor: @Can, @Selim -->
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico">
 <title>Kapitalismus Kasse - Deine Bank!</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleExtern.css">
 <script src="${pageContext.request.contextPath}/JavaScript/navigation_extern.js"></script>
@@ -18,9 +21,6 @@
             </div>
         </div>
 </noscript>
-
-
-
 
 	<nav id="navbar">
 		<ul>
