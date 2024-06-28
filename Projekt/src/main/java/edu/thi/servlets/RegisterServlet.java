@@ -118,7 +118,7 @@ public class RegisterServlet extends HttpServlet {
 				try (ResultSet resultSetCheckEmail = statementCheckEmail.executeQuery()) {
 					if (resultSetCheckEmail.next()) {
 						response.sendRedirect("html/fehlermeldungEmail.jsp");
-						return; // Beende die Methode
+						return;
 					}
 				}
 			}
