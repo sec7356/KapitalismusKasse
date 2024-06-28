@@ -106,3 +106,48 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
 }
+
+/* Stil für den Popup bei aktivierten Cookies */
+        #cookieSuccess {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #dff0d8;
+            color: #3c763d;
+            border: 1px solid #d6e9c6;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+            z-index: 9999;
+        }
+
+        /* Stil für die Warnung bei blockierten Cookies */
+        #cookieWarning {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f2dede;
+            color: #a94442;
+            border: 1px solid #ebccd1;
+            padding: 20px;
+            border-radius: 5px;
+            display: none;
+            text-align: center;
+            z-index: 1000;
+        }
+        
+        /* Stil für den Button zum Neuladen */
+        #reloadButton {
+            background-color: #337ab7;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #reloadButton:hover {
+            background-color: #286090;
+        }
