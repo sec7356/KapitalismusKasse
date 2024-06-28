@@ -1,4 +1,5 @@
 <!-- Autor: Diane -->
+<!-- validiert -->
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -47,7 +48,7 @@
 		<br><br><br>
 		<div class="profile-text">
 				<p id="greeting">
-					Guten Tag, <span id="vorname">Admin</span>
+					Guten Tag, <span>Admin</span>
 				</p>
 		</div>
 		<p>Sie haben als berechtigter Mitarbeiter "unbegrenzte Möglichkeiten" für jeden Kunden bei uns!</p>

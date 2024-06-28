@@ -23,11 +23,10 @@
 		<ul>
 			<li>
 				<div class="container"> 
-				<a href="${pageContext.request.contextPath}/html/UserStartseite.jsp"title="Die Bank der Zukunft!">
+				<a href="${pageContext.request.contextPath}/html/UserStartseite.jsp" title="Die Bank der Zukunft!">
 					<img src="${pageContext.request.contextPath}/img/logo.jpg" alt="Logo" class="imageMitLink"></a>
 					
-					<a href="${pageContext.request.contextPath}/html/UserStartseite.jsp"
-					title="Die Bank der Zukunft!" class="companyNameLink">
+					<a href="${pageContext.request.contextPath}/html/UserStartseite.jsp" title="Die Bank der Zukunft!" class="companyNameLink">
 						<span>Kapitalismus</span>
 						<span>Kasse</span></a>
 				</div>
@@ -58,8 +57,8 @@
 		<br><br><br><br>						
 		<div class="profile-text">
 				<p id="greeting">
-					Guten Tag, <span id="vorname">${sessionScope.vorname}</span>
-					<span id="nachname">${sessionScope.nachname}</span>
+					Guten Tag, <span>${sessionScope.vorname}</span>
+					<span>${sessionScope.nachname}</span>
 				</p>
 		</div>
 	</div>
