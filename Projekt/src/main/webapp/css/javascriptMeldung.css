@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+body.noscript-active {
+	background-color: rgba(0, 0, 0, 0.5);
+	overflow: hidden; /* Verhindert das Scrollen */
+}
+
+.noscript-message-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.7);
+	z-index: 9999;
+}
+
+.noscript-message {
+	background-color: white;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	text-align: center;
+	font-size: 1.2em;
+	color: black;
+}

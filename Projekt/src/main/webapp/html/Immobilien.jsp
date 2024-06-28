@@ -14,6 +14,16 @@
     <script src="${pageContext.request.contextPath}/JavaScript/navigation_extern.js"></script>
 </head>
 <body>
+
+<noscript>
+<div class="noscript-message-container">
+            <div class="noscript-message">
+                JavaScript ist deaktiviert. Bitte aktivieren Sie JavaScript, um diese Webseite vollständig nutzen zu können.
+            </div>
+        </div>
+</noscript>
+  
+  
   
 <nav id="navbar">
 	<ul>
