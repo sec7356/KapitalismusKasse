@@ -1,3 +1,5 @@
+//Autor: @Diane
+
 package edu.thi.java;
 
 import java.io.Serializable;

@@ -218,8 +218,7 @@ public class RegisterServlet extends HttpServlet {
 
 		return IBAN;
 	}
-	
-	
+
 	
 	// Methode zur IBAN-Formatierung
     private String formatIban(String iban) {

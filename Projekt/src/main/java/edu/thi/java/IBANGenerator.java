@@ -1,3 +1,5 @@
+//Autor: @Diane
+
 //von KI erstellt
 
 package edu.thi.java;
