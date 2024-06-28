@@ -1,3 +1,6 @@
+<!-- Autor: Can -->
+<!-- Validiert -->
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <fmt:setLocale value="de_DE" />
@@ -44,13 +47,13 @@
 	</nav>
 
 	<main>
-	<form method="post"action="${pageContext.request.contextPath}/UeberweisungUeberpruefenServlet">
+	<form method="post" action="${pageContext.request.contextPath}/UeberweisungUeberpruefenServlet">
 		<section>
 			<fieldset class="account-info-container">
 				<legend>Ihr Konto</legend>
 				<div class="account-info">
 					<div class="iban-info">
-						<label for="konto-iban">IBAN:</label> 
+						<label>IBAN:</label> 
 						<%
                             String iban = (String) session.getAttribute("IBAN");
                             String formattedIban = iban.replaceAll("(.{4})(?!$)", "$1 ");
@@ -58,7 +61,7 @@
                         <span><%=formattedIban%></span>
 					</div>
 					<div class="saldo-info">
-						<label for="konto-saldo">Neuer Kontosaldo:</label> <span><fmt:formatNumber value="${sessionScope.kontostand}" 
+						<label>Neuer Kontosaldo:</label> <span><fmt:formatNumber value="${sessionScope.kontostand}" 
 						type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2"/> €</span>
 					</div>
 				</div>

@@ -15,7 +15,7 @@
     margin-bottom: 5px; /* Add some space between items */
 }
 
-#bold {
+.bold {
 	font-weight: bold;
 }
 

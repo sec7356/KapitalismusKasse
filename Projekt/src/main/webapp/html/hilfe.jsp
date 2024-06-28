@@ -1,5 +1,5 @@
 <!-- Validiert -->
-<!-- Autor: Selim, Diane-->
+<!-- Autoren: Selim, Diane-->
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 

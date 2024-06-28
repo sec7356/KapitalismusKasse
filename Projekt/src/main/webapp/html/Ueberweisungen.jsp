@@ -1,6 +1,5 @@
 <!-- Autor: Can -->
-<!-- FEHLERMELDUNG: The value of the for attribute of the label element must be the ID of a non-hidden form control.! -->
-
+<!-- FEHLERMELDUNG: "The value of the for attribute of the label element must be the ID of a non-hidden form control."! -->
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -25,18 +24,18 @@
     <nav id="navbar">
         <ul>
             <li>
-				<div class="container">
-					<img src="${pageContext.request.contextPath}/img/logo.jpg" alt="Logo" class="image">
-					<div class="company-name">Kapitalismus<br> Kasse
-					</div>
-				</div>
+                <div class="container">
+                    <img src="${pageContext.request.contextPath}/img/logo.jpg" alt="Logo" class="image">
+                    <div class="company-name">Kapitalismus<br> Kasse
+                    </div>
+                </div>
             </li>
             <li><a href="${pageContext.request.contextPath}/html/UserStartseite.jsp" title="Sehen Sie sich Ihr Dashboard an!">Dashboard</a></li>
             <li><a href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp" class="active" title="Überweisen Sie bequem Ihr Geld!">Überweisung</a></li>
             <li><a href="${pageContext.request.contextPath}/VerlaufServlet" title="Sehen Sie sich alle Ihre Buchungen an!">Kontoaktivitäten</a></li>
             <li><a href="${pageContext.request.contextPath}/html/hilfeIntern.jsp" title="Holen Sie sich Hilfe!">Hilfe</a>
-			</li>
-			<li>
+            </li>
+            <li>
                 <!-- Benutzer verwalten Icon -->
                 <a href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp" title="Nutzerdaten verwalten">
                     <img src="${pageContext.request.contextPath}/img/accountBild.jpg" alt="Benutzerverwaltung" class="accountBild">
@@ -62,11 +61,11 @@
                     <legend>Ihr Konto</legend>
                     <div class="account-info">
                         <div class="iban-info">
-                            <label for="von">IBAN:</label>
-                        <span>${sessionScope.formattedIban}</span>
+                            <label>IBAN:</label>
+                            <span>${sessionScope.formattedIban}</span>
                         </div>
                         <div class="saldo-info">
-                            <label for="konto-saldo">Aktueller Kontosaldo:</label>
+                            <label>Aktueller Kontosaldo:</label>
                             <span>
                                 <fmt:formatNumber value="${sessionScope.kontostand}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2" /> €
                             </span>
@@ -97,13 +96,11 @@
                     </div>
                     <div class="error-message-container">
                       <!-- Container für Fehlermeldung -->
-					<c:if test="${not empty requestScope.error}">
-    					<div class="message error-message">
-        				${requestScope.error}
-    					</div>
-					</c:if>
-					
-
+                      <c:if test="${not empty requestScope.error}">
+                          <div class="message error-message">
+                              ${requestScope.error}
+                          </div>
+                      </c:if>
                     </div>
                 </fieldset>
                 <fieldset>
@@ -114,7 +111,6 @@
                         <span class="icon" id="summe-icon"></span>
                     </div>
                     <div class="form-group">
-                        <label for="betrag"></label>
                         <p class="hint-text">
                             Bitte beachten Sie eventuell die Meldepflicht ab 12.500 Euro <br>gemäß
                             <a href="https://www.bundesbank.de/de/service/meldewesen/aussenwirtschaft" target="blank">Außenwirtschaftsverordnung<img src="${pageContext.request.contextPath}/img/Link.png" alt="Logo" style="vertical-align: middle; width: 30px; height: 30px; margin-left: -7px;"></a>
@@ -125,12 +121,9 @@
                         <textarea id="verwendungszweck" name="verwendungszweck" maxlength="140" oninput="updateCharCount()"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="betrag"></label>
                         <div id="char-count" class="hint-text">Sie können noch 140 Zeichen eingeben.</div>
                     </div>
-                    
                     <div class="form-group">
-                        <label for="betrag">Hinweis</label>
                         <p class="hint-text">
                         <br><br>
                             Wir möchten Sie darauf hinweisen, dass Überweisungen
@@ -142,7 +135,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="betrag">*Pflichtfelder</label>
+                        <label>*Pflichtfelder</label>
                     </div>
                 </fieldset>
                 <div class="button-container">

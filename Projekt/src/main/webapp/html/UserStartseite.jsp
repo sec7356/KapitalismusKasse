@@ -1,4 +1,5 @@
 <!-- Autor:  -->
+<!-- Fehler bei Validation in Zeile 122: "The value of the for attribute of the label element must be the ID of a non-hidden form control." -->
 
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -13,7 +14,6 @@
 		<link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico" />
 		<title>Startseite - Kapitalismus-Kasse</title>
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/UserStartseite_Design.css">
-		<!-- Font Awesome for icons -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 		
 		<script src="${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
@@ -119,7 +119,7 @@
         <output id="laufzeit-anzeige">12 Monate</output>
     </div>
     <div class="input-container">
-        <label for="rate">Monatliche Rate (inkl. 21,5% Zins):</label>
+        <label>Monatliche Rate (inkl. 21,5% Zins):</label>
         <output id="rate-anzeige">0,00€</output>
     </div>
 </div>

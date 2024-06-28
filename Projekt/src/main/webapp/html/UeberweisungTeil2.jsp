@@ -1,6 +1,4 @@
 <!-- Autor: Can -->
-<!-- FEHLERMELDUNG: The value of the for attribute of the label element must be the ID of a non-hidden form control.! -->
-
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -58,11 +56,11 @@
 					<legend>Ihr Konto</legend>
 					<div class="account-info">
 						<div class="iban-info">
-							<label for="von">IBAN:</label>  
+							<label>IBAN:</label>  
                         <span>${sessionScope.formattedIban}</span>
 						</div>
 						<div class="saldo-info">
-							<label for="konto-saldo">Aktueller Kontosaldo:</label> <span><fmt:formatNumber
+							<label>Aktueller Kontosaldo:</label> <span><fmt:formatNumber
 									value="${sessionScope.kontostand}" type="number"
 									groupingUsed="true" maxFractionDigits="2" minFractionDigits="2" />
 								€</span>
@@ -88,23 +86,23 @@
 				<fieldset>
 					<legend>Empfängerdaten</legend>
 					<div class="form-group">
-						<label for="nach">IBAN*</label><span>${requestScope.nach}</span>
+						<label>IBAN*</label><span>${requestScope.nach}</span>
 					</div>
 					<div class="form-group">
-						<label for="nach">Vorname</label><span>${requestScope.nachVorname}</span>
+						<label>Vorname</label><span>${requestScope.nachVorname}</span>
 					</div>
 					<div class="form-group">
-						<label for="nach">Nachname</label><span>${requestScope.nachNachname}</span>
+						<label>Nachname</label><span>${requestScope.nachNachname}</span>
 					</div>
 				</fieldset>
 				<fieldset>
 					<legend>Zahlungsdaten</legend>
 					<div class="form-group">
-						<label for="summe">Betrag* EUR</label> <span><fmt:formatNumber value="${requestScope.summe}" 
+						<label>Betrag* EUR</label> <span><fmt:formatNumber value="${requestScope.summe}" 
 						type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2" /> €</span>
 					</div>
 					<div class="form-group">
-						<label for="betrag"></label>
+						<label></label>
 						<p class="hint-text">
 							Bitte beachten Sie eventuell die Meldepflicht ab 12.500 Euro <br>gemäß
 							<a href="https://www.bundesbank.de/de/service/meldewesen/aussenwirtschaft" target="blank">Außenwirtschaftsverordnung<img src="${pageContext.request.contextPath}/img/Link.png" alt="Logo" style="vertical-align: middle; width: 30px; height: 30px; margin-left: -7px;"></a>
@@ -112,12 +110,12 @@
 					</div>
 
 					<div class="form-group">
-						<label for="verwendungszweck">Verwendungszweck</label> 
+						<label>Verwendungszweck</label> 
 						<span>
 							<!-- Verwendungszweck aus der Anfrage abrufen und anzeigen -->
 							<c:choose>
     							<c:when test="${empty requestScope.verwendungszweck}">
-        							<p> - keine Angaben - </p>
+        							- keine Angaben - <br>
     							</c:when>
    								<c:otherwise>
        	 							<span>${requestScope.verwendungszweck}</span>
@@ -126,10 +124,10 @@
 						</span>
 					</div>
 					<div class="form-group">
-						<label for="betrag"></label>
+						<label></label>
 					</div>
 					<div class="form-group">
-						<label for="betrag">Hinweis</label>
+						<label>Hinweis</label>
 						<p class="hint-text">
 							Wir möchten Sie darauf hinweisen, dass Überweisungen
 							ausschließlich an Empfänger durchgeführt werden können, die

@@ -74,7 +74,7 @@
 
 	<div class="grid-container">
 		<div class="grid-item">
-			<p id="bold">Bargeld wächst nun auf Bäumen!</p><br>
+			<p class="bold">Bargeld wächst nun auf Bäumen!</p><br>
 			<br>Neu! Forscher fanden eine spezielle Art von Pflanzen aus einer Nachbargalaxie, worauf Euro-Scheine wachsen.
 			Desshalb jetzt 100€ Startguthaben bei der Registrierung als Neukunde!
 			<br><br>
@@ -96,7 +96,7 @@
 			Ihre Vision verwirklichen und den Weg zum Erfolg ebnen.
 		</div>
 		<div class="grid-item">
-			<p id="bold">Sie haben Ihr Geld versoffen?</p><br>
+			<p class="bold">Sie haben Ihr Geld versoffen?</p><br>
 			<br>Keine Sorge!<br>Mit unsereren attraktiven
 			Kredit-Angeboten katapultieren wir Sie in die nächstgrößere
 			Katastrophe!<br><br>
