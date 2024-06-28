@@ -129,7 +129,7 @@
     <h2>Sicherheitshinweise</h2>
     <ul>
         <li>Halten Sie Ihre Zugangsdaten geheim und teilen Sie sie niemals mit anderen.</li>
-        <li>Aktualisieren Sie regelmäßig Ihr Passwort und verwenden Sie starke Passwörter.</li>
+        <li>Aktualisieren Sie regelmäßig Ihre Pin.</li>
         <li>Überprüfen Sie Ihre Kontobewegungen regelmäßig auf verdächtige Aktivitäten.</li>
     </ul>
 </div>
