@@ -16,7 +16,7 @@
     <title>Alle Buchungen - Kapitalismus-Kasse</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleIntern.css">
     <script src="${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
-    <script src="${pageContext.request.contextPath}/JavaScript/greeting.js"></script>
+    <script src="${pageContext.request.contextPath}/JavaScript/greetingAdmin.js"></script>
     <script src="${pageContext.request.contextPath}/JavaScript/Zwischenablage.js"></script>
 </head>
 <body>
@@ -47,11 +47,10 @@
 
 <br>
 <div class="grauBackground">
-		<br><br><br><br>						
+		<br><br><br>						
 		<div class="profile-text">
 				<p id="greeting">
-					Guten Tag, <span id="vorname">${sessionScope.vorname}</span>
-					<span id="nachname">${sessionScope.nachname}</span>
+					Guten Tag, <span id="vorname">Admin</span>
 				</p>
 		</div>
 		<p>Hier können Sie den Kontostand oder auch das Disporahmen nach Ihrer Wahl frei entscheiden!</p>

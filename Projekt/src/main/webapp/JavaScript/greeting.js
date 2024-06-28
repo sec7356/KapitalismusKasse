@@ -20,6 +20,9 @@ function Begruessung() {
     var nachname = document.getElementById('nachname').textContent;
     document.getElementById('greeting').textContent = begruessung + ", " + vorname + " " + nachname + " 👋";
 }
-
 // Begrüßung bei Seitenladen einstellen
 window.onload = Begruessung;
+
+
+
+
