@@ -58,8 +58,8 @@ public class UeberweisenServlet extends HttpServlet {
 
 	        if (vonKontostand + dispo < summe) {
 	            System.out.println("Guthaben und Dispo reichen nicht aus.");
-	            request.setAttribute("error", "Das verfügbare Guthaben und der Dispositionsrahmen sind für die Durchführung der Überweisung unzureichend.");
-	            request.getRequestDispatcher("/html/Ueberweisungen.jsp").forward(request, response);
+	            session.setAttribute("error", "Das verfügbare Guthaben und der Dispositionsrahmen sind für die Durchführung der Überweisung unzureichend.");
+	            response.sendRedirect(request.getContextPath() + "/html/Ueberweisungen.jsp");
 	            return;
 	        }
 

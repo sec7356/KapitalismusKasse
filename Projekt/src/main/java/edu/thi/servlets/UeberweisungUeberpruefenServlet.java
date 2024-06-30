@@ -8,6 +8,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import javax.sql.DataSource;
 import java.io.IOException;
 import java.sql.Connection;
@@ -24,6 +26,7 @@ public class UeberweisungUeberpruefenServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
+	    HttpSession session = request.getSession();
 
     	
     	String von = (String) request.getSession().getAttribute("IBAN");
@@ -35,8 +38,8 @@ public class UeberweisungUeberpruefenServlet extends HttpServlet {
         
         // Überprüfen, ob versucht wird, an die eigene IBAN zu überweisen
         if (von.equals(nach)) {
-            request.setAttribute("error", "Überweisungen auf die eigene IBAN sind nicht zulässig.");
-            request.getRequestDispatcher("/html/Ueberweisungen.jsp").forward(request, response);
+            session.setAttribute("error", "Überweisungen auf die eigene IBAN sind nicht zulässig.");
+            response.sendRedirect(request.getContextPath() + "/html/Ueberweisungen.jsp");
             return;
         }
         
@@ -50,8 +53,8 @@ public class UeberweisungUeberpruefenServlet extends HttpServlet {
                         int count = checkIbanResult.getInt("count");
                         if (count == 0) {
                             // Empfänger-IBAN nicht gefunden
-                            request.setAttribute("error", "Der Empfänger mit der angegebenen IBAN ist kein Kunde unseres Instituts.");
-                            request.getRequestDispatcher("/html/Ueberweisungen.jsp").forward(request, response);
+                            session.setAttribute("error", "Der Empfänger mit der angegebenen IBAN ist kein Kunde unseres Instituts.");
+                            response.sendRedirect(request.getContextPath() + "/html/Ueberweisungen.jsp");
                             return; // Beende die Methode, um die Weiterleitung zu verhindern
                         }
                     }

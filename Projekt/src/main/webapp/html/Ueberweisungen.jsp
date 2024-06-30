@@ -97,10 +97,10 @@
                     </div>
                     <div class="error-message-container">
                       <!-- Container für Fehlermeldung -->
-                      <c:if test="${not empty requestScope.error}">
+                      <c:if test="${not empty sessionScope.error}">
                           <div class="message error-message">
-                              ${requestScope.error}
-							  <c:remove var="error" scope="request"/>
+                              ${sessionScope.error}
+							  <c:remove var="error" scope="session"/>
                           </div>
                       </c:if>
                     </div>
