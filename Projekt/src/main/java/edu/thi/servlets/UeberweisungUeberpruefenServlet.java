@@ -35,10 +35,9 @@ public class UeberweisungUeberpruefenServlet extends HttpServlet {
         
         // Überprüfen, ob versucht wird, an die eigene IBAN zu überweisen
         if (von.equals(nach)) {
-            // Fehlermeldung für den Versuch, an die eigene IBAN zu überweisen
             request.setAttribute("error", "Sie können keine Überweisung an Ihre eigene IBAN vornehmen!");
             request.getRequestDispatcher("/html/Ueberweisungen.jsp").forward(request, response);
-            return; // Beende die Methode, um die Weiterleitung zu verhindern
+            return;
         }
         
         // Datenbankzugriff, um den Vor- und Nachnamen des Empfängers zu erhalten

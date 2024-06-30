@@ -109,6 +109,7 @@
                     <div class="form-group">
                         <label for="summe">Betrag* EUR</label>
                         <input type="number" id="summe" name="summe" required min="1" max="9999999999999.99" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1')">
+                        <!-- JS: erlaubt sind nur nur numerische Zeichen & 1 Dezimalpunkt - replace1 entfernt alles was keine Ziffern/Punkte sind, replace2 stellt sicher, dass nur ein Dezimalpunkt vorkommt -->
                         <span class="icon" id="summe-icon"></span>
                     </div>
                     <div class="form-group">
