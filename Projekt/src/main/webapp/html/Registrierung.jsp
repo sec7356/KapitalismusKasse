@@ -86,8 +86,8 @@
                     </div>
                 </div>
                 <div class="form-group buttons">
-                    <button id="registerButton" type="submit">Registrieren</button>
                     <button type="reset">Zurücksetzen</button>
+                	<button id="registerButton" type="submit">Registrieren</button>
                 </div>
                 <div class="form-group">
                     <p><b>Sie kommen nicht weiter?</b></p>
