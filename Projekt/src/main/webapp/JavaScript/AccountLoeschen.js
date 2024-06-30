@@ -1,4 +1,5 @@
 //Autor: @Can
+"use strict";
 
 
 function confirmDelete() {

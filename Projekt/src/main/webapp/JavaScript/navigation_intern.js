@@ -1,5 +1,7 @@
 //Autor: @Selim, @Can
 
+"use strict";
+
 
 window.addEventListener("scroll", function() {
     var nav = document.querySelector("#navbar");

@@ -1,12 +1,12 @@
 //Autor: @Can
 
-'use strict'
+"use strict";
 
 document.addEventListener('DOMContentLoaded', () => {
-    const pinCells = document.querySelectorAll('.pin-cell');
+    var pinCells = document.querySelectorAll('.pin-cell');
 
     pinCells.forEach(cell => {
-        const pinContent = cell.querySelector('.pin-content');
+        var pinContent = cell.querySelector('.pin-content');
 
         if (pinContent) { // Überprüfen Sie, ob pinContent vorhanden ist
             cell.addEventListener('mouseover', () => {

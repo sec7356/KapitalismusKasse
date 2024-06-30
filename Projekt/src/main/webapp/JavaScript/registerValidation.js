@@ -1,17 +1,14 @@
 /* register.js */
 //Autor: Diane 
-
+"use strict";
 
 document.addEventListener("DOMContentLoaded", init);
 
-function init() {
-    console.log("DOM-Inhalt geladen.");
-    
+function init() {    
     var emailInput = document.getElementById('email');
     if (emailInput) {
         emailInput.addEventListener('input', handleEmailInput);
     } else {
-        console.error("E-Mail-Eingabefeld nicht gefunden.");
     }
 }
 
@@ -25,9 +22,7 @@ function handleEmailInput() {
     }
 }
 
-function checkEmailAvailability(email) {
-    console.log("Überprüfe Verfügbarkeit der E-Mail für: " + email);
-    
+function checkEmailAvailability(email) {    
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.responseType = "json";
     xmlhttp.onreadystatechange = function() {
@@ -43,7 +38,6 @@ function checkEmailAvailability(email) {
 }
 
 function handleEmailResponse(response) {
-    console.log("Behandle E-Mail-Antwort:", response);
     
     var emailStatus = document.getElementById('emailStatus');
     var emailErrorMessage = document.getElementById('emailErrorMessage');
@@ -71,7 +65,6 @@ function clearEmailStatus() {
     if (emailStatus) {
         emailStatus.textContent = '';
     } else {
-        console.error("E-Mail-Status-Element nicht gefunden.");
     }
 }
 
@@ -80,7 +73,6 @@ function disableRegisterButton() {
     if (registerButton) {
         registerButton.disabled = true;
     } else {
-        console.error("Registrierungsbutton nicht gefunden.");
     }
 }
 
@@ -89,7 +81,6 @@ function enableRegisterButton() {
     if (registerButton) {
         registerButton.disabled = false;
     } else {
-        console.error("Registrierungsbutton nicht gefunden.");
     }
 }
 

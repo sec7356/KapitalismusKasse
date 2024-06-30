@@ -1,6 +1,6 @@
 //Autor: @Can
 
-'use strict'
+"use strict";
 
 document.addEventListener("DOMContentLoaded", function() {
     // JavaScript-Funktion, um das Logout-Element nach einer bestimmten Zeit auszublenden

@@ -1,4 +1,5 @@
 //Autor: @Can
+"use strict";
 
 document.getElementById("resetZeichen").addEventListener("onclick", resetForm());
 
