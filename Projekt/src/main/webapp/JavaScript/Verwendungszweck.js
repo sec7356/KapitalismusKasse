@@ -1,17 +1,16 @@
 //Autor: @Can
 "use strict";
 
-document.getElementById("resetZeichen").addEventListener("onclick", resetForm());
-
 window.onload = function() {
+
+document.getElementById("resetZeichen").addEventListener("click", resetForm);
+
+function resetForm() {
+    // Zurücksetzen des Eingabefelds
+    document.getElementById("verwendungszweck").value = "";
+    // Manuelle Aktualisierung des Zeichenzählers
     updateCharCount();
-    var form = document.getElementById('myForm');
-    form.addEventListener('reset', function() {
-        setTimeout(updateCharCount, 0); // Timeout, um sicherzustellen, dass das Zurücksetzen abgeschlossen ist
-    });
-    var inputField = document.getElementById("verwendungszweck");
-    inputField.addEventListener("input", updateCharCount);
-};
+}};
 
 function updateCharCount() {
     var maxLength = 140;
@@ -26,9 +25,4 @@ function updateCharCount() {
     }
 }
 
-function resetForm() {
-    // Zurücksetzen des Eingabefelds
-    document.getElementById("verwendungszweck").value = "";
-    // Manuelle Aktualisierung des Zeichenzählers
-    updateCharCount();
-}
+

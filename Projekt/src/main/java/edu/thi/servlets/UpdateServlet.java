@@ -1,4 +1,4 @@
-//Autor: Diane
+// Autor: Diane
 
 package edu.thi.servlets;
 
@@ -15,6 +15,7 @@ import java.io.InputStream;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import javax.sql.DataSource;
 import edu.thi.java.Benutzer;
 
@@ -30,11 +31,11 @@ public class UpdateServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         
         HttpSession session = request.getSession();
+        session.removeAttribute("error"); // Fehlermeldung zurücksetzen
         
         String vorname = (String) session.getAttribute("vorname");
         String nachname = (String) session.getAttribute("nachname");
         String email = (String) session.getAttribute("email");
-        boolean isAdmin = (boolean) session.getAttribute("admin");
         
         Benutzer benutzer = new Benutzer();
         benutzer.setB_id((Long) session.getAttribute("b_id"));
@@ -61,16 +62,6 @@ public class UpdateServlet extends HttpServlet {
         if (pin1 != null && pin2 != null && pin1.equals(pin2) && pin1.matches("\\d+")) {
             pin = Integer.parseInt(pin1);
         }
-
-        // Debugging-Ausgaben hinzufügen
-        System.out.println("Vorname: " + benutzer.getVorname());
-        System.out.println("Nachname: " + benutzer.getNachname());
-        System.out.println("Email: " + benutzer.getEmail());
-        System.out.println("PIN1: " + pin1);
-        System.out.println("PIN2: " + pin2);
-        System.out.println("PIN: " + pin);
-
-        
         
         Part filePart = request.getPart("profilbild");
         InputStream fileContent = null;
@@ -78,16 +69,18 @@ public class UpdateServlet extends HttpServlet {
             fileContent = filePart.getInputStream();
         }
 
-        persist(benutzer, pin, fileContent);
+        boolean updateSuccessful = persist(benutzer, pin, fileContent);
 
-        if (!isAdmin) {
-            response.sendRedirect(request.getContextPath() + "/html/UserStartseite.jsp");
-        } else {
-            response.sendRedirect(request.getContextPath() + "/AdminBenutzerListeServlet");
+        if (!updateSuccessful) {
+            session.setAttribute("error", "Die Größe des Profilbildes überschreitet das zulässige Limit von 5 MB.");
+            response.sendRedirect(request.getContextPath() + "/html/benutzerverwaltung.jsp");
+            return;
         }
+
+        response.sendRedirect(request.getContextPath() + "/html/UserStartseite.jsp");
     }
 
-    private void persist(Benutzer benutzer, Integer pin, InputStream fileContent) throws ServletException {
+    private boolean persist(Benutzer benutzer, Integer pin, InputStream fileContent) throws ServletException {
         StringBuilder sqlBuilder = new StringBuilder("UPDATE benutzer SET vorname = ?, nachname = ?, email = ?");
         if (pin != null) {
             sqlBuilder.append(", pin = ?");
@@ -107,25 +100,23 @@ public class UpdateServlet extends HttpServlet {
             pstmt.setString(paramIndex++, benutzer.getNachname());
             pstmt.setString(paramIndex++, benutzer.getEmail());
 
-            
-            // Debugging-Ausgaben hinzufügen
-            System.out.println("SQL: " + sql);
-            System.out.println("Vorname: " + benutzer.getVorname());
-            System.out.println("Nachname: " + benutzer.getNachname());
-            System.out.println("Email: " + benutzer.getEmail());
-            
             if (pin != null) {
                 pstmt.setInt(paramIndex++, pin);
             }
 
             if (fileContent != null) {
+                // Überprüfen, ob das Bild größer als 1.048.576 Bytes ist (entspricht 1 MB)
+                if (fileContent.available() > 1048576 ) {
+                    return false; 
+                }
                 pstmt.setBlob(paramIndex++, fileContent);
             }
 
             pstmt.setLong(paramIndex, benutzer.getB_id());
 
-            pstmt.executeUpdate();
-        } catch (Exception ex) {
+            int rowsUpdated = pstmt.executeUpdate();
+            return rowsUpdated > 0; // Rückgabe true, wenn Update erfolgreich war
+        } catch (SQLException | IOException ex) {
             throw new ServletException(ex.getMessage());
         }
     }

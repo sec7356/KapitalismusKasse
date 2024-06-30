@@ -19,7 +19,7 @@ CREATE TABLE Benutzer
     email VARCHAR(100),
     pin INT,
     admin TINYINT,
-    profilBild BLOB
+    profilBild mediumblob
 	);
 	
 - Für das Anlegen eines Initial-Bildes bei Neu-Registrierung folgender Befehl:

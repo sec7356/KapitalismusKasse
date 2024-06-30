@@ -359,4 +359,24 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
     align-items: center;
 }
 
+.required-fields {
+    display: inline-block;
+    font-size: 12px;
+    color: #d9534f;
+    margin-top: 5px;
+}
+
+.info-fields {
+    display: inline-block;
+    font-size: 12px;
+    color: black; 
+    margin-top: 5px;
+}
+
+.error-message-container {
+	text-align: left;
+	color: #941100;
+	margin-bottom: 0.5em;
+}
+
 

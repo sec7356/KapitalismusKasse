@@ -12,7 +12,6 @@
 <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico">
 <title>Hilfe - Kapitalismus-Kasse</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/hilfeIntern.css">
-<script src="${pageContext.request.contextPath}/JavaScript/popup.js" defer></script>
 <script  src= "${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
 <script  src="${pageContext.request.contextPath}/JavaScript/greeting.js"></script>
 <script  src="${pageContext.request.contextPath}/JavaScript/navigation_intern.js"></script>
