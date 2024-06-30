@@ -35,7 +35,7 @@ public class UeberweisungUeberpruefenServlet extends HttpServlet {
         
         // Überprüfen, ob versucht wird, an die eigene IBAN zu überweisen
         if (von.equals(nach)) {
-            request.setAttribute("error", "Sie können keine Überweisung an Ihre eigene IBAN vornehmen!");
+            request.setAttribute("error", "Überweisungen auf die eigene IBAN sind nicht zulässig.");
             request.getRequestDispatcher("/html/Ueberweisungen.jsp").forward(request, response);
             return;
         }
@@ -50,7 +50,7 @@ public class UeberweisungUeberpruefenServlet extends HttpServlet {
                         int count = checkIbanResult.getInt("count");
                         if (count == 0) {
                             // Empfänger-IBAN nicht gefunden
-                            request.setAttribute("error", "Der Empfänger mit der eingegebenen IBAN ist kein Kunde bei uns!");
+                            request.setAttribute("error", "Der Empfänger mit der angegebenen IBAN ist kein Kunde unseres Instituts.");
                             request.getRequestDispatcher("/html/Ueberweisungen.jsp").forward(request, response);
                             return; // Beende die Methode, um die Weiterleitung zu verhindern
                         }

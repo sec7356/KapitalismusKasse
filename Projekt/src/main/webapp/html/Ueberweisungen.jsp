@@ -100,6 +100,7 @@
                       <c:if test="${not empty requestScope.error}">
                           <div class="message error-message">
                               ${requestScope.error}
+							  <c:remove var="error" scope="request"/>
                           </div>
                       </c:if>
                     </div>
