@@ -34,10 +34,10 @@ public class UeberweisenServlet extends HttpServlet {
 	    String summeStr = request.getParameter("summe");
 	    String verzweck = request.getParameter("verwendungszweck");
 
-	    System.out.println("Absender " + vonIBAN);
-	    System.out.println("Empfänger " + nachIBAN);
-	    System.out.println("Summe " + summeStr);
-	    System.out.println("Verwendungszweck " + verzweck);
+	    System.out.println("Absender: " + vonIBAN);
+	    System.out.println("Empfänger: " + nachIBAN);
+	    System.out.println("Summe: " + summeStr);
+	    System.out.println("Verwendungszweck: " + verzweck);
 
 	    double summe = Double.parseDouble(summeStr);
 
@@ -58,7 +58,7 @@ public class UeberweisenServlet extends HttpServlet {
 
 	        if (vonKontostand + dispo < summe) {
 	            System.out.println("Guthaben und Dispo reichen nicht aus.");
-	            session.setAttribute("errorMessage", "Nicht genügend Guthaben und Dispo für die Überweisung.");
+	            request.setAttribute("error", "Das verfügbare Guthaben und der Dispositionsrahmen sind für die Durchführung der Überweisung unzureichend.");
 	            request.getRequestDispatcher("/html/Ueberweisungen.jsp").forward(request, response);
 	            return;
 	        }
@@ -78,7 +78,6 @@ public class UeberweisenServlet extends HttpServlet {
 	        double neuerVonKontostand = getKontostand(conn, vonIBAN);
 	        session.setAttribute("kontostand", neuerVonKontostand);
 
-	        session.setAttribute("successMessage", "Überweisung erfolgreich");
 	        response.sendRedirect("html/UeberweisungTeil3.jsp");
 
 	    } catch (SQLException e) {
