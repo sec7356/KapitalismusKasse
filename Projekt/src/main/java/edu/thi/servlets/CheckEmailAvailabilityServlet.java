@@ -34,7 +34,6 @@ public class CheckEmailAvailabilityServlet extends HttpServlet {
             out.println("{\"available\": false, \"message\": \"Bitte geben Sie eine gültige E-Mail-Adresse ein.\"}");
             return;
         }
-        
         try (Connection con = ds.getConnection();
              PreparedStatement pstmt = con.prepareStatement("SELECT 1 FROM Benutzer WHERE email = ?")) {
             pstmt.setString(1, email);
