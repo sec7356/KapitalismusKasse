@@ -37,12 +37,10 @@
             <li><a href="${pageContext.request.contextPath}/VerlaufServlet" title="Sehen Sie sich alle Ihre Buchungen an!">Kontoaktivitäten</a></li>
             <li><a href="${pageContext.request.contextPath}/html/hilfeIntern.jsp" title="Holen Sie sich Hilfe!">Hilfe</a>
             </li>
-            <li>
-                <!-- Benutzer verwalten Icon -->
-                <a href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp" title="Nutzerdaten verwalten">
-                    <img src="${pageContext.request.contextPath}/img/accountBildFokus.jpg" alt="Benutzerverwaltung" class="accountBild">
-                </a>
-            </li>
+            <li class="no-hover">
+			<a href="${pageContext.request.contextPath}/html/benutzerverwaltung.jsp" title="Nutzerdaten verwalten"> 
+				<img src="${pageContext.request.contextPath}/img/accountBildFokus.jpg"	alt="Benutzerverwaltung" class="accountBild"></a>
+			</li>
             <li>
                 <div class="timer-logout-container">
                     <div id="timer">05:00</div>

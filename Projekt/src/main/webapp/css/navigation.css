@@ -188,12 +188,13 @@ nav a {
 	transition: all 0.15s ease-in;
 }
 
-nav a:focus, nav a:hover, nav a.active {
-	color: gold;
-	position: relative;
-	color: rgb(55, 81, 128);
-	/* Schriftfarbe für Hover-Effekt, wenn nicht aktiv */
-	background-color: var(--accent1-color);
+nav li:not(.no-hover) a:focus,
+nav li:not(.no-hover) a:hover,
+nav li:not(.no-hover) a.active {
+    color: gold;
+    position: relative;
+    color: rgb(55, 81, 128); /* Schriftfarbe für Hover-Effekt, wenn nicht aktiv */
+    background-color: var(--accent1-color);
 }
 
 nav a.active::after {
