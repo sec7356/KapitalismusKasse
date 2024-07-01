@@ -1,6 +1,5 @@
 <!-- Validiert -->
 <!-- Autor: Diane -->
-<!-- Unten hidden Felder korrigieren -->
 
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -80,8 +79,8 @@
 </div>
 
 <!-- Versteckte Felder für Nachrichten -->
-<input type="hidden" id="showMessage" value="<%= request.getAttribute("showMessage") != null ? request.getAttribute("showMessage") : "false" %>">
-<input type="hidden" id="successMessage" value="<%= request.getAttribute("successMessage") != null ? request.getAttribute("successMessage") : "" %>">
+<input type="hidden" id="showMessage" value="${requestScope.showMessage != null ? requestScope.showMessage : 'false'}">
+<input type="hidden" id="successMessage" value="${requestScope.successMessage != null ? requestScope.successMessage : ''}">
 
 <!-- Hier wird die Popup-Nachricht angezeigt -->
 <div id="popup" class="popup" style="display:none;">
