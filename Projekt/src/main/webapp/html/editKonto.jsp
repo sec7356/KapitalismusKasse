@@ -18,33 +18,32 @@
     <script src="${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
     <script src="${pageContext.request.contextPath}/JavaScript/greetingAdmin.js"></script>
     <script src="${pageContext.request.contextPath}/JavaScript/Zwischenablage.js"></script>
+    <script src="${pageContext.request.contextPath}/JavaScript/navigation_intern.js"></script>
+    
 </head>
 <body>
 <nav id="navbar">
-    <ul>
-        <li>
-            <div class="container">
-                <a href="${pageContext.request.contextPath}/AdminBenutzerListeServlet" title="Die Bank der Zukunft!"> 
-                    <img src="${pageContext.request.contextPath}/img/logo.jpg" alt="Logo" class="imageMitLink">
-                </a> 
-                <a href="${pageContext.request.contextPath}/html/adminFormular.jsp" title="Die Bank der Zukunft!" class="companyNameLink">
-                    <span>Kapitalismus-</span> <span>Kasse</span>
-                </a>
-            </div>
-        </li>
-        <li></li>
-        <li>
-            <div class="timer-logout-container">
-                <div id="timer">05:00</div>
-                <div class="divider"></div>
-                <form method="post" action="${pageContext.request.contextPath}/LogoutServlet">
-                    <button name="loeschen" type="submit" class="logout-button" title="Melden Sie sich sicher ab!">Logout</button>
-                </form>
-            </div>
-        </li>
-    </ul>
-</nav>
-
+		<ul>
+			<li>
+				<div class="container">
+					<img src="${pageContext.request.contextPath}/img/logo.jpg" alt="Logo" class="image">
+					<div class="company-name">Kapitalismus<br> Kasse
+					</div>
+				</div>
+			</li>
+			<li><h1 id="adminKonsoleTitel">**Admin-Konsole**</h1></li>
+			
+			<li>
+			<div class="timer-logout-container">
+                    <div id="timer">05:00</div>
+                    <div class="divider"></div>
+                    <form method="post" action="${pageContext.request.contextPath}/LogoutServlet">
+                        <button name="loeschen" type="submit" class="logout-button" title="Melden Sie sich sicher ab!">Logout</button>
+                    </form>
+                </div>
+			</li>
+		</ul>
+	</nav>
 <br>
 <div class="grauBackground">
 		<br><br><br>						
