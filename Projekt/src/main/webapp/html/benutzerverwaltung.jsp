@@ -70,59 +70,44 @@
 	<br>
 
 <div class="internForm">
-    <form  method="post" action="${pageContext.request.contextPath}/UpdateServlet" enctype="multipart/form-data">
-        <fieldset><legend>Benutzerdaten verwalten</legend>
-			<%
-			String errorMessage = (String) session.getAttribute("errorMessage");
-			if (errorMessage != null) {
-			%>
-			<p style="color: red;"><%=errorMessage%></p>
-			<%
-			session.removeAttribute("errorMessage");
-			}
-			%>
-			<div>
-        	<br>
-            <label for="vorname">Vorname</label><br>
-            <input type="text" id="vorname" name="vorname" maxlength="30" ><br>
+    <form method="post" action="${pageContext.request.contextPath}/UpdateServlet" enctype="multipart/form-data">
+    <fieldset>
+        <legend>Benutzerdaten verwalten</legend>
+        <div>
+            <label for="vorname">Vorname:</label><br>
+            <input type="text" id="vorname" name="vorname" maxlength="30"><br>
         </div>
         <div>
-            <label for="nachname">Nachname</label><br>
-            <input type="text" id="nachname" name="nachname" maxlength="30" ><br>
+            <label for="nachname">Nachname:</label><br>
+            <input type="text" id="nachname" name="nachname" maxlength="30"><br>
         </div>
         <div>
-            <label for="pin1">PIN*</label><br>
-            <input type="password" id="pin1" name="pin1" maxlength="6" ><br>
+            <label for="pin1">PIN:</label><br>
+            <input type="password" id="pin1" name="pin1" maxlength="6"><br>
         </div>
         <div>
-            <label for="pin2">PIN bestätigen*</label><br>
-            <input type="password" id="pin2" name="pin2" maxlength="6" ><br>
-			<span class="required-fields">*Pflichtfelder</span>
-            
+            <label for="pin2">PIN bestätigen:</label><br>
+            <input type="password" id="pin2" name="pin2" maxlength="6"><br>
         </div>
         <div>
-        	<br>
-        	 <div class="error-message-container">
-                      <!-- Container für Fehlermeldung -->
-                      <c:if test="${not empty sessionScope.error}">
-                          <div class="message error-message">
-                              ${sessionScope.error}
-							  <c:remove var="error" scope="session"/>
-                          </div>
-                      </c:if>
-                    </div>
-            <label for="profilbild">Profilbild:</label>            
+            <label for="profilbild">Profilbild:</label>
             <input type="file" id="profilbild" name="profilbild" accept="image/*"><br>
             <span class="info-fields">(Das Profilbild darf maximal 1 MB betragen)</span>
-            
         </div>
         <br>
         <div>
             <button name="submit" type="submit">Änderungen speichern</button>
             <button name="reset" type="reset">Zurücksetzen</button>
+            <c:if test="${not empty sessionScope.errorMessage}">
+        		<br>
+        		<div id="error-message">${sessionScope.errorMessage}</div>
+        		<c:remove var="errorMessage" scope="session"/>
+    		</c:if>
         </div>
-        </fieldset>
-   </form>
+        
+    </fieldset>
+</form>
+
 </div>
 <br>
 <div class="internForm">

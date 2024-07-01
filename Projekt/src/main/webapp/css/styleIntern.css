@@ -379,4 +379,12 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	margin-bottom: 0.5em;
 }
 
-
+#error-message {
+    color: white;
+    background-color: #ff6666;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}

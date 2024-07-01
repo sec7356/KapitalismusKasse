@@ -44,7 +44,6 @@
                     <p>Bitte geben Sie alle Daten ein.</p><br>
                     <c:if test="${not empty sessionScope.errorMessage}">                
                     <div id="logout-message">${sessionScope.errorMessage}</div>
-                    <!-- Lösche das errorMessage Session-Attribut -->
                     <c:remove var="errorMessage" scope="session"/>
                 </c:if>
                 </div>
