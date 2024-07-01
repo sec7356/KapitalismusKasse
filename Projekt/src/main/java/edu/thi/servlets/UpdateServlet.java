@@ -14,6 +14,9 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.sql.DataSource;
 import edu.thi.java.Benutzer;
 
@@ -98,22 +101,28 @@ public class UpdateServlet extends HttpServlet {
 
     private boolean persist(Benutzer benutzer, Integer pin, InputStream fileContent) throws ServletException {
         StringBuilder sqlBuilder = new StringBuilder("UPDATE benutzer SET ");
+        List<Object> params = new ArrayList<>();
+        
         boolean hasUpdates = false;
         
         if (benutzer.getVorname() != null) {
             sqlBuilder.append("vorname = ?, ");
+            params.add(benutzer.getVorname());
             hasUpdates = true;
         }
         if (benutzer.getNachname() != null) {
             sqlBuilder.append("nachname = ?, ");
+            params.add(benutzer.getNachname());
             hasUpdates = true;
         }
         if (pin != null) {
             sqlBuilder.append("pin = ?, ");
+            params.add(pin);
             hasUpdates = true;
         }
         if (fileContent != null) {
             sqlBuilder.append("profilbild = ?, ");
+            params.add(fileContent);
             hasUpdates = true;
         }
         
@@ -131,31 +140,19 @@ public class UpdateServlet extends HttpServlet {
              PreparedStatement pstmt = con.prepareStatement(sql)) {
             int paramIndex = 1;
 
-            if (benutzer.getVorname() != null) {
-                pstmt.setString(paramIndex++, benutzer.getVorname());
-            }
-            if (benutzer.getNachname() != null) {
-                pstmt.setString(paramIndex++, benutzer.getNachname());
-            }
-            pstmt.setString(paramIndex++, benutzer.getEmail());
-
-            if (pin != null) {
-                pstmt.setInt(paramIndex++, pin);
-            }
-
-            if (fileContent != null) {
-                // Überprüfen, ob das Bild größer als 1.048.576 Bytes ist (entspricht 1 MB)
-                if (fileContent.available() > 1048576) {
-                    return false; 
+            for (Object param : params) {
+                if (param instanceof InputStream) {
+                    pstmt.setBlob(paramIndex++, (InputStream) param);
+                } else {
+                    pstmt.setObject(paramIndex++, param);
                 }
-                pstmt.setBlob(paramIndex++, fileContent);
             }
 
             pstmt.setLong(paramIndex, benutzer.getB_id());
 
             int rowsUpdated = pstmt.executeUpdate();
             return rowsUpdated > 0; // Rückgabe true, wenn Update erfolgreich war
-        } catch (SQLException | IOException ex) {
+        } catch (SQLException ex) {
             throw new ServletException(ex.getMessage());
         }
     }
