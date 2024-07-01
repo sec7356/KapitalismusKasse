@@ -66,7 +66,7 @@
 
     <aside class="vorteile">
         <h2>Ihre Vorteile bei uns als Firmenkunde:</h2>
-        <ul class="reset-ul">
+        <ul>
         <li>Kostenlose Internationale Überweisungen jeglicher Art</li>
         <li>Rund um die Uhr Support-Möglichkeiten mit unseren Betreuern</li>
         <li>Überweisungen ohne die Überwachung Ihrer Firma</li>

@@ -77,7 +77,7 @@
 
     <aside class="vorteile">
         <h2>Ihre Vorteile bei uns für Ihre Immobilien:</h2>
-        <ul  class="reset-ul">
+        <ul>
         <li>schnelle und einfache Finanzierungen</li>
         <li>personalisierte Kapitalismus-Beratung</li>
         <li>rein digitale Dienste zu jeder Uhrzeit verfügbar</li>

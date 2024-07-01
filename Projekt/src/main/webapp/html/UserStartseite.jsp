@@ -54,7 +54,6 @@
 	<br>
 
 	<div class="grauBackground">
-		
 		<div class="profile-box">
 			<div class="profilbild">
 				<img src="${pageContext.request.contextPath}/DisplayImageServlet"
@@ -63,37 +62,33 @@
 			<div class="profile-text">
 				<p id="greeting">
 					Guten Tag, <span id="vorname">${sessionScope.vorname}</span>
-					<span id="nachname">${sessionScope.nachname}</span>
-				</p>
+					<span id="nachname">${sessionScope.nachname}</span></p>
 			</div>
 		</div>
+		
 		<div class="kontoinformationen">
-			<p id="kontostand">
-				Saldo: <fmt:formatNumber value="${sessionScope.kontostand}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2"/>€
+			<p id="ubersicht">Übersicht:</p>
+			<p id="kontostand">Saldo: <fmt:formatNumber value="${sessionScope.kontostand}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2"/>€
 			<p id="iban">IBAN: ${sessionScope.formattedIban}</p>
-		</div>
-		<div class="kontoinformationen">
 			<p id="disporahmen">Disporahmen: <fmt:formatNumber value="${sessionScope.dispo}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2"/>€</p>
-			<!--	Funktion fehlt nocht für Kontotyp -->
-			<p id="kontotyp">Kontotyp: KK-StartKonto</p>
 		</div>
-	</div>
-
 
 	<div class="verlinkungen">
+	 <div class="yellow-background">
 		<div class="aktion">
-			<div class="kontoinformationen">
-
-				<p>Was möchten Sie machen?</p>
-				<br>
-				<div class="aktion">
-					<a href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp">Geld überweisen</a>
+				<p class="aktiontitel">Was möchten Sie machen?</p>
 				</div>
 				<div class="aktion">
-					<a href="${pageContext.request.contextPath}/VerlaufServlet"">Buchungsverlauf ansehen</a>
+					<button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/Ueberweisungen.jsp'">Geld überweisen</button>
 				</div>
 				<div class="aktion">
-					<a href="${pageContext.request.contextPath}/html/Kontoauszuege.jsp">Kontoauszüge ansehen</a>
+					<button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/VerlaufServlet'">Buchungsverlauf ansehen</button>
+				</div>
+				<div class="aktion">
+					<button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/Kontoauszuege.jsp'">Kontoauszüge ansehen</button>
+				</div>
+				<div class="aktion">
+					<button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/hilfeIntern.jsp#kontaktFeld'">Support kontaktieren</button>
 				</div>
 			</div>
 		</div>

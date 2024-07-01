@@ -85,7 +85,7 @@
     
 	<br> <div class="teilOder">oder</div><br>
 
-	<div class="internForm">
+	<div class="internForm" id="kontaktFeld">
 	            <fieldset><legend>Nehmen Sie direkten Kontakt auf!</legend>
 	            
 	            

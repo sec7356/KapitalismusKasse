@@ -556,15 +556,3 @@ textarea {
     font-size: 1em;
     margin: 0;
 }
-
-/* liste resetten wegen navigation (nach rechts gerutscht) */
-.reset-ul {
-    list-style: disc; /* Default list style */
-    padding-left: 40px; /* Default padding */
-    margin: 10px 0; /* Default margin */
-    position: relative; /* Ensure these elements are positioned normally */
-}
-.reset-ul li {
-    position: static; /* Override any absolute positioning */
-    margin-bottom: 5px; /* Add some space between items */
-}

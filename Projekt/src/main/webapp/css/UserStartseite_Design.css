@@ -19,17 +19,19 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 70px;
+    display: grid;
 }
 
 .profile-box {
+	grid-column: 1 / 3;
+	grid-row: 1;
 	display: flex;
 	align-items: center;
 	background-color: #ffffff;
 	border: 1px solid #ccc;
 	border-radius: 30px;
 	padding: 15px;
-	margin: 15px auto 20px 0;
-	max-width: 600px;
+	margin: 15px 110px 20px 30px;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -48,6 +50,8 @@ body {
 }
 
 .kontoinformationen {
+	grid-column: 1 / 3;
+	grid-row: 2;
 	background: linear-gradient(to bottom, rgba(184, 158, 20, 0.8) 25%,
 		rgba(255, 255, 255, 0) 25%);
 	display: inline-block;
@@ -55,30 +59,30 @@ body {
 	background-color: #ffffff;
 	border: 1px solid #ccc;
 	border-radius: 30px;
-	padding: 10px;
-	margin: 5px auto 20px 30px;
-	max-width: 600px; 
+	padding: 10px 90px 5px 25px;
+	margin: 5px 110px 20px 30px;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 #kontostand {
-	margin-top: 30px;
+	margin-top: 10px;
 	font-weight: bold;
 }
 
 #iban {
-	margin-top: 30px;
+	margin-top: 10px;
 	font-weight: bold;
 }
 
 #disporahmen {
-	margin-top: 30px;
+	margin-top: 10px;
 	font-weight: bold;
 }
 
-#kontotyp {
-	margin-top: 30px;
+#ubersicht {
+	margin-top: 2px;
 	font-weight: bold;
+	font-size: 1.2em;
 }
 
 /* Verlinkungen am rechten Bildschirmrand */
@@ -89,20 +93,28 @@ body {
 	text-align: center;
 }
 
-.verlinkungen {
-	position: absolute; 
-	top: 30%; 
-	transform: translateY(-50%);
-	right: 100px;
-	display: flex; 
-	flex-direction: column; 
-	padding: 5px;
+.aktiontitel {
+	margin-left: -15px;
+	margin-top: -12px;
+	font-weight: bold;
+	font-size: 1.2em;
 }
 
-.verlinkungen a {
-	padding: 10px;
-	margin-top: 30px; 
-	text-decoration: none;
+.verlinkungen {
+	grid-column: 5;
+	grid-row: 1 / span 2;
+	background: linear-gradient(to bottom, rgba(184, 158, 20, 0.8) 25%	, rgba(255, 255, 255, 0) 25%);
+	background-size: auto 170px;
+	background-repeat: no-repeat;
+	display: inline-block;
+	align-items: left;
+	background-color: #ffffff;
+	border: 1px solid #ccc;
+	border-radius: 30px;
+	padding: 10px 30px 30px 25px;
+	margin: auto;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+	
 }
 
 /* User-Startseite und Kontostand Ende */
@@ -220,4 +232,20 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
     background-color: #fff;
     margin-top: 5px;
     font-weight: bold;
+}
+
+.buttonStyle {
+	width: 190px;
+	height: auto;
+	background-color: #b89e14;
+	color: #fff;
+	cursor: pointer;
+	padding: 5px 10px; /* Ändere den Padding nach Bedarf */
+	border: none; /* Entfernt die Standard-Bordereigenschaften */
+	border-radius: 5px; /* Rundet die Ecken des Buttons */
+	font-size: 14px; /* Ändere die Schriftgröße nach Bedarf */
+}
+
+.buttonStyle:hover {
+	background-color: #0056b3;
 }
