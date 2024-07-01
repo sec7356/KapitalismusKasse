@@ -37,44 +37,37 @@ public class RegisterServlet extends HttpServlet {
 		Benutzer benutzer = new Benutzer();
 		Konto konto = new Konto();
 
+		// Namensprüfung
 		String vorname = request.getParameter("vorname");
 		String nachname = request.getParameter("nachname");
-		
-		if (vorname != null && nachname != null) {
-		    // Überprüfen, ob die Strings nur Buchstaben enthalten
-		    boolean isVornameValid = vorname.matches("[a-zA-Z]+");
-		    boolean isNachnameValid = nachname.matches("[a-zA-Z]+");
-
-		    if (isVornameValid && isNachnameValid) {
-		        // Beide Namen sind gültig
-		        System.out.println("Die Namen sind gültig.");
-		    } else {
-		        // Einer oder beide Namen sind ungültig
-		        System.out.println("Die Namen dürfen nur Buchstaben enthalten.");
-		    }
-		} else {
-		    // Einer oder beide Parameter sind null
-		    System.out.println("Vorname oder Nachname fehlt.");
+		if (vorname == null || !vorname.matches("[a-zA-Z]+")) {
+		    session.setAttribute("errorMessage", "Der Vorname darf nur aus Buchstaben bestehen.");
+		    response.sendRedirect(request.getContextPath() + "/html/Registrierung.jsp");  
+		    return;
+		}    
+		if (nachname == null || !nachname.matches("[a-zA-Z]+")) {
+		    session.setAttribute("errorMessage", "Der Nachname darf nur aus Buchstaben bestehen.");
+		    response.sendRedirect(request.getContextPath() + "/html/Registrierung.jsp");  
+		    return;
 		}
+	
 		
-		// Benutzerregistrierungsinformationen aus dem Formular erhalten
-		benutzer.setVorname(vorname);
-		benutzer.setNachname(nachname);
-		benutzer.setEmail(request.getParameter("email"));
-		benutzer.setAdmin(false);
-
+		// Emailprüfung
+	    String email = request.getParameter("email");
+	    if (!email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")) {
+	        session.setAttribute("errorMessage", "Bitte geben Sie eine gültige E-Mail-Adresse ein.");
+	        response.sendRedirect(request.getContextPath() + "/html/Registrierung.jsp");
+	        return;
+	    }		
+		
+		// PIN-prüfung
 		String pin1 = request.getParameter("pin1");
 		String pin2 = request.getParameter("pin2");
-
-		// Überprüfen, ob mindestens einer der PINS nicht nur aus Zahlen besteht
+		
 		if (!pin1.matches("\\d+") || !pin2.matches("\\d+")) {
 			session.setAttribute("errorMessage", "Die PIN darf nur aus Zahlen bestehen.");
             response.sendRedirect(request.getContextPath() + "/html/Registrierung.jsp");  
             return;
-			
-			// Wenn mindestens einer der PINS nicht nur aus Zahlen besteht
-//			response.sendRedirect("html/fehlermeldungPIN.jsp");
-//			return; // Beende die Methode
 		}
 
 		// Überprüfen, ob die PINS übereinstimmen
@@ -82,17 +75,14 @@ public class RegisterServlet extends HttpServlet {
 			session.setAttribute("errorMessage", "Die Eingaben müssen übereinstimmen.");
             response.sendRedirect(request.getContextPath() + "/html/Registrierung.jsp");  
             return;
-			// Wenn die PINS nicht übereinstimmen
-//			response.sendRedirect("html/fehlermeldungPIN.jsp");
-//			return; // Beende die Methode
 		}
+		
+		// Benutzerregistrierungsinformationen aus dem Formular erhalten
+		benutzer.setVorname(vorname);
+		benutzer.setNachname(nachname);
+		benutzer.setEmail(request.getParameter("email"));
+		benutzer.setAdmin(false);
 		benutzer.setPin(Integer.valueOf(request.getParameter("pin1")));
-
-		// Debugging-Ausgaben
-		System.out.println("Vorname: " + benutzer.getVorname());
-		System.out.println("Nachname: " + benutzer.getNachname());
-		System.out.println("Email: " + benutzer.getEmail());
-		System.out.println("Pin: " + benutzer.getPin());
 
 		// DB-Zugriff
 		persistBenutzer(benutzer, response);

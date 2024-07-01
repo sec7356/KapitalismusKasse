@@ -74,7 +74,16 @@
 <div class="internForm">
     <form  method="post" action="${pageContext.request.contextPath}/UpdateServlet" enctype="multipart/form-data">
         <fieldset><legend>Benutzerdaten verwalten</legend>
-        <div>
+			<%
+			String errorMessage = (String) session.getAttribute("errorMessage");
+			if (errorMessage != null) {
+			%>
+			<p style="color: red;"><%=errorMessage%></p>
+			<%
+			session.removeAttribute("errorMessage");
+			}
+			%>
+			<div>
         	<br>
             <label for="vorname">Vorname</label><br>
             <input type="text" id="vorname" name="vorname" maxlength="30" ><br>

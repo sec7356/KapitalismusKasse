@@ -8,7 +8,6 @@ function init() {
     var emailInput = document.getElementById('email');
     if (emailInput) {
         emailInput.addEventListener('input', handleEmailInput);
-    } else {
     }
 }
 
@@ -31,21 +30,19 @@ function checkEmailAvailability(email) {
         }
     };
     
-    // Hier direkt den Pfad zum Servlet angeben, z.B. '/CheckEmailAvailability'
-    xmlhttp.open("POST", '../CheckEmailAvailability', true);
+    xmlhttp.open("POST", `${pageContext.request.contextPath}/CheckEmailAvailability`, true);
     xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xmlhttp.send("email=" + encodeURIComponent(email));
 }
 
 function handleEmailResponse(response) {
-    
     var emailStatus = document.getElementById('emailStatus');
     var emailErrorMessage = document.getElementById('emailErrorMessage');
 
     if (response && response.available === false) {
         emailStatus.textContent = '✘';
         emailStatus.style.color = '#941100';
-        emailErrorMessage.textContent = 'Diese E-Mail ist nicht verfügbar. Wähle eine andere Adresse aus.';
+        emailErrorMessage.textContent = response.message || 'Diese E-Mail ist nicht verfügbar. Wähle eine andere Adresse aus.';
         emailErrorMessage.style.display = 'block';
         disableRegisterButton();
     } else if (response && response.available === true) {
@@ -64,7 +61,6 @@ function clearEmailStatus() {
     var emailStatus = document.getElementById('emailStatus');
     if (emailStatus) {
         emailStatus.textContent = '';
-    } else {
     }
 }
 
@@ -72,7 +68,6 @@ function disableRegisterButton() {
     var registerButton = document.getElementById('registerButton');
     if (registerButton) {
         registerButton.disabled = true;
-    } else {
     }
 }
 
@@ -80,7 +75,6 @@ function enableRegisterButton() {
     var registerButton = document.getElementById('registerButton');
     if (registerButton) {
         registerButton.disabled = false;
-    } else {
     }
 }
 

@@ -43,17 +43,26 @@ public class UpdateServlet extends HttpServlet {
         benutzer.setNachname(nachname);
         benutzer.setEmail(email);
         
+        //Eingaben für Namen validieren & ggf überschreiben
         String neuerVorname = request.getParameter("vorname");
-        if (neuerVorname != null && !neuerVorname.isEmpty()) {
-            benutzer.setVorname(neuerVorname);
-            session.setAttribute("vorname", neuerVorname);
-        }
-        
-        String neuerNachname = request.getParameter("nachname");
-        if (neuerNachname != null && !neuerNachname.isEmpty()) {
-            benutzer.setNachname(neuerNachname);
+        if (neuerVorname == null || !neuerVorname.matches("[a-zA-Z]+")) {
+		    session.setAttribute("errorMessage", "Der Vorname darf nur aus Buchstaben bestehen.");
+		    response.sendRedirect(request.getContextPath() + "/html/benutzerverwaltung.jsp");  
+		    return;
+		} else {
+			benutzer.setVorname(neuerVorname);
+			session.setAttribute("vorname", neuerVorname);
+		}
+		
+                String neuerNachname = request.getParameter("nachname");
+        if (neuerNachname == null || !neuerNachname.matches("[a-zA-Z]+")) {
+		    session.setAttribute("errorMessage", "Der Nachname darf nur aus Buchstaben bestehen.");
+		    response.sendRedirect(request.getContextPath() + "/html/benutzerverwaltung.jsp");  
+		    return;
+		} else {
+			benutzer.setNachname(neuerNachname);
             session.setAttribute("nachname", neuerNachname);
-        }
+		}
         
         String pin1 = request.getParameter("pin1");
         String pin2 = request.getParameter("pin2");
@@ -61,6 +70,10 @@ public class UpdateServlet extends HttpServlet {
         Integer pin = null;
         if (pin1 != null && pin2 != null && pin1.equals(pin2) && pin1.matches("\\d+")) {
             pin = Integer.parseInt(pin1);
+        } else {
+        	session.setAttribute("errorMessage", "Die PIN darf nur aus Zahlen bestehen.");
+            response.sendRedirect(request.getContextPath() + "/html/benutzerverwaltung.jsp");  
+            return;
         }
         
         Part filePart = request.getPart("profilbild");
