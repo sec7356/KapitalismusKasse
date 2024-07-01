@@ -64,8 +64,8 @@
 </nav>
 
 <div class="grauBackground">
-	<br><br><br><br>												<!-- falsch formatiert -->
-	<p>Guten Tag, <%= session.getAttribute("vorname") %> <%= session.getAttribute("nachname") %>!</p>		
+	<br><br><br><br>								
+	<p>Guten Tag, ${sessionScope.vorname} ${sessionScope.nachname}!</p>		
 	<p>Hier können Sie Ihre Kontoauszüge sehen und herunterladen.</p>
 </div> <br> <br>
 

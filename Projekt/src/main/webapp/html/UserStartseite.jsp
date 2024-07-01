@@ -86,23 +86,17 @@
 				<p>Was möchten Sie machen?</p>
 				<br>
 				<div class="aktion">
-					<a
-						href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp">Geld
-						überweisen</a>
+					<a href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp">Geld überweisen</a>
 				</div>
 				<div class="aktion">
-					<a href="${pageContext.request.contextPath}/html/verlauf.jsp">Buchungsverlauf
-						ansehen</a>
+					<a href="${pageContext.request.contextPath}/html/verlauf.jsp">Buchungsverlauf ansehen</a>
 				</div>
 				<div class="aktion">
-					<a href="${pageContext.request.contextPath}/html/Kontoauszuege.jsp">Kontoauszüge
-						ansehen</a>
+					<a href="${pageContext.request.contextPath}/html/Kontoauszuege.jsp">Kontoauszüge ansehen</a>
 				</div>
 			</div>
 		</div>
 	</div>
-	
-	
 	
 	<div class="kredit-rechner">
     <h2>Kredit-Rechner</h2>
@@ -131,7 +125,7 @@
     </ul>
 </div>
 
-
+	<!-- Footer -->
 	<footer>
 		<p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>
 	</footer>
