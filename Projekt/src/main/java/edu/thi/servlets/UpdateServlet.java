@@ -1,5 +1,3 @@
-//Autor: Diane
-
 package edu.thi.servlets;
 
 import jakarta.annotation.Resource;
@@ -38,18 +36,16 @@ public class UpdateServlet extends HttpServlet {
         
         String vorname = (String) session.getAttribute("vorname");
         String nachname = (String) session.getAttribute("nachname");
-        String email = (String) session.getAttribute("email");
         Long b_id = (Long) session.getAttribute("b_id");
         
         Benutzer benutzer = new Benutzer();
         benutzer.setB_id(b_id);
         benutzer.setVorname(vorname);
         benutzer.setNachname(nachname);
-        benutzer.setEmail(email);
         
         // Eingaben für Namen validieren & ggf. überschreiben
-        String neuerVorname = request.getParameter("vorname");
-        if (neuerVorname != null && !neuerVorname.isBlank() && !neuerVorname.matches("[a-zA-Z]+")) {
+        String neuerVorname = request.getParameter("neuerVorname");
+        if (neuerVorname != null && !neuerVorname.isBlank() && !neuerVorname.matches("[a-zA-ZäöüÄÖÜß]+")) {
             session.setAttribute("errorMessage", "Der Vorname darf nur aus Buchstaben bestehen.");
             response.sendRedirect(request.getContextPath() + "/html/benutzerverwaltung.jsp");  
             return;
@@ -58,8 +54,8 @@ public class UpdateServlet extends HttpServlet {
             session.setAttribute("vorname", neuerVorname);
         }
         
-        String neuerNachname = request.getParameter("nachname");
-        if (neuerNachname != null && !neuerNachname.isBlank() && !neuerNachname.matches("[a-zA-Z]+")) {
+        String neuerNachname = request.getParameter("neuerNachname");
+        if (neuerNachname != null && !neuerNachname.isBlank() && !neuerNachname.matches("[a-zA-ZäöüÄÖÜß]+")) {
             session.setAttribute("errorMessage", "Der Nachname darf nur aus Buchstaben bestehen.");
             response.sendRedirect(request.getContextPath() + "/html/benutzerverwaltung.jsp");  
             return;
@@ -68,8 +64,8 @@ public class UpdateServlet extends HttpServlet {
             session.setAttribute("nachname", neuerNachname);
         }
         
-        String pin1 = request.getParameter("pin1");
-        String pin2 = request.getParameter("pin2");
+        String pin1 = request.getParameter("neuepin1");
+        String pin2 = request.getParameter("neuepin2");
 
         Integer neuerPin = null;
         if (pin1 != null && !pin1.isBlank() && pin1.equals(pin2) && pin1.matches("\\d+")) {
@@ -87,16 +83,15 @@ public class UpdateServlet extends HttpServlet {
         Part filePart = request.getPart("profilbild");
         InputStream fileContent = null;
         if (filePart != null && filePart.getSize() > 0) {
+            if (filePart.getSize() > 1048576) {
+                session.setAttribute("errorMessage", "Die Größe des Profilbildes überschreitet das zulässige Limit von 1 MB.");
+                response.sendRedirect(request.getContextPath() + "/html/benutzerverwaltung.jsp");
+                return; 
+            }
             fileContent = filePart.getInputStream();
         }
 
-        boolean updateSuccessful = persist(benutzer, neuerPin, fileContent);
-
-        if (!updateSuccessful) {
-            session.setAttribute("errorMessage", "Die Größe des Profilbildes überschreitet das zulässige Limit von 1 MB.");
-            response.sendRedirect(request.getContextPath() + "/html/benutzerverwaltung.jsp");
-            return;
-        }
+        persist(benutzer, neuerPin, fileContent);
 
         response.sendRedirect(request.getContextPath() + "/html/benutzerverwaltung.jsp");
     }

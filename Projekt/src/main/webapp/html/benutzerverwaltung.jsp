@@ -60,8 +60,8 @@
 		<br><br><br><br>						
 		<div class="profile-text">
 				<p id="greeting">
-					Guten Tag, <span id="vornameAnzeigen">${sessionScope.vorname}</span>
-					<span id="nachnameAnzeigen">${sessionScope.nachname}</span>
+					Guten Tag, <span id="vorname">${sessionScope.vorname}</span>
+					<span id="nachname">${sessionScope.nachname}</span>
 				</p>
 		</div>
 				<p>Hier können Sie Ihren Vor- und Nachnamen, PIN ändern, Profilbild hinzufügen!</p>
@@ -74,20 +74,20 @@
         <fieldset><legend>Benutzerdaten verwalten</legend>
 			<div>
         	<br>
-            <label for="vorname">Vorname</label><br>
-            <input type="text" id="vorname" name="vorname" maxlength="30" ><br>
+            <label for="neuerVorname">Vorname</label><br>
+            <input type="text" id="neuerVorname" name="neuerVorname" maxlength="30" ><br>
         </div>
         <div>
-            <label for="nachname">Nachname</label><br>
-            <input type="text" id="nachname" name="nachname" maxlength="30" ><br>
+            <label for="neuerNachname">Nachname</label><br>
+            <input type="text" id="neuerNachname" name="neuerNachname" maxlength="30" ><br>
         </div>
         <div>
-            <label for="pin1">PIN</label><br>
-            <input type="password" id="pin1" name="pin1" maxlength="6" ><br>
+            <label for="neuepin1">PIN</label><br>
+            <input type="password" id="neuepin1" name="neuepin1" maxlength="6" ><br>
         </div>
         <div>
-            <label for="pin2">PIN bestätigen</label><br>
-            <input type="password" id="pin2" name="pin2" maxlength="6" ><br>            
+            <label for="neuepin2">PIN bestätigen</label><br>
+            <input type="password" id="neuepin2" name="neuepin2" maxlength="6" ><br>            
         </div>
         <div>
         	<br>

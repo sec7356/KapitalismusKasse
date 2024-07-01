@@ -40,12 +40,12 @@ public class RegisterServlet extends HttpServlet {
 		// Namensprüfung
 		String vorname = request.getParameter("vorname");
 		String nachname = request.getParameter("nachname");
-		if (vorname == null || !vorname.matches("[a-zA-Z]+")) {
+		if (vorname == null || !vorname.matches("[a-zA-ZäöüÄÖÜß]+")) {
 		    session.setAttribute("errorMessage", "Der Vorname darf nur aus Buchstaben bestehen.");
 		    response.sendRedirect(request.getContextPath() + "/html/Registrierung.jsp");  
 		    return;
 		}    
-		if (nachname == null || !nachname.matches("[a-zA-Z]+")) {
+		if (nachname == null || !nachname.matches("[a-zA-ZäöüÄÖÜß]+")) {
 		    session.setAttribute("errorMessage", "Der Nachname darf nur aus Buchstaben bestehen.");
 		    response.sendRedirect(request.getContextPath() + "/html/Registrierung.jsp");  
 		    return;
