@@ -72,15 +72,14 @@
 <div class="internForm">
     <form  method="post" action="${pageContext.request.contextPath}/UpdateServlet" enctype="multipart/form-data">
         <fieldset><legend>Benutzerdaten verwalten</legend>
-			<%
-			String errorMessage = (String) session.getAttribute("errorMessage");
-			if (errorMessage != null) {
-			%>
-			<p style="color: red;"><%=errorMessage%></p>
-			<%
-			session.removeAttribute("errorMessage");
-			}
-			%>
+
+<%--  			<c:if test="${not empty sessionScope.errorMessage}"> --%>
+<!--                   <div class="message error-message"> -->
+<%--                               ${sessionScope.errorMessage} --%>
+<%-- 							  <c:remove var="errorMessage" scope="session"/> --%>
+<!--                   </div> -->
+<%--             </c:if> --%>
+
 			<div>
         	<br>
             <label for="vorname">Vorname</label><br>
