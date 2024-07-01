@@ -24,15 +24,10 @@
 		<ul>
 			<li>
 				<div class="container">
-					<a
-						href="${pageContext.request.contextPath}/AdminBenutzerListeServlet"
-						title="Die Bank der Zukunft!"> <img
-						src="${pageContext.request.contextPath}/img/logo.jpg" alt="Logo"
-						class="imageMitLink">
-					</a> <a
-						href="${pageContext.request.contextPath}/html/adminFormular.jsp"
-						title="Die Bank der Zukunft!" class="companyNameLink"> <span>Kapitalismus-</span>
-						<span>Kasse</span>
+					<a href="${pageContext.request.contextPath}/AdminBenutzerListeServlet" title="Die Bank der Zukunft!"> 
+					<img src="${pageContext.request.contextPath}/img/logo.jpg" alt="Logo" class="imageMitLink">
+					</a> <a href="${pageContext.request.contextPath}/html/adminFormular.jsp" title="Die Bank der Zukunft!" class="companyNameLink"> 
+						<span>Kapitalismus-</span> <span>Kasse</span>
 					</a>
 				</div>
 			</li>
@@ -41,10 +36,8 @@
 				<div class="timer-logout-container">
 					<div id="timer">05:00</div>
 					<div class="divider"></div>
-					<form method="post"
-						action="${pageContext.request.contextPath}/LogoutServlet">
-						<button name="loeschen" type="submit" class="logout-button"
-							title="Melden Sie sich sicher ab!">Logout</button>
+					<form method="post" action="${pageContext.request.contextPath}/LogoutServlet">
+						<button name="loeschen" type="submit" class="logout-button" title="Melden Sie sich sicher ab!">Logout</button>
 					</form>
 				</div>
 			</li>
@@ -85,17 +78,10 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><input type="text" id="vorname" name="vorname" 
-           				value="${empty benutzer ? '' : benutzer.vorname}" required maxlength="49">
-					</td>
-
-                    <td><input type="text" id="nachname" name="nachname"
-                            value="${empty benutzer ? '' : benutzer.nachname}" required maxlength="49"></td>
+                    <td><input type="text" id="vorname" name="vorname" value="${empty benutzer ? '' : benutzer.vorname}" required maxlength="49"></td>
+					<td><input type="text" id="nachname" name="nachname" value="${empty benutzer ? '' : benutzer.nachname}" required maxlength="49"></td>
                     <td>${empty benutzer ? '' : benutzer.email}</td>
-                    <td><input type="text" id="pin" name="pin"
-                            pattern="[0-9]{1,6}" maxlength="6"
-                            value="${empty benutzer ? '' : benutzer.pin}" required maxlength="6"
-                            title="Bitte geben Sie nur bis zu 6 Ziffern ein."></td>
+                    <td><input type="text" id="pin" name="pin" pattern="[0-9]{1,6}" maxlength="6" value="${empty benutzer ? '' : benutzer.pin}" required maxlength="6" title="Bitte geben Sie nur bis zu 6 Ziffern ein."></td>
                     <td><select id="admin" name="admin" required>
                             <c:choose>
                                 <c:when test="${sessionScope.b_id == benutzer.b_id}">

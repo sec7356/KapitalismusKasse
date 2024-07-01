@@ -20,6 +20,9 @@ function showPopup(message) {
     }, 10);
 }
 
+document.getElementById("verstanden").addEventListener("click", hidePopup);
+
+
 // JavaScript-Funktion, um die Popup-Nachricht auszublenden
 function hidePopup() {
     var popup = document.getElementById("popup");

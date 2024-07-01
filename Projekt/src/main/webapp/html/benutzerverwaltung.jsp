@@ -125,7 +125,7 @@
 
 <div id="popup" class="popup">
     <p id="popupMessage" class="popup-message"></p>
-    <button onclick="hidePopup()" class="popup-button">Verstanden!</button>
+    <button id="verstanden" class="popup-button">Verstanden!</button>
 </div>
 
 <input type="hidden" id="showMessage" value="${not empty requestScope.showMessage ? requestScope.showMessage : 'false'}">
