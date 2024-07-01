@@ -359,3 +359,13 @@ button[type="submit"], button[type="reset"], button[type="register"] {
 	font-size: 14px; /* Ändere die Schriftgröße nach Bedarf */
 }
 
+#logout-message {
+    color: white;
+    background-color: #ff6666;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: -25px;
+    margin-bottom: 15px;
+}
+

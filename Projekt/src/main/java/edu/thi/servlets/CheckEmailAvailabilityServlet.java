@@ -23,14 +23,13 @@ public class CheckEmailAvailabilityServlet extends HttpServlet {
     @Resource(lookup = "java:jboss/datasources/MySqlThidbDS")
     private DataSource ds;
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("application/json");
         PrintWriter out = response.getWriter();
 
         String email = request.getParameter("email");
         
-     // E-Mail Format prüfen
+        // E-Mail Format prüfen
         if (!email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")) {
             out.println("{\"available\": false, \"message\": \"Bitte geben Sie eine gültige E-Mail-Adresse ein.\"}");
             return;
