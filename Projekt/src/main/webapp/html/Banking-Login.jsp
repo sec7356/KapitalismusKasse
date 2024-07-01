@@ -85,7 +85,7 @@
 <!-- Hier wird die Popup-Nachricht angezeigt -->
 <div id="popup" class="popup" style="display:none;">
     <p id="popupMessage" class="popup-message"></p>
-    <button onclick="hidePopup()" class="popup-button">Verstanden!</button>
+    <button id="bestaetigen" class="popup-button">Verstanden!</button>
 </div>
 	
 	<!-- Footer -->
