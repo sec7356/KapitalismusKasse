@@ -37,9 +37,29 @@ public class RegisterServlet extends HttpServlet {
 		Benutzer benutzer = new Benutzer();
 		Konto konto = new Konto();
 
+		String vorname = request.getParameter("vorname");
+		String nachname = request.getParameter("nachname");
+		
+		if (vorname != null && nachname != null) {
+		    // Überprüfen, ob die Strings nur Buchstaben enthalten
+		    boolean isVornameValid = vorname.matches("[a-zA-Z]+");
+		    boolean isNachnameValid = nachname.matches("[a-zA-Z]+");
+
+		    if (isVornameValid && isNachnameValid) {
+		        // Beide Namen sind gültig
+		        System.out.println("Die Namen sind gültig.");
+		    } else {
+		        // Einer oder beide Namen sind ungültig
+		        System.out.println("Die Namen dürfen nur Buchstaben enthalten.");
+		    }
+		} else {
+		    // Einer oder beide Parameter sind null
+		    System.out.println("Vorname oder Nachname fehlt.");
+		}
+		
 		// Benutzerregistrierungsinformationen aus dem Formular erhalten
-		benutzer.setVorname(request.getParameter("vorname"));
-		benutzer.setNachname(request.getParameter("nachname"));
+		benutzer.setVorname(vorname);
+		benutzer.setNachname(nachname);
 		benutzer.setEmail(request.getParameter("email"));
 		benutzer.setAdmin(false);
 
@@ -48,17 +68,23 @@ public class RegisterServlet extends HttpServlet {
 
 		// Überprüfen, ob mindestens einer der PINS nicht nur aus Zahlen besteht
 		if (!pin1.matches("\\d+") || !pin2.matches("\\d+")) {
+			session.setAttribute("errorMessage", "Die PIN darf nur aus Zahlen bestehen.");
+            response.sendRedirect(request.getContextPath() + "/html/Registrierung.jsp");  
+            return;
+			
 			// Wenn mindestens einer der PINS nicht nur aus Zahlen besteht
-			response.sendRedirect("html/fehlermeldungPIN.jsp");
-			return; // Beende die Methode
+//			response.sendRedirect("html/fehlermeldungPIN.jsp");
+//			return; // Beende die Methode
 		}
 
 		// Überprüfen, ob die PINS übereinstimmen
 		if (!pin1.equals(pin2)) {
-
+			session.setAttribute("errorMessage", "Die Eingaben müssen übereinstimmen.");
+            response.sendRedirect(request.getContextPath() + "/html/Registrierung.jsp");  
+            return;
 			// Wenn die PINS nicht übereinstimmen
-			response.sendRedirect("html/fehlermeldungPIN.jsp");
-			return; // Beende die Methode
+//			response.sendRedirect("html/fehlermeldungPIN.jsp");
+//			return; // Beende die Methode
 		}
 		benutzer.setPin(Integer.valueOf(request.getParameter("pin1")));
 
