@@ -50,8 +50,8 @@
 		<br><br><br><br>						
 		<div class="profile-text">
 				<p id="greeting">
-					Guten Tag, <span id="vornameAnzeigen">${sessionScope.vorname}</span>
-					<span id="nachnameAnzeigen">${sessionScope.nachname}</span>
+					Guten Tag, <span id="vorname">${sessionScope.vorname}</span>
+					<span id="nachname">${sessionScope.nachname}</span>
 				</p>
 		</div>
 		<p>Sie suchen nach Hilfe? Dann sind Sie hier genau richtig!</p>

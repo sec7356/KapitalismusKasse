@@ -64,7 +64,7 @@
 					<span id="nachname">${sessionScope.nachname}</span>
 				</p>
 		</div>
-				<p>Hier können Sie Ihren Vor- und Nachnamen, PIN ändern, Profilbild hinzufügen!</p>
+				<p>Hier können Sie Ihren Vornamen, Nachnamen und PIN ändern, sowie ein Profilbild hinzufügen!</p>
 		
 	</div>
 	<br>

@@ -68,9 +68,6 @@
 
 	</div>
 
-		<!-- Entweder so lassen (nur als Aufruf von Startseite) oder komplett löschen -->
-
-
 <footer>
         <p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>
     </footer>

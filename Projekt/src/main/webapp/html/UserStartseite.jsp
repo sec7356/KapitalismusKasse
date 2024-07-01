@@ -62,8 +62,8 @@
 			</div>
 			<div class="profile-text">
 				<p id="greeting">
-					Guten Tag, <span id="vornameAnzeigen">${sessionScope.vorname}</span>
-					<span id="nachnameAnzeigen">${sessionScope.nachname}</span>
+					Guten Tag, <span id="vorname">${sessionScope.vorname}</span>
+					<span id="nachname">${sessionScope.nachname}</span>
 				</p>
 			</div>
 		</div>
