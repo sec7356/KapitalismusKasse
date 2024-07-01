@@ -8,6 +8,7 @@ function init() {
     var emailInput = document.getElementById('email');
     if (emailInput) {
         emailInput.addEventListener('input', handleEmailInput);
+    } else {
     }
 }
 
@@ -30,12 +31,14 @@ function checkEmailAvailability(email) {
         }
     };
     
-    xmlhttp.open("POST", `${pageContext.request.contextPath}/CheckEmailAvailability`, true);
+    // Hier direkt den Pfad zum Servlet angeben, z.B. '/CheckEmailAvailability'
+    xmlhttp.open("POST", '../CheckEmailAvailability', true);
     xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xmlhttp.send("email=" + encodeURIComponent(email));
 }
 
 function handleEmailResponse(response) {
+    
     var emailStatus = document.getElementById('emailStatus');
     var emailErrorMessage = document.getElementById('emailErrorMessage');
 
@@ -61,6 +64,7 @@ function clearEmailStatus() {
     var emailStatus = document.getElementById('emailStatus');
     if (emailStatus) {
         emailStatus.textContent = '';
+    } else {
     }
 }
 
@@ -68,6 +72,7 @@ function disableRegisterButton() {
     var registerButton = document.getElementById('registerButton');
     if (registerButton) {
         registerButton.disabled = true;
+    } else {
     }
 }
 
@@ -75,6 +80,7 @@ function enableRegisterButton() {
     var registerButton = document.getElementById('registerButton');
     if (registerButton) {
         registerButton.disabled = false;
+    } else {
     }
 }
 

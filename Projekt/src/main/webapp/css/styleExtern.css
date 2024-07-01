@@ -1,20 +1,19 @@
 /* Autor: @Diane, @Selim, @Can */
-
 @import url('style.css');
+
 @import url('javascriptMeldung.css');
-
-
 
 /* liste resetten wegen navigation (nach rechts gerutscht) */
 .reset-ul {
-    list-style: disc; /* Default list style */
-    padding-left: 40px; /* Default padding */
-    margin: 10px 0; /* Default margin */
-    position: relative; /* Ensure these elements are positioned normally */
+	list-style: disc; /* Default list style */
+	padding-left: 40px; /* Default padding */
+	margin: 10px 0; /* Default margin */
+	position: relative; /* Ensure these elements are positioned normally */
 }
+
 .reset-ul li {
-    position: static; /* Override any absolute positioning */
-    margin-bottom: 5px; /* Add some space between items */
+	position: static; /* Override any absolute positioning */
+	margin-bottom: 5px; /* Add some space between items */
 }
 
 .bold {
@@ -32,58 +31,58 @@
 
 /* FAQ-Stile */
 .faq-section {
-    width: 96%;
-    margin: auto;
-    background-color: #e0e0e0;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-    margin-bottom: 20px;
+	width: 96%;
+	margin: auto;
+	background-color: #e0e0e0;
+	padding: 15px;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 .faq-item {
-    margin-bottom: 20px;
-    padding-left: 60px; /* Abstand von links */
+	margin-bottom: 20px;
+	padding-left: 60px; /* Abstand von links */
 }
 
 .faq-question {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin: 0;
+	font-size: 1.2em;
+	font-weight: bold;
+	margin: 0;
 }
 
 .faq-answer {
-    margin: 5px 0 0 0;
-    padding-left: 20px;
-    position: relative;
+	margin: 5px 0 0 0;
+	padding-left: 20px;
+	position: relative;
 }
 
 .faq-answer::before {
-    content: '→'; /* Pfeil vor der Antwort */
-    position: absolute;
-    left: -20px;
-    color: #000;
+	content: '→'; /* Pfeil vor der Antwort */
+	position: absolute;
+	left: -20px;
+	color: #000;
 }
 
 .vorteile {
 	width: 96%;
-    margin: auto;
-    background-color: #e0e0e0;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 10px;
+	margin: auto;
+	background-color: #e0e0e0;
+	padding: 15px;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	margin-top: 10px;
 }
 
 .regBox {
 	width: 96%;
-    margin: auto;
-    background-color: #e0e0e0;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+	margin: auto;
+	background-color: #e0e0e0;
+	padding: 15px;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	margin-bottom: 20px;
 }
 
 .buttonStyle {
@@ -99,55 +98,55 @@
 
 .karriereBox {
 	width: 96%;
-    margin: auto;
-    background-color: #e0e0e0;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
+	margin: auto;
+	background-color: #e0e0e0;
+	padding: 15px;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	margin-top: 20px;
 }
 
 /* Stil für den Popup bei aktivierten Cookies */
-        #cookieSuccess {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            background-color: #dff0d8;
-            color: #3c763d;
-            border: 1px solid #d6e9c6;
-            padding: 10px;
-            border-radius: 5px;
-            display: none;
-            z-index: 9999;
-        }
+#cookieSuccess {
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	background-color: #dff0d8;
+	color: #3c763d;
+	border: 1px solid #d6e9c6;
+	padding: 10px;
+	border-radius: 5px;
+	display: none;
+	z-index: 9999;
+}
 
-        /* Stil für die Warnung bei blockierten Cookies */
-        #cookieWarning {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #f2dede;
-            color: #a94442;
-            border: 1px solid #ebccd1;
-            padding: 20px;
-            border-radius: 5px;
-            display: none;
-            text-align: center;
-            z-index: 1000;
-        }
-        
-        /* Stil für den Button zum Neuladen */
-        #reloadButton {
-            background-color: #337ab7;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin-top: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
+/* Stil für die Warnung bei blockierten Cookies */
+#cookieWarning {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #f2dede;
+	color: #a94442;
+	border: 1px solid #ebccd1;
+	padding: 20px;
+	border-radius: 5px;
+	display: none;
+	text-align: center;
+	z-index: 1000;
+}
 
-        #reloadButton:hover {
-            background-color: #286090;
-        }
+/* Stil für den Button zum Neuladen */
+#reloadButton {
+	background-color: #337ab7;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	margin-top: 10px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+#reloadButton:hover {
+	background-color: #286090;
+}
