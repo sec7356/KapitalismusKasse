@@ -106,7 +106,7 @@
                     </div>
             <label for="profilbild">Profilbild:</label>            
             <input type="file" id="profilbild" name="profilbild" accept="image/*"><br>
-            <span class="info-fields">(Das Profilbild darf maximal 5 MB betragen)</span>
+            <span class="info-fields">(Das Profilbild darf maximal 1 MB betragen)</span>
             
         </div>
         <br>

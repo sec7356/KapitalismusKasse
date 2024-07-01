@@ -55,14 +55,14 @@
 	</div>
 
 <div class="Suchfeld">
-    <form id="AdminSuchen" method="get" action="${pageContext.request.contextPath}/AdminBenutzerListeServlet" onsubmit="saveFormInputs()">
+    <form id="AdminSuchen" method="get" action="${pageContext.request.contextPath}/AdminBenutzerListeServlet">
         <label for="vorname">Vorname:</label>
         <input type="text" id="vorname" name="vorname">
         <label for="nachname">Nachname:</label>
         <input type="text" id="nachname" name="nachname">
         <label for="email">E-Mail:</label>
         <input type="text" id="email" name="email">
-        <button type="submit">Suchen</button>
+        <button type="submit">Suchen / Reset</button>        
     </form>
 </div>
     

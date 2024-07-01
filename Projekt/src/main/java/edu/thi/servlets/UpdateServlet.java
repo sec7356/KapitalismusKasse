@@ -72,7 +72,7 @@ public class UpdateServlet extends HttpServlet {
         boolean updateSuccessful = persist(benutzer, pin, fileContent);
 
         if (!updateSuccessful) {
-            session.setAttribute("error", "Die Größe des Profilbildes überschreitet das zulässige Limit von 5 MB.");
+            session.setAttribute("error", "Die Größe des Profilbildes überschreitet das zulässige Limit von 1 MB.");
             response.sendRedirect(request.getContextPath() + "/html/benutzerverwaltung.jsp");
             return;
         }
