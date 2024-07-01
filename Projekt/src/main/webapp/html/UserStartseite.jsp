@@ -90,7 +90,7 @@
 					<a href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp">Geld überweisen</a>
 				</div>
 				<div class="aktion">
-					<a href="${pageContext.request.contextPath}/html/verlauf.jsp">Buchungsverlauf ansehen</a>
+					<a href="${pageContext.request.contextPath}/VerlaufServlet"">Buchungsverlauf ansehen</a>
 				</div>
 				<div class="aktion">
 					<a href="${pageContext.request.contextPath}/html/Kontoauszuege.jsp">Kontoauszüge ansehen</a>
