@@ -73,6 +73,10 @@ public class UpdateServlet extends HttpServlet {
             session.setAttribute("errorMessage", "Die PIN darf nur aus Zahlen bestehen und muss bestätigt werden.");
             response.sendRedirect(request.getContextPath() + "/html/benutzerverwaltung.jsp");  
             return;
+        } else if (pin2 != null && !pin2.isBlank() && pin1.isBlank()) {
+            session.setAttribute("errorMessage", "Die PIN muss zur Bestätigung zweimal angegeben werden.");
+            response.sendRedirect(request.getContextPath() + "/html/benutzerverwaltung.jsp");  
+            return;
         }
         
         Part filePart = request.getPart("profilbild");
@@ -89,7 +93,7 @@ public class UpdateServlet extends HttpServlet {
             return;
         }
 
-        response.sendRedirect(request.getContextPath() + "/html/UserStartseite.jsp");
+        response.sendRedirect(request.getContextPath() + "/html/benutzerverwaltung.jsp");
     }
 
     private boolean persist(Benutzer benutzer, Integer pin, InputStream fileContent) throws ServletException {

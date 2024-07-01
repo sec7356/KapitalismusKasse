@@ -72,14 +72,6 @@
 <div class="internForm">
     <form  method="post" action="${pageContext.request.contextPath}/UpdateServlet" enctype="multipart/form-data">
         <fieldset><legend>Benutzerdaten verwalten</legend>
-
-<%--  			<c:if test="${not empty sessionScope.errorMessage}"> --%>
-<!--                   <div class="message error-message"> -->
-<%--                               ${sessionScope.errorMessage} --%>
-<%-- 							  <c:remove var="errorMessage" scope="session"/> --%>
-<!--                   </div> -->
-<%--             </c:if> --%>
-
 			<div>
         	<br>
             <label for="vorname">Vorname</label><br>
@@ -90,26 +82,21 @@
             <input type="text" id="nachname" name="nachname" maxlength="30" ><br>
         </div>
         <div>
-            <label for="pin1">PIN*</label><br>
+            <label for="pin1">PIN</label><br>
             <input type="password" id="pin1" name="pin1" maxlength="6" ><br>
         </div>
         <div>
-            <label for="pin2">PIN bestätigen*</label><br>
-            <input type="password" id="pin2" name="pin2" maxlength="6" ><br>
-			<span class="required-fields">*Pflichtfelder</span>
-            
+            <label for="pin2">PIN bestätigen</label><br>
+            <input type="password" id="pin2" name="pin2" maxlength="6" ><br>            
         </div>
         <div>
         	<br>
         	 <div class="error-message-container">
-                      <!-- Container für Fehlermeldung -->
-                      <c:if test="${not empty sessionScope.error}">
-                          <div class="message error-message">
-                              ${sessionScope.error}
-							  <c:remove var="error" scope="session"/>
-                          </div>
-                      </c:if>
-                    </div>
+             	<c:if test="${not empty sessionScope.errorMessage}">                
+                    <div>${sessionScope.errorMessage}</div>
+                    <c:remove var="errorMessage" scope="session"/>
+        		</c:if>        
+			</div>
             <label for="profilbild">Profilbild:</label>            
             <input type="file" id="profilbild" name="profilbild" accept="image/*"><br>
             <span class="info-fields">(Das Profilbild darf maximal 1 MB betragen)</span>
