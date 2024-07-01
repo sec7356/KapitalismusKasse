@@ -68,7 +68,7 @@ body {
 	position: fixed;
 	width: 60px; /* Standardgröße des Konto-Bildes */
 	height: 60px; /* Standardgröße des Konto-Bildes */
-	transition: width 0.3s ease-in-out, height 0.3s ease-in-out, right 0.3s
+	transition: width 0.2s ease-in-out, height 0.3s ease-in-out, right 0.3s
 		ease-in-out, top 0.3s ease-in-out;
 	/* Weitere Übergänge hinzufügen, je nach Bedarf */
 }
@@ -127,13 +127,13 @@ nav {
 
 nav.small {
 	background-color: #d1d1d1; /* Neue Hintergrundfarbe */
-	transition: background-color 0.3s ease-in-out;
+	transition: background-color 0.2s ease-in-out;
 	/* Übergangseffekt für die Hintergrundfarbe */
 }
 
 nav.small a {
 	color: white; /* Ändere die Schriftfarbe auf Weiß */
-	transition: color 0.3s ease-in-out;
+	transition: color 0.2s ease-in-out;
 	/* Übergangseffekt für die Schriftfarbe */
 }
 

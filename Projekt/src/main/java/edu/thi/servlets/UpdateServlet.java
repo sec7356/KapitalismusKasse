@@ -45,7 +45,7 @@ public class UpdateServlet extends HttpServlet {
         
         // Eingaben für Namen validieren & ggf. überschreiben
         String neuerVorname = request.getParameter("neuerVorname");
-        if (neuerVorname != null && !neuerVorname.isBlank() && !neuerVorname.matches("[a-zA-ZäöüÄÖÜß]+")) {
+        if (neuerVorname != null && !neuerVorname.isBlank() && !neuerVorname.matches("[a-zA-ZäöüÄÖÜß ]+")) {
             session.setAttribute("errorMessage", "Der Vorname darf nur aus Buchstaben bestehen.");
             response.sendRedirect(request.getContextPath() + "/html/benutzerverwaltung.jsp");  
             return;
@@ -55,7 +55,7 @@ public class UpdateServlet extends HttpServlet {
         }
         
         String neuerNachname = request.getParameter("neuerNachname");
-        if (neuerNachname != null && !neuerNachname.isBlank() && !neuerNachname.matches("[a-zA-ZäöüÄÖÜß]+")) {
+        if (neuerNachname != null && !neuerNachname.isBlank() && !neuerNachname.matches("[a-zA-ZäöüÄÖÜß ]+")) {
             session.setAttribute("errorMessage", "Der Nachname darf nur aus Buchstaben bestehen.");
             response.sendRedirect(request.getContextPath() + "/html/benutzerverwaltung.jsp");  
             return;

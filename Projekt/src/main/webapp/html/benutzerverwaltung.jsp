@@ -82,11 +82,11 @@
             <input type="text" id="neuerNachname" name="neuerNachname" maxlength="30" ><br>
         </div>
         <div>
-            <label for="neuepin1">PIN</label><br>
+            <label for="neuepin1">Neue PIN</label><br>
             <input type="password" id="neuepin1" name="neuepin1" maxlength="6" ><br>
         </div>
         <div>
-            <label for="neuepin2">PIN bestätigen</label><br>
+            <label for="neuepin2">Neue PIN bestätigen</label><br>
             <input type="password" id="neuepin2" name="neuepin2" maxlength="6" ><br>            
         </div>
         <div>
