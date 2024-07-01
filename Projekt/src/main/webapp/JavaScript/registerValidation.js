@@ -42,7 +42,7 @@ function handleEmailResponse(response) {
     if (response && response.available === false) {
         emailStatus.textContent = '✘';
         emailStatus.style.color = '#941100';
-        emailErrorMessage.textContent = response.message || 'Diese E-Mail ist nicht verfügbar. Wähle eine andere Adresse aus.';
+        emailErrorMessage.textContent = 'Diese E-Mail ist nicht verfügbar. Wähle eine andere Adresse aus.';
         emailErrorMessage.style.display = 'block';
         disableRegisterButton();
     } else if (response && response.available === true) {

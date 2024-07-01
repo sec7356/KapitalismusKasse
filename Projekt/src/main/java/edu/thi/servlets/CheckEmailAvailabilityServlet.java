@@ -30,11 +30,11 @@ public class CheckEmailAvailabilityServlet extends HttpServlet {
 
         String email = request.getParameter("email");
         
-     // E-Mail Format prüfen
-        if (!email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")) {
-            out.println("{\"available\": false, \"message\": \"Bitte geben Sie eine gültige E-Mail-Adresse ein.\"}");
-            return;
-        }
+//     // E-Mail Format prüfen
+//        if (!email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")) {
+//            out.println("{\"available\": false, \"message\": \"Bitte geben Sie eine gültige E-Mail-Adresse ein.\"}");
+//            return;
+//        }
         
         try (Connection con = ds.getConnection();
              PreparedStatement pstmt = con.prepareStatement("SELECT 1 FROM Benutzer WHERE email = ?")) {

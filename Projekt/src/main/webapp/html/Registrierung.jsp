@@ -82,13 +82,18 @@
 				</div>
 				<br>
 				<div class="form-group">
-                    <div class="email-container">
-                        <label for="email">Email*</label>
-                        <input type="email" id="email" name="email" required maxlength="50">
-                        <span id="emailStatus"></span>
-                        <span id="emailErrorMessage" class="required-fields" style="display: none;"></span>
-                    </div>
-                </div>
+					<div class="email-container">
+						<label for="email">Email*</label> <input type="email" id="email"
+							name="email" required maxlength="50"> <span
+							id="emailStatus"></span>
+						<div class="form-group">
+							<span id="emailErrorMessage" class="required-fields"
+								style="display: none;">Diese E-Mail ist nicht verfügbar.
+								Wähle eine andere Adresse aus.</span>
+						</div>
+					</div>
+				</div>
+				<br>
 				<div class="form-group flex-container">
 					<div class="flex-item">
 						<label for="pin1">PIN*</label> <input type="password" id="pin1"
@@ -123,8 +128,7 @@
 					<button type="button" class="buttonStyle"
 						onclick="location.href='${pageContext.request.contextPath}/html/hilfe.jsp'">Klicken
 						für Hilfe</button>
-					<br>
-					<br>
+					<br> <br>
 					<button type="button" class="buttonStyle"
 						onclick="location.href='${pageContext.request.contextPath}/html/kontakt.jsp'">Klicken
 						zum Kontaktieren</button>
@@ -133,7 +137,6 @@
 		</div>
 	</div>
 
-	<!-- Footer -->
 	<footer>
 		<p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>
 		<p>Soweit auf dieser Internetseite von der Kapitalismus Kasse die
