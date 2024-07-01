@@ -90,11 +90,11 @@
 	            
 	           <p>Zögern Sie nicht und kontaktieren Sie jederzeit unsere Kapitalismus-Experten!</p>
 	           <p>Ansprechpartner:</p><ul class="reset-ul">
-	           <li class="partner">Selim Cingitas (sec7356@thi.de)</li>
-	           <li class="partner">Salih Can Pepeoglu (sap7224@thi.de)</li>
-	           <li class="partner">Diane Stegmüller (dis8584@thi.de)</li></ul>
-	            <br>
-	            </fieldset>
+	           <li class="partner">Salih Can Pepeoglu: <a href="mailto:sap7224@thi.de">sap7224@thi.de</a></li>
+	           <li class="partner">Selim Cingitas: <a href="mailto:sec7356@thi.de">sec7356@thi.de</a></li>
+	           <li class="partner">Diane Stegmüller: <a href="mailto:dis8584@thi.de">dis8584@thi.de</a></li>
+	            </ul><br>
+		           </fieldset>
 	    </div>
 
 

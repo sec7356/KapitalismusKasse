@@ -60,3 +60,7 @@ body {
 textarea {
 	resize: none; /* nicht per Maus Größe ändern */
 }
+
+.partner {
+	font-weight: bold;
+}

@@ -34,15 +34,15 @@
     <aside class="helpBox">
         <h2>Ansprechpartner</h2>
         <ul class="abstandli">
-            <li><b>Salih Can Pepeoglu:</b> <a href="mailto:sap7224@thi.de">sap7224@thi.de</a></li>
-            <li><b>Selim Cingitas:</b> <a href="mailto:sec7356@thi.de">sec7356@thi.de</a></li>
-            <li><b>Diane Stegmüller:</b> <a href="mailto:dis8584@thi.de">dis8584@thi.de</a></li>
+            <li>Salih Can Pepeoglu: <a href="mailto:sap7224@thi.de">sap7224@thi.de</a></li>
+            <li>Selim Cingitas: <a href="mailto:sec7356@thi.de">sec7356@thi.de</a></li>
+            <li>Diane Stegmüller: <a href="mailto:dis8584@thi.de">dis8584@thi.de</a></li>
         </ul>
     </aside>
     
     <aside class="helpBox">
         <h2>Kapitalismus-Kasse Postfach:</h2>
-        <ul>
+        <ul class="abstandli">
             <li><a href="mailto:kpt-kasse@navalcadets.com">kpt-kasse@navalcadets.com</a></li>
         </ul>
     </aside>
@@ -54,7 +54,7 @@
         hohen Aufkommens an Anfragen bis zu 4 Werktage benötigen, um Ihnen zu antworten. 
         Wir setzen alles daran, Ihnen schnellstmöglich weiterzuhelfen. 
         Vielen Dank für Ihre Geduld und Ihr Vertrauen.</p>
-    </article><br><br><br><br><br>
+    </article><br>
     
     <footer>
 		<p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>

@@ -94,7 +94,7 @@
 		    Online-Banking. Diese können Sie in den Einstellungen Ihres Kontos einsehen und verwalten.</p>
 			</div>
         </aside>
-        <br><br><br><br>
+        
     
    <footer>
 		<p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>
