@@ -46,42 +46,43 @@
 	</nav>
 	<br>
 
-	<div class="grauBackground">
-		<br><br><br><br>						
-		<div class="profile-text">
-				<p id="greeting">
-					Guten Tag, <span id="vorname">${sessionScope.vorname}</span>
-					<span id="nachname">${sessionScope.nachname}</span>
-				</p>
-		</div>
-		<p>Sie suchen nach Hilfe? Dann sind Sie hier genau richtig!</p>
-	</div>
-	<br>
-	
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="${pageContext.request.contextPath}/JavaScript/hilfeMail.js"></script>
-
-    <div class="internForm">
-        <form id="problemForm" method="post" action="mailto:kpt-kasse@navalcadets.com" enctype="multipart/form-data" onsubmit="sendMail(event)">
-            <fieldset><legend>Formular zum Problem</legend>
-            <div class="hilfeFormular">
-            <div class="betreff">
-                <label for="betreff">Betreff:</label><br>
-                <input type="text" id="betreff" name="betreff" maxlength="30" placeholder="Titel oder Art des Problems..." required><br>
-            </div>
-            
-                <label for="beschreibung">Beschreibung:</label><br>
-                <textarea id="beschreibung" name="beschreibung" rows="10" cols="75" maxlength="500" 
-                placeholder="Beschreiben Sie ausführlich Ihr Problem..." required></textarea><br>
-            </div>
-            <br>
-            <div>
-                <button name="submit" type="submit">Hilfe anfordern</button>
-                <button name="reset" type="reset">Zurücksetzen</button>
-            </div>
-            </fieldset>
-       </form>
+<div class="grauBackground">
+    <br><br><br><br>                        
+    <div class="profile-text">
+        <p id="greeting">
+            Guten Tag, <span id="vorname">${sessionScope.vorname}</span>
+            <span id="nachname">${sessionScope.nachname}</span>
+        </p>
     </div>
+    <p>Sie suchen nach Hilfe? Dann sind Sie hier genau richtig!</p>
+</div>
+<br>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="${pageContext.request.contextPath}/JavaScript/hilfeMail.js"></script>
+
+<div class="internForm">
+    <form id="problemForm" method="post" action="mailto:kpt-kasse@navalcadets.com" enctype="multipart/form-data">
+        <fieldset><legend>Formular zum Problem</legend>
+        <div class="hilfeFormular">
+        <div class="betreff">
+            <label for="betreff">Betreff:</label><br>
+            <input type="text" id="betreff" name="betreff" maxlength="30" placeholder="Titel oder Art des Problems..." required><br>
+        </div>
+        
+            <label for="beschreibung">Beschreibung:</label><br>
+            <textarea id="beschreibung" name="beschreibung" rows="10" cols="75" maxlength="500" 
+            placeholder="Beschreiben Sie ausführlich Ihr Problem..." required></textarea><br>
+        </div>
+        <br>
+        <div>
+            <button name="submit" type="submit">Hilfe anfordern</button>
+            <button name="reset" type="reset">Zurücksetzen</button>
+        </div>
+        </fieldset>
+   </form>
+</div>
+
     
 	<br> <div class="teilOder">oder</div><br>
 
