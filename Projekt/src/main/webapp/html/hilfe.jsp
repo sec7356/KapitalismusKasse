@@ -1,6 +1,5 @@
 <!-- Validiert -->
 <!-- Autoren: Selim, Diane-->
-<!-- in Zeile 50 wird onclick verwendet, das muss noch geändert werden -->
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
@@ -52,7 +51,7 @@
 		<article class="helpBox">
         <h2>Wie kontaktiere ich den Support?</h2>
         <p>Falls Sie Unterstützung benötigen, können Sie gerne unser Support kontaktieren:</p>
-        <button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/kontakt.jsp'">Klicken zum Kontaktieren</button>
+        <a href="${pageContext.request.contextPath}/html/kontakt.jsp" class="FakeButtonStyle">Klicken zum Kontaktieren</a>
         </article>
   
 		

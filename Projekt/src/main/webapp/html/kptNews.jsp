@@ -114,16 +114,15 @@
 		</div>
 	</div>
 
-	<p id="weiteres">Wir haben bald weitere Artikel für sie. Werden Sie unser Kunde und bleiben Sie auf dem aktuellsten Stand!</p>
+	<p id="weiteres">-Wir haben bald weitere Artikel für sie. Werden Sie unser Kunde und bleiben Sie auf dem aktuellsten Stand!-</p>
     
-    <article>
-	<br>
-		<h2>Entdecken Sie Ihre Vorteile bei uns als Privatkunde!</h2>
-		<p>Klicken sie <a href="${pageContext.request.contextPath}/html/index.jsp" class="black-anchor">hier</a>.</p>
+   <article class="regBox">
+		<h3>Registrieren Sie sich jetzt!</h3>
+		<a href="${pageContext.request.contextPath}/html/Registrierung.jsp" class="FakeButtonStyle">Klicken zum Registrieren</a>
 		<h3>Bereits registriert?</h3>
-		<p>Klicken sie zum Einloggen <a href="${pageContext.request.contextPath}/html/Banking-Login.jsp" class="black-anchor">hier</a>.</p>
-		<h3>Passwort vergessen?</h3>
-		<p>Hilfe finden Sie <a href="${pageContext.request.contextPath}/html/passwortReset.jsp" class="black-anchor">hier</a>.</p>
+		<a href="${pageContext.request.contextPath}/html/Banking-Login.jsp" class="FakeButtonStyle">Klicken zum Anmelden</a>
+		<h3>Benötigen Sie Hilfe?</h3>
+		<a href="${pageContext.request.contextPath}/html/hilfe.jsp" class="FakeButtonStyle">Klicken für Hilfe</a>
 	</article>
 
 	<footer>

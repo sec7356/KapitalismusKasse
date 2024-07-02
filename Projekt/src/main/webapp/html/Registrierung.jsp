@@ -101,8 +101,8 @@
                 </div>
                 <div class="form-group">
                     <p><b>Sie kommen nicht weiter?</b></p>
-                    <button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/hilfe.jsp'">Klicken für Hilfe</button><br><br>
-                    <button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/kontakt.jsp'">Klicken zum Kontaktieren</button>
+                    <a href="${pageContext.request.contextPath}/html/hilfe.jsp" class="FakeButtonStyle">Klicken für Hilfe</a><br><br>
+                    <a href="${pageContext.request.contextPath}/html/kontakt.jsp" class="FakeButtonStyle">Klicken zum Kontaktieren</a>
                 </div>
             </form>
         </div>
