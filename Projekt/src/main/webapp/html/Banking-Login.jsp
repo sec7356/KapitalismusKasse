@@ -1,6 +1,5 @@
 <!-- Validiert -->
 <!-- Autor: Diane -->
-<!-- in Zeile 70 & 73 wird onclick verwendet, das muss noch geändert werden -->
 
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -67,10 +66,11 @@
             </div>
             <div class="form-group">
                 <p><b>Probleme beim Anmelden?</b></p>
-                <button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/hilfe.jsp'">Klicken für Hilfe</button>
-                
+    			<a href="${pageContext.request.contextPath}/html/hilfe.jsp" class="buttonStyle">Klicken für Hilfe</a>
+                                
                 <p><b>Neu hier?</b></p>
-                <button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/Registrierung.jsp'">Klicken zum Registrieren</button>
+          		<a href="${pageContext.request.contextPath}/html/Registrierung..jsp" class="buttonStyle">Klicken zum Registrieren</a>
+                
             </div>
         </form>
     </div>

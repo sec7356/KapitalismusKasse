@@ -83,6 +83,11 @@
 	border: none; /* Entfernt die Standard-Bordereigenschaften */
 	border-radius: 5px; /* Rundet die Ecken des Buttons */
 	font-size: 14px; /* Ändere die Schriftgröße nach Bedarf */
+	text-decoration: none;
+}
+
+.buttonStyle:hover {
+	background-color: #286090;
 }
 
 .karriereBox {
