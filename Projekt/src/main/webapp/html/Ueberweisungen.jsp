@@ -119,7 +119,7 @@
                     </div>
                     <div class="form-group">
                         <label for="verwendungszweck">Verwendungszweck</label>
-                        <textarea id="verwendungszweck" name="verwendungszweck" maxlength="140" oninput="updateCharCount()"></textarea>
+                        <textarea id="verwendungszweck" name="verwendungszweck" maxlength="140"></textarea>
                     </div>
                     <div class="form-group">
                    	<label></label> 
