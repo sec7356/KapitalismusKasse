@@ -1,4 +1,5 @@
 /* Autor: @Selim, @Can, @Diane */
+/* validiert am 02.07 */
 
 @import url('popup.css');
 
@@ -67,7 +68,6 @@ footer {
 	padding: 0;
 	font-weight: bold;
 	display: flex;
-	align-items: left;
 	flex-direction: column;
 	margin-left: 75px;
 	color: rgb(55, 81, 128);
@@ -79,7 +79,6 @@ footer {
 	font-weight: bold;
 	font-size: 1em;
 	display: flex;
-	align-items: left;
 	flex-direction: column;
 	margin-left: 75px;
 	color: rgb(55, 81, 128);
@@ -87,8 +86,7 @@ footer {
 
 nav {
 	position: fixed;
-	left: 0;
-	width: 100%;						/* Wieso funktioniert es nicht wie beim style.css ?? 99.3%*/ 
+	width: 100%;						
 	background-color: white;
 	display: flex;
 	justify-content: center;
@@ -143,10 +141,8 @@ nav li {
 }
 
 nav a {
-	position: 0; /* Stellt die Position für das Pseudoelement fest */
 	padding-bottom: 3px; /* Fügt Platz für den Unterstrich hinzu */
 	text-decoration: none;
-	text-align: inline-flex;
 	color: black;
 	font-size: 14px;
 	transition: all .15s ease-in;

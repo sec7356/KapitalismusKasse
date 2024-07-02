@@ -1,4 +1,5 @@
 /* Autor: @Selim */
+/* validiert am 02.07 */
 
 @import url('styleIntern.css');
 
@@ -21,7 +22,7 @@ body {
 	margin-top: 4px;
 	margin-bottom: 2px;
 	font-size: 2.1em;
-	font-style: bold;
+	font-weight: bold;
 	position: absolute;
 	left: 50%; /* Zentrieren horizontal zur Trennlinie */
     transform: translate(-50%, -50%); /* Zentrieren des Textes */
