@@ -1,5 +1,4 @@
 <!-- Autor:  @Selim-->
-<!-- in Zeile 83, 86, 89, 92 wird onclick verwendet, das muss noch geändert werden -->
 
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -80,16 +79,16 @@
 				<p class="aktiontitel">Was möchten Sie machen?</p>
 				</div>
 				<div class="aktion">
-					<button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/Ueberweisungen.jsp'">Geld überweisen</button>
+					<a href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp" class="FakeButtonStyle">Geld überweisen</a>
 				</div>
 				<div class="aktion">
-					<button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/VerlaufServlet'">Buchungsverlauf ansehen</button>
+					<a href="${pageContext.request.contextPath}/VerlaufServlet" class="FakeButtonStyle">Buchungsverlauf ansehen</a>
 				</div>
 				<div class="aktion">
-					<button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/Kontoauszuege.jsp'">Kontoauszüge ansehen</button>
+					<a href="${pageContext.request.contextPath}/html/Kontoauszuege.jsp" class="FakeButtonStyle">Kontoauszüge ansehen</a>
 				</div>
 				<div class="aktion">
-					<button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/hilfeIntern.jsp#kontaktFeld'">Support kontaktieren</button>
+					<a href="${pageContext.request.contextPath}/html/hilfeIntern.jsp#kontaktFeld" class="FakeButtonStyle">Support kontaktieren</a>
 				</div>
 			</div>
 		</div>
