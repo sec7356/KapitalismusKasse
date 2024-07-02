@@ -69,7 +69,7 @@
     			<a href="${pageContext.request.contextPath}/html/hilfe.jsp" class="buttonStyle">Klicken für Hilfe</a>
                                 
                 <p><b>Neu hier?</b></p>
-          		<a href="${pageContext.request.contextPath}/html/Registrierung..jsp" class="buttonStyle">Klicken zum Registrieren</a>
+          		<a href="${pageContext.request.contextPath}/html/Registrierung.jsp" class="buttonStyle">Klicken zum Registrieren</a>
                 
             </div>
         </form>
