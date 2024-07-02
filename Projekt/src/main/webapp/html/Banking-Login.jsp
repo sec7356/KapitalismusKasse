@@ -15,9 +15,13 @@
 <script src="${pageContext.request.contextPath}/JavaScript/popupLöschen.js"></script>
 <script src="${pageContext.request.contextPath}/JavaScript/logout-message.js"></script> 
 
-
+<script src="${pageContext.request.contextPath}/JavaScript/cookieCheck.js"></script>
 </head>
 <body>
+	<div id="cookieSuccess">✅ Cookie-Zugriff erfolgreich!</div>
+	    <div id="cookieWarning">Bitte aktivieren Sie Ihre Cookies um fortzufahren!<br>
+	        <button id="reloadButton">Neu laden</button>
+   		</div>
 	<nav id="navbar">
 		<ul>
 			<li>

@@ -10,8 +10,13 @@
     <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico" />
     <title>Fehlermeldung - Kapitalismus-Kasse</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style1.css">
+<script src="${pageContext.request.contextPath}/JavaScript/cookieCheck.js"></script>
 </head>
 <body>
+	<div id="cookieSuccess">✅ Cookie-Zugriff erfolgreich!</div>
+	    <div id="cookieWarning">Bitte aktivieren Sie Ihre Cookies um fortzufahren!<br>
+	        <button id="reloadButton">Neu laden</button>
+   		</div>
     <header>
         <h1>Oops! Bei der Registrierung ist Etwas ist schief gelaufen.</h1>
     </header>

@@ -14,7 +14,12 @@
     <script src="${pageContext.request.contextPath}/JavaScript/navigation_extern.js"></script>
     
 </head>
-<body>    
+<body>  
+
+<div id="cookieSuccess">✅ Cookie-Zugriff erfolgreich!</div>
+    <div id="cookieWarning">Bitte aktivieren Sie Ihre Cookies um fortzufahren!<br>
+        <button id="reloadButton">Neu laden</button>
+    </div>  
 
 <noscript>
 <div class="noscript-message-container">

@@ -2,6 +2,7 @@
 /* validiert am 02.07 */
 
 @import url('popup.css');
+@import url('cookiePopup.css');
 
 /* Deaktiviere die Textauswahl auf der gesamten Webseite */
 body {

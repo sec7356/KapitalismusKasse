@@ -11,8 +11,13 @@
 <title>Kapitalismus Kasse - Deine Bank!</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleExtern.css">
 <script src="${pageContext.request.contextPath}/JavaScript/navigation_extern.js"></script>
+<script src="${pageContext.request.contextPath}/JavaScript/cookieCheck.js"></script>
 </head>
 <body>
+	<div id="cookieSuccess">✅ Cookie-Zugriff erfolgreich!</div>
+	    <div id="cookieWarning">Bitte aktivieren Sie Ihre Cookies um fortzufahren!<br>
+	        <button id="reloadButton">Neu laden</button>
+   		</div>
 
 	<nav id="navbar">
 		<ul>

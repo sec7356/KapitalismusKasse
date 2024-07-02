@@ -17,8 +17,13 @@
     <script src="${pageContext.request.contextPath}/JavaScript/navigation_extern.js"></script>
     <script src="${pageContext.request.contextPath}/JavaScript/registerValidation.js" defer></script>
     <script src="https://www.google.com/recaptcha/api.js" defer></script>
+<script src="${pageContext.request.contextPath}/JavaScript/cookieCheck.js"></script>
 </head>
 <body>
+	<div id="cookieSuccess">✅ Cookie-Zugriff erfolgreich!</div>
+	    <div id="cookieWarning">Bitte aktivieren Sie Ihre Cookies um fortzufahren!<br>
+	        <button id="reloadButton">Neu laden</button>
+   		</div>
     <nav id="navbar">
         <ul>
             <li>
