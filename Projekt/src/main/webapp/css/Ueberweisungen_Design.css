@@ -1,4 +1,5 @@
 /* Autor: @Can*/
+/* validiert */
 
 @import url('popup.css');
 
@@ -182,7 +183,7 @@ button[type="submit"]:hover, button[type="reset"]:hover {
 
 .new-transfer-header {
 	margin-right: auto;
-	margin-bottom: -3rm;
+	margin-bottom: -3em;
 	align-self: baseline;
 }
 
