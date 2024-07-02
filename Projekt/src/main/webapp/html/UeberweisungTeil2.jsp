@@ -124,9 +124,7 @@
 							</c:choose>
 						</span>
 					</div>
-					<div class="form-group">
-						<label></label>
-					</div>
+					<br><br>
 					<div class="form-group">
 						<label>Hinweis</label>
 						<p class="hint-text">

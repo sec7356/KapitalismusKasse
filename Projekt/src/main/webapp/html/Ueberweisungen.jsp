@@ -125,9 +125,10 @@
                    	<label></label> 
                         <div id="char-count" class="hint-text">Sie können noch 140 Zeichen eingeben.</div>
                     </div>
+                    <br><br>
                     <div class="form-group">
+                    	<label>Hinweis</label>
                         <p class="hint-text">
-                        <br><br>
                             Wir möchten Sie darauf hinweisen, dass Überweisungen
                             ausschließlich an Empfänger durchgeführt werden können, die
                             ebenfalls Kunden der Kapitalismus-Kasse sind.<br><br>
