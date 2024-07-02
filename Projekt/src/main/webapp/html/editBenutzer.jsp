@@ -85,17 +85,20 @@
                     <td><select id="admin" name="admin" required>
                             <c:choose>
                                 <c:when test="${sessionScope.b_id == benutzer.b_id}">
-                                    <option value="" disabled selected>Ja (nicht änderbar)</option>
+                                    <option value="" disabled>Admin-Rolle ändern</option>
+                                    <option value="true" selected>Ja (nicht änderbar)</option>
 									<option value="false" disabled>Nein</option>
                                     
                                 </c:when>
                                 <c:otherwise>
                                     <c:choose>
                                         <c:when test="${empty benutzer or benutzer.admin}">
+											<option value="" disabled>Admin-Rolle ändern</option>
                                             <option value="true" selected>Ja</option>
                                             <option value="false">Nein</option>
                                         </c:when>
                                         <c:otherwise>
+                      						<option value="" disabled>Admin-Rolle ändern</option>
                                             <option value="true">Ja</option>
                                             <option value="false" selected>Nein</option>
                                         </c:otherwise>
