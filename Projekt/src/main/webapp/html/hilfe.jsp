@@ -1,5 +1,6 @@
 <!-- Validiert -->
 <!-- Autoren: Selim, Diane-->
+<!-- in Zeile 50 wird onclick verwendet, das muss noch geändert werden -->
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 

@@ -1,5 +1,6 @@
 <!-- Autor: @Can, @Selim -->
 <!-- validiert -->
+<!-- in Zeile 58, 59, 125, 127, 129 wird onclick verwendet, das muss noch geändert werden -->
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 

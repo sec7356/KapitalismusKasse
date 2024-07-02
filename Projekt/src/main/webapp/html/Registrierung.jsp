@@ -1,5 +1,6 @@
 <!-- Autor:  @Diane, @Selim, @Can -->
 <!-- Validiert -->
+<!-- in Zeile 99, 100 wird onclick verwendet, das muss noch geändert werden -->
 
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>

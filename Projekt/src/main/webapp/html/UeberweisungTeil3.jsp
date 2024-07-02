@@ -1,5 +1,7 @@
 <!-- Autor: Can -->
 <!-- Validiert -->
+<!-- in Zeile 94, 95 wird onclick verwendet, das muss noch geändert werden -->
+
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
