@@ -1,4 +1,5 @@
 /* Autor: @Selim */
+/* validiert */
 
 @import url('navigation.css');
 
@@ -55,7 +56,7 @@ body {
 	background: linear-gradient(to bottom, rgba(184, 158, 20, 0.8) 25%,
 		rgba(255, 255, 255, 0) 25%);
 	display: inline-block;
-	align-items: left;
+	text-align: left;
 	background-color: #ffffff;
 	border: 1px solid #ccc;
 	border-radius: 30px;
@@ -107,7 +108,7 @@ body {
 	background-size: auto 170px;
 	background-repeat: no-repeat;
 	display: inline-block;
-	align-items: left;
+	text-align: left;
 	background-color: #ffffff;
 	border: 1px solid #ccc;
 	border-radius: 30px;

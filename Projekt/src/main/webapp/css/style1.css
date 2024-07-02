@@ -1,4 +1,5 @@
 /* Autor: Diane */
+/* validiert */
 
 /* Globale Stile */
 body {
@@ -100,7 +101,6 @@ input[type="email"] {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    maxlength: 40
 }
 
 input[type="email"] {
@@ -109,7 +109,6 @@ input[type="email"] {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    maxlength: 40
 }
 
 /* Stil für Submit-Button */
