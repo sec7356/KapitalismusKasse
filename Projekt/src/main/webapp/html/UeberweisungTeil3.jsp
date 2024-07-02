@@ -1,6 +1,5 @@
 <!-- Autor: Can -->
 <!-- Validiert -->
-<!-- in Zeile 94, 95 wird onclick verwendet, das muss noch geändert werden -->
 
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
@@ -92,8 +91,8 @@
 				Kapitalismus-Kasse: Geld fliegt schneller als Gedankenblitze.<br>Ihr Geld ist weg, bevor Sie es merken.<br><br>Treu unserem Motto: Ihr Geld gehört uns sowieso.<br></label><br>
 				
 			<div class="button-container">
-				<button type="reset" onclick="window.location.href = '${pageContext.request.contextPath}/html/UserStartseite.jsp';" title="Überweisen Sie bequem Ihr Geld!">Zur Startseite</button>
-				<button type="reset" onclick="window.location.href = '${pageContext.request.contextPath}/html/Ueberweisungen.jsp';" title="Überweisen Sie bequem Ihr Geld!">Neue Überweisung</button>
+			   	<a href="${pageContext.request.contextPath}/html/UserStartseite.jsp" class="buttonStyle">Zur Startseite</a>
+			   	<a href="${pageContext.request.contextPath}/html/Ueberweisungen.jsp" class="buttonStyle">Neue Überweisung</a>
 			</div>
 				
 		</section>

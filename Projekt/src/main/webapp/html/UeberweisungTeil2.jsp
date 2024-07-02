@@ -1,5 +1,4 @@
 <!-- Autor: Can -->
-<!-- in Zeile 145 wird onclick verwendet, das muss noch geändert werden -->
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -11,13 +10,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/x-icon"
-	href="${pageContext.request.contextPath}/img/favicon.ico" />
+<link rel="icon" type="image/x-icon"href="${pageContext.request.contextPath}/img/favicon.ico">
 <title>Überweisung - Kapitalismus-Kasse</title>
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/css/Ueberweisungen_Design.css">
+<link rel="stylesheet"href="${pageContext.request.contextPath}/css/Ueberweisungen_Design.css">
 <script src="${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
 <script src="${pageContext.request.contextPath}/JavaScript/navigation_intern.js"></script>
+<script src="${pageContext.request.contextPath}/JavaScript/UeberweisungKorrigieren.js"></script>
+
 
 </head>
 <body>
@@ -107,7 +106,8 @@
 						<label></label>
 						<p class="hint-text">
 							Bitte beachten Sie eventuell die Meldepflicht ab 12.500 Euro <br>gemäß
-							<a href="https://www.bundesbank.de/de/service/meldewesen/aussenwirtschaft" target="blank">Außenwirtschaftsverordnung<img src="${pageContext.request.contextPath}/img/Link.png" alt="Logo" style="vertical-align: middle; width: 30px; height: 30px; margin-left: -7px;"></a>
+							<a href="https://www.bundesbank.de/de/service/meldewesen/aussenwirtschaft" target="blank">Außenwirtschaftsverordnung
+        						<img src="${pageContext.request.contextPath}/img/Link.png" alt="Logo" class="link-logo">
 						</p>
 					</div>
 
@@ -142,8 +142,8 @@
 				</fieldset>
 
 				<div class="button-container">
-					<button type="button" class="korrigieren-button" onclick="history.back()">Korrigieren</button>
-					<button name="submit" type="submit">Überweisen</button>
+    			<button type="button" id="korrigierenButton" class="korrigieren-button">Korrigieren</button>
+				<button name="submit" type="submit">Überweisen</button>
 
 				</div>
 			</section>
