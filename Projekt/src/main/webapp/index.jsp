@@ -1,5 +1,6 @@
 <!-- Validiert am 28.06 @Can -->
 <!-- Autor: @Can, @Selim -->
+<!-- onclick für die Buttons noch drin -->
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
