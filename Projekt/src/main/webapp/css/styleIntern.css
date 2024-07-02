@@ -378,3 +378,8 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	color: #941100;
 	margin-bottom: 0.5em;
 }
+.success-message-container {
+	text-align: left;
+	color: #155724;
+	margin-bottom: 0.5em;
+}

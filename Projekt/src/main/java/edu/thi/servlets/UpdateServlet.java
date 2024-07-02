@@ -1,3 +1,4 @@
+//Autor: Diane + ChatGpt
 package edu.thi.servlets;
 
 import jakarta.annotation.Resource;
@@ -90,9 +91,11 @@ public class UpdateServlet extends HttpServlet {
             }
             fileContent = filePart.getInputStream();
         }
-
-        persist(benutzer, neuerPin, fileContent);
-
+        
+        boolean erfolg = persist(benutzer, neuerPin, fileContent);
+        if (erfolg) {
+            session.setAttribute("successMessage", "Profil erfolgreich aktualisiert.");
+        }
         response.sendRedirect(request.getContextPath() + "/html/benutzerverwaltung.jsp");
     }
 

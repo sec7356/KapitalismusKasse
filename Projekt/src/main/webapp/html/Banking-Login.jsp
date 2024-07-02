@@ -1,5 +1,6 @@
 <!-- Validiert -->
 <!-- Autor: Diane -->
+<!-- ab Zeile 71 wird onklick verwendet, ist das dort nötig? -->
 
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>

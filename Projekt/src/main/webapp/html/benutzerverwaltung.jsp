@@ -90,13 +90,18 @@
             <input type="password" id="neuepin2" name="neuepin2" maxlength="6" ><br>            
         </div>
         <div>
-        	<br>
         	 <div class="error-message-container">
              	<c:if test="${not empty sessionScope.errorMessage}">                
                     <div>${sessionScope.errorMessage}</div>
                     <c:remove var="errorMessage" scope="session"/>
         		</c:if>        
 			</div>
+			<div class="success-message-container">
+             	<c:if test="${not empty sessionScope.successMessage}">                
+                    <div>${sessionScope.successMessage}</div>
+                    <c:remove var="successMessage" scope="session"/>
+        		</c:if>        
+			</div>			
             <label for="profilbild">Profilbild:</label>            
             <input type="file" id="profilbild" name="profilbild" accept="image/*"><br>
             <span class="info-fields">(Das Profilbild darf maximal 1 MB betragen)</span>
