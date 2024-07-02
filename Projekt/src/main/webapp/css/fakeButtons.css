@@ -1,0 +1,20 @@
+/* Autor: @Selim */
+
+.FakeButtonStyle {
+	display: inline-block;
+	width: 190px;
+	height: auto;
+	background-color: #b89e14;
+	color: #fff;
+	cursor: pointer;
+	padding: 5px 10px; /* Ändere den Padding nach Bedarf */
+	border: none; /* Entfernt die Standard-Bordereigenschaften */
+	border-radius: 5px; /* Rundet die Ecken des Buttons */
+	font-size: 14px; /* Ändere die Schriftgröße nach Bedarf */
+	text-decoration: none;
+	text-align: center;
+}
+
+.FakeButtonStyle:hover {
+	background-color: #0056b3;
+}

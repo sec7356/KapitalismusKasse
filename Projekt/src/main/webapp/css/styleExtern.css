@@ -4,6 +4,7 @@
 @import url('style.css');
 @import url('cookiePopup.css');
 @import url('javascriptMeldung.css');
+@import url('fakeButtons.css');
 
 .bold {
 	font-weight: bold;

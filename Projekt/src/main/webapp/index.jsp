@@ -192,11 +192,11 @@
     <article class="regBox">
 	<br>
 		<h2>Registrieren Sie sich jetzt als Firmenkunde!</h2>
-		<button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/Registrierung.jsp'">Klicken zum Registrieren</button>
+		<a href="${pageContext.request.contextPath}/html/Registrierung.jsp" class="FakeButtonStyle">Klicken zum Registrieren</a>
 		<h3>Bereits registriert?</h3>
-		<button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/Banking-Login.jsp'">Klicken zum Anmelden</button>
+		<a href="${pageContext.request.contextPath}/html/Banking-Login.jsp" class="FakeButtonStyle">Klicken zum Anmelden</a>
 		<h3>Passwort vergessen?</h3>
-		<button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/hilfe.jsp'">Klicken für Hilfe</button>
+		<a href="${pageContext.request.contextPath}/html/hilfe.jsp" class="FakeButtonStyle">Klicken für Hilfe</a>
 	</article>
 
 	<!-- Footer -->

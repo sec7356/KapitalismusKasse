@@ -3,6 +3,7 @@
 
 @import url('popup.css');
 @import url('cookiePopup.css');
+@import url('fakeButtons.css');
 
 /* Deaktiviere die Textauswahl auf der gesamten Webseite */
 body {
