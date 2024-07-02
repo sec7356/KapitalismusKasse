@@ -1,6 +1,6 @@
 <!-- Validiert -->
 <!-- Autor: Diane -->
-<!-- ab Zeile 71 wird onklick verwendet, ist das dort nötig? -->
+<!-- in Zeile 70 & 73 wird onclick verwendet, das muss noch geändert werden -->
 
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -46,11 +46,8 @@
                 <br>
                 <c:if test="${not empty sessionScope.errorMessage}">                
                     <div id="logout-message">${sessionScope.errorMessage}</div>
-                    <!-- Lösche das errorMessage Session-Attribut -->
                     <c:remove var="errorMessage" scope="session"/>
                 </c:if>
-                
-                <!-- Prüfe, ob das logoutMessage Session-Attribut existiert und nicht leer ist -->
                 <c:if test="${not empty sessionScope.logoutMessage}">
                     <div id="logout-message">${sessionScope.logoutMessage}</div>
                     <!-- Lösche das logoutMessage Session-Attribut -->
@@ -89,7 +86,6 @@
     <button id="bestaetigen" class="popup-button">Verstanden!</button>
 </div>
 	
-	<!-- Footer -->
 	<footer>
 		<p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>
 		<p>Soweit auf dieser Internetseite von der Kapitalismus Kasse die Rede ist, bezieht sich dies auf die Angebote der Kapitalismus 

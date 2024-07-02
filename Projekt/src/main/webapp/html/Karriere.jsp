@@ -1,5 +1,5 @@
 <!-- Autor: @Selim, @Can-->
-<!--  -->
+<!-- in Zeile 66, 67, 143, 146 wird onclick verwendet, das muss noch geändert werden -->
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -146,7 +146,6 @@
         <button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/kontakt.jsp'">Klicken für Hilfe</button>
     </article>
 
-    <!-- Footer -->
 	<footer>
 		<p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>
 		<p>Soweit auf dieser Internetseite von der Kapitalismus Kasse die Rede ist, bezieht sich dies auf die Angebote der Kapitalismus 
