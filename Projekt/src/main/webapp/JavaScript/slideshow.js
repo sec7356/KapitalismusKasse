@@ -1,41 +1,53 @@
-//Autor: @Can
+//Autor: Can
 
 "use strict";
 
+// Initialisierung des slideIndex
 let slideIndex = 1;
 showSlides(slideIndex);
 
+// Funktion zur Anzeige der Slides basierend auf slideIndex
 function showSlides(n) {
-	let i;
-	let slides = document.getElementsByClassName("mySlides");
-	let dots = document.getElementsByClassName("dot");
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
 
-	if (n > slides.length) {
-		slideIndex = 1;
-	}
-	if (n < 1) {
-		slideIndex = slides.length;
-	}
+    // Überprüfen, ob n außerhalb des gültigen Bereichs liegt
+    if (n > slides.length) {
+        slideIndex = 1;
+    }
+    if (n < 1) {
+        slideIndex = slides.length;
+    }
 
-	for (i = 0; i < slides.length; i++) {
-		slides[i].style.display = "none";
-	}
-	for (i = 0; i < dots.length; i++) {
-		dots[i].className = dots[i].className.replace(" active", "");
-	}
+    // Alle Slides ausblenden und aktive Klasse bei den Dots entfernen
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
 
-	slides[slideIndex - 1].style.display = "block";
-	dots[slideIndex - 1].className += " active";
+    // Den gewünschten Slide anzeigen und den Dot aktivieren
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
 }
 
+// Funktion zum Inkrementieren bzw. Dekrementieren des slideIndex und Anzeigen der Slides
 function plusSlides(n) {
-	showSlides(slideIndex += n);
+    showSlides(slideIndex += n);
 }
 
-function currentSlide(n) {
-	showSlides(slideIndex = n);
-}
+// Event-Handler für den "Vorheriger Slide" Button
+document.getElementById("prevButton").addEventListener("click", function() {
+    plusSlides(-1);
+});
 
+// Event-Handler für den "Nächster Slide" Button
+document.getElementById("nextButton").addEventListener("click", function() {
+    plusSlides(1);
+});
+
+// Automatisches Wechseln alle 10 Sekunden
 setInterval(function() {
-	plusSlides(1);
-}, 10000); // Automatisches Wechseln alle 10 Sekunden
+    plusSlides(1);
+}, 10000);
