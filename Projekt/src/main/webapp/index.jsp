@@ -1,6 +1,5 @@
 <!-- Validiert am 28.06 @Can -->
 <!-- Autor: @Can, @Selim -->
-<!-- onclick für die Buttons noch drin -->
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -190,12 +189,11 @@
     
     
     <article class="regBox">
-	<br>
-		<h2>Registrieren Sie sich jetzt als Firmenkunde!</h2>
+		<h3>Registrieren Sie sich jetzt!</h3>
 		<a href="${pageContext.request.contextPath}/html/Registrierung.jsp" class="FakeButtonStyle">Klicken zum Registrieren</a>
 		<h3>Bereits registriert?</h3>
 		<a href="${pageContext.request.contextPath}/html/Banking-Login.jsp" class="FakeButtonStyle">Klicken zum Anmelden</a>
-		<h3>Passwort vergessen?</h3>
+		<h3>Benötigen Sie Hilfe?</h3>
 		<a href="${pageContext.request.contextPath}/html/hilfe.jsp" class="FakeButtonStyle">Klicken für Hilfe</a>
 	</article>
 

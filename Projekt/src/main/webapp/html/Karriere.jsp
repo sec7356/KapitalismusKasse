@@ -1,5 +1,4 @@
 <!-- Autor: @Selim, @Can-->
-<!-- in Zeile 66, 67, 143, 146 wird onclick verwendet, das muss noch geändert werden -->
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -145,10 +144,10 @@
 
     <article class="regBox">
         <h3>Registrieren Sie sich jetzt um Ihre Karriere starten zu können!</h3>
-    	<button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/Registrierung.jsp'">Klicken zum Registrieren</button>        
+    	<a href="${pageContext.request.contextPath}/html/Registrierung.jsp" class="FakeButtonStyle">Klicken zum Registrieren</a>
        
         <h3>Benötigen Sie Hilfe?</h3>
-        <button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/kontakt.jsp'">Klicken für Hilfe</button>
+        <a href="${pageContext.request.contextPath}/html/hilfe.jsp" class="FakeButtonStyle">Klicken für Hilfe</a>
     </article>
 
 	<footer>

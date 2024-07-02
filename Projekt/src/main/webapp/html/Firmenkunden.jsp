@@ -1,6 +1,5 @@
 <!-- Autor: @Can, @Selim -->
 <!-- validiert -->
-<!-- in Zeile 58, 59, 125, 127, 129 wird onclick verwendet, das muss noch geändert werden -->
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -120,12 +119,12 @@
         </aside>
     
     <article class="regBox">
-        <h3>Registrieren Sie sich jetzt!</h3>
-    	<button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/Registrierung.jsp'">Klicken zum Registrieren</button>        
-       <h3>Bereits registriert?</h3>
-		<button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/Banking-Login.jsp'">Klicken zum Anmelden</button>
-        <h3>Benötigen Sie Hilfe?</h3>
-        <button type="button" class="buttonStyle" onclick="location.href='${pageContext.request.contextPath}/html/kontakt.jsp'">Klicken für Hilfe</button>
+        <h3>Registrieren Sie sich jetzt als Firmenkunde!</h3>
+		<a href="${pageContext.request.contextPath}/html/Registrierung.jsp" class="FakeButtonStyle">Klicken zum Registrieren</a>
+		<h3>Bereits registriert?</h3>
+		<a href="${pageContext.request.contextPath}/html/Banking-Login.jsp" class="FakeButtonStyle">Klicken zum Anmelden</a>
+		<h3>Benötigen Sie Hilfe?</h3>
+		<a href="${pageContext.request.contextPath}/html/hilfe.jsp" class="FakeButtonStyle">Klicken für Hilfe</a>
     </article>  
 
     <!-- Footer -->
