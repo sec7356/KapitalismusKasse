@@ -1,6 +1,5 @@
 <!-- Autor: @Can -->
-<!-- Validierung: er erkennt das Form element nicht richtig weil der div Kontailer davor geöffnet und im form Tag geschlossen wird -->
-<!-- Validierung: h2 ist nicht in table erlaubt -->
+<!-- validiert am 02.07 -->
 
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -50,7 +49,7 @@
 		<br><br><br>						
 		<div class="profile-text">
 				<p id="greeting">
-					Guten Tag, <span id="vorname">Admin</span>
+					Guten Tag, <span id="name">Admin</span>
 				</p>
 		</div>
 		<p>Hier können Sie den Vor- und Nachnamen, die PIN oder ändern oder auch dem Nutzer die Admin-Rolle geben!</p>
@@ -82,11 +81,13 @@
                     <td><input type="text" id="vorname" name="vorname" value="${empty benutzer ? '' : benutzer.vorname}" required maxlength="49"></td>
 					<td><input type="text" id="nachname" name="nachname" value="${empty benutzer ? '' : benutzer.nachname}" required maxlength="49"></td>
                     <td>${empty benutzer ? '' : benutzer.email}</td>
-                    <td><input type="text" id="pin" name="pin" pattern="[0-9]{1,6}" maxlength="6" value="${empty benutzer ? '' : benutzer.pin}" required maxlength="6" title="Bitte geben Sie nur bis zu 6 Ziffern ein."></td>
+                    <td><input type="text" id="pin" name="pin" pattern="[0-9]{1,6}" value="${empty benutzer ? '' : benutzer.pin}" required maxlength="6" title="Bitte geben Sie nur bis zu 6 Ziffern ein."></td>
                     <td><select id="admin" name="admin" required>
                             <c:choose>
                                 <c:when test="${sessionScope.b_id == benutzer.b_id}">
-                                    <option value="true" disabled selected>Ja (nicht änderbar)</option>
+                                    <option value="" disabled selected>Ja (nicht änderbar)</option>
+									<option value="false" disabled>Nein</option>
+                                    
                                 </c:when>
                                 <c:otherwise>
                                     <c:choose>

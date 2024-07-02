@@ -1,6 +1,5 @@
 <!-- Autor: @Can -->
-<!-- Validierung: er erkennt das Form element nicht richtig weil der div Kontainer davor geöffnet und im form Tag geschlossen wird -->
-<!-- Validierung: h2 ist nicht in table erlaubt -->
+<!-- validiert am 02.07 -->
 
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -117,7 +116,7 @@
                 </tbody>
             </table>
 			<input type="hidden" name="b_id" value="${benutzer.b_id}">
-			<input type="hidden" name="iban" value="${konto.IBAN}" />
+			<input type="hidden" name="iban" value="${konto.IBAN}">
 			
 			</form>
 	</div>
