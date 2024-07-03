@@ -1,4 +1,5 @@
-//Autor: @Selim
+//Autor: @Selim - Idee von mir, Code von Google for Developers entnommen und anschließend mit ChatGPT auf unsere Seite angepasst
+//Quelle: https://developers.google.com/recaptcha/docs/display?hl=de
 
 "use strict";
 
