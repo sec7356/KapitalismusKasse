@@ -1,4 +1,4 @@
-//Autor: Can
+//Autor: Can - Grundidee und Hauptteil des Code von mir, ChatGPT zur korrekten Umsetzung 
 
 package edu.thi.servlets;
 
