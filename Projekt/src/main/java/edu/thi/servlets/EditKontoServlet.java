@@ -1,4 +1,4 @@
-//Autor: 
+//Autor: Can
 
 package edu.thi.servlets;
 
@@ -92,8 +92,10 @@ public class EditKontoServlet extends HttpServlet {
         request.setAttribute("konto", konto);
         request.setAttribute("transaktionen", transaktionen);
 
-        request.getRequestDispatcher("/BenutzerDetailsServlet?b_id=" + benutzerId).forward(request, response);
+        // Redirect zu der Seite, die die aktualisierten Informationen anzeigt
+        response.sendRedirect(request.getContextPath() + "/BenutzerDetailsServlet?b_id=" + benutzerId);
     }
+
 
     private void updateKonto(String iban, double kontoStand, double dispo) throws ServletException {
         try (Connection con = ds.getConnection()) {

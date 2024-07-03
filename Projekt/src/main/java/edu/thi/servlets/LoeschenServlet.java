@@ -10,7 +10,6 @@ import java.sql.ResultSet;
 import javax.sql.DataSource;
 
 import jakarta.annotation.Resource;
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -25,8 +24,8 @@ public class LoeschenServlet extends HttpServlet {
     @Resource(lookup = "java:jboss/datasources/MySqlThidbDS")
     private DataSource ds;
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
         Long id = (Long) session.getAttribute("b_id");
@@ -36,10 +35,8 @@ public class LoeschenServlet extends HttpServlet {
         if (kontostand != null && kontostand != 0) {
             // Kontostand ist nicht null, zeige eine Fehlermeldung mit dem genauen Kontostand an
             String errorMessage = String.format("Konto kann nicht gelöscht werden, da der Kontostand %.2f € beträgt.", kontostand);
-            request.setAttribute("errorMessage", errorMessage);
-            request.setAttribute("showMessage", true); // Attribute, um die Popup-Nachricht anzuzeigen
-            RequestDispatcher dispatcher = request.getRequestDispatcher("html/benutzerverwaltung.jsp");
-            dispatcher.forward(request, response);
+            session.setAttribute("errorMessage", errorMessage);
+            response.sendRedirect(request.getContextPath() + "/html/benutzerverwaltung.jsp");
             return;
         } else {
             // Lösche zuerst die Konten, um die referenzielle Integrität sicherzustellen
@@ -48,20 +45,12 @@ public class LoeschenServlet extends HttpServlet {
 
             // Setze eine Erfolgsmeldung, die auf der Benutzerverwaltung.jsp angezeigt wird
             String successMessage = "Konto und Benutzer erfolgreich gelöscht.";
-            request.setAttribute("successMessage", successMessage);
-            request.setAttribute("showMessage", true); // Attribute, um die Popup-Nachricht anzuzeigen
+            session.setAttribute("successMessage", successMessage);
         }
 
-        session = request.getSession(false);
-        if (session != null) {
-            session.invalidate(); // Invalide die Session, um alle Daten zu löschen
-        }
-
-        // Leite zurück zum Login und gebe Info an Benutzer, dass Konto gelöscht wurde
-        request.setAttribute("successMessage", "Konto und Benutzer erfolgreich gelöscht.");
-        request.setAttribute("showMessage", true);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("html/Banking-Login.jsp");
-        dispatcher.forward(request, response);
+        // Session ungültig machen und umleiten
+        session.invalidate();
+        response.sendRedirect(request.getContextPath() + "/html/Banking-Login.jsp?message=success");
     }
 
     private Double getKontostand(Long id) throws ServletException {
@@ -82,7 +71,7 @@ public class LoeschenServlet extends HttpServlet {
 
     private void deleteBenutzer(Long id) throws ServletException {
         try (Connection con = ds.getConnection();
-                PreparedStatement pstmt = con.prepareStatement("DELETE FROM Benutzer WHERE b_id = ?")) {
+             PreparedStatement pstmt = con.prepareStatement("DELETE FROM Benutzer WHERE b_id = ?")) {
             pstmt.setLong(1, id);
             pstmt.executeUpdate();
         } catch (Exception ex) {
@@ -92,13 +81,11 @@ public class LoeschenServlet extends HttpServlet {
 
     private void deleteKonto(Long id) throws ServletException {
         try (Connection con = ds.getConnection();
-                PreparedStatement pstmt = con.prepareStatement("DELETE FROM Konto WHERE besitzer = ?")) {
+             PreparedStatement pstmt = con.prepareStatement("DELETE FROM Konto WHERE besitzer = ?")) {
             pstmt.setLong(1, id);
             pstmt.executeUpdate();
         } catch (Exception ex) {
             throw new ServletException(ex.getMessage());
         }
     }
-
-	
 }

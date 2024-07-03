@@ -1,4 +1,4 @@
-//Autor: Diane
+//Autor: Can
 
 package edu.thi.servlets;
 
@@ -37,7 +37,7 @@ public class EditBenutzerServlet extends HttpServlet {
             List<Konto> konto = getKonto(benutzer_id);
             List<Transaktion> transaktionen = getTransaktionen(benutzer_id);
 
-            request.setAttribute("benutzer", benutzer); 
+            request.setAttribute("benutzer", benutzer);
             request.setAttribute("kontoinformationen", konto);
             request.setAttribute("transaktionen", transaktionen);
 
@@ -47,13 +47,12 @@ public class EditBenutzerServlet extends HttpServlet {
         }
     }
 
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	request.setCharacterEncoding("UTF-8");
+        request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
-    	
-    	String benutzerId = request.getParameter("b_id");
+
+        String benutzerId = request.getParameter("b_id");
         String vorname = request.getParameter("vorname");
         String nachname = request.getParameter("nachname");
         String email = request.getParameter("email");
@@ -67,7 +66,6 @@ public class EditBenutzerServlet extends HttpServlet {
             return;
         }
 
-        // Prüfen und aktualisieren nur der geänderten Felder
         boolean isUpdated = false;
         if (vorname != null && !vorname.isEmpty() && !vorname.equals(currentBenutzer.getVorname())) {
             currentBenutzer.setVorname(vorname);
@@ -106,16 +104,14 @@ public class EditBenutzerServlet extends HttpServlet {
             }
         }
 
-        // Nur aktualisieren, wenn tatsächlich Änderungen vorgenommen wurden
         if (isUpdated) {
             updateBenutzer(currentBenutzer);
-
-            request.setAttribute("message", "Benutzer erfolgreich aktualisiert.");
+            request.getSession().setAttribute("message", "Benutzer erfolgreich aktualisiert.");
         } else {
-            request.setAttribute("message", "Keine Änderungen vorgenommen.");
+            request.getSession().setAttribute("message", "Keine Änderungen vorgenommen.");
         }
 
-        request.getRequestDispatcher("/BenutzerDetailsServlet?b_id=" + benutzerId).forward(request, response);
+        response.sendRedirect(request.getContextPath() + "/BenutzerDetailsServlet?b_id=" + benutzerId);
     }
 
     private Benutzer getBenutzerDetails(String b_id) throws ServletException {
@@ -163,7 +159,6 @@ public class EditBenutzerServlet extends HttpServlet {
             throw new ServletException("Datenbankfehler: " + ex.getMessage());
         }
     }
-
 
     private List<Konto> getKonto(String b_id) throws ServletException {
         List<Konto> konto = new ArrayList<>();
@@ -230,7 +225,6 @@ public class EditBenutzerServlet extends HttpServlet {
             throw new ServletException(ex.getMessage());
         }
 
-        // Transaktionen nach Zeitstempel sortieren (neuestes zuerst)
         Collections.sort(transaktionen, Comparator.comparing(Transaktion::getZeitstempel).reversed());
 
         return transaktionen;

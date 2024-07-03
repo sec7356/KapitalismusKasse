@@ -8,7 +8,6 @@ import java.sql.PreparedStatement;
 import javax.sql.DataSource;
 
 import jakarta.annotation.Resource;
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -26,19 +25,20 @@ public class DeleteBenutzerServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         Long id = Long.parseLong(request.getParameter("b_id"));
 
-        	deleteTransaktion(id);
+        try {
+            deleteTransaktion(id);
             deleteKonto(id);
             deleteBenutzer(id);
-        
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/AdminBenutzerListeServlet");
-        dispatcher.forward(request, response);
-    }
+        } catch (ServletException ex) {
+            ex.printStackTrace();
+        }
 
-    
+        response.sendRedirect(request.getContextPath() + "/AdminBenutzerListeServlet");
+    }
 
     private void deleteBenutzer(Long id) throws ServletException {
         try (Connection con = ds.getConnection();
-                PreparedStatement pstmt = con.prepareStatement("DELETE FROM Benutzer WHERE b_id = ?")) {
+             PreparedStatement pstmt = con.prepareStatement("DELETE FROM Benutzer WHERE b_id = ?")) {
             pstmt.setLong(1, id);
             pstmt.executeUpdate();
         } catch (Exception ex) {
@@ -48,26 +48,24 @@ public class DeleteBenutzerServlet extends HttpServlet {
 
     private void deleteKonto(Long id) throws ServletException {
         try (Connection con = ds.getConnection();
-                PreparedStatement pstmt = con.prepareStatement("DELETE FROM Konto WHERE besitzer = ?")) {
+             PreparedStatement pstmt = con.prepareStatement("DELETE FROM Konto WHERE besitzer = ?")) {
             pstmt.setLong(1, id);
             pstmt.executeUpdate();
-        } catch (Exception ex) {
-            throw new ServletException(ex.getMessage());
-        }
-    }
-    
-    private void deleteTransaktion(Long id) throws ServletException {
-        try (Connection con = ds.getConnection();
-             PreparedStatement pstmt = con.prepareStatement(
-                     "DELETE FROM Transaktion WHERE von IN (SELECT IBAN FROM Konto WHERE besitzer = ?)")) {
-            
-            pstmt.setLong(1, id);
-            pstmt.executeUpdate();
-            
         } catch (Exception ex) {
             throw new ServletException(ex.getMessage());
         }
     }
 
-	
+    private void deleteTransaktion(Long id) throws ServletException {
+        try (Connection con = ds.getConnection();
+             PreparedStatement pstmt = con.prepareStatement(
+                     "DELETE FROM Transaktion WHERE von IN (SELECT IBAN FROM Konto WHERE besitzer = ?)")) {
+
+            pstmt.setLong(1, id);
+            pstmt.executeUpdate();
+
+        } catch (Exception ex) {
+            throw new ServletException(ex.getMessage());
+        }
+    }
 }
