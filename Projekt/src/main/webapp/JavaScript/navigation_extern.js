@@ -1,4 +1,5 @@
 //Autor: @Can, @Selim
+
 "use strict";
 
 window.addEventListener("scroll", function() {

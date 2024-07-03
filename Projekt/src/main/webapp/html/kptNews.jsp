@@ -43,8 +43,6 @@
 		</ul>
 	</nav>
 
-	<!-- Slide-Show-Inhalt -->
-
 	<div class="slideshow-container">
 		<div class="mySlides fade">
 			<div class="text">
@@ -78,8 +76,6 @@
 
 	
 	<script src="${pageContext.request.contextPath}/JavaScript/slideshow.js"></script>
-
-	<!-- Weiterer Inhalt unter der SlideShow -->
 
 	<br>
 	<br>

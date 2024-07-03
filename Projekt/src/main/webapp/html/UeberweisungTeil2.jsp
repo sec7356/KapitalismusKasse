@@ -123,7 +123,6 @@
 					<div class="form-group">
 						<label>Verwendungszweck</label> 
 						<span>
-							<!-- Verwendungszweck aus der Anfrage abrufen und anzeigen -->
 							<c:choose>
     							<c:when test="${empty requestScope.verwendungszweck}">
         							- keine Angaben - <br>
@@ -154,7 +153,6 @@
 
 				</div>
 			</section>
-<!-- 			Parameter werden an UeberweisenServlet weitergegeben -->
 			<input type="hidden" name="von" value="${sessionScope.IBAN}"> 
 			<input type="hidden" name="nach" value="${requestScope.nach}">
 			<input type="hidden" name="summe" value="${requestScope.summe}">

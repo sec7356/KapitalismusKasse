@@ -43,8 +43,6 @@
 	</ul>
 </nav>
 
-<!-- Slide-Show-Inhalt -->
-
 <div class="slideshow-container">
   <div class="mySlides fade">
   	<div class="text">Deine Firma<br> Unsere Firma!</div>
@@ -134,7 +132,6 @@
 		<a href="${pageContext.request.contextPath}/html/hilfe.jsp" class="FakeButtonStyle">Klicken für Hilfe</a>
     </article>  
 
-    <!-- Footer -->
 	<footer>
 		<p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>
 		<p>Soweit auf dieser Internetseite von der Kapitalismus Kasse die Rede ist, bezieht sich dies auf die Angebote der Kapitalismus 

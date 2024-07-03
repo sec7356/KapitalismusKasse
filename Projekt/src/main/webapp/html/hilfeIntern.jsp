@@ -1,4 +1,4 @@
-<!-- Autor: Selim -->
+<!-- Autor: Selim - mailto Fuktion von ChatGPT erstellt -->
 
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 

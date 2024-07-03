@@ -1,8 +1,6 @@
 //Autor: @Diane
+
 "use strict";
-
-
-
 
 function copyToClipboardAndDisplayText(text) {
     navigator.clipboard.writeText(text).then(function() {

@@ -1,4 +1,4 @@
-<!-- Autor:  Selim-->
+<!-- Autor: Selim - Code von mir, mit Unterstützung von ChatGPT beim Kreditrechner -->
 
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>

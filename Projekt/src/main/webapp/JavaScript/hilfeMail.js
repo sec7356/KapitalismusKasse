@@ -1,4 +1,4 @@
-//Autor: @Selim - Idee von mir, umgesetzt durch ChatGPT & passend angepasst durch mir
+//Autor: @Selim - Idee von mir, umgesetzt durch ChatGPT & passend angepasst
 
 "use strict";
 

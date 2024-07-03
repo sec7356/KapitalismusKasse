@@ -1,4 +1,4 @@
-//Autor: @Selim, @Can
+//Autor: Selim, Can - Idee von uns, Korrektur von ChatGPT
 
 "use strict";
 

@@ -1,4 +1,4 @@
-//Autor: @Can, @Selim
+//Autor: Can, Selim
 
 "use strict";
 

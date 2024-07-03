@@ -1,4 +1,5 @@
-//Autor: Can
+//Autor: Can - Code von mir, ChatGPT zur Korrektur
+
 "use strict";
 
 window.onload = function() {

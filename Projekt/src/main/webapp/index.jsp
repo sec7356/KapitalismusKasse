@@ -1,4 +1,4 @@
-<!-- Autoren: Can, Selim -->
+<!-- Autoren: Can, Selim - Disclaimer: Der Inhalt des FAQ auf allen Seiten von ChatGPT erstellt -->
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -42,8 +42,6 @@
 			<li class="right2"><a href="${pageContext.request.contextPath}/html/Banking-Login.jsp">Banking-Login</a></li>
 		</ul>
 	</nav>
-
-	<!-- Slide-Show-Inhalt -->
 
 	<div class="slideshow-container">
 		<div class="mySlides fade">
@@ -196,7 +194,6 @@
 		<a href="${pageContext.request.contextPath}/html/hilfe.jsp" class="FakeButtonStyle">Klicken für Hilfe</a>
 	</article>
 
-	<!-- Footer -->
 	<footer>
 		<p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>
 		<p>Soweit auf dieser Internetseite von der Kapitalismus Kasse die Rede ist, bezieht sich dies auf die Angebote der Kapitalismus 

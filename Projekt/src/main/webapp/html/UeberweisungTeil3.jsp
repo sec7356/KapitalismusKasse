@@ -67,11 +67,7 @@
 				<div class="account-info">
 					<div class="iban-info">
 						<label>IBAN:</label> 
-						<%
-                            String iban = (String) session.getAttribute("IBAN");
-                            String formattedIban = iban.replaceAll("(.{4})(?!$)", "$1 ");
-                        %>
-                        <span><%=formattedIban%></span>
+						<span>${sessionScope.formattedIban}</span>
 					</div>
 					<div class="saldo-info">
 						<label>Neuer Kontosaldo:</label> <span><fmt:formatNumber value="${sessionScope.kontostand}" 

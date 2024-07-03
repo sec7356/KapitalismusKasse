@@ -1,4 +1,5 @@
-//Autor: Can
+//Autor: Can - w3schools als Vorlage
+//Quelle: https://www.w3schools.com/howto/howto_js_slideshow.asp
 
 "use strict";
 
