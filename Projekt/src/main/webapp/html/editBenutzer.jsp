@@ -81,7 +81,6 @@
                 <input type="submit" class="custom-button" value="Speichern">
             </span>
         <table class="transaktionen-table">
-            <thead>
                 <tr>
                     <th>Vorname</th>
                     <th>Nachname</th>
@@ -89,8 +88,6 @@
                     <th>PIN</th>
                     <th>Admin</th>
                 </tr>
-            </thead>
-            <tbody>
                 <tr>
                     <td><input type="text" id="vorname" name="vorname" value="${empty benutzer ? '' : benutzer.vorname}" required maxlength="49"></td>
 					<td><input type="text" id="nachname" name="nachname" value="${empty benutzer ? '' : benutzer.nachname}" required maxlength="49"></td>
@@ -121,7 +118,6 @@
                             </c:choose>
                     </select></td>
                 </tr>
-            </tbody>
         </table>
         <input type="hidden" name="b_id" value="${benutzer.b_id}">
     </form>
@@ -134,7 +130,7 @@
             <h2 class="form-title">Konto-Informationen</h2>
         	<table class="transaktionen-table">
 			<c:if test="${empty kontoinformationen}">
-				<p>Keine Konto-Informationen gefunden.</p>
+				Keine Konto-Informationen gefunden.
 			</c:if>
 			<thead>
 				<tr>
