@@ -34,11 +34,6 @@ public class UeberweisenServlet extends HttpServlet {
 	    String summeStr = request.getParameter("summe");
 	    String verzweck = request.getParameter("verwendungszweck");
 
-	    System.out.println("Absender: " + vonIBAN);
-	    System.out.println("Empfänger: " + nachIBAN);
-	    System.out.println("Summe: " + summeStr);
-	    System.out.println("Verwendungszweck: " + verzweck);
-
 	    double summe = Double.parseDouble(summeStr);
 
 	    Connection conn = null;
@@ -57,7 +52,6 @@ public class UeberweisenServlet extends HttpServlet {
 
 
 	        if (vonKontostand + dispo < summe) {
-	            System.out.println("Guthaben und Dispo reichen nicht aus.");
 	            session.setAttribute("error", "Das verfügbare Guthaben und der Dispositionsrahmen sind für die Durchführung der Überweisung unzureichend.");
 	            response.sendRedirect(request.getContextPath() + "/html/Ueberweisungen.jsp");
 	            return;

@@ -104,16 +104,7 @@ public class LoginServlet extends HttpServlet {
                     benutzer.setPin(rs.getInt("pin"));
                     benutzer.setAdmin(rs.getBoolean("admin"));
                     benutzer.setProfilbild(rs.getBytes("profilBild"));
-
-                    // Debugging-Ausgaben zur Überprüfung der Benutzerdaten aus der DB
-                    System.out.println("DB b_id: " + rs.getLong("b_id"));
-                    System.out.println("DB Vorname: " + rs.getString("vorname"));
-                    System.out.println("DB Nachname: " + rs.getString("nachname"));
-                    System.out.println("DB Email: " + rs.getString("email"));
-                    System.out.println("DB Pin: " + rs.getInt("pin"));
-                } else {
-                    System.out.println("No user found with email: " + email + " and pin: " + pin);
-                }
+                } 
             }
         } catch (Exception ex) {
             throw new ServletException(ex.getMessage(), ex);
