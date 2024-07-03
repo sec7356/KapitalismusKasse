@@ -1,4 +1,4 @@
-//Autor: Diane Grundidee und Hauptteil des Code, ChatGPT zur korrekten & effizienteren Umsetzung (StringBuilder sqlBuilder)
+//Autor: Diane - Grundidee und Hauptteil des Code von mir, ChatGPT zur korrekten & effizienteren Umsetzung (StringBuilder sqlBuilder)
 package edu.thi.servlets;
 
 import jakarta.annotation.Resource;

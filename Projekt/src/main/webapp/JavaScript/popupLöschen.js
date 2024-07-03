@@ -1,4 +1,4 @@
-//Autor: @Diane
+//Autor: Diane - Grundidee und Hauptteil des Code von mir, ChatGPT zur korrekten & effizienteren Umsetzung
 
 "use strict";
 

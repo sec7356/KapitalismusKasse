@@ -1,4 +1,4 @@
-//Autor: Diane, mit Fehlerkorrektur von ChatGPT
+//Autor: Diane
 
 package edu.thi.servlets;
 
