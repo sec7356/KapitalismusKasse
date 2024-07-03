@@ -67,7 +67,7 @@
 		<div class="profile-box">
 			<div class="profilbild">
 				<img src="${pageContext.request.contextPath}/DisplayImageServlet"
-					alt="Profilbild" />
+					alt="Profilbild">
 			</div>
 			<div class="profile-text">
 				<p id="greeting">
