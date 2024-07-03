@@ -1,4 +1,4 @@
-//Autor: Can
+//Autor: Can - ChatGPT zur Korrektur verwendet
 
 package edu.thi.servlets;
 

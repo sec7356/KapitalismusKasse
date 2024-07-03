@@ -1,6 +1,4 @@
-//Autor: @Diane
-
-//von KI erstellt
+//Autor: @Diane - mit KI erstellt
 
 package edu.thi.java;
 

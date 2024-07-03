@@ -1,4 +1,4 @@
-//Autor: Diane, Can
+//Autor: Diane, Can - ChatGPT zur effizienteren Umsetzung genutzt (sqlBuilder)
 
 package edu.thi.servlets;
 
