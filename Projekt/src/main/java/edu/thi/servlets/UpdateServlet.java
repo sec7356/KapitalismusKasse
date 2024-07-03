@@ -1,4 +1,4 @@
-//Autor: Diane + ChatGpt
+//Autor: Diane Grundidee und Hauptteil des codes, ChatGpt zur korrekten Umsetzung & Fehlerkorrektur
 package edu.thi.servlets;
 
 import jakarta.annotation.Resource;
