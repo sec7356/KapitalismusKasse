@@ -1,4 +1,3 @@
-/* register.js */
 //Autor: Diane 
 "use strict";
 
@@ -22,23 +21,19 @@ function handleEmailInput() {
     }
 }
 
-function checkEmailAvailability(email) {    
+function checkEmailAvailability(email) {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.responseType = "json";
-    xmlhttp.onreadystatechange = function() {
-        if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-            handleEmailResponse(xmlhttp.response);
-        }
-    };
+
+    xmlhttp.addEventListener("load", handleEmailResponse);
     
-    // Hier direkt den Pfad zum Servlet angeben, z.B. '/CheckEmailAvailability'
     xmlhttp.open("POST", '../CheckEmailAvailability', true);
     xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xmlhttp.send("email=" + encodeURIComponent(email));
 }
 
-function handleEmailResponse(response) {
-    
+function handleEmailResponse( ) {
+    var response = this.response;
     var emailStatus = document.getElementById('emailStatus');
     var emailErrorMessage = document.getElementById('emailErrorMessage');
 
@@ -57,7 +52,7 @@ function handleEmailResponse(response) {
     } else {
         clearEmailStatus();
         disableRegisterButton();
-    }
+    }
 }
 
 function clearEmailStatus() {
@@ -96,6 +91,6 @@ function checkPINConfirmation() {
     } else {
         pinInputContainer.classList.remove('correct');
         pinInputContainer.classList.add('incorrect');
-        pinInputContainer.setAttribute('data-feedback', '✘');
-    }
+        pinInputContainer.setAttribute('data-feedback', '✘');
+    }
 }
