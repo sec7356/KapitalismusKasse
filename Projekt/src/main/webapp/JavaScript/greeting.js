@@ -3,6 +3,7 @@
 "use strict";
 
 // Funktion zur Bestimmung der Begrüßung basierend auf der Tageszeit
+document.addEventListener('DOMContentLoaded', function() {
 function Begruessung() {
     var jetzt = new Date();
     var stunde = jetzt.getHours();
@@ -24,7 +25,5 @@ function Begruessung() {
 }
 // Begrüßung bei Seitenladen einstellen
 window.onload = Begruessung;
-
-
-
+});
 

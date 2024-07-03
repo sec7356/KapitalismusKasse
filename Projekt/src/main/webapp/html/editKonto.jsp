@@ -15,7 +15,7 @@
     <title>Alle Buchungen - Kapitalismus-Kasse</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleIntern.css">
     <script src="${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
-    <script src="${pageContext.request.contextPath}/JavaScript/greetingAdmin.js"></script>
+    <script src="${pageContext.request.contextPath}/JavaScript/greetingAdmin.js" defer></script>
     <script src="${pageContext.request.contextPath}/JavaScript/Zwischenablage.js"></script>
     <script src="${pageContext.request.contextPath}/JavaScript/navigation_intern.js"></script>
     
@@ -26,6 +26,14 @@
 	    <div id="cookieWarning">Bitte aktivieren Sie Ihre Cookies um fortzufahren!<br>
 	        <button id="reloadButton">Neu laden</button>
    		</div>
+<noscript>
+<div class="noscript-message-container">
+            <div class="noscript-message">
+                JavaScript ist deaktiviert. Bitte aktivieren Sie JavaScript, um diese Webseite vollständig nutzen zu können.
+            </div>
+        </div>
+</noscript>
+
 <nav id="navbar">
 		<ul>
 			<li>

@@ -28,8 +28,6 @@
         </div>
 </noscript>
   
-  
-  
 <nav id="navbar">
 	<ul>
 		<li>

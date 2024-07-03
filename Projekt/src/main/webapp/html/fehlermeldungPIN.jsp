@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico">
     <title>Fehlermeldung - Kapitalismus-Kasse</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style1.css">
 <script src="${pageContext.request.contextPath}/JavaScript/cookieCheck.js"></script>
@@ -18,6 +18,15 @@
 	    <div id="cookieWarning">Bitte aktivieren Sie Ihre Cookies um fortzufahren!<br>
 	        <button id="reloadButton">Neu laden</button>
    		</div>
+   		
+<noscript>
+<div class="noscript-message-container">
+            <div class="noscript-message">
+                JavaScript ist deaktiviert. Bitte aktivieren Sie JavaScript, um diese Webseite vollständig nutzen zu können.
+            </div>
+        </div>
+</noscript>
+
     <header>
         <h1>Oops! Bei der Registrierung ist Etwas ist schief gelaufen.</h1>
     </header>
