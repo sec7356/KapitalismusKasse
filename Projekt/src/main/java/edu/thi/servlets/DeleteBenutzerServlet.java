@@ -1,4 +1,4 @@
-//Autor: Diane
+//Autor: Diane, Can
 
 package edu.thi.servlets;
 

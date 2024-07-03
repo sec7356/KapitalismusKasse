@@ -1,4 +1,4 @@
-//Autor: Can
+//Autor: Selim
 
 package edu.thi.servlets;
 
