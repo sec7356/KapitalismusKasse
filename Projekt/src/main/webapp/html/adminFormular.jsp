@@ -14,7 +14,7 @@
     <script src="${pageContext.request.contextPath}/JavaScript/PinAusblenden.js"></script>
     <script src="${pageContext.request.contextPath}/JavaScript/greetingAdmin.js" defer></script>
     <script src="${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
-	<script src="${pageContext.request.contextPath}/JavaScript/navigation_intern.js"></script>
+	<script src="${pageContext.request.contextPath}/JavaScript/navigation_admin.js"></script>
     
 <script src="${pageContext.request.contextPath}/JavaScript/cookieCheck.js"></script>
 </head>
