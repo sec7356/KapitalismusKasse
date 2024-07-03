@@ -1,4 +1,4 @@
-<!-- Autor: @Selim, @Can-->
+<!-- Autoren: Selim, Can-->
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 

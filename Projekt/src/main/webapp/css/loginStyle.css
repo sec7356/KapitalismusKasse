@@ -1,5 +1,4 @@
-/* Autor: @Selim */
-/* validiert am 02.07 */
+/* Autor: Selim */
 
 @import url('styleExtern.css');
 @import url('fakeButtons.css');
@@ -17,7 +16,7 @@
 }
 
 .login-form {
-    background: rgb(209, 209, 209, 0.9); /* Weißer, halbtransparenter Hintergrund für das Formular */
+    background: rgb(209, 209, 209, 0.9); 
     padding: 30px;
     border-radius: 5px;
     text-align: center;

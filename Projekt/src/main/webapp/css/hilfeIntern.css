@@ -1,5 +1,4 @@
-/* Autor: @Selim */
-/* validiert am 02.07 */
+/* Autor: Selim */
 
 @import url('styleIntern.css');
 
@@ -24,23 +23,23 @@ body {
 	font-size: 2.1em;
 	font-weight: bold;
 	position: absolute;
-	left: 50%; /* Zentrieren horizontal zur Trennlinie */
-    transform: translate(-50%, -50%); /* Zentrieren des Textes */
-    color: #f0f0f0; /* Hintergrundfarbe des Textes (optional) */
-    padding: 0 10px; /* Innenabstand des Textes (optional) */
-    z-index: 1; /* Text über der Trennlinie anzeigen */
+	left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: #f0f0f0; 
+    padding: 0 10px; 
+    z-index: 1; 
 }
 
 /* liste resetten wegen navigation (nach rechts gerutscht) */
 .reset-ul {
-    list-style: disc; /* Default list style */
-    padding-left: 40px; /* Default padding */
-    margin: 10px 0; /* Default margin */
-    position: relative; /* Ensure these elements are positioned normally */
+    list-style: disc; 
+    padding-left: 40px; 
+    margin: 10px 0; 
+    position: relative; 
 }
 .reset-ul li {
-    position: static; /* Override any absolute positioning */
-    margin-bottom: 5px; /* Add some space between items */
+    position: static; 
+    margin-bottom: 5px; 
 }
 
 .internForm {
@@ -50,16 +49,15 @@ body {
 
 /* Stil für Formulareingabefelder */
 .internForm input[type="text"] , .internForm textarea{
-	width: 97%; /* Volle Breite des Eingabefeldes */
-	padding: 10px; /* Innenabstand des Eingabefeldes */
+	width: 97%;
+	padding: 10px;
 	margin-bottom: 15px;
-	/* Abstand nach unten zwischen den Eingabefeldern */
-	border: 1px solid #ccc; /* Rand des Eingabefeldes */
-	border-radius: 5px; /* Abgerundete Ecken des Eingabefeldes */
+	border: 1px solid #ccc; 
+	border-radius: 5px; 
 }
 
 textarea {
-	resize: none; /* nicht per Maus Größe ändern */
+	resize: none; 
 }
 
 .partner {

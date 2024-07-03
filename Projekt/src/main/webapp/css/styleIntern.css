@@ -1,5 +1,4 @@
-/* Autor: @Diane, @Selim, @Can */
-/* validiert */
+/* Autor: Diane, Selim, Can */
 
 @import url('popup.css');
 @import url('navigation.css');
@@ -13,15 +12,15 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    padding-bottom: 60px; /* Platz für den Footer reservieren */
+    padding-bottom: 60px; 
     background-color: #fbfbfb;
 }
 
 /* Aktionsbox Start */
 .aktionen {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 Spalten */
-    grid-gap: 15px; /* Abstand zwischen Spalten */
+    grid-template-columns: repeat(3, 1fr); 
+    grid-gap: 15px; 
     padding: 20px 60px;
 }
 
@@ -65,28 +64,27 @@ body {
 
 /* CSS für adminForm-Klasse */
 .internForm {
-    width: 80%; /* Breite des Formulars */
-    margin: 0 auto; /* Zentriert das Formular horizontal */
-    padding: 20px; /* Innenabstand des Formulars */
-    background-color: #f0f0f0; /* Hintergrundfarbe des Formulars */
-    border-radius: 10px; /* Abgerundete Ecken des Formulars */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Schatten um das Formular */
+    width: 80%; 
+    margin: 0 auto; 
+    padding: 20px; 
+    background-color: #f0f0f0; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
 
 /* Stil für Überschriften im Formular */
 .internForm h2 {
-    font-size: 24px; /* Schriftgröße */
-    margin-bottom: 20px; /* Abstand nach unten */
+    font-size: 24px;
+    margin-bottom: 20px; 
 }
 
 /* Stil für Formulareingabefelder */
 .internForm input[type="text"], .internForm input[type="email"], .internForm input[type="password"] {
-    width: 50%; /* Volle Breite des Eingabefeldes */
-    padding: 10px; /* Innenabstand des Eingabefeldes */
+    width: 50%; 
+    padding: 10px; 
     margin-bottom: 15px;
-    /* Abstand nach unten zwischen den Eingabefeldern */
-    border: 1px solid #ccc; /* Rand des Eingabefeldes */
-    border-radius: 5px; /* Abgerundete Ecken des Eingabefeldes */
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
 }
 
 /* Allgemeine Stile für Formulareingabefelder und Buttons */
@@ -104,7 +102,7 @@ button[type="submit"], input[type="submit"], button[type="reset"], input[type="r
 /* Zusätzliche globale Stile für Formulareingabefelder und Buttons */
 input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, button[type="submit"]:focus, button[type="reset"]:focus {
     outline: none; 
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Fügt einen benutzerdefinierten Fokus-Schatten hinzu */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
 }
 
 .custom-button {
@@ -182,9 +180,8 @@ form {
 
 /* Zusätzliche globale Stile für Formulareingabefelder und Buttons */
 input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, button[type="submit"]:focus, button[type="reset"]:focus {
-    outline: none; /* Entfernt die Standard-Fokusrahmen */
+    outline: none; 
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-    /* Fügt einen benutzerdefinierten Fokus-Schatten hinzu */
 }
 
 .geldHintergrund {
@@ -213,7 +210,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
     width: 100%;
     border-collapse: collapse;
     font-size: 14px;    
-    text-align: center; /* Zentriert den Text innerhalb der Tabelle */
+    text-align: center; 
 }
 
 .transaktionen-table th, .transaktionen-table td {

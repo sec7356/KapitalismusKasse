@@ -1,11 +1,10 @@
-/* Autor: @Diane, @Selim, @Can */
-/* validiert am 02.07 */
+/* Autor: Diane, Selim, Can */
 
 @import url('popup.css');
 @import url('cookiePopup.css');
 @import url('fakeButtons.css');
 
-/* Deaktiviere die Textauswahl auf der gesamten Webseite */
+/* Deaktiviert die Textauswahl auf der gesamten Webseite */
 body {
 	-webkit-user-select: none; /* Safari */
 	-moz-user-select: none; /* Firefox */
@@ -15,33 +14,33 @@ body {
 
 /* Globale Stile */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #fbfbfb;
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background-color: #fbfbfb;
 }
 
 header, nav, aside, article {
-    margin: 0px;
-    padding: 5px;
+	margin: 0px;
+	padding: 5px;
 }
 
 main {
-    flex: 1; /* Wichtig, damit der Inhalt den restlichen Platz einnimmt */
+	flex: 1; /* Wichtig, damit der Inhalt den restlichen Platz einnimmt */
 }
 
 /* Footer-Stile */
 footer {
-    height: 70px;
-    background-color: #d1d1d1;
-    color: rgb(0, 0, 0);
-    text-align: center;
-    padding: 0px;
-    justify-content: center;
-   	transition: bottom 1s ease; /* Fügt eine sanfte Animation hinzu */    
+	height: 70px;
+	background-color: #d1d1d1;
+	color: rgb(0, 0, 0);
+	text-align: center;
+	padding: 0px;
+	justify-content: center;
+	transition: bottom 1s ease;
 }
 
 /* Navigation horizontal */
@@ -62,14 +61,13 @@ footer {
 	position: fixed;
 }
 
-.imageMitLink { /*Neuer Style für das Logo ganz oben mit Link zur Startseite*/
+.imageMitLink {
 	position: absolute;
 	height: 60px;
 	max-width: 60px;
 	left: 12px;
 	margin-top: -26px;
 	margin-left: 3px;
-	
 }
 
 .company-name {
@@ -105,28 +103,26 @@ nav {
 }
 
 nav.small {
-	background-color: #d1d1d1; /* Neue Hintergrundfarbe */
-	transition: background-color 0.3s ease-in-out;	/* Übergangseffekt für die Hintergrundfarbe */
+	background-color: #d1d1d1;
+	transition: background-color 0.3s ease-in-out;
 }
 
 nav.small a {
-	color: white; /* Ändere die Schriftfarbe auf Weiß */
+	color: white;
 	transition: color 0.3s ease-in-out;
-	/* Übergangseffekt für die Schriftfarbe */
 }
 
 nav ul {
 	align-items: center;
-	border: none; /* Zum testen hier Rahmen dotted */
+	border: none;
 	margin: 0;
 	padding: 0;
 	list-style: none;
 	display: flex;
 	justify-content: center;
-	/* Horizontale Zentrierung der Listenelemente */
 }
 
-.right2 { /*FIX VOM BUG: Listenelemente letzte immer nach rechts verschoben*/
+.right2 {
 	position: absolute;
 	right: 0;
 }
@@ -151,7 +147,7 @@ nav li {
 }
 
 nav a {
-	padding-bottom: 3px; /* Fügt Platz für den Unterstrich hinzu */
+	padding-bottom: 3px;
 	text-decoration: none;
 	color: black;
 	font-size: 14px;
@@ -162,18 +158,17 @@ nav a:focus, nav a:hover, nav a.active {
 	color: gold;
 	position: relative;
 	color: rgb(55, 81, 128);
-	/* Schriftfarbe für Hover-Effekt, wenn nicht aktiv */
 	background-color: var(--accent1-color);
 }
 
 nav a.active::after {
-	content: ''; /* Pseudoelement für den Unterstrich */
+	content: '';
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	width: 100%; /* Breite des Unterstrichs auf 100% des Links setzen */
+	width: 100%;
 	height: 2px;
-	background-color: #b89e14; /* Farbe des Unterstrichs */
+	background-color: #b89e14;
 }
 
 /* Ende horizontale Navigation */
@@ -198,98 +193,92 @@ img {
 	width: 100%;
 }
 
-
-
 .update_window {
 	margin-top: 30px;
-    position: relative;
-    height: 100%;
-    width: 100%;
-    background: url('../img/Bild1.jpeg') no-repeat center right;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	position: relative;
+	height: 100%;
+	width: 100%;
+	background: url('../img/Bild1.jpeg') no-repeat center right;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .update-form {
-    background: rgb(209, 209, 209, 0.9); /* Weißer, halbtransparenter Hintergrund für das Formular */
-    padding: 30px;
-    border-radius: 5px;
-    text-align: center;
-    max-width: 400px;
-    width: 100%;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
-    margin-right: 40%;
+	background: rgb(209, 209, 209, 0.9);
+	padding: 30px;
+	border-radius: 5px;
+	text-align: center;
+	max-width: 400px;
+	width: 100%;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+	margin-right: 40%;
 }
 
 .update-form .form-group:nth-of-type(3) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .register-form {
-    background: rgb(209, 209, 209, 0.9); /* Weißer, halbtransparenter Hintergrund für das Formular */
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    max-width: 400px;
-    width: 100%;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
-    margin-right: 40%;
+	background: rgb(209, 209, 209, 0.9);
+	padding: 30px;
+	border-radius: 10px;
+	text-align: center;
+	max-width: 400px;
+	width: 100%;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+	margin-right: 40%;
 }
 
 .register-form .form-group:nth-of-type(6) {
 	display: flex;
-    justify-content: space-between;
-    align-items: center;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .form-group {
-    margin-bottom: 5px;
-    text-align: left;
-    width:100%;
+	margin-bottom: 5px;
+	text-align: left;
+	width: 100%;
 }
 
 .flex-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px; 
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
 }
 
 .flex-item {
-    flex: 1;
+	flex: 1;
 }
 
 label {
 	font-weight: bold;
-    display: block;
-    margin-bottom: 2px;
+	display: block;
+	margin-bottom: 2px;
 }
 
 .required-fields {
-    display: inline-block;
-    font-size: 12px;
-    color: #d9534f; /* Rote Farbe für den Hinweistext */
-    margin-top: 5px;
+	display: inline-block;
+	font-size: 12px;
+	color: #d9534f; 
+	margin-top: 5px;
 }
 
 .login-form .form-group:nth-of-type(3) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
-
 
 /*Login-Fenster hier zu Ende */
-
-
 body, html {
-    height: 100%;
-    font-family: Arial, sans-serif;
+	height: 100%;
+	font-family: Arial, sans-serif;
 }
-
 
 /* Slideshow container */
 .slideshow-container {
@@ -307,23 +296,23 @@ body, html {
 .text {
 	position: absolute;
 	top: 30%;
-	left: 50px; /* Anpassen, um den Text von links zu positionieren */
+	left: 50px; 
 	transform: translateY(-30%);
-	z-index: 1; /* Stellt sicher, dass der Text über dem Bild liegt */
-	color: white; /* Textfarbe anpassen */
-	font-size: 50px; /* Textgröße anpassen */
-	padding: 10px; /* Optional: Füge Abstand zum Text hinzu */
+	z-index: 1; 
+	color: white; 
+	font-size: 50px; 
+	padding: 10px; 
 }
 
 .text_info {
 	position: absolute;
 	top: 60%;
-	left: 50px; /* Anpassen, um den Text von links zu positionieren */
+	left: 50px; 
 	transform: translateY(-30%);
-	z-index: 1; /* Stellt sicher, dass der Text über dem Bild liegt */
-	color: white; /* Textfarbe anpassen */
-	font-size: 20px; /* Textgröße anpassen */
-	padding: 10px; /* Optional: Füge Abstand zum Text hinzu */
+	z-index: 1; 
+	color: white; 
+	font-size: 20px; 
+	padding: 10px; 
 }
 
 .prev, .next {
@@ -341,13 +330,11 @@ body, html {
 	user-select: none;
 }
 
-/* Position the "next button" to the right */
 .next {
 	right: 0;
 	border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a grey background color */
 .prev:hover, .next:hover {
 	background-color: #f1f1f1;
 	color: black;
@@ -359,7 +346,6 @@ body, html {
 	left: 8px;
 }
 
-/* The dots/bullets/indicators */
 .dot {
 	height: 10px;
 	width: 10px;
@@ -374,18 +360,21 @@ body, html {
 	background-color: #b89e14;
 }
 
-/* Fading animation */
 .fade {
 	animation-name: fade;
 	animation-duration: 2s;
 }
 
 @keyframes fade {
-	from {opacity: 0.8}
-to {opacity: 1}
+	from {opacity: 0.8
 }
 
-/* On smaller screens, decrease text size */
+to {
+	opacity: 1
+}
+
+}
+
 @media only screen and (max-width: 300px) {
 	.text {
 		font-size: 11px
@@ -394,18 +383,16 @@ to {opacity: 1}
 /* Slideshow-Ende */
 #Banktext {
 	padding-left: 60px;
-	color: black; /* Ändere die Textfarbe auf rot */
+	color: black; 
 	font-size: 2.3em;
 	font-family: Verdana, sans-serif;
-	font-weight: bold; /* Ändere die Schrift auf fett */
-	/* Füge weitere CSS-Regeln hinzu, um die Formatierung anzupassen */
+	font-weight: bold; 
 }
 
 .grid-container {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	/* Erstellt drei Spalten mit gleicher Breite */
-	grid-gap: 20px; /* Fügt einen Abstand zwischen den Spalten hinzu */
+	grid-gap: 20px; 
 	padding: 0 60px;
 	margin-bottom: 20px;
 }
@@ -425,7 +412,6 @@ aside {
 article {
 	padding-left: 60px;
 	background-color: #fff;
-/* 	padding: 20px; */
 }
 
 /* Formular-Stile */
@@ -457,99 +443,95 @@ input[type="email"] {
 /* Stil für Submit-Button */
 button[type="submit"], button[type="reset"], button[type="register"] {
 	width: auto;
-/* 	background-color: #007bff; */
 	background-color: #b89e14;
 	color: #fff;
 	cursor: pointer;
-	padding: 5px 10px; /* Ändere den Padding nach Bedarf */
-	border: none; /* Entfernt die Standard-Bordereigenschaften */
-	border-radius: 5px; /* Rundet die Ecken des Buttons */
-	font-size: 14px; /* Ändere die Schriftgröße nach Bedarf */
+	padding: 5px 10px; 
+	border: none; 
+	border-radius: 5px; 
+	font-size: 14px; 
 }
 
 /* Button: Hover-Effekt */
 button[type="submit"]:hover, button[type="register"]:hover {
-	background-color: rgb(55, 81, 128); /*#0056b3; */
-	/* Ändere die Hintergrundfarbe im Hover-Zustand */
+	background-color: rgb(55, 81, 128); 
 }
 
 /* Stil für das Select-Element */
 select {
-	width: 200px; /* Füllt die gesamte verfügbare Breite */
-	height: 50px; /* Ändere die Höhe nach Bedarf */
-	padding: 10px; /* Fügt etwas Platz um den Text ein */
+	width: 200px; 
+	height: 50px; 
+	padding: 10px; 
 	box-sizing: border-box;
-	/* Inkludiert das Padding in die Gesamtbreite */
 }
 
 /* Stil für das Textfeld */
 textarea {
 	padding-left: 60px;
-	width: 80%; /* Füllt die gesamte verfügbare Breite */
-	height: 250px; /* Ändere die Höhe nach Bedarf */
-	padding: 10px; /* Fügt etwas Platz um den Text ein */
+	width: 80%; 
+	height: 250px; 
+	padding: 10px; 
 	box-sizing: border-box;
-	/* Inkludiert das Padding in die Gesamtbreite */
 }
 
 .error-message {
 	color: white;
-    background-color: #ff6666;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    margin-top: -25px;
-    margin-bottom: 15px;
+	background-color: #ff6666;
+	padding: 10px;
+	border-radius: 5px;
+	text-align: center;
+	margin-top: -25px;
+	margin-bottom: 15px;
 }
 
 #logout-message {
-    color: white;
-    background-color: #ff6666;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    margin-top: -25px;
-    margin-bottom: 15px;
+	color: white;
+	background-color: #ff6666;
+	padding: 10px;
+	border-radius: 5px;
+	text-align: center;
+	margin-top: -25px;
+	margin-bottom: 15px;
 }
 /* Content auf index */
 .contentIndex {
 	width: 96%;
-    margin: auto;
-    background-color: #d1d1d1;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    color: #ffffff;
+	margin: auto;
+	background-color: #d1d1d1;
+	padding: 15px;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	color: #ffffff;
 }
 
 .contentIndex h2 {
-    margin-bottom: 20px;
-    font-size: 2em;
+	margin-bottom: 20px;
+	font-size: 2em;
 }
 
 .flexIndexContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
 }
 
 .content-item {
-    flex: 1 1 200px; /* flex-grow, flex-shrink, flex-basis */
-    text-align: center;
-    max-width: 250px;
+	flex: 1 1 200px; 
+	text-align: center;
+	max-width: 250px;
 }
 
 .content-item img {
-    width: auto;
-    height: auto;
-    max-width: 150px; /* maximale Breite der Bilder */
-    max-height: 150px; /* maximale Höhe der Bilder */
-    margin-bottom: 10px;
+	width: auto;
+	height: auto;
+	max-width: 150px; 
+	max-height: 150px; 
+	margin-bottom: 10px;
 }
 
 .content-item p {
-    font-size: 1em;
-    margin: 0;
+	font-size: 1em;
+	margin: 0;
 }

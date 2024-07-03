@@ -1,5 +1,4 @@
-/* Autor: @Selim */
-/* validiert */
+/* Autor: Selim */
 
 @import url('navigation.css');
 @import url('cookiePopup.css');
@@ -12,7 +11,7 @@ body {
 	font-family: Arial, sans-serif;
 	margin: 0;
 	padding: 0;
-	padding-bottom: 60px; /* Platz für den Footer reservieren */
+	padding-bottom: 60px; 
 }
 
 /* User-Startseite und Kontostand */
@@ -245,10 +244,10 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	background-color: #b89e14;
 	color: #fff;
 	cursor: pointer;
-	padding: 5px 10px; /* Ändere den Padding nach Bedarf */
-	border: none; /* Entfernt die Standard-Bordereigenschaften */
-	border-radius: 5px; /* Rundet die Ecken des Buttons */
-	font-size: 14px; /* Ändere die Schriftgröße nach Bedarf */
+	padding: 5px 10px; 
+	border: none; 
+	border-radius: 5px; 
+	font-size: 14px; 
 }
 
 .buttonStyle:hover {

@@ -1,5 +1,4 @@
 /* Autor: Diane */
-/* validiert */
 
 @import url('cookiePopup.css');
 
@@ -8,7 +7,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    padding-bottom: 60px; /* Platz für den Footer reservieren */
+    padding-bottom: 60px; 
 }
 
 header, nav, aside, article, footer {
@@ -23,8 +22,8 @@ header {
     color: #fff;
     display: flex;
     text-align: center;
-    justify-content: center; /* Zentriert horizontal */
-    align-items: center; /* Zentriert vertikal */
+    justify-content: center; 
+    align-items: center; 
     padding: 20px;
 }
 
@@ -40,10 +39,8 @@ footer {
 	color: rgb(0, 0, 0);
 	text-align: center;
 	padding: 0px;
-	transition: bottom 1s ease; /* Fügt eine sanfte Animation hinzu */
+	transition: bottom 1s ease; 
 }
-/* Um den Footer beim Hochscrollen zu verstecken */
-
 
 /* Navigation-Stile */
 nav {
@@ -52,25 +49,25 @@ nav {
     background-color: #444;
     color: #fff;
     padding: 5px;
-    justify-content: center; /* Zentriert horizontal */
-    align-items: center; /* Zentriert vertikal */
+    justify-content: center; 
+    align-items: center; 
 }
 
 /* Link-Stile */
 .white-anchor {
     font-size: 16px;
-    color: #ffffff; /* Weiß */
-    text-decoration: none; /* Keine Unterstreichung */
+    color: #ffffff;
+    text-decoration: none; 
 }
 
 .black-anchor {
     font-size: 16px;
-    color: #000000; /* Schwarz */
-    text-decoration: underline; /* mit Unterstreichung */
+    color: #000000; 
+    text-decoration: underline; 
 }
 
 a:hover {
-    text-decoration: underline; /* Unterstreichung bei Hover */
+    text-decoration: underline; 
 }
 
 /* Sidebar-Stile */
@@ -121,31 +118,31 @@ button[type="register"] {
     background-color: #007bff;
     color: #fff;
     cursor: pointer;
-    padding: 5px 10px; /* Ändere den Padding nach Bedarf */
-    border: none; /* Entfernt die Standard-Bordereigenschaften */
-    border-radius: 5px; /* Rundet die Ecken des Buttons */
-    font-size: 14px; /* Ändere die Schriftgröße nach Bedarf */
+    padding: 5px 10px; 
+    border: none; 
+    border-radius: 5px; 
+    font-size: 14px; 
 }
 
 /* Button: Hover-Effekt */
 button[type="submit"]:hover,
 button[type="register"]:hover{
-    background-color: #0056b3; /* Ändere die Hintergrundfarbe im Hover-Zustand */
+    background-color: #0056b3; 
 }
 
 
 /* Stil für das Select-Element */
 select {
-    width: 200px; /* Füllt die gesamte verfügbare Breite */
-    height: 50px; /* Ändere die Höhe nach Bedarf */
-    padding: 10px; /* Fügt etwas Platz um den Text ein */
-    box-sizing: border-box; /* Inkludiert das Padding in die Gesamtbreite */
+    width: 200px; 
+    height: 50px; 
+    padding: 10px; 
+    box-sizing: border-box; 
 }
 
 /* Stil für das Textfeld */
 textarea {
-    width: 80%; /* Füllt die gesamte verfügbare Breite */
-    height: 250px; /* Ändere die Höhe nach Bedarf */
-    padding: 10px; /* Fügt etwas Platz um den Text ein */
-    box-sizing: border-box; /* Inkludiert das Padding in die Gesamtbreite */
+    width: 80%; 
+    height: 250px; 
+    padding: 10px; 
+    box-sizing: border-box; 
 }

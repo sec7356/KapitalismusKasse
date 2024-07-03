@@ -1,9 +1,8 @@
-/* Autor: @Can */
-/* validiert am 02.07 */
+/* Autor: Can */
 
 body.noscript-active {
 	background-color: rgba(0, 0, 0, 0.5);
-	overflow: hidden; /* Verhindert das Scrollen */
+	overflow: hidden; 
 }
 
 .noscript-message-container {

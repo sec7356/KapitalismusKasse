@@ -1,5 +1,4 @@
-/* Autor: @Diane, @Selim, @Can */
-/* validiert */
+/* Autor: Diane, Selim, Can */
 
 @import url('style.css');
 @import url('cookiePopup.css');
@@ -12,10 +11,9 @@
 
 #weiteres {
 	padding: 10px 0px 10px 60px;
-	color: black; /* Ändere die Textfarbe auf rot */
+	color: black; 
 	font-size: 1.5em;
 	font-family: Verdana, sans-serif;
-	/* Füge weitere CSS-Regeln hinzu, um die Formatierung anzupassen */
 	background-color: #ddd;
 }
 
@@ -33,7 +31,7 @@
 
 .faq-item {
 	margin-bottom: 20px;
-	padding-left: 60px; /* Abstand von links */
+	padding-left: 60px; 
 }
 
 .faq-question {
@@ -49,7 +47,7 @@
 }
 
 .faq-answer::before {
-	content: '→'; /* Pfeil vor der Antwort */
+	content: '→'; 
 	position: absolute;
 	left: -20px;
 	color: #000;
@@ -80,10 +78,10 @@
 	background-color: #b89e14;
 	color: #fff;
 	cursor: pointer;
-	padding: 5px 10px; /* Ändere den Padding nach Bedarf */
-	border: none; /* Entfernt die Standard-Bordereigenschaften */
-	border-radius: 5px; /* Rundet die Ecken des Buttons */
-	font-size: 14px; /* Ändere die Schriftgröße nach Bedarf */
+	padding: 5px 10px; 
+	border: none; 
+	border-radius: 5px; 
+	font-size: 14px; 
 	text-decoration: none;
 }
 

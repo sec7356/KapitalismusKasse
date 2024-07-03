@@ -1,4 +1,4 @@
-/* Autor: @Selim */
+/* Autor: Selim */
 
 .FakeButtonStyle {
 	display: inline-block;
@@ -7,10 +7,10 @@
 	background-color: #b89e14;
 	color: #fff;
 	cursor: pointer;
-	padding: 5px 10px; /* Ändere den Padding nach Bedarf */
-	border: none; /* Entfernt die Standard-Bordereigenschaften */
-	border-radius: 5px; /* Rundet die Ecken des Buttons */
-	font-size: 14px; /* Ändere die Schriftgröße nach Bedarf */
+	padding: 5px 10px; 
+	border: none; 
+	border-radius: 5px; 
+	font-size: 14px;
 	text-decoration: none;
 	text-align: center;
 }

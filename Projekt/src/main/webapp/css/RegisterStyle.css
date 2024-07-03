@@ -1,45 +1,42 @@
-/* Autor: @Selim, @Can, @Diane */
-/* validiert am 02.07 */
+/* Autor: Selim, Can, Diane */
 
 @import url('popup.css');
 @import url('cookiePopup.css');
 @import url('fakeButtons.css');
 @import url('javascriptMeldung.css');
 
-
-/* Deaktiviere die Textauswahl auf der gesamten Webseite */
+/* Deaktiviert die Textauswahl auf der gesamten Webseite */
 body {
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Standard */
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: url('../img/eingangbankNeu.jpg') no-repeat center right;
-    background-size: cover;
+	-webkit-user-select: none; /* Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Standard */
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background: url('../img/eingangbankNeu.jpg') no-repeat center right;
+	background-size: cover;
 }
 
 header, aside, article {
-    margin: 0;
-    padding: 5px;
+	margin: 0;
+	padding: 5px;
 }
 
 /* Footer-Stile */
 footer {
-    height: 70px;
-    bottom: 0px;
-    background-color: #d1d1d1;
-    color: rgb(0, 0, 0);
-    text-align: center;
-    padding: 0px;
-    padding-top: 10px;
-    justify-content: center;
-   	transition: bottom 1s ease; /* Fügt eine sanfte Animation hinzu */    
+	height: 70px;
+	bottom: 0px;
+	background-color: #d1d1d1;
+	color: rgb(0, 0, 0);
+	text-align: center;
+	padding: 0px;
+	padding-top: 10px;
+	justify-content: center;
+	transition: bottom 1s ease; 
 }
 
 /* Navigation horizontal */
-
 .container {
 	position: absolute;
 	left: 0;
@@ -57,14 +54,13 @@ footer {
 	position: fixed;
 }
 
-.imageMitLink { /*Neuer Style für das Logo ganz oben mit Link zur Startseite*/
+.imageMitLink {
 	position: absolute;
 	height: 60px;
 	max-width: 60px;
 	left: 12px;
 	margin-top: -26px;
 	margin-left: 3px;
-	
 }
 
 .company-name {
@@ -90,34 +86,32 @@ footer {
 
 nav {
 	position: fixed;
-	width: 100%;						
+	width: 100%;
 	background-color: white;
 	display: flex;
 	justify-content: center;
 	z-index: 1000;
-	height: 80px;		
+	height: 80px;
 }
 
 nav.small {
-	background-color: #d1d1d1; /* Neue Hintergrundfarbe */
-	transition: background-color 0.3s ease-in-out;	/* Übergangseffekt für die Hintergrundfarbe */
+	background-color: #d1d1d1;
+	transition: background-color 0.3s ease-in-out;
 }
 
 nav.small a {
-	color: white; /* Ändere die Schriftfarbe auf Weiß */
+	color: white;
 	transition: color 0.3s ease-in-out;
-	/* Übergangseffekt für die Schriftfarbe */
 }
 
 nav ul {
 	align-items: center;
-	border: none; /* Zum testen hier Rahmen dotted */
+	border: none;
 	margin: 0;
 	padding: 0;
 	list-style: none;
 	display: flex;
 	justify-content: center;
-	/* Horizontale Zentrierung der Listenelemente */
 }
 
 li:last-child {
@@ -145,7 +139,7 @@ nav li {
 }
 
 nav a {
-	padding-bottom: 3px; /* Fügt Platz für den Unterstrich hinzu */
+	padding-bottom: 3px; 
 	text-decoration: none;
 	color: black;
 	font-size: 14px;
@@ -156,196 +150,189 @@ nav a:focus, nav a:hover, nav a.active {
 	color: gold;
 	position: relative;
 	color: rgb(55, 81, 128);
-	/* Schriftfarbe für Hover-Effekt, wenn nicht aktiv */
 	background-color: var(--accent1-color);
 }
 
 nav a.active::after {
-	content: ''; /* Pseudoelement für den Unterstrich */
+	content: '';
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	width: 100%; /* Breite des Unterstrichs auf 100% des Links setzen */
+	width: 100%;
 	height: 2px;
-	background-color: #b89e14; /* Farbe des Unterstrichs */
+	background-color: #b89e14;
 }
 
 /* Ende horizontale Navigation */
 
-
 /*REGISTER-Fenster */
 .reg_window {
-    margin-top: 20px;
-    position: relative;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 40px;
+	margin-top: 20px;
+	position: relative;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 40px;
 }
 
 .register-form {
-    background: rgb(209, 209, 209, 0.9);
-    padding: 30px;
-    border-radius: 5px;
-    text-align: center;
-    max-width: 400px;
-    width: 100%;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
-    margin-right: 40%;
-    margin-top: 50px
+	background: rgb(209, 209, 209, 0.9);
+	padding: 30px;
+	border-radius: 5px;
+	text-align: center;
+	max-width: 400px;
+	width: 100%;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+	margin-right: 40%;
+	margin-top: 50px
 }
 
 .form-group {
-    margin-bottom: 15px; 
-    text-align: left;
-    width: 100%;
+	margin-bottom: 15px;
+	text-align: left;
+	width: 100%;
 }
 
 .flex-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
 }
 
 .flex-item {
-    flex: 1;
-    margin: 0;
+	flex: 1;
+	margin: 0;
 }
 
 label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
+	font-weight: bold;
+	display: block;
+	margin-bottom: 5px;
 }
 
 .required-fields {
-    display: inline-block;
-    font-size: 12px;
-    color: #d9534f; /* Rote Farbe für den Hinweistext */
-    margin-top: 5px;
+	display: inline-block;
+	font-size: 12px;
+	color: #d9534f;
+	margin-top: 5px;
 }
 
 /* Formular-Stile */
 form {
-    margin-top: 20px;
+	margin-top: 20px;
 }
 
 input[type="text"], input[type="password"], input[type="email"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #b5b5b5;
-    border-radius: 5px;
-    box-sizing: border-box;
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #b5b5b5;
+	border-radius: 5px;
+	box-sizing: border-box;
 }
 
 /* Stil für Submit-Button */
 button[type="submit"], button[type="reset"], button[type="register"] {
-    width: auto;
-    background-color: #b89e14;
-    color: #fff;
-    cursor: pointer;
-    padding: 10px 20px; 
-    border: none; 
-    border-radius: 5px; 
-    font-size: 14px; 
+	width: auto;
+	background-color: #b89e14;
+	color: #fff;
+	cursor: pointer;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	font-size: 14px;
 }
 
 /* Button: Hover-Effekt */
-.buttons button[type="submit"]:hover, .buttons button[type="reset"]:hover, .buttons button[type="register"]:hover,
-#disabledButton:hover {
-    background-color: rgb(55, 81, 128); 
+.buttons button[type="submit"]:hover, .buttons button[type="reset"]:hover,
+	.buttons button[type="register"]:hover, #disabledButton:hover {
+	background-color: rgb(55, 81, 128);
 }
-
-
 
 .g-recaptcha-container {
-    display: flex;
-    justify-content: center;
+	display: flex;
+	justify-content: center;
 }
-
 
 .buttons {
-    display: flex;
-    justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
 }
 
-.buttons button{
-    width: calc(50% - 5px); 
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-    cursor: pointer;
+.buttons button {
+	width: calc(50% - 5px);
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	font-size: 14px;
+	cursor: pointer;
 }
 
 .buttons button:first-child {
-    margin-right: 10px; 
+	margin-right: 10px;
 }
 
 .buttons button:last-child {
-    margin-left: 10px;
+	margin-left: 10px;
 }
 
-
 /* RegisterStyle.css */
-
 .email-container {
-    position: relative;
-    width: 100%;
+	position: relative;
+	width: 100%;
 }
 
 #email {
-    width: 100%;
-    box-sizing: border-box; /* Include padding in width calculation */
-    padding-right: 30px; /* Space for the status icon */
+	width: 100%;
+	box-sizing: border-box; 
+	padding-right: 30px; 
 }
 
 #emailStatus {
-    position: absolute;
-    right: 10px;
-    top: 70%; /* Adjust as needed */
-    transform: translateY(-50%);
+	position: absolute;
+	right: 10px;
+	top: 70%; 
+	transform: translateY(-50%);
 }
 
 #emailErrorMessage {
-    position: absolute;
-    top: 100%; /* Position directly below the email input */
-    left: 0;
-    width: 100%;
-    text-align: left;
-    color: #d9534f;
-    font-size: 12px;
-    display: none; /* Initially hide the error message */
+	position: absolute;
+	top: 100%; 
+	left: 0;
+	width: 100%;
+	text-align: left;
+	color: #d9534f;
+	font-size: 12px;
+	display: none;
 }
 
 .pin-input-container {
-    position: relative;
+	position: relative;
 }
 
 .pin-input-container input {
-    padding-right: 25px; /* Platz für das Feedback reservieren */
-    box-sizing: border-box; /* Padding in Berechnung einbeziehen */
+	padding-right: 25px; 
+	box-sizing: border-box; 
 }
 
 .pin-input-container::after {
-    content: attr(data-feedback); /* Pseudo-Element für das visuelle Feedback */
-    position: absolute;
-    top: 50%;
-    right: 5px; /* Abstand vom rechten Rand anpassen */
-    transform: translateY(-50%);
-    font-size: 18px; /* Optional: Größe des Symbols anpassen */
-    color: #941100; /* Farbe für das Kreuz */
+	content: attr(data-feedback);
+	position: absolute;
+	top: 50%;
+	right: 5px; 
+	transform: translateY(-50%);
+	font-size: 18px;
+	color: #941100; 
 }
 
 .pin-input-container.correct::after {
-    content: '✔'; /* Inhalt für das Häkchen */
-    color: #b89e14; /* Farbe für das Häkchen */
+	content: '✔'; 
+	color: #b89e14; 
 }
 
 .pin-input-container.incorrect::after {
-    content: '✘'; /* Inhalt für das Kreuz */
+	content: '✘'; 
 }
 
 .buttonStyle {
@@ -353,19 +340,18 @@ button[type="submit"], button[type="reset"], button[type="register"] {
 	background-color: #b89e14;
 	color: #fff;
 	cursor: pointer;
-	padding: 5px 10px; /* Ändere den Padding nach Bedarf */
-	border: none; /* Entfernt die Standard-Bordereigenschaften */
-	border-radius: 5px; /* Rundet die Ecken des Buttons */
-	font-size: 14px; /* Ändere die Schriftgröße nach Bedarf */
+	padding: 5px 10px; 
+	border: none; 
+	border-radius: 5px; 
+	font-size: 14px; 
 }
 
 #logout-message {
-    color: white;
-    background-color: #ff6666;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    margin-top: -25px;
-    margin-bottom: 15px;
+	color: white;
+	background-color: #ff6666;
+	padding: 10px;
+	border-radius: 5px;
+	text-align: center;
+	margin-top: -25px;
+	margin-bottom: 15px;
 }
-

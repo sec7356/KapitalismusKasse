@@ -1,7 +1,6 @@
-/* Autor: @Selim, @Can */
-/* validiert am 02.07 */
+/* Autor: Selim, Can */
 
-/* Deaktiviere die Textauswahl auf der gesamten Webseite */
+/* Deaktiviert die Textauswahl auf der gesamten Webseite */
 body {
 	-webkit-user-select: none; /* Safari */
 	-moz-user-select: none; /* Firefox */
@@ -14,37 +13,35 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-color: #b89e14; /* Hintergrundfarbe des Containers */
-	padding: 1px; /* Innenabstand des Containers */
+	background-color: #b89e14; 
+	padding: 1px; 
 	border-radius: 10px;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-	transition: all 0.2s ease-in-out; /* Übergang für alle Änderungen */
+	transition: all 0.2s ease-in-out; 
 }
 
 #timer {
 	margin-top: 1px;
 	font-size: 14px;
-	color: white; /* Textfarbe */
-	margin-bottom: 2px; /* Abstand zur Trennlinie */
+	color: white;
+	margin-bottom: 2px; 
 	transition: font-size 0.2s ease-in-out;
-	/* Übergang für die Schriftgröße */
 }
 
 .divider {
 	width: 75%;
 	border: none;
 	border-top: 1.5px solid white;
-	margin: 0px; /* Abstand zur oberen und unteren Seite */
+	margin: 0px; 
 }
 
 .logout-button {
-	color: white; /* Textfarbe */
+	color: white;
 	border: none;
-	border-radius: 0px; /* Abgerundete Ecken */
-	margin-top: 1px; /* Abstand zur Trennlinie */
+	border-radius: 0px; 
+	margin-top: 1px; 
 	margin-bottom: 1px;
 	transition: font-size 0.2s ease-in-out;
-	/* Übergang für die Schriftgröße */
 }
 
 /* Navigation horizontal */
@@ -67,18 +64,16 @@ body {
 
 .accountBild {
 	position: fixed;
-	width: 60px; /* Standardgröße des Konto-Bildes */
-	height: 60px; /* Standardgröße des Konto-Bildes */
-	transition: width 0.2s ease-in-out, height 0.3s ease-in-out, right 0.3s
-		ease-in-out, top 0.3s ease-in-out;
-	/* Weitere Übergänge hinzufügen, je nach Bedarf */
+	width: 60px; 
+	height: 60px; 
+	transition: width 0.2s ease-in-out, height 0.3s ease-in-out, right 0.3s ease-in-out, top 0.3s ease-in-out;
 }
 
 .accountBild.small-account-image {
-	width: 36px; /* Verkleinerte Größe des Konto-Bildes */
-	height: 36px; /* Verkleinerte Größe des Konto-Bildes */
-	right: 80px; /* Rechter Abstand des Konto-Bildes beim Verkleinern */
-	top: 3.5px; /* Gewünschter vertikaler Versatz beim Verkleinern */
+	width: 36px; 
+	height: 36px; 
+	right: 80px; 
+	top: 3.5px; 
 }
 
 .imageMitLink {
@@ -125,26 +120,23 @@ nav {
 }
 
 nav.small {
-	background-color: #d1d1d1; /* Neue Hintergrundfarbe */
+	background-color: #d1d1d1; 
 	transition: background-color 0.2s ease-in-out;
-	/* Übergangseffekt für die Hintergrundfarbe */
 }
 
 nav.small a {
-	color: white; /* Ändere die Schriftfarbe auf Weiß */
+	color: white; 
 	transition: color 0.2s ease-in-out;
-	/* Übergangseffekt für die Schriftfarbe */
 }
 
 nav ul {
 	align-items: center;
-	border: none; /* Zum Testen hier Rahmen dotted */
+	border: none; 
 	margin: 0;
 	padding: 0;
 	list-style: none;
 	display: flex;
 	justify-content: center;
-	/* Horizontale Zentrierung der Listenelemente */
 }
 
 li:last-child {
@@ -178,7 +170,7 @@ nav li {
 }
 
 nav a {
-	padding-bottom: 3px; /* Fügt Platz für den Unterstrich hinzu */
+	padding-bottom: 3px; 
 	text-decoration: none;
 	color: black;
 	font-size: 14px;
@@ -190,18 +182,18 @@ nav li:not(.no-hover) a:hover,
 nav li:not(.no-hover) a.active {
     color: gold;
     position: relative;
-    color: rgb(55, 81, 128); /* Schriftfarbe für Hover-Effekt, wenn nicht aktiv */
+    color: rgb(55, 81, 128); 
     background-color: var(--accent1-color);
 }
 
 nav a.active::after {
-	content: ''; /* Pseudoelement für den Unterstrich */
+	content: ''; 
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	width: 100%; /* Breite des Unterstrichs auf 100% des Links setzen */
+	width: 100%; 
 	height: 2px;
-	background-color: #b89e14; /* Farbe des Unterstrichs */
+	background-color: #b89e14; 
 }
 
 /* Ende horizontale Navigation */
@@ -218,7 +210,7 @@ footer {
 	color: rgb(0, 0, 0);
 	text-align: center;
 	padding: 0px;
-	transition: bottom 1s ease; /* Fügt eine sanfte Animation hinzu */
+	transition: bottom 1s ease; 
 }
 
 footer nav ul {
