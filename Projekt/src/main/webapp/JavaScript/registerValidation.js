@@ -27,7 +27,7 @@ function checkEmailAvailability(email) {
 
     xmlhttp.addEventListener("load", handleEmailResponse);
     
-    xmlhttp.open("POST", '../CheckEmailAvailability', true);
+    xmlhttp.open("POST", '../CheckEmailAvailabilityServlet', true);
     xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xmlhttp.send("email=" + encodeURIComponent(email));
 }
