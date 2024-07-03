@@ -13,7 +13,6 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/loginStyle.css">
 <script src="${pageContext.request.contextPath}/JavaScript/popupLöschen.js"></script>
 <script src="${pageContext.request.contextPath}/JavaScript/logout-message.js"></script> 
-
 <script src="${pageContext.request.contextPath}/JavaScript/cookieCheck.js"></script>
 </head>
 <body>
