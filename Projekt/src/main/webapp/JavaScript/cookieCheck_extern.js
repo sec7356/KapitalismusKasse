@@ -1,4 +1,5 @@
-//Autor: @Selim
+//Autor: @Selim - Code Grundgerüst von Stackoverflow (Quelle unten), von mir und ChatGPT angepasst und Funktionen hinzugefügt.
+//Quelle: https://stackoverflow.com/questions/5968196/how-do-i-check-if-a-cookie-exists
 
 "use strict";
 
