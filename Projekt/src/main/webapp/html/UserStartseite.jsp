@@ -124,7 +124,6 @@
     </ul>
 </div>
 
-	<!-- Footer -->
 	<footer>
 		<p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>
 	</footer>
