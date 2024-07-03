@@ -19,6 +19,15 @@
 	    <div id="cookieWarning">Bitte aktivieren Sie Ihre Cookies um fortzufahren!<br>
 	        <button id="reloadButton">Neu laden</button>
    		</div>
+   		
+<noscript>
+<div class="noscript-message-container">
+            <div class="noscript-message">
+                JavaScript ist deaktiviert. Bitte aktivieren Sie JavaScript, um diese Webseite vollständig nutzen zu können.
+            </div>
+        </div>
+</noscript>
+
     <header>
         <h1>Oops! Etwas ist schief gelaufen.</h1>
     </header>

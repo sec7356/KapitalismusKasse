@@ -10,21 +10,28 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico" />
+		<link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico">
 		<title>Startseite - Kapitalismus-Kasse</title>
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/UserStartseite_Design.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 		<script src="${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
-		<script src="${pageContext.request.contextPath}/JavaScript/greeting.js"></script>
+		<script src="${pageContext.request.contextPath}/JavaScript/greeting.js" defer></script>
 	 	<script src="${pageContext.request.contextPath}/JavaScript/navigation_intern.js"></script>
-		
-<script src="${pageContext.request.contextPath}/JavaScript/cookieCheck.js"></script>
+		<script src="${pageContext.request.contextPath}/JavaScript/cookieCheck.js"></script>
 </head>
 <body>
 	<div id="cookieSuccess">✅ Cookie-Zugriff erfolgreich!</div>
 	    <div id="cookieWarning">Bitte aktivieren Sie Ihre Cookies um fortzufahren!<br>
 	        <button id="reloadButton">Neu laden</button>
    		</div>
+   		
+<noscript>
+<div class="noscript-message-container">
+            <div class="noscript-message">
+                JavaScript ist deaktiviert. Bitte aktivieren Sie JavaScript, um diese Webseite vollständig nutzen zu können.
+            </div>
+        </div>
+</noscript>
 
 	<nav id="navbar">
 		<ul>

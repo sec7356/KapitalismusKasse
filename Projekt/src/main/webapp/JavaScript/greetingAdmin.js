@@ -2,6 +2,7 @@
 
 "use strict"
 
+document.addEventListener('DOMContentLoaded', function() {
 function BegruessungAdmin() {
     var jetzt = new Date();
     var stunde = jetzt.getHours();
@@ -21,6 +22,7 @@ function BegruessungAdmin() {
 
 // Begrüßung bei Seitenladen einstellen
 window.onload = BegruessungAdmin;
+});
 
 
 
