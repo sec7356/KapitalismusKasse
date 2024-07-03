@@ -1,5 +1,5 @@
 <!-- Autor: @Can -->
-<!-- Fehlermeldung bei Validtion!!! -->
+<!-- Validiert am 03.07 -->
 
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -116,7 +116,8 @@
                                     </c:choose>
                                 </c:otherwise>
                             </c:choose>
-                    </select></td>
+                    </select>
+                </td>
                 </tr>
         </table>
         <input type="hidden" name="b_id" value="${benutzer.b_id}">
@@ -132,14 +133,11 @@
 			<c:if test="${empty kontoinformationen}">
 				<tr><td colspan="3">Keine Konto-Informationen gefunden</td></tr>
 			</c:if>
-			<thead>
 				<tr>
 					<th>IBAN</th>
 					<th>Kontostand</th>
 					<th>Disporahmen</th>
 				</tr>
-			</thead>
-			<tbody>
 				<c:forEach var="konto" items="${kontoinformationen}">
 					<tr>
 						<td>${konto.IBAN}</td>
@@ -147,7 +145,6 @@
 						<td><fmt:formatNumber value="${konto.dispoStand}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2" /> €</td>
 					</tr>
 				</c:forEach>
-			</tbody>
 			</table>
 		</div>
 	</div>
@@ -158,7 +155,6 @@
     <div class="form-container">
         <h2 class="form-title">Transaktion-Informationen</h2>
         <table class="transaktionen-table">
-            <thead>
                 <tr>
                     <th>Zahlender</th>
                     <th>Empfänger</th>
@@ -167,8 +163,6 @@
                     <th>Verwendungszweck</th>
                     <th>Zeitstempel</th>
                 </tr>
-            </thead>
-            <tbody>
                 <c:choose>
 					<c:when test="${empty transaktionen}">
 						<tr><td colspan="6">Noch keine Transaktionen durchgeführt</td></tr>
@@ -200,7 +194,6 @@
 						</c:forEach>
 					</c:otherwise>
 				</c:choose>
-            </tbody>
         </table>
     </div>
 </div>
