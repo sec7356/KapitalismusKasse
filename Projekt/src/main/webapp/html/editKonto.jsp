@@ -1,4 +1,5 @@
 <!-- Autor: @Can -->
+<!-- validiert am 03.07 -->
 
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -74,8 +75,6 @@
     <div class="form-container">
         <h2 class="form-title">Benutzer-Informationen</h2>
 	        <table class="transaktionen-table">
-
-          	<thead>
             <tr>
                 <th>Vorname</th>
                 <th>Nachname</th>
@@ -83,8 +82,6 @@
                 <th>PIN</th>
                 <th>Admin</th>
             </tr>
-        	</thead>
-        	<tbody>
                 <tr>
                     <td>${benutzer.vorname}</td>
                     <td>${benutzer.nachname}</td>
@@ -97,7 +94,6 @@
                     </c:choose>
                     </td>
                 </tr>
-        	</tbody>
     		</table>
     </div>
 </div>
@@ -112,36 +108,27 @@
             </span>
         
             <table class="transaktionen-table">
-                <thead>
                     <tr>
                         <th>IBAN</th>
                         <th>Kontostand</th>
                         <th>Disporahmen</th>
                     </tr>
-                </thead>
-                <tbody>
                     <tr>
                         <td>${konto.IBAN}</td> <!-- IBAN als nicht bearbeitbares Feld -->
                         <td><input type="number" id="kontoStand" name="kontoStand" value="${empty konto ? '' : konto.kontoStand}" required min="0" max="9999999999999"></td>
                         <td><input type="number" id="dispoStand" name="dispoStand" value="${empty konto ? '' : konto.dispoStand}" required min="0" max="99999999"></td>
                     </tr>
-                </tbody>
             </table>
 			<input type="hidden" name="b_id" value="${benutzer.b_id}">
 			<input type="hidden" name="iban" value="${konto.IBAN}">
-			
 			</form>
 	</div>
 </div>
-
-    
-    
 
 <div class="transaktionen">
     <div class="form-container">
         <h2 class="form-title">Transaktion-Informationen</h2>
         <table class="transaktionen-table">
-            <thead>
                 <tr>
                     <th>Zahlender</th>
                     <th>Empfänger</th>
@@ -150,8 +137,6 @@
                     <th>Verwendungszweck</th>
                     <th>Zeitstempel</th>
                 </tr>
-            </thead>
-            <tbody>
                 <c:choose>
 					<c:when test="${empty transaktionen}">
 						<tr><td colspan="6">Noch keine Transaktionen durchgeführt</td></tr>
@@ -175,7 +160,6 @@
 										<td class="centered-cell">${transaktion.empfaengerVorname} ${transaktion.empfaengerNachname}</td>
                                         <td class="centered-cell"><div class="centered-content">${transaktion.nach} <button class="copy-button" data-text="${transaktion.nach}">Kopieren</button></div></td>
 										<td><fmt:formatNumber value="${transaktion.summe}" type="number" groupingUsed="true" maxFractionDigits="2" minFractionDigits="2" /> €</td>
-										
 										<td class="verzweck-cell">${empty transaktion.verzweck ? ' - keine Angaben - ' : transaktion.verzweck}</td>
 										<td><fmt:formatDate value="${transaktion.zeitstempel}" pattern="dd.MM.yyyy, HH:mm" /> Uhr</td>
 									</tr>
@@ -184,14 +168,9 @@
 						</c:forEach>
 					</c:otherwise>
 				</c:choose>
-            </tbody>
         </table>
     </div>
 </div>
-    
-    
-    
-
     <footer>
         <p>&copy; 2024 Kapitalismus Kasse. Alle Rechte vorbehalten.</p>
     </footer>
