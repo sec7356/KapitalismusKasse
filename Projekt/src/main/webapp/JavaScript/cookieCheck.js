@@ -2,8 +2,7 @@
 
 "use strict";
 
-// Überprüfung der Cookies nach dem Laden der Seite
-window.onload = function() {
+document.addEventListener("DOMContentLoaded", function() {
     checkCookiesEnabled();
 
     var reloadButton = document.getElementById("reloadButton");
@@ -11,32 +10,39 @@ window.onload = function() {
         reloadButton.addEventListener("click", function() {
             location.reload();
         });
-    } 
-};
+    }
+});
 
 function checkCookiesEnabled() {
-    // Versuch einen Test-Cookie zu setzen
-    document.cookie = "testcookie=1";
-    const cookiesEnabled = document.cookie.indexOf("testcookie") !== -1;
+    try {
+        // Versuch einen Test-Cookie zu setzen
+        document.cookie = "testcookie=1; path=/";
+        const cookiesEnabled = document.cookie.indexOf("testcookie") !== -1;
 
-    if (cookiesEnabled) {
-        // Cookie löschen
-        document.cookie = "testcookie=1; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-        if (!getCookie('successShown')) {
-            showSuccessPopup();
-            setCookie('successShown', '1', 1); // Cookie setzen für einen Tag
+        if (cookiesEnabled) {
+            // Cookie löschen
+            document.cookie = "testcookie=1; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            if (!getCookie('successShown')) {
+                showSuccessPopup();
+                setCookie('successShown', '1', 1); // Cookie setzen für einen Tag
+            }
+        } else {
+            showAlert();
         }
-    } else {
+    } catch (error) {
+        console.error("Fehler beim Überprüfen der Cookies:", error);
         showAlert();
     }
 }
 
 function showSuccessPopup() {
     var successPopup = document.getElementById("cookieSuccess");
-    successPopup.style.display = "block";
-    setTimeout(() => {
-        successPopup.style.display = "none";
-    }, 2000);
+    if (successPopup) {
+        successPopup.style.display = "block";
+        setTimeout(() => {
+            successPopup.style.display = "none";
+        }, 2000);
+    }
 }
 
 function showAlert() {
