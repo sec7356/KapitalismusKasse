@@ -10,7 +10,7 @@
     <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/favicon.ico">
     <title>Hilfe - Kapitalismus-Kasse</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/hilfeKntStyle.css">
-	<script src="${pageContext.request.contextPath}/JavaScript/cookieCheck.js"></script>
+	<script src="${pageContext.request.contextPath}/JavaScript/cookieCheck_extern.js"></script>
 </head>
 <body>
 	<div id="cookieSuccess">✅ Cookie-Zugriff erfolgreich!</div>

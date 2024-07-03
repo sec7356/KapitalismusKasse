@@ -35,8 +35,6 @@ function checkCookiesEnabled() {
     }
 }
 
-var logoutUrl = "/KapitalismusKasse/LogoutServlet";
-
 
 function showSuccessPopup() {
     var successPopup = document.getElementById("cookieSuccess");
@@ -45,7 +43,6 @@ function showSuccessPopup() {
         setTimeout(() => {
             successPopup.style.display = "none";
             // Leitet den Benutzer nach einer kurzen Verzögerung weiter
-        	window.location.href = logoutUrl;
         }, 0);
     }
 }

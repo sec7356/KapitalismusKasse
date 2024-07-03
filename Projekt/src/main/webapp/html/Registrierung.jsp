@@ -15,7 +15,7 @@
     <script src="${pageContext.request.contextPath}/JavaScript/navigation_extern.js"></script>
     <script src="${pageContext.request.contextPath}/JavaScript/registerValidation.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" defer></script>
-<script src="${pageContext.request.contextPath}/JavaScript/cookieCheck.js"></script>
+<script src="${pageContext.request.contextPath}/JavaScript/cookieCheck_extern.js"></script>
 </head>
 <body>
 	<div id="cookieSuccess">✅ Cookie-Zugriff erfolgreich!</div>
