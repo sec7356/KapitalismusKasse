@@ -16,7 +16,14 @@ function showPopup(message) {
     popup.style.display = "block";
 }
 
-document.getElementById("bestaetigen").addEventListener("click", hidePopup);
+//document.getElementById("bestaetigen").addEventListener("click", hidePopup);
+	var bestaetigen = document.getElementById("bestaetigen");
+	if (bestaetigen) {
+		bestaetigen.addEventListener("click", function() {
+			hidePopup();
+	});
+};
+	
 
 // JavaScript-Funktion, um die Popup-Nachricht auszublenden
 function hidePopup() {

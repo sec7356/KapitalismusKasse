@@ -11,9 +11,7 @@ window.onload = function() {
         reloadButton.addEventListener("click", function() {
             location.reload();
         });
-    } else {
-        console.error('Element mit der ID "reloadButton" nicht gefunden');
-    }
+    } 
 };
 
 function checkCookiesEnabled() {
