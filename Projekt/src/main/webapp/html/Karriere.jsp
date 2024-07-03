@@ -11,6 +11,8 @@
     <title>Karriere - Kapitalismuss-Kasse</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleExtern.css">
     <script src="${pageContext.request.contextPath}/JavaScript/navigation_extern.js"></script>
+    <script src="${pageContext.request.contextPath}/JavaScript/cookieCheck.js"></script>
+    
     
 </head>
 <body>  
