@@ -1,4 +1,4 @@
-//Autor: Can
+//Autor: Can -  der Code ist von mir, aber die JOIN Anweisung mit ChatGPT 
 
 package edu.thi.servlets;
 

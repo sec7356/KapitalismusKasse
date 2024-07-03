@@ -1,4 +1,4 @@
-//Autor: Can - Grundidee und Hauptteil des Code von mir, ChatGPT zur korrekten Umsetzung 
+//Autor: Can - Grundidee und Hauptteil des Code von mir, ChatGPT zur korrekten Umsetzung der JOIN Anweisung
 
 package edu.thi.servlets;
 

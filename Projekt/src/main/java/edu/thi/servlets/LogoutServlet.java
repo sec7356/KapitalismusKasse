@@ -37,6 +37,6 @@ public class LogoutServlet extends HttpServlet {
 		HttpSession newSession = request.getSession(true);
 		newSession.setAttribute("logoutMessage", "Sie haben sich erfolgreich abgemeldet.");
 
-		response.sendRedirect(request.getContextPath() + "/html/Banking-Login.jsp"); // Leite zurück zur Login-Seite
+		response.sendRedirect(request.getContextPath() + "/html/Banking-Login.jsp");
 	}
 }

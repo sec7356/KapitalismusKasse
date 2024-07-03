@@ -1,4 +1,4 @@
-//Autor: Selim, Can
+//Autor: Selim, Can -  der Code ist von uns, aber die JOIN Anweisung mit ChatGPT 
 
 package edu.thi.servlets;
 

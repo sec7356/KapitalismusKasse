@@ -1,4 +1,4 @@
-//Autor: Selim
+//Autor: Selim - JOIN Anweisung von ChatGPT
 
 package edu.thi.servlets;
 
