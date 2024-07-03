@@ -1,6 +1,4 @@
-<!-- Validiert -->
 <!-- Autor: Selim -->
-<!--  onsubmit() bei internForm ausbauen! und navigation Scrollen bearbeiten-->
 
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 
