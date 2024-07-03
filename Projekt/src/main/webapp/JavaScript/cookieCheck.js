@@ -41,7 +41,11 @@ function showSuccessPopup() {
         successPopup.style.display = "block";
         setTimeout(() => {
             successPopup.style.display = "none";
+            // Leitet den Benutzer nach einer kurzen Verzögerung weiter
+            window.location.href = "/LogoutServlet";
         }, 2000);
+    } else {
+        console.error('Element mit der ID "cookieSuccess" nicht gefunden');
     }
 }
 
