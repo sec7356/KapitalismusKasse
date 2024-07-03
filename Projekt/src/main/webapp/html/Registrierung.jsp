@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/RegisterStyle.css">
     <script src="${pageContext.request.contextPath}/JavaScript/captcha.js"></script>
     <script src="${pageContext.request.contextPath}/JavaScript/navigation_extern.js"></script>
-    <script src="${pageContext.request.contextPath}/JavaScript/registerValidation.js" defer></script>
+    <script src="${pageContext.request.contextPath}/JavaScript/registerValidation.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" defer></script>
 <script src="${pageContext.request.contextPath}/JavaScript/cookieCheck.js"></script>
 </head>

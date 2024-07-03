@@ -11,7 +11,7 @@
     <title>Kontoauszüge - Kapitalismus-Kasse</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleIntern.css">
     <script  src= "${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
-    <script  src="${pageContext.request.contextPath}/JavaScript/greeting.js" defer></script>
+    <script  src="${pageContext.request.contextPath}/JavaScript/greeting.js"></script>
 <script src="${pageContext.request.contextPath}/JavaScript/cookieCheck.js"></script>
 </head>
 <body>

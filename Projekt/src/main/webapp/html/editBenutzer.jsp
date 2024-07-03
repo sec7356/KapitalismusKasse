@@ -15,7 +15,7 @@
 <title>Alle Buchungen - Kapitalismus-Kasse</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleIntern.css">
 <script src="${pageContext.request.contextPath}/JavaScript/Countdown.js"></script>
-<script src="${pageContext.request.contextPath}/JavaScript/greetingAdmin.js" defer></script>
+<script src="${pageContext.request.contextPath}/JavaScript/greetingAdmin.js"></script>
 <script src="${pageContext.request.contextPath}/JavaScript/Zwischenablage.js"></script>
 <script src="${pageContext.request.contextPath}/JavaScript/navigation_intern.js"></script>
 
