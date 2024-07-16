@@ -34,7 +34,9 @@ function checkEmailAvailability(email) {
 }
 
 function handleEmailResponse( ) {
-    var response = this.response;
+    var response = this.response;           //Antwort vom XMLHttpRequest-Obj.
+    
+    //die zu aktualisierenden DOM-Elemente
     var emailStatus = document.getElementById('emailStatus');
     var emailErrorMessage = document.getElementById('emailErrorMessage');
 
