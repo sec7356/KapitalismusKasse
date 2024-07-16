@@ -33,7 +33,7 @@ function checkEmailAvailability(email) {
     xmlhttp.send("email=" + encodeURIComponent(email));
 }
 
-function handleEmailResponse( ) {
+function handleEmailResponse( ) {           //aufgerufen, wenn die Antwort vom Server empfangen wurde
     var response = this.response;           //Antwort vom XMLHttpRequest-Obj.
     
     //die zu aktualisierenden DOM-Elemente
